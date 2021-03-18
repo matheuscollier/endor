@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Blue Djinn" nameDescription="um blue djinn" race="blood" experience="190" speed="220" manacost="0">
+  <health now="330" max="330"/>
+  <look type="80" head="0" body="0" legs="0" feet="0" corpse="3001"/>
+  <targetchange interval="2000" chance="0"/>
+  <strategy attack="100" defense="0"/>
+  <flags>
+    <flag summonable="0"/>
+    <flag attackable="1"/>
+    <flag hostile="1"/>
+    <flag illusionable="0"/>
+    <flag convinceable="0"/>
+    <flag pushable="0"/>
+    <flag canpushitems="1"/>
+    <flag canpushcreatures="0"/>
+    <flag targetDistance="1"/>
+    <flag runonhealth="0"/>
+  </flags>
+  <attacks>
+    <attack name="melee" interval="2000" min="-60" max="-120"/>
+    <attack name="fire" interval="2200" chance="50" range="7" min="-30" max="-80">
+      <attribute key="shootEffect" value="fire"/>
+    </attack>
+    <attack name="energycondition" interval="2500" chance="40" range="7" min="-50" max="-90">
+      <attribute key="shootEffect" value="energy"/>
+    </attack>
+    <attack name="drunk" interval="3100" chance="15" range="7">
+      <attribute key="shootEffect" value="energy"/>
+      <attribute key="areaEffect" value="energyarea"/>
+    </attack>
+    <attack name="outfit" interval="4400" chance="25" range="7" monster="rabbit" duration="20000">
+      <attribute key="areaEffect" value="blueshimmer"/>
+    </attack>
+  </attacks>
+  <defenses armor="0" defense="0"/>
+  <immunities>
+    <immunity physical="0"/>
+    <immunity energy="1"/>
+    <immunity fire="1"/>
+    <immunity poison="0"/>
+    <immunity lifedrain="1"/>
+    <immunity paralyze="1"/>
+    <immunity outfit="1"/>
+    <immunity drunk="1"/>
+    <immunity invisible="1"/>
+  </immunities>
+  <voices interval="5000" chance="10">
+    <voice sentence="Simsalabim"/>
+    <voice sentence="Feel the power of my magic, tiny mortal!"/>
+    <voice sentence="Be careful what you wish for."/>
+    <voice sentence="Wishes can come true."/>
+  </voices>
+  <loot capacity="600">
+    <item id="2148" countmax="40" chance1="100000"/>
+ 	<item id="2684" countmax="5" chance1="30000"/>
+ 	<item id="2146" countmax="1" chance1="800"/>
+ 	<item id="2663" chance="150"/>
+ 	<item id="2062" chance="400"/>
+ 	<item id="2442" chance="4000"/>
+ 	<item id="5912" countmax="1" chance1="700"/> cloth
+ 	<item id="2745" chance="6000"/>
+  </loot>
+</monster>

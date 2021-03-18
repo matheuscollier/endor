@@ -23,8 +23,7 @@ monster.Bestiary = {
 	CharmsPoints = 30,
 	Stars = 2,
 	Occurrence = 3,
-	Locations = "It raids every four hours, starting at server save, in groups of one to three at \z
-		various places around Venore swamp, especially near the southern production site."
+	Locations = "x."
 	}
 
 monster.health = 390
@@ -80,9 +79,10 @@ monster.voices = {
 }
 
 monster.loot = {
-	{name = "gold coin", chance = 100000, maxCount = 20},
-	{name = "meat", chance = 33600, maxCount = 4},
-	{name = "ham", chance = 39200, maxCount = 3}
+	{id = 10603, chance = 8000},
+	{id = 2148, chance = 30000, maxCount = 17},
+	{id = 2666, chance = 880, maxCount = 4},
+	{id = 2671, chance = 880, maxCount = 3}
 }
 
 monster.attacks = {

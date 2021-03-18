@@ -1,8 +1,8 @@
 local mType = Game.createMonsterType("Lost Soul")
 local monster = {}
 
-monster.description = "a lost soul"
-monster.experience = 4000
+monster.description = "um lost soul"
+monster.experience = 2500
 monster.outfit = {
 	lookType = 232,
 	lookHead = 0,
@@ -13,35 +13,17 @@ monster.outfit = {
 	lookMount = 0
 }
 
-monster.raceId = 283
-monster.Bestiary = {
-	class = "Undead",
-	race = BESTY_RACE_UNDEAD,
-	toKill = 2500,
-	FirstUnlock = 100,
-	SecondUnlock = 1000,
-	CharmsPoints = 50,
-	Stars = 4,
-	Occurrence = 0,
-	Locations = "Pits of Inferno, Formorgar Mines, Helheim, \z
-		Roshamuul Prison and in The Arcanum (Part of the Inquisition quest)."
-	}
-
-monster.health = 5800
-monster.maxHealth = 5800
+monster.health = 8500
+monster.maxHealth = 8500
 monster.race = "undead"
 monster.corpse = 6310
-monster.speed = 380
+monster.speed = 220
 monster.manaCost = 0
 monster.maxSummons = 0
 
 monster.changeTarget = {
-	interval = 4000,
-	chance = 15
-}
-
-monster.strategiesTarget = {
-	nearest = 100,
+	interval = 6000,
+	chance = 7
 }
 
 monster.flags = {
@@ -54,14 +36,14 @@ monster.flags = {
 	illusionable = true,
 	canPushItems = true,
 	canPushCreatures = true,
-	staticAttackChance = 90,
+	staticAttackChance = 95,
 	targetDistance = 1,
-	runHealth = 450,
+	runHealth = 0,
 	healthHidden = false,
 	isBlockable = false,
 	canWalkOnEnergy = false,
-	canWalkOnFire = true,
-	canWalkOnPoison = true,
+	canWalkOnFire = false,
+	canWalkOnPoison = false,
 	pet = false
 }
 
@@ -73,57 +55,39 @@ monster.light = {
 monster.voices = {
 	interval = 5000,
 	chance = 10,
-	{text = "Forgive Meee!", yell = false},
 	{text = "Mouuuurn meeee!", yell = false},
-	{text = "Help meee!", yell = false}
+	{text = "Forgive Meeeee!", yell = false}
 }
 
 monster.loot = {
-	{name = "ruby necklace", chance = 1500},
-	{name = "white pearl", chance = 10000, maxCount = 3},
-	{name = "black pearl", chance = 12000, maxCount = 3},
-	{name = "gold coin", chance = 100000, maxCount = 198},
-	{name = "platinum coin", chance = 100000, maxCount = 7},
-	{name = "red gem", chance = 15000},
-	{name = "stone skin amulet", chance = 2780},
-	{name = "blank rune", chance = 35250, maxCount = 3},
-	{name = "skull staff", chance = 850},
-	{name = "tower shield", chance = 740},
-	{name = "skull helmet", chance = 170},
-	{name = "silver goblet", chance = 4950},
-	{name = "soul orb", chance = 15000},
-	{id = 6300, chance = 2170},
-	{name = "demonic essence", chance = 7500},
-	{name = "skeleton decoration", chance = 1250},
-	{name = "haunted blade", chance = 740},
-	{name = "titan axe", chance = 1000},
-	{name = "great mana potion", chance = 14200, maxCount = 2},
-	{name = "great health potion", chance = 8800, maxCount = 2},
-	{id = 9810, chance = 3500},
-	{name = "unholy bone", chance = 33010}
+	{id = 2480, chance = 3000},
+	{id = 2483, chance = 3000},
+	{id = 2133, chance = 1000},
+	{id = 5626, chance = 300},
+	{id = 2197, chance = 200},
+	{id = 2436, chance = 400}
 }
 
 monster.attacks = {
-	{name ="melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -420},
-	{name ="combat", interval = 2000, chance = 10, type = COMBAT_DEATHDAMAGE, minDamage = -40, maxDamage = -210, length = 3, spread = 0, effect = CONST_ME_MAGIC_RED, target = false},
-	{name ="speed", interval = 2000, chance = 20, speedChange = -800, radius = 6, effect = CONST_ME_SMALLCLOUDS, target = false, duration = 4000}
+	{name ="melee", interval = 2000, chance = 100, minDamage = -200, maxDamage = -320},
+	{name ="combat", interval = 1850, chance = 25, minDamage = -150, maxDamage = -300, type = COMBAT_LIFEDRAIN, length = 6, spread = 3, effect = CONST_ME_MAGIC_RED, target = false}
 }
 
 monster.defenses = {
-	defense = 30,
-	armor = 30
+	defense = 0,
+	armor = 0
 }
 
 monster.elements = {
 	{type = COMBAT_PHYSICALDAMAGE, percent = 0},
-	{type = COMBAT_ENERGYDAMAGE, percent = 10},
+	{type = COMBAT_ENERGYDAMAGE, percent = 0},
 	{type = COMBAT_EARTHDAMAGE, percent = 100},
 	{type = COMBAT_FIREDAMAGE, percent = 100},
 	{type = COMBAT_LIFEDRAIN, percent = 100},
 	{type = COMBAT_MANADRAIN, percent = 0},
 	{type = COMBAT_DROWNDAMAGE, percent = 0},
-	{type = COMBAT_ICEDAMAGE, percent = 50},
-	{type = COMBAT_HOLYDAMAGE , percent = -20},
+	{type = COMBAT_ICEDAMAGE, percent = 0},
+	{type = COMBAT_HOLYDAMAGE , percent = 0},
 	{type = COMBAT_DEATHDAMAGE , percent = 100}
 }
 

@@ -1,8 +1,8 @@
 local mType = Game.createMonsterType("Hand of Cursed Fate")
 local monster = {}
 
-monster.description = "a hand of cursed fate"
-monster.experience = 5000
+monster.description = "uma hand of cursed fate"
+monster.experience = 4850
 monster.outfit = {
 	lookType = 230,
 	lookHead = 0,
@@ -13,57 +13,37 @@ monster.outfit = {
 	lookMount = 0
 }
 
-monster.raceId = 281
-monster.Bestiary = {
-	class = "Undead",
-	race = BESTY_RACE_UNDEAD,
-	toKill = 2500,
-	FirstUnlock = 100,
-	SecondUnlock = 1000,
-	CharmsPoints = 50,
-	Stars = 4,
-	Occurrence = 0,
-	Locations = "Pits of Inferno, The Battlefield, The Arcanum, The Blood Halls and The Crystal Caves."
-	}
-
-monster.health = 7500
-monster.maxHealth = 7500
-monster.race = "blood"
+monster.health = 10500
+monster.maxHealth = 10500
+monster.race = "undead"
 monster.corpse = 6312
-monster.speed = 260
-monster.manaCost = 0
+monster.speed = 290
+monster.manaCost = 690
 monster.maxSummons = 0
 
 monster.changeTarget = {
-	interval = 4000,
+	interval = 7000,
 	chance = 10
-}
-
-monster.strategiesTarget = {
-	nearest = 70,
-	health = 10,
-	damage = 10,
-	random = 10,
 }
 
 monster.flags = {
 	summonable = false,
 	attackable = true,
 	hostile = true,
-	convinceable = false,
+	convinceable = true,
 	pushable = false,
 	rewardBoss = false,
-	illusionable = true,
+	illusionable = false,
 	canPushItems = true,
 	canPushCreatures = true,
-	staticAttackChance = 20,
+	staticAttackChance = 95,
 	targetDistance = 1,
-	runHealth = 3500,
+	runHealth = 300,
 	healthHidden = false,
 	isBlockable = false,
-	canWalkOnEnergy = true,
-	canWalkOnFire = true,
-	canWalkOnPoison = true,
+	canWalkOnEnergy = false,
+	canWalkOnFire = false,
+	canWalkOnPoison = false,
 	pet = false
 }
 
@@ -78,62 +58,38 @@ monster.voices = {
 }
 
 monster.loot = {
-	{name = "emerald bangle", chance = 3500},
-	{name = "small sapphire", chance = 11000, maxCount = 4},
-	{name = "gold coin", chance = 60000, maxCount = 100},
-	{name = "gold coin", chance = 60000, maxCount = 100},
-	{name = "gold coin", chance = 50000, maxCount = 67},
-	{name = "platinum coin", chance = 100000, maxCount = 7},
-	{name = "violet gem", chance = 700},
-	{name = "yellow gem", chance = 5940},
-	{name = "energy ring", chance = 3150},
-	{name = "platinum amulet", chance = 1005},
-	{name = "mind stone", chance = 9090},
-	{name = "wand of inferno", chance = 5590},
-	{name = "boots of haste", chance = 540},
-	{name = "protection amulet", chance = 8740},
-	{name = "sudden death rune", chance = 4200, maxCount = 8},
-	{name = "skull staff", chance = 700},
-	{name = "knight armor", chance = 4550},
-	{name = "crown armor", chance = 1400},
-	{name = "mysterious voodoo skull", chance = 247},
-	{name = "soul orb", chance = 31111},
-	{id = 6300, chance = 1750},
-	{name = "demonic essence", chance = 12000},
-	{name = "concentrated demonic blood", chance = 30000, maxCount = 4},
-	{name = "assassin star", chance = 7692, maxCount = 5},
-	{name = "abyss hammer", chance = 495},
-	{name = "great mana potion", chance = 19990, maxCount = 2},
-	{name = "ultimate health potion", chance = 18000},
-	{name = "gold ingot", chance = 700}
+	{id = 2148, chance = 70000, maxCount = 100},
+	{id = 2178, chance = 1000},
+	{id = 6558, chance = 1000},
+	{id = 2187, chance = 1000},
+	{id = 2153, chance = 1000},
+	{id = 5799, chance = 1000}
 }
 
 monster.attacks = {
-	{name ="melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -520, condition = {type = CONDITION_POISON, totalDamage = 380, interval = 4000}},
-	{name ="combat", interval = 2000, chance = 15, type = COMBAT_MANADRAIN, minDamage = 0, maxDamage = -920, range = 1, target = false},
-	{name ="drunk", interval = 2000, chance = 10, radius = 4, effect = CONST_ME_SMALLCLOUDS, target = false, duration = 3000},
-	{name ="combat", interval = 2000, chance = 15, type = COMBAT_LIFEDRAIN, minDamage = -220, maxDamage = -880, range = 1, effect = CONST_ME_SMALLCLOUDS, target = false}
+	{name ="melee", interval = 1800, chance = 100, minDamage = -160, maxDamage = -480},
+	{name ="combat", interval = 1200, chance = 40, minDamage = -160, maxDamage = -320, type = COMBAT_PHYSICALDAMAGE, effect = CONST_ME_DRAWBLOOD},
+	{name ="combat", interval = 4200, chance = 25, minDamage = -200, maxDamage = -800, type = COMBAT_MANADRAIN, range = 6, target = false}
 }
 
 monster.defenses = {
-	defense = 25,
-	armor = 25,
-	{name ="speed", interval = 2000, chance = 15, speedChange = 1000, effect = CONST_ME_MAGIC_RED, target = false, duration = 5000},
-	{name ="invisible", interval = 2000, chance = 10, effect = CONST_ME_MAGIC_BLUE},
-	{name ="combat", interval = 2000, chance = 20, type = COMBAT_HEALING, minDamage = 100, maxDamage = 250, effect = CONST_ME_MAGIC_BLUE, target = false}
+	defense = 0,
+	armor = 0,
+	{name ="invisible", interval = 9000, chance = 60, effect = CONST_ME_MAGIC_BLUE},
+	{name ="combat", interval = 6000, chance = 30, minDamage = 200, maxDamage = 400, type = COMBAT_HEALING, effect = CONST_ME_MAGIC_BLUE, target = false}
 }
 
 monster.elements = {
-	{type = COMBAT_PHYSICALDAMAGE, percent = 0},
-	{type = COMBAT_ENERGYDAMAGE, percent = 100},
-	{type = COMBAT_EARTHDAMAGE, percent = 100},
-	{type = COMBAT_FIREDAMAGE, percent = 100},
-	{type = COMBAT_LIFEDRAIN, percent = 0},
+	{type = COMBAT_PHYSICALDAMAGE, percent = 5},
+	{type = COMBAT_ENERGYDAMAGE, percent = 15},
+	{type = COMBAT_EARTHDAMAGE, percent = 30},
+	{type = COMBAT_FIREDAMAGE, percent = 60},
+	{type = COMBAT_LIFEDRAIN, percent = 100},
 	{type = COMBAT_MANADRAIN, percent = 0},
-	{type = COMBAT_DROWNDAMAGE, percent = 0},
-	{type = COMBAT_ICEDAMAGE, percent = -10},
-	{type = COMBAT_HOLYDAMAGE , percent = -25},
-	{type = COMBAT_DEATHDAMAGE , percent = 100}
+	{type = COMBAT_DROWNDAMAGE, percent = 100},
+	{type = COMBAT_ICEDAMAGE, percent = 40},
+	{type = COMBAT_HOLYDAMAGE , percent = 30},
+	{type = COMBAT_DEATHDAMAGE , percent = 60}
 }
 
 monster.immunities = {

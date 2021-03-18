@@ -1,7 +1,7 @@
 local mType = Game.createMonsterType("Hellfire Fighter")
 local monster = {}
 
-monster.description = "a hellfire fighter"
+monster.description = "um hellfire fighter"
 monster.experience = 3120
 monster.outfit = {
 	lookType = 243,
@@ -23,7 +23,7 @@ monster.Bestiary = {
 	CharmsPoints = 50,
 	Stars = 4,
 	Occurrence = 0,
-	Locations = "Pits of Inferno, Demon Forge, Fury Dungeon."
+	Locations = "x."
 	}
 
 monster.health = 3800
@@ -76,30 +76,18 @@ monster.voices = {
 }
 
 monster.loot = {
-	{name = "emerald bangle", chance = 2200},
-	{id = 2136, chance = 190},
-	{name = "small diamond", chance = 1400},
-	{name = "gold coin", chance = 50000, maxCount = 100},
-	{name = "gold coin", chance = 40000, maxCount = 100},
-	{name = "gold coin", chance = 10000, maxCount = 46},
-	{name = "wand of inferno", chance = 9450},
-	{name = "burnt scroll", chance = 50000},
-	{name = "blank rune", chance = 30000, maxCount = 2},
-	{name = "fire sword", chance = 4140},
-	{name = "fire axe", chance = 440},
-	{name = "soul orb", chance = 12150},
-	{name = "demonic essence", chance = 14500},
-	{name = "magma legs", chance = 730},
-	{name = "magma coat", chance = 470},
-	{name = "fiery heart", chance = 9570},
-	{name = "piece of hellfire armor", chance = 5060},
-	{id = 13757, chance = 670}
+	{id = 10553, chance = 7000},
+	{id = 2148, chance = 100000, maxCount = 60},
+	{id = 2148, chance = 80000, maxCount = 60},
+	{id = 7368, chance = 8000},
+	{id = 2187, chance = 900},
+	{id = 2426, chance = 750}
 }
 
 monster.attacks = {
-	{name ="melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -520},
+	{name ="melee", interval = 2000, chance = 100, minDamage = -90, maxDamage = -320},
 	{name ="firefield", interval = 2000, chance = 10, range = 7, radius = 3, shootEffect = CONST_ANI_FIRE, target = false},
-	{name ="combat", interval = 2000, chance = 10, type = COMBAT_FIREDAMAGE, minDamage = -392, maxDamage = -1500, length = 8, spread = 3, effect = CONST_ME_FIREATTACK, target = false},
+	{name ="combat", interval = 2000, chance = 10, type = COMBAT_FIREDAMAGE, minDamage = -82, maxDamage = -190, length = 8, spread = 3, effect = CONST_ME_FIREATTACK, target = false},
 	{name ="combat", interval = 2000, chance = 15, type = COMBAT_FIREDAMAGE, minDamage = -60, maxDamage = -330, range = 7, radius = 3, effect = CONST_ME_HITBYFIRE, target = false},
 	{name ="hellfire fighter soulfire", interval = 2000, chance = 15, target = false}
 }
@@ -117,7 +105,7 @@ monster.elements = {
 	{type = COMBAT_LIFEDRAIN, percent = 0},
 	{type = COMBAT_MANADRAIN, percent = 0},
 	{type = COMBAT_DROWNDAMAGE, percent = 0},
-	{type = COMBAT_ICEDAMAGE, percent = -25},
+	{type = COMBAT_ICEDAMAGE, percent = -15},
 	{type = COMBAT_HOLYDAMAGE , percent = 0},
 	{type = COMBAT_DEATHDAMAGE , percent = 20}
 }

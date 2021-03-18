@@ -1,8 +1,8 @@
 local mType = Game.createMonsterType("Silencer")
 local monster = {}
 
-monster.description = "a silencer"
-monster.experience = 5100
+monster.description = "Silencer"
+monster.experience = 7500
 monster.outfit = {
 	lookType = 585,
 	lookHead = 0,
@@ -13,37 +13,17 @@ monster.outfit = {
 	lookMount = 0
 }
 
-monster.raceId = 1014
-monster.Bestiary = {
-	class = "Magical",
-	race = BESTY_RACE_MAGICAL,
-	toKill = 100,
-	FirstUnlock = 50,
-	SecondUnlock = 500,
-	CharmsPoints = 25,
-	Stars = 3,
-	Occurrence = 0,
-	Locations = "All over the Roshamuul surface and Nightmare Isles."
-	}
-
-monster.health = 5400
-monster.maxHealth = 5400
+monster.health = 7000
+monster.maxHealth = 7000
 monster.race = "blood"
 monster.corpse = 22489
-monster.speed = 470
+monster.speed = 360
 monster.manaCost = 0
 monster.maxSummons = 0
 
 monster.changeTarget = {
 	interval = 4000,
 	chance = 5
-}
-
-monster.strategiesTarget = {
-	nearest = 70,
-	health = 10,
-	damage = 10,
-	random = 10,
 }
 
 monster.flags = {
@@ -63,7 +43,7 @@ monster.flags = {
 	isBlockable = false,
 	canWalkOnEnergy = false,
 	canWalkOnFire = false,
-	canWalkOnPoison = true,
+	canWalkOnPoison = false,
 	pet = false
 }
 
@@ -82,48 +62,44 @@ monster.voices = {
 }
 
 monster.loot = {
-	{name = "gold coin", chance = 100000, maxCount = 100},
-	{name = "platinum coin", chance = 100000, maxCount = 8},
-	{name = "stealth ring", chance = 1200},
-	{name = "boots of haste", chance = 360},
-	{name = "dark shield", chance = 2000},
-	{name = "assassin star", chance = 7600, maxCount = 10},
-	{name = "diamond sceptre", chance = 960},
-	{name = "haunted blade", chance = 2000},
-	{name = "titan axe", chance = 2200},
-	{name = "shadow sceptre", chance = 640},
-	{name = "glorious axe", chance = 2400},
-	{name = "terra legs", chance = 960},
-	{name = "terra boots", chance = 480},
-	{name = "cluster of solace", chance = 560},
-	{name = "silencer claws", chance = 17000},
-	{name = "silencer resonating chamber", chance = 8410}
+	{id = 2148, chance = 100000, maxCount = 100},
+	{id = 2152, chance = 100000, maxCount = 5},
+	{id = 2165, chance = 1200},
+	{id = 2195, chance = 500},
+	{id = 7387, chance = 80},
+	{id = 7407, chance = 50},
+	{id = 7885, chance = 70},
+	{id = 7886, chance = 120},
+	{id = 22608, chance = 5},
+	{id = 22534, chance = 1500},
+	{id = 22535, chance = 8410}
 }
 
 monster.attacks = {
-	{name ="melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -315, condition = {type = CONDITION_POISON, totalDamage = 600, interval = 4000}},
-	{name ="silencer skill reducer", interval = 2000, chance = 10, range = 3, target = false},
-	{name ="combat", interval = 2000, chance = 15, type = COMBAT_MANADRAIN, minDamage = -40, maxDamage = -150, radius = 4, shootEffect = CONST_ANI_ONYXARROW, effect = CONST_ME_MAGIC_RED, target = true}
+	{name ="melee", interval = 1680, chance = 100, minDamage = -400, maxDamage = -670},
+	{name ="combat", interval = 2000, chance = 15, minDamage = -40, maxDamage = -120, type = COMBAT_MANADRAIN, ShootEffect = CONST_ANI_ONYXARROW, effect = CONST_ME_MAGIC_RED, target = true},
+	{name ="combat", interval = 2850, chance = 29, minDamage = -500, maxDamage = -700, type = COMBAT_LIFEDRAIN, length = 7, spread = 3, effect = CONST_ME_DRAWBLOOD, target = false},
+	{name ="combat", interval = 3100, chance = 32, minDamage = -350, maxDamage = -495, type = COMBAT_PHYSICALDAMAGE, range = 7, ShootEffect = CONST_ANI_FIRE, effect = CONST_ME_DRAWBLOOD, target = true}
 }
 
 monster.defenses = {
-	defense = 20,
-	armor = 20,
-	{name ="speed", interval = 2000, chance = 15, speedChange = 450, effect = CONST_ME_MAGIC_RED, target = false, duration = 5000},
-	{name ="combat", interval = 2000, chance = 10, type = COMBAT_HEALING, minDamage = 220, maxDamage = 425, effect = CONST_ME_MAGIC_BLUE, target = false}
+	defense = 0,
+	armor = 0,
+	{name ="speed", interval = 2000, chance = 15, SpeedChange = 450, Duration = 5000},
+	{name ="combat", interval = 2000, chance = 10, minDamage = 220, maxDamage = 425, type = COMBAT_HEALING, effect = CONST_ME_MAGIC_BLUE, target = false}
 }
 
 monster.elements = {
-	{type = COMBAT_PHYSICALDAMAGE, percent = 5},
-	{type = COMBAT_ENERGYDAMAGE, percent = 15},
-	{type = COMBAT_EARTHDAMAGE, percent = 100},
-	{type = COMBAT_FIREDAMAGE, percent = 30},
+	{type = COMBAT_PHYSICALDAMAGE, percent = 20},
+	{type = COMBAT_ENERGYDAMAGE, percent = 30},
+	{type = COMBAT_EARTHDAMAGE, percent = 30},
+	{type = COMBAT_FIREDAMAGE, percent = 25},
 	{type = COMBAT_LIFEDRAIN, percent = 0},
 	{type = COMBAT_MANADRAIN, percent = 0},
 	{type = COMBAT_DROWNDAMAGE, percent = 0},
-	{type = COMBAT_ICEDAMAGE, percent = 10},
-	{type = COMBAT_HOLYDAMAGE , percent = -25},
-	{type = COMBAT_DEATHDAMAGE , percent = 70}
+	{type = COMBAT_ICEDAMAGE, percent = 20},
+	{type = COMBAT_HOLYDAMAGE , percent = 15},
+	{type = COMBAT_DEATHDAMAGE , percent = 80}
 }
 
 monster.immunities = {

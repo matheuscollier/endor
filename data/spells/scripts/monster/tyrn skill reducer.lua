@@ -1,14 +1,14 @@
 local combat = {}
 
 for i = 40, 55 do
-	combat[i] = Combat()
-	combat[i]:setParameter(COMBAT_PARAM_EFFECT, CONST_ME_SOUND_WHITE)
+	combat[i] = createCombatObject()
+	setCombatParam(combat[i], COMBAT_PARAM_EFFECT, CONST_ME_SOUND_WHITE)
 
-	local condition = Condition(CONDITION_ATTRIBUTES)
-	condition:setParameter(CONDITION_PARAM_TICKS, 12000)
-	condition:setParameter(CONDITION_PARAM_SKILL_MELEEPERCENT, i)
-	condition:setParameter(CONDITION_PARAM_SKILL_FISTPERCENT, i)
-	condition:setParameter(CONDITION_PARAM_SKILL_SHIELDPERCENT, i)
+	local condition = createConditionObject(CONDITION_ATTRIBUTES)
+	setConditionParam(condition, CONDITION_PARAM_TICKS, 12000)
+	setConditionParam(condition, CONDITION_PARAM_SKILL_MELEEPERCENT, i)
+	setConditionParam(condition, CONDITION_PARAM_SKILL_FISTPERCENT, i)
+	setConditionParam(condition, CONDITION_PARAM_SKILL_SHIELDPERCENT, i)
 
 	arr = {
 	{0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0},
@@ -27,10 +27,10 @@ for i = 40, 55 do
 	}
 
 	local area = createCombatArea(arr)
-	combat[i]:setArea(area)
-	combat[i]:addCondition(condition)
+	setCombatArea(combat[i], area)
+	setCombatCondition(combat[i], condition)
 end
 
-function onCastSpell(creature, var)
-	return combat[math.random(40, 55)]:execute(creature, var)
+function onCastSpell(cid, var)
+	return doCombat(cid, combat[math.random(40, 55)], var)
 end

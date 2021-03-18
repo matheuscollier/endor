@@ -1,7 +1,7 @@
 local mType = Game.createMonsterType("Larva")
 local monster = {}
 
-monster.description = "a larva"
+monster.description = "uma larva"
 monster.experience = 44
 monster.outfit = {
 	lookType = 82,
@@ -13,40 +13,21 @@ monster.outfit = {
 	lookMount = 0
 }
 
-monster.raceId = 82
-monster.Bestiary = {
-	class = "Vermin",
-	race = BESTY_RACE_VERMIN,
-	toKill = 500,
-	FirstUnlock = 25,
-	SecondUnlock = 250,
-	CharmsPoints = 15,
-	Stars = 2,
-	Occurrence = 0,
-	Locations = "Ankrahmun Pharaoh Tombs, Ashta'daramai, Daramian Mountain Scarab Lair, \z
-		Daramian Scarab Caves, Daramian Scarab Lairs, Deeper Drefia, Kha'zeel Mountains, Lion's Rock, \z
-		Northern Darama Desert, Port Hope Surroundings, Treasure Island, Yalahar Factory Quarter."
-	}
-
 monster.health = 70
 monster.maxHealth = 70
 monster.race = "venom"
-monster.corpse = 6023
+monster.corpse = 3010
 monster.speed = 124
 monster.manaCost = 355
 monster.maxSummons = 0
 
 monster.changeTarget = {
-	interval = 5000,
+	interval = 2000,
 	chance = 0
 }
 
-monster.strategiesTarget = {
-	nearest = 100,
-}
-
 monster.flags = {
-	summonable = true,
+	summonable = false,
 	attackable = true,
 	hostile = true,
 	convinceable = true,
@@ -55,14 +36,14 @@ monster.flags = {
 	illusionable = true,
 	canPushItems = false,
 	canPushCreatures = false,
-	staticAttackChance = 90,
+	staticAttackChance = 95,
 	targetDistance = 1,
 	runHealth = 0,
 	healthHidden = false,
 	isBlockable = false,
 	canWalkOnEnergy = false,
 	canWalkOnFire = false,
-	canWalkOnPoison = true,
+	canWalkOnPoison = false,
 	pet = false
 }
 
@@ -77,28 +58,28 @@ monster.voices = {
 }
 
 monster.loot = {
-	{name = "gold coin", chance = 63000, maxCount = 15},
-	{name = "meat", chance = 14666}
+	{id = 2148, chance = 70000, maxCount = 20},
+	{id = 2666, chance = 10000}
 }
 
 monster.attacks = {
-	{name ="melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -35, condition = {type = CONDITION_POISON, totalDamage = 15, interval = 4000}}
+	{name ="melee", interval = 2000, chance = 100, minDamage = -10, maxDamage = -35, condition = {type = CONDITION_POISON, startDamage = 10, interval = 2000}}
 }
 
 monster.defenses = {
-	defense = 10,
-	armor = 10
+	defense = 0,
+	armor = 0
 }
 
 monster.elements = {
 	{type = COMBAT_PHYSICALDAMAGE, percent = 0},
-	{type = COMBAT_ENERGYDAMAGE, percent = 10},
+	{type = COMBAT_ENERGYDAMAGE, percent = 0},
 	{type = COMBAT_EARTHDAMAGE, percent = 100},
-	{type = COMBAT_FIREDAMAGE, percent = -10},
+	{type = COMBAT_FIREDAMAGE, percent = 0},
 	{type = COMBAT_LIFEDRAIN, percent = 0},
 	{type = COMBAT_MANADRAIN, percent = 0},
 	{type = COMBAT_DROWNDAMAGE, percent = 0},
-	{type = COMBAT_ICEDAMAGE, percent = -5},
+	{type = COMBAT_ICEDAMAGE, percent = 0},
 	{type = COMBAT_HOLYDAMAGE , percent = 0},
 	{type = COMBAT_DEATHDAMAGE , percent = 0}
 }

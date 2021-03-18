@@ -4,10 +4,10 @@ local config = {
 }
 
 local spheres = {
-	[7759] = {VOCATION.CLIENT_ID.PALADIN},
-	[7760] = {VOCATION.CLIENT_ID.SORCERER},
-	[7761] = {VOCATION.CLIENT_ID.DRUID},
-	[7762] = {VOCATION.CLIENT_ID.KNIGHT}
+	[7759] = {3, 7},
+	[7760] = {1, 5},
+	[7761] = {2, 6},
+	[7762] = {4, 8}
 }
 
 local enchantableGems = {2147, 2146, 2149, 2150}
@@ -41,22 +41,24 @@ local enchantedItems = {
 	[8905] = {8906, 8907, 8909, 8908}
 }
 
-local enchanting = Action()
+function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 
-function enchanting.onUse(player, item, fromPosition, target, toPosition, isHotkey)
+if player:getStorageValue(Storage.Exhaust) >= os.time() then
+	player:sendTextMessage(MESSAGE_STATUS_SMALL, 'You are exhausted.')
+	return true
+    end
 
-	if table.contains({33268, 33269}, toPosition.x)
-	and toPosition.y == 31830 and toPosition.z == 10
-	and player:getStorageValue(Storage.ElementalSphere.QuestLine) > 0 then
-		if not table.contains(spheres[item.itemid], player:getVocation():getClientId()) then
+	if isInArray({33268, 33269}, toPosition.x) and toPosition.y == 31830 and toPosition.z == 10 and player:getStorageValue(Storage.ElementalSphere.QuestLine) > 0 then
+		if not isInArray(spheres[item.itemid], player:getVocation():getId()) then
 			return false
-		elseif table.contains({7915, 7916}, target.itemid) then
+		elseif isInArray({7915, 7916}, target.itemid) then
 			player:say('Turn off the machine first.', TALKTYPE_MONSTER_SAY)
 			return true
 		else
 			player:setStorageValue(Storage.ElementalSphere.MachineGemCount, math.max(1, player:getStorageValue(Storage.ElementalSphere.MachineGemCount) + 1))
 			toPosition:sendMagicEffect(CONST_ME_PURPLEENERGY)
 			item:transform(item.itemid, item.type - 1)
+			player:setStorageValue(Storage.Exhaust, os.time())
 			return true
 		end
 	end
@@ -66,6 +68,7 @@ function enchanting.onUse(player, item, fromPosition, target, toPosition, isHotk
 		target:decay()
 		item:remove(1)
 		toPosition:sendMagicEffect(CONST_ME_MAGIC_RED)
+		player:setStorageValue(Storage.Exhaust, os.time())
 		return true
 	end
 
@@ -73,6 +76,40 @@ function enchanting.onUse(player, item, fromPosition, target, toPosition, isHotk
 		target:transform(9933)
 		item:remove(1)
 		toPosition:sendMagicEffect(CONST_ME_MAGIC_RED)
+		player:setStorageValue(Storage.Exhaust, os.time())
+		return true
+	end
+	
+	if item.itemid == 7759 and target.itemid == 2544 then
+		doPlayerRemoveItem(player,2544,1)
+		doPlayerAddItem(player, 7839, 70)
+		item:remove(1)
+		toPosition:sendMagicEffect(CONST_ME_MAGIC_RED)
+		player:setStorageValue(Storage.Exhaust, os.time())
+		return true
+	end
+	if item.itemid == 7760 and target.itemid == 2544 then
+		doPlayerRemoveItem(player,2544,1)
+		doPlayerAddItem(player, 7840, 70)
+		item:remove(1)
+		toPosition:sendMagicEffect(CONST_ME_MAGIC_RED)
+		player:setStorageValue(Storage.Exhaust, os.time())
+		return true
+	end
+	if item.itemid == 7761 and target.itemid == 2544 then
+		doPlayerRemoveItem(player,2544,1)
+		doPlayerAddItem(player, 7850, 70)
+		item:remove(1)
+		toPosition:sendMagicEffect(CONST_ME_MAGIC_RED)
+		player:setStorageValue(Storage.Exhaust, os.time())
+		return true
+	end
+	if item.itemid == 7762 and target.itemid == 2544 then
+		doPlayerRemoveItem(player,2544,1)
+		doPlayerAddItem(player, 7838, 70)
+		item:remove(1)
+		toPosition:sendMagicEffect(CONST_ME_MAGIC_RED)
+		player:setStorageValue(Storage.Exhaust, os.time())
 		return true
 	end
 
@@ -104,6 +141,7 @@ function enchanting.onUse(player, item, fromPosition, target, toPosition, isHotk
 		item:transform(enchantedGems[targetId])
 		player:addManaSpent(items.valuables.mana)
 		player:getPosition():sendMagicEffect(CONST_ME_HOLYDAMAGE)
+		player:setStorageValue(Storage.Exhaust, os.time())
 		return true
 	end
 
@@ -112,6 +150,7 @@ function enchanting.onUse(player, item, fromPosition, target, toPosition, isHotk
 		target:decay()
 		item:remove(1)
 		toPosition:sendMagicEffect(CONST_ME_MAGIC_GREEN)
+		player:setStorageValue(Storage.Exhaust, os.time())
 		return true
 	end
 
@@ -127,17 +166,15 @@ function enchanting.onUse(player, item, fromPosition, target, toPosition, isHotk
 		end
 
 		local subtype = target.type
-		if not isInArray({2544, 8905}, target.itemid) then
+		if not isInArray({8905}, target.itemid) then
 			subtype = 1000
 		end
 
 		target:transform(enchantedItems[target.itemid][targetId], subtype)
 		target:getPosition():sendMagicEffect(CONST_ME_MAGIC_RED)
 		item:remove(1)
+		player:setStorageValue(Storage.Exhaust, os.time())
 		return true
 	end
 	return false
 end
-
-enchanting:id(7759, 7760, 7761, 7762)
-enchanting:register()

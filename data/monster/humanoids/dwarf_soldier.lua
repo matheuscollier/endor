@@ -1,7 +1,7 @@
 local mType = Game.createMonsterType("Dwarf Soldier")
 local monster = {}
 
-monster.description = "a dwarf soldier"
+monster.description = "um dwarf soldier"
 monster.experience = 70
 monster.outfit = {
 	lookType = 71,
@@ -23,14 +23,13 @@ monster.Bestiary = {
 	CharmsPoints = 15,
 	Stars = 2,
 	Occurrence = 0,
-	Locations = "Kazordoon Dwarf Mines, Cyclopolis, Dwacatra, Ferngrims Gate, Dwarf Bridge, \z
-		Mount Sternum Undead Cave, Beregar, Tiquanda Dwarf Cave, Cormaya Dwarf Cave."
+	Locations = "x."
 	}
 
 monster.health = 135
 monster.maxHealth = 135
 monster.race = "blood"
-monster.corpse = 6014
+monster.corpse = 2985
 monster.speed = 176
 monster.manaCost = 360
 monster.maxSummons = 0
@@ -77,41 +76,41 @@ monster.voices = {
 }
 
 monster.loot = {
-	{name = "gold coin", chance = 28000, maxCount = 12},
-	{name = "axe ring", chance = 120},
-	{name = "battle axe", chance = 2500},
-	{name = "crossbow", chance = 3000},
-	{name = "chain armor", chance = 8000},
-	{name = "soldier helmet", chance = 12000},
-	{name = "dwarven shield", chance = 3000},
-	{name = "bolt", chance = 40000, maxCount = 7},
-	{id = 2554, chance = 10000},
-	{name = "white mushroom", chance = 40000, maxCount = 3},
-	{name = "iron ore", chance = 300},
-	{name = "piercing bolt", chance = 4000, maxCount = 3}
+	{id = 2481, chance = 1000},
+	{id = 2455, chance = 900},
+	{id = 2378, chance = 3333},
+	{id = 2464, chance = 3000},
+	{id = 2643, chance = 4000},
+	{id = 2525, chance = 1300},
+	{id = 2787, chance = 60000, maxCount = 5},
+	{id = 2148, chance = 80000, maxCount = 75},
+	{id = 2543, chance = 20000, maxCount = 10},
+	{id = 2543, chance = 10000, maxCount = 4},
+	{id = 2554, chance = 2333},
+	{id = 2213, chance = 1050}
 }
 
 monster.attacks = {
-	{name ="melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -70},
-	{name ="combat", interval = 2000, chance = 10, type = COMBAT_PHYSICALDAMAGE, minDamage = 0, maxDamage = -60, range = 7, shootEffect = CONST_ANI_BOLT, target = false}
+	{name ="melee", interval = 2000, chance = 100, minDamage = -15, maxDamage = -40},
+	{name ="combat", interval = 3600, chance = 99, minDamage = -10, maxDamage = -35, type = COMBAT_PHYSICALDAMAGE, range = 5, ShootEffect = CONST_ANI_BOLT, target = false}
 }
 
 monster.defenses = {
-	defense = 15,
-	armor = 15
+	defense = 0,
+	armor = 0
 }
 
 monster.elements = {
 	{type = COMBAT_PHYSICALDAMAGE, percent = 0},
 	{type = COMBAT_ENERGYDAMAGE, percent = 0},
-	{type = COMBAT_EARTHDAMAGE, percent = 10},
-	{type = COMBAT_FIREDAMAGE, percent = -5},
+	{type = COMBAT_EARTHDAMAGE, percent = 0},
+	{type = COMBAT_FIREDAMAGE, percent = 0},
 	{type = COMBAT_LIFEDRAIN, percent = 0},
 	{type = COMBAT_MANADRAIN, percent = 0},
 	{type = COMBAT_DROWNDAMAGE, percent = 0},
 	{type = COMBAT_ICEDAMAGE, percent = 0},
 	{type = COMBAT_HOLYDAMAGE , percent = 0},
-	{type = COMBAT_DEATHDAMAGE , percent = -5}
+	{type = COMBAT_DEATHDAMAGE , percent = 0}
 }
 
 monster.immunities = {

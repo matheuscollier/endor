@@ -1,8 +1,8 @@
 local mType = Game.createMonsterType("Lizard Snakecharmer")
 local monster = {}
 
-monster.description = "a lizard snakecharmer"
-monster.experience = 210
+monster.description = "um lizard snakecharmer"
+monster.experience = 200
 monster.outfit = {
 	lookType = 115,
 	lookHead = 0,
@@ -13,34 +13,17 @@ monster.outfit = {
 	lookMount = 0
 }
 
-monster.raceId = 115
-monster.Bestiary = {
-	class = "Reptile",
-	race = BESTY_RACE_REPTILE,
-	toKill = 1000,
-	FirstUnlock = 50,
-	SecondUnlock = 500,
-	CharmsPoints = 25,
-	Stars = 3,
-	Occurrence = 0,
-	Locations = "Chor."
-	}
-
 monster.health = 325
 monster.maxHealth = 325
 monster.race = "blood"
-monster.corpse = 6041
+monster.corpse = 4262
 monster.speed = 184
 monster.manaCost = 0
 monster.maxSummons = 6
 
 monster.changeTarget = {
-	interval = 4000,
-	chance = 10
-}
-
-monster.strategiesTarget = {
-	nearest = 100,
+	interval = 2000,
+	chance = 50
 }
 
 monster.flags = {
@@ -53,14 +36,14 @@ monster.flags = {
 	illusionable = true,
 	canPushItems = true,
 	canPushCreatures = false,
-	staticAttackChance = 80,
-	targetDistance = 4,
+	staticAttackChance = 95,
+	targetDistance = 2,
 	runHealth = 15,
 	healthHidden = false,
 	isBlockable = false,
 	canWalkOnEnergy = false,
 	canWalkOnFire = false,
-	canWalkOnPoison = true,
+	canWalkOnPoison = false,
 	pet = false
 }
 
@@ -70,54 +53,45 @@ monster.light = {
 }
 
 monster.summons = {
-	{name = "cobra", chance = 20, interval = 2000}
+	{name = "cobra", chance = 25, interval = 1000, max = 6}
 }
 
 monster.voices = {
 	interval = 5000,
 	chance = 10,
-	{text = "I smeeeel warm blood!", yell = false},
-	{text = "Shhhhhhh", yell = false}
+	{text = "Shhhhhhhh.", yell = false},
+	{text = "I ssssmell warm blood!", yell = false}
 }
 
 monster.loot = {
-	{name = "gold coin", chance = 83740, maxCount = 55},
-	{name = "small amethyst", chance = 520},
-	{name = "yellow gem", chance = 150},
-	{name = "life ring", chance = 340},
-	{name = "life crystal", chance = 1430},
-	{name = "terra rod", chance = 920},
-	{name = "snakebite rod", chance = 230},
-	{name = "cape", chance = 8640},
-	{name = "charmer's tiara", chance = 230},
-	{name = "lizard leather", chance = 1320},
-	{name = "lizard scale", chance = 860},
-	{name = "mana potion", chance = 860}
+	{id = 2148, chance = 100000, maxCount = 75},
+	{id = 3971, chance = 600},
+	{id = 5876, chance = 2500},
+	{id = 3983, chance = 2000},
+	{id = 3975, chance = 200}
 }
 
 monster.attacks = {
-	{name ="melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -30},
-	-- poison
-	{name ="condition", type = CONDITION_POISON, interval = 2000, chance = 15, minDamage = -100, maxDamage = -200, range = 7, shootEffect = CONST_ANI_POISON, target = false},
-	{name ="combat", interval = 2000, chance = 15, type = COMBAT_EARTHDAMAGE, minDamage = -50, maxDamage = -110, range = 7, radius = 1, shootEffect = CONST_ANI_POISON, effect = CONST_ME_GREEN_RINGS, target = true}
+	{name ="melee", interval = 2000, chance = 100, skill = 28, attack = 18},
+	{name ="condition", type = CONDITION_POISON, interval = 4000, chance = 20, minDamage = -140, maxDamage = -200, range = 7, ShootEffect = CONST_ANI_POISON, effect = CONST_ME_POISONAREA, target = false},
+	{name ="combat", interval = 1000, chance = 17, minDamage = -50, maxDamage = -100, range = 7, type = COMBAT_EARTHDAMAGE, ShootEffect = CONST_ANI_POISON, effect = CONST_ME_GREEN_RINGS, target = true}
 }
 
 monster.defenses = {
-	defense = 15,
-	armor = 15,
-	{name ="combat", interval = 2000, chance = 50, type = COMBAT_HEALING, minDamage = 50, maxDamage = 100, effect = CONST_ME_MAGIC_BLUE, target = false},
-	{name ="invisible", interval = 2000, chance = 10, effect = CONST_ME_MAGIC_BLUE}
+	defense = 0,
+	armor = 0,
+	{name ="combat", interval = 1000, chance = 34, minDamage = 50, maxDamage = 100, type = COMBAT_HEALING, effect = CONST_ME_MAGIC_BLUE, target = false}
 }
 
 monster.elements = {
-	{type = COMBAT_PHYSICALDAMAGE, percent = -20},
-	{type = COMBAT_ENERGYDAMAGE, percent = 20},
+	{type = COMBAT_PHYSICALDAMAGE, percent = 0},
+	{type = COMBAT_ENERGYDAMAGE, percent = 0},
 	{type = COMBAT_EARTHDAMAGE, percent = 100},
-	{type = COMBAT_FIREDAMAGE, percent = -10},
+	{type = COMBAT_FIREDAMAGE, percent = 0},
 	{type = COMBAT_LIFEDRAIN, percent = 0},
 	{type = COMBAT_MANADRAIN, percent = 0},
 	{type = COMBAT_DROWNDAMAGE, percent = 0},
-	{type = COMBAT_ICEDAMAGE, percent = 20},
+	{type = COMBAT_ICEDAMAGE, percent = 0},
 	{type = COMBAT_HOLYDAMAGE , percent = 0},
 	{type = COMBAT_DEATHDAMAGE , percent = 0}
 }

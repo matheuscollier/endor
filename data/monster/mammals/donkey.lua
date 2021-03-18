@@ -2,9 +2,9 @@ local mType = Game.createMonsterType("Donkey")
 local monster = {}
 
 monster.description = "a donkey"
-monster.experience = 0
+monster.experience = 20
 monster.outfit = {
-	lookType = 387,
+	lookType = 399,
 	lookHead = 0,
 	lookBody = 0,
 	lookLegs = 0,
@@ -13,27 +13,23 @@ monster.outfit = {
 	lookMount = 0
 }
 
-monster.health = 45
-monster.maxHealth = 45
+monster.health = 50
+monster.maxHealth = 50
 monster.race = "blood"
 monster.corpse = 13509
-monster.speed = 150
+monster.speed = 180
 monster.manaCost = 0
 monster.maxSummons = 0
 
 monster.changeTarget = {
-	interval = 2000,
-	chance = 20
-}
-
-monster.strategiesTarget = {
-	nearest = 100,
+	interval = 5000,
+	chance = 8
 }
 
 monster.flags = {
 	summonable = false,
 	attackable = true,
-	hostile = false,
+	hostile = true,
 	convinceable = false,
 	pushable = true,
 	rewardBoss = false,
@@ -41,8 +37,8 @@ monster.flags = {
 	canPushItems = false,
 	canPushCreatures = false,
 	staticAttackChance = 90,
-	targetDistance = 4,
-	runHealth = 25,
+	targetDistance = 1,
+	runHealth = 0,
 	healthHidden = false,
 	isBlockable = false,
 	canWalkOnEnergy = false,
@@ -59,20 +55,18 @@ monster.light = {
 monster.voices = {
 	interval = 5000,
 	chance = 10,
-	{text = "Grunt!", yell = false}
 }
 
 monster.loot = {
-	{name = "meat", chance = 20000, maxCount = 2}
 }
 
 monster.attacks = {
-	{name ="melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -5}
+	{name ="melee", interval = 2000, chance = 100, skill = 20, attack = 10}
 }
 
 monster.defenses = {
-	defense = 2,
-	armor = 2
+	defense = 5,
+	armor = 10
 }
 
 monster.elements = {

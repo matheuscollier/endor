@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<npc name="Frezzl" script="default.lua" access="3" walkinterval="0">
+	<mana now="100" max="100"/>
+	<health now="1500" max="1500"/>
+	<look type="577" head="1" body="114" legs="21" feet="0" addons="3"/>
+	
+ <parameters>
+  <parameter key="module_shop" value="1"/>
+  <parameter key="message_greet" value="Ola. Como posso te ajudar |PLAYERNAME|?"/>
+  <parameter key="shop_sellable" value="frazzle skin,22533,200;frazzle tongue,22532,300;silencer claws,22534,450;silencer resonating chamber,22535,500;brown crystal splinter,18417,350;red crystal fragment,18420,400;violet crystal shard,18414,600"/>
+ </parameters>
+</npc>
+

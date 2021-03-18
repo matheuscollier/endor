@@ -1,7 +1,7 @@
 local mType = Game.createMonsterType("Rabbit")
 local monster = {}
 
-monster.description = "a rabbit"
+monster.description = "um rabbit"
 monster.experience = 0
 monster.outfit = {
 	lookType = 74,
@@ -13,38 +13,21 @@ monster.outfit = {
 	lookMount = 0
 }
 
-monster.raceId = 74
-monster.Bestiary = {
-	class = "Mammal",
-	race = BESTY_RACE_MAMMAL,
-	toKill = 250,
-	FirstUnlock = 10,
-	SecondUnlock = 100,
-	CharmsPoints = 5,
-	Stars = 1,
-	Occurrence = 0,
-	Locations = "In most grass areas of Tibia, for example on Tutorial Island."
-	}
-
 monster.health = 15
 monster.maxHealth = 15
 monster.race = "blood"
-monster.corpse = 6017
+monster.corpse = 2992
 monster.speed = 180
 monster.manaCost = 220
 monster.maxSummons = 0
 
 monster.changeTarget = {
-	interval = 5000,
+	interval = 2000,
 	chance = 0
 }
 
-monster.strategiesTarget = {
-	nearest = 100,
-}
-
 monster.flags = {
-	summonable = true,
+	summonable = false,
 	attackable = true,
 	hostile = false,
 	convinceable = true,
@@ -53,7 +36,7 @@ monster.flags = {
 	illusionable = true,
 	canPushItems = false,
 	canPushCreatures = false,
-	staticAttackChance = 90,
+	staticAttackChance = 95,
 	targetDistance = 1,
 	runHealth = 15,
 	healthHidden = false,
@@ -75,13 +58,17 @@ monster.voices = {
 }
 
 monster.loot = {
-	{name = "meat", chance = 85620, maxCount = 2},
-	{id = 2684, chance = 10000, maxCount = 2}
+	{id = 2684, chance = 70000, maxCount = 4},
+	{id = 2666, chance = 20000, maxCount = 2}
+}
+
+monster.attacks = {
+	{name ="melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = 0}
 }
 
 monster.defenses = {
-	defense = 5,
-	armor = 5
+	defense = 0,
+	armor = 0
 }
 
 monster.elements = {

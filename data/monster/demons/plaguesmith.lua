@@ -1,8 +1,8 @@
 local mType = Game.createMonsterType("Plaguesmith")
 local monster = {}
 
-monster.description = "a plaguesmith"
-monster.experience = 3555
+monster.description = "um plaguesmith"
+monster.experience = 5450
 monster.outfit = {
 	lookType = 247,
 	lookHead = 0,
@@ -23,8 +23,7 @@ monster.Bestiary = {
 	CharmsPoints = 25,
 	Stars = 3,
 	Occurrence = 0,
-	Locations = "Pits of Inferno, Formorgar Mines, Edron Demon Forge (The Vats, The Foundry), \z
-		Magician Quarter, Alchemist Quarter, Roshamuul Prison."
+	Locations = "x."
 	}
 
 monster.health = 8250
@@ -83,39 +82,27 @@ monster.voices = {
 }
 
 monster.loot = {
-	{name = "emerald bangle", chance = 341},
-	{name = "silver brooch", chance = 2000},
-	{name = "gold coin", chance = 50000, maxCount = 100},
-	{name = "gold coin", chance = 40000, maxCount = 100},
-	{name = "gold coin", chance = 50000, maxCount = 65},
-	{name = "small amethyst", chance = 5000, maxCount = 3},
-	{name = "platinum coin", chance = 7142, maxCount = 2},
-	{name = "axe ring", chance = 4347},
-	{name = "club ring", chance = 4761},
-	{name = "piece of iron", chance = 20000},
-	{name = "mouldy cheese", chance = 50000},
-	{id = 33528, chance = 60000},
-	{name = "two handed sword", chance = 20000},
-	{name = "war hammer", chance = 2127},
-	{name = "morning star", chance = 29000},
-	{name = "battle hammer", chance = 20000},
-	{name = "hammer of wrath", chance = 952},
-	{name = "knight legs", chance = 6250},
-	{name = "steel shield", chance = 20000},
-	{name = "steel boots", chance = 1123},
-	{name = "piece of royal steel", chance = 1234},
-	{name = "piece of hell steel", chance = 1010},
-	{name = "piece of draconian steel", chance = 1030},
-	{name = "soul orb", chance = 11111},
-	{name = "demonic essence", chance = 9033},
-	{name = "onyx arrow", chance = 7692, maxCount = 4},
-	{name = "great health potion", chance = 10000},
-	{id = 9810, chance = 540}
+	{id = 2416, chance = 3333},
+	{id = 13298, chance = 2000},
+	{id = 2444, chance = 50},
+	{id = 2489, chance = 1000},
+	{id = 2645, chance = 150},
+	{id = 2515, chance = 500},
+	{id = 2148, chance = 40000, maxCount = 100},
+	{id = 2148, chance = 40000, maxCount = 100},
+	{id = 2148, chance = 40000, maxCount = 100},
+	{id = 2148, chance = 40000, maxCount = 100},
+	{id = 2148, chance = 40000, maxCount = 100},
+	{id = 2417, chance = 2500},
+	{id = 2422, chance = 3000},
+	{id = 5944, chance = 1538},
+	{id = 2079, chance = 2000},
+	{id = 2209, chance = 2222}
 }
 
 monster.attacks = {
-	{name ="melee", interval = 1500, chance = 100, minDamage = 0, maxDamage = -539, condition = {type = CONDITION_POISON, totalDamage = 200, interval = 4000}},
-	{name ="combat", interval = 2000, chance = 15, type = COMBAT_EARTHDAMAGE, minDamage = -60, maxDamage = -114, radius = 4, effect = CONST_ME_POISONAREA, target = false},
+	{name ="melee", interval = 1500, chance = 100, minDamage = -160, maxDamage = -339, condition = {type = CONDITION_POISON, totalDamage = 200, interval = 4000}},
+	{name ="combat", interval = 2000, chance = 15, type = COMBAT_EARTHDAMAGE, minDamage = -150, maxDamage = -314, radius = 4, effect = CONST_ME_POISONAREA, target = false},
 	{name ="plaguesmith wave", interval = 2000, chance = 10, minDamage = -100, maxDamage = -350, target = false},
 	{name ="speed", interval = 2000, chance = 15, speedChange = -800, radius = 4, effect = CONST_ME_POISONAREA, target = false, duration = 30000}
 }

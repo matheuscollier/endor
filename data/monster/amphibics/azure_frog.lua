@@ -1,7 +1,7 @@
 local mType = Game.createMonsterType("Azure Frog")
 local monster = {}
 
-monster.description = "an azure frog"
+monster.description = "um azure frog"
 monster.experience = 20
 monster.outfit = {
 	lookType = 226,
@@ -23,9 +23,9 @@ monster.Bestiary = {
 	CharmsPoints = 15,
 	Stars = 2,
 	Occurrence = 0,
-	Locations = "Meriana, Laguna Islands, and other Shattered Isles."
+	Locations = "x."
 	}
-
+	
 monster.health = 60
 monster.maxHealth = 60
 monster.race = "blood"
@@ -72,18 +72,18 @@ monster.light = {
 monster.voices = {
 	interval = 5000,
 	chance = 10,
-	{text = "Ribbit! Ribbit!", yell = false},
-	{text = "Ribbit!", yell = false}
+	{text = "Ribbit!Ribbit!", yell = false}
 }
 
 monster.loot = {
-	{name = "gold coin", chance = 74230, maxCount = 10},
-	{name = "worm", chance = 9240}
+	{id = 2148, chance = 60000, maxCount = 9},
+	{id = 3976, chance = 53500, maxCount = 4}
 }
 
 monster.attacks = {
 	{name ="melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -24, effect = CONST_ME_DRAWBLOOD}
 }
+
 
 monster.defenses = {
 	defense = 5,

@@ -1,7 +1,7 @@
 local mType = Game.createMonsterType("Pig")
 local monster = {}
 
-monster.description = "a pig"
+monster.description = "um pig"
 monster.experience = 0
 monster.outfit = {
 	lookType = 60,
@@ -13,40 +13,21 @@ monster.outfit = {
 	lookMount = 0
 }
 
-monster.raceId = 60
-monster.Bestiary = {
-	class = "Mammal",
-	race = BESTY_RACE_MAMMAL,
-	toKill = 250,
-	FirstUnlock = 10,
-	SecondUnlock = 100,
-	CharmsPoints = 5,
-	Stars = 1,
-	Occurrence = 0,
-	Locations = "Rookgaard, Orc Fort, under Femor Hills with Goblins, some farms like The McRonald's Farm, \z
-		Liberty Bay slums and Nargor, Foreigner Quarter in Yalahar, Isle of the Kings, \z
-		cells in Tafariel's throneroom in Pits of Inferno, Gardens of Night."
-	}
-
 monster.health = 25
 monster.maxHealth = 25
 monster.race = "blood"
-monster.corpse = 6000
+monster.corpse = 2935
 monster.speed = 114
 monster.manaCost = 255
 monster.maxSummons = 0
 
 monster.changeTarget = {
-	interval = 4000,
+	interval = 2000,
 	chance = 0
 }
 
-monster.strategiesTarget = {
-	nearest = 100,
-}
-
 monster.flags = {
-	summonable = true,
+	summonable = false,
 	attackable = true,
 	hostile = false,
 	convinceable = true,
@@ -55,9 +36,9 @@ monster.flags = {
 	illusionable = true,
 	canPushItems = false,
 	canPushCreatures = false,
-	staticAttackChance = 90,
+	staticAttackChance = 95,
 	targetDistance = 1,
-	runHealth = 25,
+	runHealth = 0,
 	healthHidden = false,
 	isBlockable = false,
 	canWalkOnEnergy = false,
@@ -74,18 +55,15 @@ monster.light = {
 monster.voices = {
 	interval = 5000,
 	chance = 10,
-	{text = "Oink oink", yell = false},
-	{text = "Oink", yell = false}
 }
 
 monster.loot = {
-	{name = "meat", chance = 64000, maxCount = 4},
-	{name = "pig foot", chance = 950}
+	{id = 2671, chance = 100000, maxCount = 4}
 }
 
 monster.defenses = {
-	defense = 5,
-	armor = 10
+	defense = 0,
+	armor = 0
 }
 
 monster.elements = {

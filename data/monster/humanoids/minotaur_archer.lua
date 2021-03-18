@@ -1,7 +1,7 @@
 local mType = Game.createMonsterType("Minotaur Archer")
 local monster = {}
 
-monster.description = "a minotaur archer"
+monster.description = "um minotaur archer"
 monster.experience = 65
 monster.outfit = {
 	lookType = 24,
@@ -13,57 +13,36 @@ monster.outfit = {
 	lookMount = 0
 }
 
-monster.raceId = 24
-monster.Bestiary = {
-	class = "Humanoid",
-	race = BESTY_RACE_HUMANOID,
-	toKill = 500,
-	FirstUnlock = 25,
-	SecondUnlock = 250,
-	CharmsPoints = 15,
-	Stars = 2,
-	Occurrence = 0,
-	Locations = "Ancient Temple, way to Mintwallin, Folda Underground Cave, Outlaw Camp, Plains of Havoc, \z
-		Kazordoon Minotaur Tower, Daramian Minotaur Pyramid, Deeper Fibula Dungeon (level 50+ to open the door), \z
-		Hero Cave, Foreigner Quarter and Elvenbane."
-	}
-
 monster.health = 100
 monster.maxHealth = 100
 monster.race = "blood"
-monster.corpse = 5982
+monster.corpse = 2871
 monster.speed = 160
 monster.manaCost = 390
 monster.maxSummons = 0
 
 monster.changeTarget = {
-	interval = 4000,
-	chance = 10
-}
-
-monster.strategiesTarget = {
-	nearest = 100,
+	interval = 2000,
+	chance = 50
 }
 
 monster.flags = {
-	summonable = true,
-	attackable = true,
-	hostile = true,
-	convinceable = true,
-	pushable = false,
-	rewardBoss = false,
+	isSummonable = true,
+	isAttackable = true,
+	isHostile = true,
+	isConvinceable = true,
+	isPushable = false,
+	isBoss = false,
 	illusionable = true,
 	canPushItems = false,
 	canPushCreatures = false,
-	staticAttackChance = 90,
+	staticAttackChance = 95,
 	targetDistance = 4,
 	runHealth = 10,
-	healthHidden = false,
-	isBlockable = false,
-	canWalkOnEnergy = false,
-	canWalkOnFire = false,
-	canWalkOnPoison = false,
-	pet = false
+	isHealthHidden = false,
+	canwalkonenergy = false,
+	canwalkonfire = false,
+	canwalkonpoison = false
 }
 
 monster.light = {
@@ -79,40 +58,38 @@ monster.voices = {
 }
 
 monster.loot = {
-	{name = "gold coin", chance = 75410, maxCount = 30},
-	{name = "crossbow", chance = 830},
-	{name = "brass armor", chance = 530},
-	{name = "scale armor", chance = 530},
-	{name = "bolt", chance = 90450, maxCount = 20},
-	{name = "meat", chance = 5000},
-	{name = "minotaur leather", chance = 1900},
-	{name = "piercing bolt", chance = 12340, maxCount = 4},
-	{name = "broken crossbow", chance = 15400},
-	{name = "minotaur horn", chance = 1990, maxCount = 2},
-	{name = "piece of archer armor", chance = 8260}
+	{id = 2483, chance = 700},
+	{id = 2481, chance = 1050},
+	{id = 5878, chance = 19999},
+	{id = 2455, chance = 2000},
+	{id = 2465, chance = 1700},
+	{id = 2648, chance = 2000},
+	{id = 2458, chance = 3000},
+	{id = 2666, chance = 50000, maxCount = 3},
+	{id = 2543, chance = 70000, maxCount = 12},
+	{id = 2148, chance = 100000, maxCount = 65}
 }
 
 monster.attacks = {
-	{name ="melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -25},
-	{name ="combat", interval = 2000, chance = 40, type = COMBAT_PHYSICALDAMAGE, minDamage = 0, maxDamage = -80, range = 7, shootEffect = CONST_ANI_BOLT, target = false}
+	{name ="combat", interval = 3250, chance = 100, minDamage = -20, maxDamage = -60, type = COMBAT_PHYSICALDAMAGE, range = 6, ShootEffect = CONST_ANI_BOLT, target = false}
 }
 
 monster.defenses = {
-	defense = 10,
-	armor = 10
+	defense = 0,
+	armor = 0
 }
 
 monster.elements = {
 	{type = COMBAT_PHYSICALDAMAGE, percent = 0},
 	{type = COMBAT_ENERGYDAMAGE, percent = 0},
 	{type = COMBAT_EARTHDAMAGE, percent = 0},
-	{type = COMBAT_FIREDAMAGE, percent = 20},
+	{type = COMBAT_FIREDAMAGE, percent = 0},
 	{type = COMBAT_LIFEDRAIN, percent = 0},
 	{type = COMBAT_MANADRAIN, percent = 0},
 	{type = COMBAT_DROWNDAMAGE, percent = 0},
-	{type = COMBAT_ICEDAMAGE, percent = -10},
-	{type = COMBAT_HOLYDAMAGE , percent = 10},
-	{type = COMBAT_DEATHDAMAGE , percent = -1}
+	{type = COMBAT_ICEDAMAGE, percent = 0},
+	{type = COMBAT_HOLYDAMAGE , percent = 0},
+	{type = COMBAT_DEATHDAMAGE , percent = 0}
 }
 
 monster.immunities = {

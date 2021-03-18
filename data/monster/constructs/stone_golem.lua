@@ -1,7 +1,7 @@
 local mType = Game.createMonsterType("Stone Golem")
 local monster = {}
 
-monster.description = "a stone golem"
+monster.description = "um stone golem"
 monster.experience = 160
 monster.outfit = {
 	lookType = 67,
@@ -23,10 +23,7 @@ monster.Bestiary = {
 	CharmsPoints = 15,
 	Stars = 2,
 	Occurrence = 0,
-	Locations = "Maze of Lost Souls, in and around Ashta daramai, Formorgar Mines, \z
-		Mad Technomancer room, Dark Cathedral, Demona, Goroma, Tarpit Tomb, Peninsula Tomb, \z
-		Deeper Banuta, Forbidden Lands, Beregar Mines, Farmine Mines, Drillworm Caves, 2 caves on Hrodmir, \z
-		Orc Fortress (single spawn) and Medusa Tower."
+	Locations = "x."
 	}
 
 monster.health = 270
@@ -78,22 +75,17 @@ monster.voices = {
 }
 
 monster.loot = {
-	{name = "small stone", chance = 13890, maxCount = 4},
-	{id = 2124, chance = 120},
-	{name = "gold coin", chance = 90000, maxCount = 40},
-	{name = "red gem", chance = 30},
-	{name = "power ring", chance = 5070},
-	{name = "carlin sword", chance = 2500},
-	{name = "iron ore", chance = 1980},
-	{name = "ancient stone", chance = 1020},
-	{name = "shiny stone", chance = 760},
-	{name = "sulphurous stone", chance = 10370},
-	{name = "piece of marble rock", chance = 380},
-	{id = 13757, chance = 550}
+	{id = 2148, chance = 100000, maxCount = 30},
+	{id = 2483, chance = 2000},
+	{id = 2197, chance = 100},
+	{id = 1295, chance = 10000},
+	{id = 1294, chance = 20000, maxCount = 5},
+	{id = 2395, chance = 2000},
+	{id = 2580, chance = 3000}
 }
 
 monster.attacks = {
-	{name ="melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -110}
+	{name ="melee", interval = 2000, chance = 100, minDamage = -20, maxDamage = -110}
 }
 
 monster.defenses = {
@@ -102,16 +94,16 @@ monster.defenses = {
 }
 
 monster.elements = {
-	{type = COMBAT_PHYSICALDAMAGE, percent = 20},
-	{type = COMBAT_ENERGYDAMAGE, percent = 15},
+	{type = COMBAT_PHYSICALDAMAGE, percent = 0},
+	{type = COMBAT_ENERGYDAMAGE, percent = 0},
 	{type = COMBAT_EARTHDAMAGE, percent = 100},
-	{type = COMBAT_FIREDAMAGE, percent = 20},
-	{type = COMBAT_LIFEDRAIN, percent = 0},
+	{type = COMBAT_FIREDAMAGE, percent = 100},
+	{type = COMBAT_LIFEDRAIN, percent = 100},
 	{type = COMBAT_MANADRAIN, percent = 0},
 	{type = COMBAT_DROWNDAMAGE, percent = 100},
-	{type = COMBAT_ICEDAMAGE, percent = -10},
+	{type = COMBAT_ICEDAMAGE, percent = 0},
 	{type = COMBAT_HOLYDAMAGE , percent = 0},
-	{type = COMBAT_DEATHDAMAGE , percent = 20}
+	{type = COMBAT_DEATHDAMAGE , percent = 100}
 }
 
 monster.immunities = {

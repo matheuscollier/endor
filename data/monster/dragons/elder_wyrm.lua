@@ -1,8 +1,8 @@
 local mType = Game.createMonsterType("Elder Wyrm")
 local monster = {}
 
-monster.description = "an elder wyrm"
-monster.experience = 2500
+monster.description = "um elder wyrm"
+monster.experience = 6100
 monster.outfit = {
 	lookType = 561,
 	lookHead = 0,
@@ -23,14 +23,14 @@ monster.Bestiary = {
 	CharmsPoints = 50,
 	Stars = 4,
 	Occurrence = 0,
-	Locations = "Drefia Wyrm Lair, Vandura Wyrm Cave, Glooth Factory (west)."
+	Locations = "x."
 	}
-
-monster.health = 2700
-monster.maxHealth = 2700
+	
+monster.health = 3300
+monster.maxHealth = 3300
 monster.race = "blood"
 monster.corpse = 21283
-monster.speed = 280
+monster.speed = 350
 monster.manaCost = 0
 monster.maxSummons = 0
 
@@ -75,39 +75,28 @@ monster.light = {
 monster.voices = {
 	interval = 5000,
 	chance = 10,
-	{text = "GRROARR", yell = false},
-	{text = "GRRR", yell = false}
+	{text = "GRRR!", yell = false},
+	{text = "GROOOOAAAAAAAAR!", yell = false}
 }
 
 monster.loot = {
-	{name = "small diamond", chance = 4000, maxCount = 5},
-	{name = "gold coin", chance = 100000, maxCount = 174},
-	{name = "platinum coin", chance = 25150, maxCount = 3},
-	{name = "crossbow", chance = 9690},
-	{name = "dragon ham", chance = 32420, maxCount = 2},
-	{name = "soul orb", chance = 5980},
-	{name = "dragonbone staff", chance = 100},
-	{name = "shadow sceptre", chance = 310},
-	{name = "strong health potion", chance = 17710},
-	{name = "strong mana potion", chance = 20930},
-	{name = "lightning pendant", chance = 520},
-	{name = "lightning boots", chance = 310},
-	{name = "lightning legs", chance = 930},
-	{name = "lightning robe", chance = 310},
-	{name = "composite hornbow", chance = 310},
-	{name = "focus cape", chance = 100},
-	{name = "wand of starstorm", chance = 410},
-	{name = "wand of draconia", chance = 2000},
-	{name = "shockwave amulet", chance = 100},
-	{name = "wyrm scale", chance = 15980}
+	{id = 2672, chance = 10000, maxCount = 3},
+	{id = 2474, chance = 120},
+	{id = 10582, chance = 300},
+	{id = 8871, chance = 100},
+	{id = 2148, chance = 40000, maxCount = 75},
+	{id = 2148, chance = 40000, maxCount = 75},
+	{id = 2148, chance = 40000, maxCount = 75},
+	{id = 2146, chance = 200},
+	{id = 2542, chance = 30}
 }
 
 monster.attacks = {
-	{name ="melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -360},
-	{name ="combat", interval = 2000, chance = 15, type = COMBAT_ENERGYDAMAGE, minDamage = -90, maxDamage = -150, radius = 4, effect = CONST_ME_TELEPORT, target = true},
-	{name ="combat", interval = 2000, chance = 20, type = COMBAT_ENERGYDAMAGE, minDamage = -140, maxDamage = -250, radius = 5, effect = CONST_ME_PURPLEENERGY, target = false},
-	{name ="combat", interval = 2000, chance = 10, type = COMBAT_PHYSICALDAMAGE, minDamage = 0, maxDamage = -180, length = 8, spread = 3, effect = CONST_ME_BLOCKHIT, target = false},
-	{name ="elder wyrm wave", interval = 2000, chance = 10, minDamage = -200, maxDamage = -300, target = false}
+	{name ="melee", interval = 2000, chance = 100, minDamage = -450, maxDamage = -600},
+	{name ="combat", interval = 2000, chance = 15, type = COMBAT_ENERGYDAMAGE, minDamage = -90, maxDamage = -150, radius = 4, effect = CONST_ME_TELEPORT, target = true},																																								  
+	{name ="combat", interval = 2000, chance = 20, minDamage = -350, maxDamage = -520, type = COMBAT_ENERGYDAMAGE, effect = CONST_ME_PURPLEENERGY, target = false},
+	{name ="combat", interval = 2000, chance = 10, minDamage = -350, maxDamage = -520, type = COMBAT_PHYSICALDAMAGE, length = 8, spread = 3, effect = CONST_ME_BLOCKHIT, target = false},
+	{name ="elder wyrm wave", interval = 2000, chance = 10, minDamage = -430, maxDamage = -520, target = false}
 }
 
 monster.defenses = {

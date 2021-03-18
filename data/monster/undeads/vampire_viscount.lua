@@ -1,8 +1,8 @@
 local mType = Game.createMonsterType("Vampire Viscount")
 local monster = {}
 
-monster.description = "a vampire viscount"
-monster.experience = 800
+monster.description = "um vampire viscount"
+monster.experience = 21500
 monster.outfit = {
 	lookType = 555,
 	lookHead = 0,
@@ -13,36 +13,17 @@ monster.outfit = {
 	lookMount = 0
 }
 
-monster.raceId = 958
-monster.Bestiary = {
-	class = "Undead",
-	race = BESTY_RACE_UNDEAD,
-	toKill = 1000,
-	FirstUnlock = 50,
-	SecondUnlock = 500,
-	CharmsPoints = 25,
-	Stars = 3,
-	Occurrence = 0,
-	Locations = "Drefia, Edron Vampire Crypt."
-	}
-
-monster.health = 1200
-monster.maxHealth = 1200
+monster.health = 18000
+monster.maxHealth = 18000
 monster.race = "blood"
 monster.corpse = 21278
-monster.speed = 220
+monster.speed = 485
 monster.manaCost = 0
 monster.maxSummons = 0
 
 monster.changeTarget = {
-	interval = 4000,
+	interval = 8000,
 	chance = 10
-}
-
-monster.strategiesTarget = {
-	nearest = 80,
-	health = 10,
-	damage = 10,
 }
 
 monster.flags = {
@@ -62,7 +43,7 @@ monster.flags = {
 	isBlockable = false,
 	canWalkOnEnergy = false,
 	canWalkOnFire = false,
-	canWalkOnPoison = true,
+	canWalkOnPoison = false,
 	pet = false
 }
 
@@ -74,53 +55,51 @@ monster.light = {
 monster.voices = {
 	interval = 5000,
 	chance = 10,
-	{text = "Prepare to BLEED!", yell = false},
-	{text = "Don't struggle. We don't want to waste a drop of blood now, do we?", yell = false},
-	{text = "Ah, refreshments have arrived!", yell = false},
-	{text = "Bloody good thing you came!", yell = false}
+	{text = "All I need is your blood.", yell = false},
+	{text = "Dead is the new alive.", yell = false},
+	{text = "Come, let me kiss you, darling. Oh wait, I meant kill.", yell = false}
 }
 
 monster.loot = {
-	{name = "black pearl", chance = 2500},
-	{name = "small ruby", chance = 3040, maxCount = 2},
-	{name = "gold coin", chance = 83000, maxCount = 50},
-	{name = "red gem", chance = 540},
-	{name = "ice rapier", chance = 810},
-	{name = "vampire shield", chance = 200},
-	{name = "red piece of cloth", chance = 70},
-	{name = "strong health potion", chance = 7100},
-	{name = "strong mana potion", chance = 8180},
-	{name = "vampire teeth", chance = 7200},
-	{name = "blood preservation", chance = 2910},
-	{name = "tooth file", chance = 6560},
-	{name = "vampire's cape chain", chance = 4460}
+	{id = 8865, chance = 250},
+	{id = 2534, chance = 330},
+	{id = 6132, chance = 280},
+	{id = 30884, chance = 15},
+	{id = 10602, chance = 2500},
+	{id = 2145, chance = 4000},
+	{id = 2148, chance = 10000, maxCount = 84},
+	{id = 2148, chance = 5000, maxCount = 84},
+	{id = 2148, chance = 12000, maxCount = 84},
+	{id = 6546, chance = 20},
+	{id = 2144, chance = 800, maxCount = 4},
+	{id = 2796, chance = 5900, maxCount = 3}
 }
 
 monster.attacks = {
-	{name ="melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -150},
-	{name ="combat", interval = 2000, chance = 15, type = COMBAT_DEATHDAMAGE, minDamage = -50, maxDamage = -100, range = 6, radius = 3, shootEffect = CONST_ANI_DEATH, effect = CONST_ME_MORTAREA, target = true},
-	-- bleed
-	{name ="condition", type = CONDITION_BLEEDING, interval = 2000, chance = 10, minDamage = -320, maxDamage = -560, radius = 6, effect = CONST_ME_BATS, target = false}
+	{name ="melee", interval = 1500, chance = 100, minDamage = -780, maxDamage = -920},
+	{name ="combat", interval = 2720, chance = 33, minDamage = -850, maxDamage = -1150, type = COMBAT_LIFEDRAIN, length = 7, spread = 3, effect = CONST_ME_DRAWBLOOD, target = false},
+	{name ="combat", interval = 2280, chance = 16, minDamage = -750, maxDamage = -910, type = COMBAT_DEATHDAMAGE, range = 4, ShootEffect = CONST_ANI_SUDDENDEATH, effect = CONST_ME_MORTAREA, target = false},
+	{name ="combat", interval = 3805, chance = 35, minDamage = -890, maxDamage = -1050, type = COMBAT_PHYSICALDAMAGE, range = 7, ShootEffect = CONST_ANI_SUDDENDEATH, effect = CONST_ME_GROUNDSHAKER, target = true},
+	{name ="speed", interval = 4000, chance = 35, SpeedChange = -500, Duration = 4000}
 }
 
 monster.defenses = {
-	defense = 35,
-	armor = 35,
-	{name ="outfit", interval = 2000, chance = 10, target = false, duration = 4000, outfitMonster = "Vicious Manbat"},
-	{name ="speed", interval = 2000, chance = 15, speedChange = 300, effect = CONST_ME_MAGIC_RED, target = false, duration = 4000}
+	defense = 0,
+	armor = 0,
+	{name ="combat", interval = 4220, chance = 35, minDamage = 250, maxDamage = 650, type = COMBAT_HEALING, effect = CONST_ME_MAGIC_BLUE, target = false}
 }
 
 monster.elements = {
 	{type = COMBAT_PHYSICALDAMAGE, percent = 5},
-	{type = COMBAT_ENERGYDAMAGE, percent = 0},
-	{type = COMBAT_EARTHDAMAGE, percent = 100},
-	{type = COMBAT_FIREDAMAGE, percent = -5},
+	{type = COMBAT_ENERGYDAMAGE, percent = 19},
+	{type = COMBAT_EARTHDAMAGE, percent = 52},
+	{type = COMBAT_FIREDAMAGE, percent = 15},
 	{type = COMBAT_LIFEDRAIN, percent = 0},
 	{type = COMBAT_MANADRAIN, percent = 0},
 	{type = COMBAT_DROWNDAMAGE, percent = 0},
-	{type = COMBAT_ICEDAMAGE, percent = 5},
-	{type = COMBAT_HOLYDAMAGE , percent = -5},
-	{type = COMBAT_DEATHDAMAGE , percent = 100}
+	{type = COMBAT_ICEDAMAGE, percent = 22},
+	{type = COMBAT_HOLYDAMAGE , percent = 5},
+	{type = COMBAT_DEATHDAMAGE , percent = 82}
 }
 
 monster.immunities = {

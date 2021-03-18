@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+
+<npc name="Spirit Healer" script="promoDruid.lua" walkinterval="10000" lookdir="2">
+	<mana now="10" max="10"/>
+	<health now="10" max="10"/>
+	<look type="130" head="0" body="0" legs="85" feet="85" addons="3" corpse="3128"/>
+</npc>

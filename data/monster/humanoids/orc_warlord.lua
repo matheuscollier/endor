@@ -1,69 +1,48 @@
 local mType = Game.createMonsterType("Orc Warlord")
 local monster = {}
 
-monster.description = "an orc warlord"
+monster.description = "um orc warlord"
 monster.experience = 670
 monster.outfit = {
 	lookType = 2,
-	lookHead = 0,
-	lookBody = 0,
-	lookLegs = 0,
-	lookFeet = 0,
+	lookHead = 20,
+	lookBody = 30,
+	lookLegs = 40,
+	lookFeet = 50,
 	lookAddons = 0,
 	lookMount = 0
 }
 
-monster.raceId = 2
-monster.Bestiary = {
-	class = "Humanoid",
-	race = BESTY_RACE_HUMANOID,
-	toKill = 1000,
-	FirstUnlock = 50,
-	SecondUnlock = 500,
-	CharmsPoints = 25,
-	Stars = 3,
-	Occurrence = 0,
-	Locations = "Orc Fortress, Foreigner Quarter, Zao Orc Land."
-	}
-
 monster.health = 950
 monster.maxHealth = 950
 monster.race = "blood"
-monster.corpse = 6008
-monster.speed = 234
+monster.corpse = 2967
+monster.speed = 240
 monster.manaCost = 0
 monster.maxSummons = 0
 
 monster.changeTarget = {
-	interval = 4000,
-	chance = 10
-}
-
-monster.strategiesTarget = {
-	nearest = 70,
-	health = 15,
-	damage = 15,
+	interval = 2000,
+	chance = 5
 }
 
 monster.flags = {
-	summonable = false,
-	attackable = true,
-	hostile = true,
-	convinceable = false,
-	pushable = false,
-	rewardBoss = false,
-	illusionable = false,
+	isSummonable = false,
+	isAttackable = true,
+	isHostile = true,
+	isConvinceable = false,
+	isPushable = false,
+	isBoss = false,
+	illusionable = true,
 	canPushItems = true,
-	canPushCreatures = true,
-	staticAttackChance = 90,
+	canPushCreatures = false,
+	staticAttackChance = 50,
 	targetDistance = 1,
 	runHealth = 0,
-	healthHidden = false,
-	isBlockable = false,
-	canWalkOnEnergy = false,
-	canWalkOnFire = true,
-	canWalkOnPoison = false,
-	pet = false
+	isHealthHidden = false,
+	canwalkonenergy = false,
+	canwalkonfire = false,
+	canwalkonpoison = false
 }
 
 monster.light = {
@@ -74,60 +53,46 @@ monster.light = {
 monster.voices = {
 	interval = 5000,
 	chance = 10,
-	{text = "Ranat Ulderek!", yell = false},
-	{text = "Orc buta bana!", yell = false},
-	{text = "Ikem rambo zambo!", yell = false},
-	{text = "Fetchi Maruk Buta", yell = false}
+	{text = "Renat Ulderek.", yell = false}
 }
 
 monster.loot = {
-	{name = "gold coin", chance = 18000, maxCount = 45},
-	{name = "stealth ring", chance = 90},
-	{name = "gold ring", chance = 30},
-	{name = "protection amulet", chance = 2190},
-	{name = "two handed sword", chance = 1680},
-	{name = "throwing star", chance = 13920, maxCount = 18},
-	{id = 2419, chance = 3450},
-	{name = "orcish axe", chance = 5400},
-	{name = "dragon hammer", chance = 320},
-	{name = "plate armor", chance = 5210},
-	{name = "brass armor", chance = 740},
-	{name = "dark helmet", chance = 1260},
-	{name = "crusader helmet", chance = 280},
-	{name = "plate legs", chance = 4280},
-	{id = 2667, chance = 10800, maxCount = 2},
-	{name = "hunting spear", chance = 5260},
-	{id = 7395, chance = 50},
-	{name = "health potion", chance = 470},
-	{name = "magma boots", chance = 280},
-	{name = "orc tooth", chance = 9640},
-	{name = "broken helmet", chance = 24350},
-	{name = "orc leather", chance = 20620},
-	{name = "skull belt", chance = 4610}
+	{id = 11113, chance = 2000},
+	{id = 2148, chance = 100000, maxCount = 40},
+	{id = 2666, chance = 30000, maxCount = 3},
+	{id = 2419, chance = 9000},
+	{id = 2667, chance = 50000},
+	{id = 2647, chance = 600},
+	{id = 2399, chance = 8666, maxCount = 5},
+	{id = 2428, chance = 1500},
+	{id = 2478, chance = 2857},
+	{id = 2463, chance = 1000},
+	{id = 2165, chance = 900},
+	{id = 2497, chance = 300},
+	{id = 2179, chance = 200}
 }
 
 monster.attacks = {
-	{name ="melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -250},
-	{name ="combat", interval = 2000, chance = 20, type = COMBAT_PHYSICALDAMAGE, minDamage = 0, maxDamage = -200, range = 7, shootEffect = CONST_ANI_THROWINGSTAR, target = false}
+	{name ="melee", interval = 2000, chance = 100, minDamage = -90, maxDamage = -230},
+	{name ="combat", interval = 2750, chance = 99, minDamage = -48, maxDamage = -120, type = COMBAT_PHYSICALDAMAGE, range = 6, ShootEffect = CONST_ANI_THROWINGSTAR, target = true}
 }
 
 monster.defenses = {
-	defense = 35,
-	armor = 35,
-	{name ="invisible", interval = 2000, chance = 5, effect = CONST_ME_MAGIC_BLUE}
+	defense = 0,
+	armor = 0
 }
 
 monster.elements = {
 	{type = COMBAT_PHYSICALDAMAGE, percent = 0},
-	{type = COMBAT_ENERGYDAMAGE, percent = 20},
-	{type = COMBAT_EARTHDAMAGE, percent = -10},
-	{type = COMBAT_FIREDAMAGE, percent = 80},
+	{type = COMBAT_ENERGYDAMAGE, percent = 0},
+	{type = COMBAT_EARTHDAMAGE, percent = 100},
+	{type = COMBAT_FIREDAMAGE, percent = 100},
 	{type = COMBAT_LIFEDRAIN, percent = 0},
 	{type = COMBAT_MANADRAIN, percent = 0},
 	{type = COMBAT_DROWNDAMAGE, percent = 0},
 	{type = COMBAT_ICEDAMAGE, percent = 0},
-	{type = COMBAT_HOLYDAMAGE , percent = 10},
-	{type = COMBAT_DEATHDAMAGE , percent = -5}
+	{type = COMBAT_HOLYDAMAGE , percent = 0},
+	{type = COMBAT_DEATHDAMAGE , percent = 0}
 }
 
 monster.immunities = {

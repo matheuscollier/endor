@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<npc name="Carcereiro" script="carcereiro.lua" walkinterval="2000" floorchange="0">
+   <health now="100" max="100"/>
+   <look type="433" head="58" body="113" legs="50" feet="78" addons="1" mount="688"/>
+</npc>
+	
+

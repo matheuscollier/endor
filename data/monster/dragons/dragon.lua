@@ -1,7 +1,7 @@
 local mType = Game.createMonsterType("Dragon")
 local monster = {}
 
-monster.description = "a dragon"
+monster.description = "um dragon"
 monster.experience = 700
 monster.outfit = {
 	lookType = 34,
@@ -17,25 +17,20 @@ monster.raceId = 34
 monster.Bestiary = {
 	class = "Dragon",
 	race = BESTY_RACE_DRAGON,
-	toKill = 1000,
-	FirstUnlock = 50,
-	SecondUnlock = 500,
-	CharmsPoints = 25,
+	toKill = 1500,
+	FirstUnlock = 10,
+	SecondUnlock = 750,
+	CharmsPoints = 50,
 	Stars = 3,
 	Occurrence = 0,
-	Locations = "Thais Ancient Temple, Darashia Dragon Lair, Mount Sternum Dragon Cave, Mintwallin, \z
-		deep in Fibula Dungeon, Kazordoon Dragon Lair (near Dwarf Bridge), Plains of Havoc, Elven Bane castle, \z
-		Maze of Lost Souls, southern cave and dragon tower in Shadowthorn, Orc Fortress, Venore Dragon Lair, \z
-		Pits of Inferno, Behemoth Quest room in Edron, Hero Cave, deep Cyclopolis, Edron Dragon Lair, Goroma, \z
-		Ankrahmun Dragon Lairs, Draconia, Dragonblaze Peaks, some Ankrahmun Tombs, \z
-		underground of Fenrock (on the way to Beregar), Krailos Steppe and Crystal Lakes."
+	Locations = "x."
 	}
-
+	
 monster.health = 1000
 monster.maxHealth = 1000
 monster.race = "blood"
 monster.corpse = 5973
-monster.speed = 172
+monster.speed = 220
 monster.manaCost = 0
 monster.maxSummons = 0
 
@@ -85,32 +80,28 @@ monster.voices = {
 }
 
 monster.loot = {
-	{name = "small diamond", chance = 380},
-	{name = "gold coin", chance = 47500, maxCount = 70},
-	{name = "gold coin", chance = 37500, maxCount = 45},
-	{name = "life crystal", chance = 120},
-	{name = "wand of inferno", chance = 1005},
-	{name = "double axe", chance = 960},
-	{name = "longsword", chance = 4000},
-	{name = "serpent sword", chance = 420},
-	{name = "broadsword", chance = 1950},
-	{name = "dragon hammer", chance = 560},
-	{name = "crossbow", chance = 10000},
-	{name = "steel helmet", chance = 3000},
-	{name = "steel shield", chance = 15000},
-	{name = "dragon shield", chance = 320},
-	{name = "burst arrow", chance = 8060, maxCount = 10},
-	{name = "plate legs", chance = 2000},
-	{name = "dragon ham", chance = 65500, maxCount = 3},
-	{name = "green dragon leather", chance = 1005},
-	{name = "green dragon scale", chance = 1000},
-	{name = "dragonbone staff", chance = 110},
-	{name = "strong health potion", chance = 1000},
-	{name = "dragon's tail", chance = 9740}
+	{id = 2672, chance = 10000, maxCount = 2},
+	{id = 5920, chance = 3000},
+	{id = 10020, chance = 1000},
+	{id = 5877, chance = 5000},
+	{id = 2434, chance = 1200},
+	{id = 2509, chance = 1600},
+	{id = 2647, chance = 650},
+	{id = 2387, chance = 800},
+	{id = 2397, chance = 3200},
+	{id = 2546, chance = 10000, maxCount = 10},
+	{id = 2516, chance = 450},
+	{id = 2413, chance = 3600},
+	{id = 2409, chance = 800},
+	{id = 2148, chance = 90000, maxCount = 50},
+	{id = 2145, chance = 2000},
+	{id = 2177, chance = 100},
+	{id = 2492, chance = 2},
+	{id = 2469, chance = 3}
 }
 
 monster.attacks = {
-	{name ="melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -120},
+	{name ="melee", interval = 2000, chance = 100, minDamage = -40, maxDamage = -120},
 	{name ="combat", interval = 2000, chance = 15, type = COMBAT_FIREDAMAGE, minDamage = -60, maxDamage = -140, range = 7, radius = 4, shootEffect = CONST_ANI_FIRE, effect = CONST_ME_FIREAREA, target = true},
 	{name ="combat", interval = 2000, chance = 10, type = COMBAT_FIREDAMAGE, minDamage = -100, maxDamage = -170, length = 8, spread = 3, effect = CONST_ME_FIREAREA, target = false}
 }

@@ -2,7 +2,7 @@ local mType = Game.createMonsterType("Crustacea Gigantica")
 local monster = {}
 
 monster.description = "a crustacea gigantica"
-monster.experience = 1800
+monster.experience = 10000
 monster.outfit = {
 	lookType = 383,
 	lookHead = 0,
@@ -23,11 +23,9 @@ monster.Bestiary = {
 	CharmsPoints = 15,
 	Stars = 2,
 	Occurrence = 3,
-	Locations = "Calassa, Treasure Island , Seacrest Grounds. \z
-		In the Seacrest Grounds the spawns are Varying Monster Spawns in which the common creature is an Abyssal Calamary. \z
-		The chance to spawn a Crustacea Gigantica seems to be around 1%-2%."
+	Locations = "x."
 	}
-
+	
 monster.health = 1600
 monster.maxHealth = 1600
 monster.race = "blood"
@@ -81,13 +79,10 @@ monster.voices = {
 }
 
 monster.loot = {
-	{name = "gold coin", chance = 96000, maxCount = 100},
-	{name = "gold coin", chance = 56000, maxCount = 75},
-	{name = "strong mana potion", chance = 8885},
-	{name = "strong health potion", chance = 3880},
-	{name = "giant crab pincer", chance = 5000, maxCount = 2},
-	{name = "ring of healing", chance = 3000},
-	{name = "great mana potion", chance = 1220},
+	{id = 2148, chance = 40000, maxCount = 80},
+	{id = 2148, chance = 40000, maxCount = 39},
+	{id = 13304, chance = 5500},
+	{id = 7589, chance = 7000}
 }
 
 monster.attacks = {

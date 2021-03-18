@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<monster name="Swan Maiden" nameDescription="a swan maiden" race="blood" experience="700" speed="220" manacost="450">
+	<look type="138" head="0" body="0" legs="114" feet="97" corpse="29118" />
+	<health now="800" max="800" />
+	<targetchange interval="4000" chance="10" />
+	<flags>
+		<flag summonable="0" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="1" />
+		<flag convinceable="0" />
+		<flag pushable="0" />
+		<flag canpushitems="1" />
+		<flag canpushcreatures="0" />
+		<flag targetDistance="1" />
+		<flag staticattack="90" />
+		<flag runonhealth="20" />
+		<flag canwalkonenergy="0" />
+		<flag canWalkOnFire="0" />
+		<flag canwalkonpoison="0" />
+	</flags>
+	<attacks>
+		<attack name="melee" interval="2000" min="50" max="-275" />
+		<attack name="earth" interval="2000" chance="15" range="7" target="1" min="-60" max="-165">
+			<attribute key="shootEffect" value="poison" />
+		</attack>
+		<attack name="drunk" interval="3000" chance="11" radius="6" target="0" duration="25000">
+			<attribute key="areaEffect" value="purplenote" />
+		</attack>
+	</attacks>
+	<defenses armor="25" defense="25">
+		<defense name="healing" interval="2000" chance="15" min="85" max="105">
+			<attribute key="areaEffect" value="blueshimmer" />
+		</defense>
+	</defenses>
+	<elements>
+		<element icePercent="10" />
+		<element firePercent="10" />
+		<element holyPercent="5" />
+		<element deathPercent="-5" />
+		<element physicalPercent="-5" />
+	</elements>
+	<voices interval="5000" chance="10">
+		<voice sentence="Are you stalking me? You will bitterly regret this!" />
+		<voice sentence="Nightmarish monster! This dream is not meant for you!" />
+		<voice sentence="You won't steal my robe! Back off!" />
+	</voices>
+	<loot>
+		<item id="2148" countmax="112" chance="30000" />
+		<item id="2149" countmax="3" chance="1492" />
+		<item id="2796" countmax="2" chance="492" />
+		<item id="7589" chance="6800" />
+		<item id="2423" chance="5155" />
+		<item id="7590" chance="191" />
+		<item id="7387" chance="1200" />
+		<item id="2195" chance="1250" />
+	</loot>
+</monster>

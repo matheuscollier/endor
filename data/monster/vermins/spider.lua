@@ -1,7 +1,7 @@
 local mType = Game.createMonsterType("Spider")
 local monster = {}
 
-monster.description = "a spider"
+monster.description = "uma spider"
 monster.experience = 12
 monster.outfit = {
 	lookType = 30,
@@ -13,39 +13,21 @@ monster.outfit = {
 	lookMount = 0
 }
 
-monster.raceId = 30
-monster.Bestiary = {
-	class = "Vermin",
-	race = BESTY_RACE_VERMIN,
-	toKill = 250,
-	FirstUnlock = 10,
-	SecondUnlock = 100,
-	CharmsPoints = 5,
-	Stars = 1,
-	Occurrence = 0,
-	Locations = "Almost everywhere, in grass areas, sewers like Carlin sewers, \z
-		caves like as Ancient Temple, Rookgaard and the Tiquanda Tarantula Caves."
-	}
-
 monster.health = 20
 monster.maxHealth = 20
 monster.race = "venom"
-monster.corpse = 5961
+monster.corpse = 2807
 monster.speed = 152
 monster.manaCost = 210
 monster.maxSummons = 0
 
 monster.changeTarget = {
-	interval = 4000,
+	interval = 2000,
 	chance = 0
 }
 
-monster.strategiesTarget = {
-	nearest = 100,
-}
-
 monster.flags = {
-	summonable = true,
+	summonable = false,
 	attackable = true,
 	hostile = true,
 	convinceable = true,
@@ -54,7 +36,7 @@ monster.flags = {
 	illusionable = true,
 	canPushItems = false,
 	canPushCreatures = false,
-	staticAttackChance = 90,
+	staticAttackChance = 95,
 	targetDistance = 1,
 	runHealth = 6,
 	healthHidden = false,
@@ -76,24 +58,24 @@ monster.voices = {
 }
 
 monster.loot = {
-	{name = "gold coin", chance = 65150, maxCount = 5},
-	{name = "spider fangs", chance = 960}
+	{id = 2148, chance = 90000, maxCount = 6},
+	{id = 5879, chance = 3000}
 }
 
 monster.attacks = {
-	{name ="melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -9}
+	{name ="melee", interval = 2000, chance = 100, skill = 19, attack = 7}
 }
 
 monster.defenses = {
-	defense = 2,
-	armor = 2
+	defense = 0,
+	armor = 0
 }
 
 monster.elements = {
 	{type = COMBAT_PHYSICALDAMAGE, percent = 0},
 	{type = COMBAT_ENERGYDAMAGE, percent = 0},
 	{type = COMBAT_EARTHDAMAGE, percent = 0},
-	{type = COMBAT_FIREDAMAGE, percent = -20},
+	{type = COMBAT_FIREDAMAGE, percent = 0},
 	{type = COMBAT_LIFEDRAIN, percent = 0},
 	{type = COMBAT_MANADRAIN, percent = 0},
 	{type = COMBAT_DROWNDAMAGE, percent = 0},

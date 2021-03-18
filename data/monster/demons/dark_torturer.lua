@@ -1,7 +1,7 @@
 local mType = Game.createMonsterType("Dark Torturer")
 local monster = {}
 
-monster.description = "a dark torturer"
+monster.description = "um dark torturer"
 monster.experience = 4650
 monster.outfit = {
 	lookType = 234,
@@ -23,7 +23,7 @@ monster.Bestiary = {
 	CharmsPoints = 50,
 	Stars = 4,
 	Occurrence = 0,
-	Locations = "Pits of Inferno, Vengoth, Blood Halls, Oramond Dungeon, Roshamuul Prison."
+	Locations = "x."
 	}
 
 monster.health = 7350
@@ -83,30 +83,20 @@ monster.voices = {
 }
 
 monster.loot = {
-	{name = "gold coin", chance = 50000, maxCount = 100},
-	{name = "gold coin", chance = 40000, maxCount = 99},
-	{name = "platinum coin", chance = 55000, maxCount = 8},
-	{name = "golden legs", chance = 30},
-	{id = 2558, chance = 5250},
-	{name = "steel boots", chance = 5050},
-	{name = "ham", chance = 60000, maxCount = 2},
-	{name = "orichalcum pearl", chance = 2760, maxCount = 2},
-	{name = "cat's paw", chance = 2222},
-	{name = "jewelled backpack", chance = 1192},
-	{name = "soul orb", chance = 23000},
-	{id = 6300, chance = 2008},
-	{name = "demonic essence", chance = 8520},
-	{name = "concentrated demonic blood", chance = 33333, maxCount = 3},
-	{name = "assassin star", chance = 2222, maxCount = 5},
-	{name = "vile axe", chance = 480},
-	{name = "butcher's axe", chance = 850},
-	{name = "great mana potion", chance = 14830, maxCount = 2},
-	{name = "great health potion", chance = 10000, maxCount = 2},
-	{name = "gold ingot", chance = 3140}
+	{id = 5741, chance = 400},
+	{id = 2476, chance = 700},
+	{id = 2477, chance = 550},
+	{id = 2528, chance = 650},
+	{id = 3962, chance = 30},
+	{id = 13940, chance = 200},
+	{id = 2169, chance = 1500},
+	{id = 5480, chance = 5000},
+	{id = 6537, chance = 6000},
+	{id = 2148, chance = 95000, maxCount = 65}
 }
 
 monster.attacks = {
-	{name ="melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -500},
+	{name ="melee", interval = 2000, chance = 100, minDamage = -240, maxDamage = -470},
 	{name ="combat", interval = 2000, chance = 10, type = COMBAT_PHYSICALDAMAGE, minDamage = 0, maxDamage = -781, range = 7, shootEffect = CONST_ANI_THROWINGKNIFE, target = false},
 	{name ="dark torturer skill reducer", interval = 2000, chance = 5, target = false}
 }
@@ -118,16 +108,16 @@ monster.defenses = {
 }
 
 monster.elements = {
-	{type = COMBAT_PHYSICALDAMAGE, percent = 0},
-	{type = COMBAT_ENERGYDAMAGE, percent = 30},
+	{type = COMBAT_PHYSICALDAMAGE, percent = 5},
+	{type = COMBAT_ENERGYDAMAGE, percent = 25},
 	{type = COMBAT_EARTHDAMAGE, percent = 90},
 	{type = COMBAT_FIREDAMAGE, percent = 100},
 	{type = COMBAT_LIFEDRAIN, percent = 0},
 	{type = COMBAT_MANADRAIN, percent = 0},
 	{type = COMBAT_DROWNDAMAGE, percent = 0},
-	{type = COMBAT_ICEDAMAGE, percent = -10},
-	{type = COMBAT_HOLYDAMAGE , percent = -10},
-	{type = COMBAT_DEATHDAMAGE , percent = 10}
+	{type = COMBAT_ICEDAMAGE, percent = 20},
+	{type = COMBAT_HOLYDAMAGE , percent = 25},
+	{type = COMBAT_DEATHDAMAGE , percent = 30}
 }
 
 monster.immunities = {

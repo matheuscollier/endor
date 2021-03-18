@@ -42,6 +42,134 @@ SCARLETT_MAY_DIE = 0
 ropeSpots = {384, 418, 8278, 8592, 13189, 14436, 15635, 19518, 26019, 24621, 24622, 24623, 24624}
 specialRopeSpots = { 14435 }
 
+   function getItemAttack(uid) return ItemType(getThing(uid).itemid):getAttack() end
+   function getItemDefense(uid) return ItemType(getThing(uid).itemid):getDefense() end
+   function getItemExtraDefense(uid) return ItemType(getThing(uid).itemid):getExtraDefense() end
+   function getItemArmor(uid) return ItemType(getThing(uid).itemid):getArmor() end
+   function getItemWeaponType(uid) return ItemType(getThing(uid).itemid):getWeaponType() end
+   function isArmor(uid) if (getItemArmor(uid) ~= 0 and getItemWeaponType(uid) == 0) then return true else return false end end
+   function isWeapon(uid) return (getItemWeaponType(uid) > 0 and getItemWeaponType(uid) ~= 4) end
+   function isShield(uid) return getItemWeaponType(uid) == 4 end
+   function isBow(uid) return (getItemWeaponType(uid) == 5 and (not ItemType(getThing(uid).itemid):isStackable())) end
+   
+       function getItemAttribute(uid, key)
+       local i = ItemType(Item(uid):getId())
+       local string_attributes = {
+         [ITEM_ATTRIBUTE_NAME] = i:getName(),
+         [ITEM_ATTRIBUTE_ARTICLE] = i:getArticle(),
+         [ITEM_ATTRIBUTE_PLURALNAME] = i:getPluralName(),
+         ["name"] = i:getName(),
+         ["article"] = i:getArticle(),
+         ["pluralname"] = i:getPluralName()
+       }
+
+       local numeric_attributes = {
+         [ITEM_ATTRIBUTE_WEIGHT] = i:getWeight(),
+         [ITEM_ATTRIBUTE_ATTACK] = i:getAttack(),
+         [ITEM_ATTRIBUTE_DEFENSE] = i:getDefense(),
+         [ITEM_ATTRIBUTE_EXTRADEFENSE] = i:getExtraDefense(),
+         [ITEM_ATTRIBUTE_ARMOR] = i:getArmor(),
+         [ITEM_ATTRIBUTE_HITCHANCE] = i:getHitChance(),
+         [ITEM_ATTRIBUTE_SHOOTRANGE] = i:getShootRange(),
+         ["weight"] = i:getWeight(),
+         ["attack"] = i:getAttack(),
+         ["defense"] = i:getDefense(),
+         ["extradefense"] = i:getExtraDefense(),
+         ["armor"] = i:getArmor(),
+         ["hitchance"] = i:getHitChance(),
+         ["shootrange"] = i:getShootRange()
+       }
+       
+       local attr = Item(uid):getAttribute(key)
+       if tonumber(attr) then
+         if numeric_attributes[key] then
+           return attr ~= 0 and attr or numeric_attributes[key]
+         end
+       else
+         if string_attributes[key] then
+           if attr == "" then
+             return string_attributes[key]
+           end
+         end
+       end
+    return attr
+    end
+
+    function doItemSetAttribute(uid, key, value)
+       return Item(uid):setAttribute(key, value)
+    end
+
+    function doItemEraseAttribute(uid, key)
+       return Item(uid):removeAttribute(key)
+    end
+	
+	
+	
+	function getItemAttribute(uid, key)
+       local i = ItemType(Item(uid):getId())
+       local string_attributes = {
+         [ITEM_ATTRIBUTE_NAME] = i:getName(),
+         [ITEM_ATTRIBUTE_ARTICLE] = i:getArticle(),
+         [ITEM_ATTRIBUTE_PLURALNAME] = i:getPluralName(),
+         ["name"] = i:getName(),
+         ["article"] = i:getArticle(),
+         ["pluralname"] = i:getPluralName()
+       }
+
+       local numeric_attributes = {
+         [ITEM_ATTRIBUTE_WEIGHT] = i:getWeight(),
+         [ITEM_ATTRIBUTE_ATTACK] = i:getAttack(),
+         [ITEM_ATTRIBUTE_DEFENSE] = i:getDefense(),
+         [ITEM_ATTRIBUTE_EXTRADEFENSE] = i:getExtraDefense(),
+         [ITEM_ATTRIBUTE_ARMOR] = i:getArmor(),
+         [ITEM_ATTRIBUTE_HITCHANCE] = i:getHitChance(),
+         [ITEM_ATTRIBUTE_SHOOTRANGE] = i:getShootRange(),
+         ["weight"] = i:getWeight(),
+         ["attack"] = i:getAttack(),
+         ["defense"] = i:getDefense(),
+         ["extradefense"] = i:getExtraDefense(),
+         ["armor"] = i:getArmor(),
+         ["hitchance"] = i:getHitChance(),
+         ["shootrange"] = i:getShootRange()
+       }
+       
+       local attr = Item(uid):getAttribute(key)
+       if tonumber(attr) then
+         if numeric_attributes[key] then
+           return attr ~= 0 and attr or numeric_attributes[key]
+         end
+       else
+         if string_attributes[key] then
+           if attr == "" then
+             return string_attributes[key]
+           end
+         end
+       end
+    return attr
+    end
+
+    function doItemSetAttribute(uid, key, value)
+       return Item(uid):setAttribute(key, value)
+    end
+
+    function doItemEraseAttribute(uid, key)
+       return Item(uid):removeAttribute(key)
+    end
+
+     
+
+   
+   function getItemInfo( param )
+    local itemType = ItemType( param )
+    if itemType:getId() == 0 then
+        itemType = ItemType(tonumber( param ))
+        if itemType:getId() == 0 then
+            return false
+        end
+    end
+    return true
+end
+
 -- Impact Analyser
 -- Every 2 seconds
 updateInterval = 2
@@ -54,38 +182,6 @@ damageImpact = {}
 
 -- New prey => preyTimeLeft
 nextPreyTime = {}
-
-startupGlobalStorages = {
-	GlobalStorage.TheAncientTombs.AshmunrahSwitchesGlobalStorage,
-	GlobalStorage.TheAncientTombs.DiprathSwitchesGlobalStorage,
-	GlobalStorage.TheAncientTombs.ThalasSwitchesGlobalStorage,
-	GlobalStorage.HeroRathleton.FirstMachines,
-	GlobalStorage.HeroRathleton.SecondMachines,
-	GlobalStorage.HeroRathleton.ThirdMachines,
-	GlobalStorage.HeroRathleton.DeepRunning,
-	GlobalStorage.HeroRathleton.HorrorRunning,
-	GlobalStorage.HeroRathleton.LavaRunning,
-	GlobalStorage.HeroRathleton.MaxxenRunning,
-	GlobalStorage.HeroRathleton.LavaCounter,
-	GlobalStorage.HeroRathleton.FourthMachines,
-	GlobalStorage.FerumbrasAscendant.Crystals.Crystal1,
-	GlobalStorage.FerumbrasAscendant.Crystals.Crystal2,
-	GlobalStorage.FerumbrasAscendant.Crystals.Crystal3,
-	GlobalStorage.FerumbrasAscendant.Crystals.Crystal4,
-	GlobalStorage.FerumbrasAscendant.Crystals.Crystal5,
-	GlobalStorage.FerumbrasAscendant.Crystals.Crystal6,
-	GlobalStorage.FerumbrasAscendant.Crystals.Crystal7,
-	GlobalStorage.FerumbrasAscendant.Crystals.Crystal8,
-	GlobalStorage.FerumbrasAscendant.Crystals.AllCrystals,
-	GlobalStorage.FerumbrasAscendant.FerumbrasEssence,
-	GlobalStorage.Feroxa.Active,
-	GlobalStorage.FerumbrasAscendant.Habitats.AllHabitats,
-	GlobalStorage.FerumbrasAscendant.Elements.Active,
-	GlobalStorage.FerumbrasAscendant.Elements.First,
-	GlobalStorage.FerumbrasAscendant.Elements.Second,
-	GlobalStorage.FerumbrasAscendant.Elements.Third,
-	GlobalStorage.FerumbrasAscendant.Elements.Done
-}
 
 do -- Event Schedule rates
 	local lootRate = Game.getEventSLoot()

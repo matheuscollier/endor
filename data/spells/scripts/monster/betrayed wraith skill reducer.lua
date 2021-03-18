@@ -1,29 +1,14 @@
-local combat = {}
-
-for i = 1, 20 do
-combat[i] = Combat()
-combat[i]:setParameter(COMBAT_PARAM_EFFECT, CONST_ME_YELLOW_RINGS)
+local combat = Combat()
+combat:setParameter(COMBAT_PARAM_EFFECT, CONST_ME_YELLOW_RINGS)
 
 local condition = Condition(CONDITION_ATTRIBUTES)
-condition:setParameter(CONDITION_PARAM_TICKS, 8000)
-condition:setParameter(CONDITION_PARAM_SKILL_DISTANCEPERCENT, i)
+condition:setParameter(CONDITION_PARAM_TICKS, 5000)
+condition:setParameter(CONDITION_PARAM_SKILL_DISTANCEPERCENT, 80)
 
-local area = createCombatArea({
-	{0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0},
-	{0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0},
-	{0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0},
-	{0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0},
-	{0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0},
-	{0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0},
-	{0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0},
-	{0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0}
-})
-
-combat[i]:setArea(area)
-combat[i]:addCondition(condition)
-
-end
+local area = createCombatArea(AREA_SQUAREWAVE5)
+combat:setArea(area)
+combat:setCondition(condition)
 
 function onCastSpell(creature, var)
-	return combat[math.random(1, 20)]:execute(creature, var)
+	return combat:execute(creature, var)
 end

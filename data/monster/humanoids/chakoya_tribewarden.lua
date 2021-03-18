@@ -1,10 +1,10 @@
 local mType = Game.createMonsterType("Chakoya Tribewarden")
 local monster = {}
 
-monster.description = "a chakoya tribewarden"
+monster.description = "uma chakoya tribewarden"
 monster.experience = 40
 monster.outfit = {
-	lookType = 259,
+	lookType = 260,
 	lookHead = 0,
 	lookBody = 0,
 	lookLegs = 0,
@@ -23,14 +23,14 @@ monster.Bestiary = {
 	CharmsPoints = 15,
 	Stars = 2,
 	Occurrence = 0,
-	Locations = "Inukaya, Chyllfroest, Chakoya Iceberg, Nibelor (during a quest)."
+	Locations = "x."
 	}
 
 monster.health = 68
 monster.maxHealth = 68
 monster.race = "blood"
-monster.corpse = 7320
-monster.speed = 124
+monster.corpse = 7324
+monster.speed = 185
 monster.manaCost = 305
 monster.maxSummons = 0
 
@@ -64,6 +64,7 @@ monster.flags = {
 	pet = false
 }
 
+
 monster.light = {
 	level = 0,
 	color = 0
@@ -72,26 +73,24 @@ monster.light = {
 monster.voices = {
 	interval = 5000,
 	chance = 10,
+	{text = "Chikuva!", yell = false},
 	{text = "Quisavu tukavi!", yell = false},
 	{text = "Si siyoqua jamjam!", yell = false},
-	{text = "Achuq! jinuma!", yell = false},
-	{text = "Si ji jusipa!", yell = false}
+	{text = "Achuq! Jinuma!", yell = false}
 }
 
 monster.loot = {
-	{name = "gold coin", chance = 79590, maxCount = 20},
-	{name = "short sword", chance = 4810},
-	{name = "bone shield", chance = 1030},
-	{id = 2667, chance = 19370},
-	{name = "northern pike", chance = 60},
-	{name = "rainbow trout", chance = 50},
-	{name = "green perch", chance = 100},
-	{name = "mammoth whopper", chance = 130},
-	{name = "fireproof horn", chance = 350}
+	{id = 2148, chance = 100000, maxCount = 14},
+	{id = 2671, chance = 35000},
+	{id = 2398, chance = 4888},
+	{id = 2541, chance = 7999},
+	{id = 2050, chance = 11111},
+	{id = 2667, chance = 48000, maxCount = 3},
+	{id = 7381, chance = 1000}
 }
 
 monster.attacks = {
-	{name ="melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -30}
+	{name ="melee", interval = 2000, chance = 100, minDamage = -15, maxDamage = -37}
 }
 
 monster.defenses = {
@@ -101,15 +100,15 @@ monster.defenses = {
 
 monster.elements = {
 	{type = COMBAT_PHYSICALDAMAGE, percent = 0},
-	{type = COMBAT_ENERGYDAMAGE, percent = -15},
+	{type = COMBAT_ENERGYDAMAGE, percent = 0},
 	{type = COMBAT_EARTHDAMAGE, percent = 0},
-	{type = COMBAT_FIREDAMAGE, percent = 25},
+	{type = COMBAT_FIREDAMAGE, percent = 0},
 	{type = COMBAT_LIFEDRAIN, percent = 0},
 	{type = COMBAT_MANADRAIN, percent = 0},
 	{type = COMBAT_DROWNDAMAGE, percent = 0},
-	{type = COMBAT_ICEDAMAGE, percent = 100},
-	{type = COMBAT_HOLYDAMAGE , percent = 10},
-	{type = COMBAT_DEATHDAMAGE , percent = -5}
+	{type = COMBAT_ICEDAMAGE, percent = 0},
+	{type = COMBAT_HOLYDAMAGE , percent = 0},
+	{type = COMBAT_DEATHDAMAGE , percent = 0}
 }
 
 monster.immunities = {

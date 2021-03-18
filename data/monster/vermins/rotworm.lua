@@ -1,7 +1,7 @@
 local mType = Game.createMonsterType("Rotworm")
 local monster = {}
 
-monster.description = "a rotworm"
+monster.description = "uma rotworm"
 monster.experience = 40
 monster.outfit = {
 	lookType = 26,
@@ -13,42 +13,21 @@ monster.outfit = {
 	lookMount = 0
 }
 
-monster.raceId = 26
-monster.Bestiary = {
-	class = "Vermin",
-	race = BESTY_RACE_VERMIN,
-	toKill = 500,
-	FirstUnlock = 25,
-	SecondUnlock = 250,
-	CharmsPoints = 15,
-	Stars = 2,
-	Occurrence = 0,
-	Locations = "Almost everywhere, like Ancient Temple, Vandura, Folda dungeon, Fibula Dungeon, \z
-		caves connecting Edron and Cormaya, Venore Swamp Troll cave, Thais Troll cave, Ferngrims Gate, \z
-		Dwarf Mines, Hellgate, below the graves in eastern Rookgaard, spider cave in western Rookgaard, \z
-		cave northeast of Ab'Dendriel, Darashia Rotworm Caves, Liberty Bay, Fenrock, \z
-		below Green Claw Swamp and some other places."
-	}
-
 monster.health = 65
 monster.maxHealth = 65
 monster.race = "blood"
-monster.corpse = 5967
-monster.speed = 116
+monster.corpse = 2824
+monster.speed = 90
 monster.manaCost = 305
 monster.maxSummons = 0
 
 monster.changeTarget = {
-	interval = 4000,
+	interval = 2000,
 	chance = 0
 }
 
-monster.strategiesTarget = {
-	nearest = 100,
-}
-
 monster.flags = {
-	summonable = true,
+	summonable = false,
 	attackable = true,
 	hostile = true,
 	convinceable = true,
@@ -57,7 +36,7 @@ monster.flags = {
 	illusionable = false,
 	canPushItems = false,
 	canPushCreatures = false,
-	staticAttackChance = 70,
+	staticAttackChance = 95,
 	targetDistance = 1,
 	runHealth = 0,
 	healthHidden = false,
@@ -79,22 +58,23 @@ monster.voices = {
 }
 
 monster.loot = {
-	{name = "gold coin", chance = 71760, maxCount = 17},
-	{id = 2376, chance = 3000},
-	{name = "mace", chance = 4500},
-	{name = "meat", chance = 20000},
-	{name = "ham", chance = 20120},
-	{name = "worm", chance = 3000, maxCount = 3},
-	{name = "lump of dirt", chance = 10000}
+	{id = 2671, chance = 20000, maxCount = 2},
+	{id = 2480, chance = 2000},
+	{id = 2530, chance = 1500},
+	{id = 2398, chance = 1000},
+	{id = 2148, chance = 90000, maxCount = 60},
+	{id = 2376, chance = 2200},
+	{id = 2412, chance = 700},
+	{id = 2089, chance = 500}
 }
 
 monster.attacks = {
-	{name ="melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -40}
+	{name ="melee", interval = 2000, chance = 100, minDamage = -10, maxDamage = -25}
 }
 
 monster.defenses = {
-	defense = 10,
-	armor = 10
+	defense = 0,
+	armor = 0
 }
 
 monster.elements = {

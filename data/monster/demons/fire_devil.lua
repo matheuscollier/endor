@@ -1,7 +1,7 @@
 local mType = Game.createMonsterType("Fire Devil")
 local monster = {}
 
-monster.description = "a fire devil"
+monster.description = "um fire devil"
 monster.experience = 145
 monster.outfit = {
 	lookType = 40,
@@ -23,8 +23,7 @@ monster.Bestiary = {
 	CharmsPoints = 15,
 	Stars = 2,
 	Occurrence = 0,
-	Locations = "Desert Dungeon, Ancient Temple, Magician Tower, Shadow Tomb, Ghostlands, Goroma, \z
-		Plains of Havoc at Ornamented Shield Quest, Spike Sword Quest."
+	Locations = "x."
 	}
 
 monster.health = 200
@@ -74,24 +73,24 @@ monster.voices = {
 	interval = 5000,
 	chance = 10,
 	{text = "Hot, eh?", yell = false},
-	{text = "Hell, oh, hell!", yell = false}
+	{text = "Hell, oh hell!", yell = false}
 }
 
 monster.loot = {
-	{id = 2050, chance = 10000},
-	{id = 2050, chance = 1420, maxCount = 2},
-	{name = "small amethyst", chance = 300},
-	{name = "necrotic rod", chance = 460},
-	{name = "blank rune", chance = 10950},
-	{name = "double axe", chance = 1500},
-	{id = 2419, chance = 3000},
-	{name = "guardian shield", chance = 210},
-	{name = "cleaver", chance = 1100},
-	{name = "small pitchfork", chance = 19770}
+	{id = 2148, chance = 100000, maxCount = 35},
+	{id = 2666, chance = 13333, maxCount = 3},
+	{id = 2419, chance = 600},
+	{id = 2387, chance = 500},
+	{id = 2568, chance = 3000},
+	{id = 2515, chance = 100},
+	{id = 2260, chance = 6666},
+	{id = 2691, chance = 20000, maxCount = 2},
+	{id = 2150, chance = 300},
+	{id = 2191, chance = 1000}
 }
 
 monster.attacks = {
-	{name ="melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -35},
+	{name ="melee", interval = 2000, chance = 100, minDamage = -25, maxDamage = -50},
 	{name ="combat", interval = 2000, chance = 20, type = COMBAT_FIREDAMAGE, minDamage = -60, maxDamage = -90, range = 7, radius = 4, shootEffect = CONST_ANI_FIRE, effect = CONST_ME_FIREAREA, target = true},
 	{name ="combat", interval = 2000, chance = 15, type = COMBAT_FIREDAMAGE, minDamage = -20, maxDamage = -50, range = 7, radius = 2, shootEffect = CONST_ANI_FIRE, effect = CONST_ME_FIREAREA, target = true}
 }

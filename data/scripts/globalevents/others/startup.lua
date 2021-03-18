@@ -1,56 +1,9 @@
 local serverstartup = GlobalEvent("serverstartup")
 function serverstartup.onStartup()
 	print(">> Loading map attributes")
-	-- Npc table
-	loadLuaNpcs(NpcTable)
-	-- Sign table
-	loadLuaMapSign(SignTable)
-	print("> Loaded " .. (#SignTable) .. " signs in the map")
-	-- Book/Document table
-	loadLuaMapBookDocument(BookDocumentTable)
-
-	-- Action and unique tables
-	-- Chest table
-	loadLuaMapAction(ChestAction)
-	loadLuaMapUnique(ChestUnique)
-	-- Corpse table
-	loadLuaMapAction(CorpseAction)
-	loadLuaMapUnique(CorpseUnique)
-	-- Doors key table
-	loadLuaMapAction(KeyDoorAction)
-	-- Doors level table
-	loadLuaMapAction(LevelDoorAction)
-	-- Doors quest table
-	loadLuaMapAction(QuestDoorAction)
-	loadLuaMapUnique(QuestDoorUnique)
-	-- Item table
-	loadLuaMapAction(ItemAction)
-	loadLuaMapUnique(ItemUnique)
-	-- Item daily reward table
-	loadLuaMapAction(DailyRewardAction)
-	-- Item unmoveable table
-	loadLuaMapAction(ItemUnmoveableAction)
-	-- Lever table
-	loadLuaMapAction(LeverAction)
-	loadLuaMapUnique(LeverUnique)
-	-- Teleport (magic forcefields) table
-	loadLuaMapAction(TeleportAction)
-	loadLuaMapUnique(TeleportUnique)
-	-- Teleport item table
-	loadLuaMapAction(TeleportItemAction)
-	loadLuaMapUnique(TeleportItemUnique)
-	-- Tile table
-	loadLuaMapAction(TileAction)
-	loadLuaMapUnique(TileUnique)
-	-- Tile pick table
-	loadLuaMapAction(TilePickAction)
 
 	print("> Loaded all actions in the map")
 	print("> Loaded all uniques in the map")
-
-	for i = 1, #startupGlobalStorages do
-		Game.setStorageValue(startupGlobalStorages[i], 0)
-	end
 
 	local time = os.time()
 	db.asyncQuery('TRUNCATE TABLE `players_online`')
@@ -76,6 +29,19 @@ function serverstartup.onStartup()
 	db.asyncQuery('DELETE FROM `ip_bans` WHERE `expires_at` != 0 AND `expires_at` <= ' .. time)
 	db.asyncQuery('DELETE FROM `market_history` WHERE `inserted` <= \z
 	' .. (time - configManager.getNumber(configKeys.MARKET_OFFER_DURATION)))
+	
+	-- Boosted Creature Website	
+	if Game.getBoostedCreature() ~= nil then 
+	local monsterOutfit = MonsterType(Game.getBoostedCreature()):outfit()    
+	local monsterLookType = monsterOutfit.lookType
+	local monsterFeet = monsterOutfit.lookFeet
+	local monsterLegs = monsterOutfit.lookLegs
+	local monsterHead = monsterOutfit.lookHead
+	local monsterBody = monsterOutfit.lookBody 
+	local monsterAddons = monsterOutfit.lookAddons
+	local monsterMount = monsterOutfit.lookMount
+	db.query("UPDATE `boosted_creature` SET `looktype` = '".. monsterLookType .."', `lookfeet` = '".. monsterFeet .."', `looklegs` = '".. monsterLegs  .."', `lookhead` = '".. monsterHead .."', `lookbody` = '".. monsterBody .."', `lookaddons` = '".. monsterAddons .."', `lookmount` = '".. monsterMount .."'")
+	end
 
 	-- Move expired bans to ban history
 	local banResultId = db.storeQuery('SELECT * FROM `account_bans` WHERE `expires_at` != 0 AND `expires_at` <= ' .. time)
@@ -90,12 +56,6 @@ function serverstartup.onStartup()
 			db.asyncQuery('DELETE FROM `account_bans` WHERE `account_id` = ' .. accountId)
 		until not result.next(banResultId)
 		result.free(banResultId)
-	end
-
-	-- Ferumbras Ascendant quest
-	for i = 1, #GlobalStorage.FerumbrasAscendant.Habitats do
-		local storage = GlobalStorage.FerumbrasAscendant.Habitats[i]
-		Game.setStorageValue(storage, 0)
 	end
 
 	-- Check house auctions
@@ -127,8 +87,5 @@ function serverstartup.onStartup()
 
 	-- Hireling System
 	HirelingsInit()
-
-	-- Load otservbr-custom map (data/world/custom/otservbr-custom.otbm)
-	loadCustomMap()
 end
 serverstartup:register()

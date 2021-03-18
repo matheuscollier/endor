@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<raid>
+  <!--Announcements-->
+  <announce delay="1000" type="Event" message="Em algum lugar de Mordor, a presenca do maligno Maiar, Sauron, pode ser sentida!" />
+  <!--Single Spawns-->
+  <singlespawn delay="1000" name="Sauron" x="1630" y="1142" z="8" />
+</raid>

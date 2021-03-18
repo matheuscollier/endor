@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<npc name="Siestaar" walkinterval="2000" floorchange="0" script="siestaar.lua">
-	<health now="100" max="100"/>
-	<look type="288" head="129" body="128" legs="72" feet="94" addons="3"/>
+<npc name="Siestaar" script="roshabanqueiro.lua" walkinterval="2000" floorchange="0">
+  <health now="100" max="100" />
+  <look type="288" head="132" body="131" legs="112" feet="94" addons="3" />
+<parameters>
+ <parameter key="message_greet" value="Olá |PLAYERNAME|, o que você deseja hoje? {depositar}, {sacar}, ver o {saldo} ou {transferir} seu dinheiro ?"/>
+        <parameter key="message_farewell" value="Foi um prazer te atender |PLAYERNAME|."/>
+	
+	</parameters>
 </npc>
+ 

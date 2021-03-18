@@ -2,7 +2,7 @@ local mType = Game.createMonsterType("Lancer Beetle")
 local monster = {}
 
 monster.description = "a lancer beetle"
-monster.experience = 275
+monster.experience = 250
 monster.outfit = {
 	lookType = 348,
 	lookHead = 0,
@@ -13,35 +13,17 @@ monster.outfit = {
 	lookMount = 0
 }
 
-monster.raceId = 633
-monster.Bestiary = {
-	class = "Vermin",
-	race = BESTY_RACE_VERMIN,
-	toKill = 1000,
-	FirstUnlock = 50,
-	SecondUnlock = 500,
-	CharmsPoints = 25,
-	Stars = 3,
-	Occurrence = 0,
-	Locations = "Zao Wailing Widow Cave, Muggy Plains (during raid), Razzachai, \z
-		Northern Zao Plantations, Northern Brimstone Bug Cave, Chyllfroest."
-	}
-
 monster.health = 400
 monster.maxHealth = 400
 monster.race = "venom"
 monster.corpse = 11375
-monster.speed = 266
+monster.speed = 220
 monster.manaCost = 0
 monster.maxSummons = 0
 
 monster.changeTarget = {
-	interval = 4000,
-	chance = 10
-}
-
-monster.strategiesTarget = {
-	nearest = 100,
+	interval = 5000,
+	chance = 12
 }
 
 monster.flags = {
@@ -56,12 +38,12 @@ monster.flags = {
 	canPushCreatures = false,
 	staticAttackChance = 90,
 	targetDistance = 1,
-	runHealth = 30,
+	runHealth = 80,
 	healthHidden = false,
 	isBlockable = false,
 	canWalkOnEnergy = false,
 	canWalkOnFire = false,
-	canWalkOnPoison = true,
+	canWalkOnPoison = false,
 	pet = false
 }
 
@@ -77,39 +59,30 @@ monster.voices = {
 }
 
 monster.loot = {
-	{name = "gold coin", chance = 60000, maxCount = 61},
-	{name = "gold coin", chance = 60000, maxCount = 79},
-	{name = "small amethyst", chance = 247},
-	{name = "poisonous slime", chance = 8333},
-	{name = "lump of dirt", chance = 4166},
-	{name = "lancer beetle shell", chance = 16666},
-	{name = "beetle necklace", chance = 1123}
+	{id = 2148, chance = 200000, maxCount = 30},
+	{id = 11372, chance = 10000}
 }
 
 monster.attacks = {
-	{name ="melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -115},
-	{name ="poisonfield", interval = 2000, chance = 10, radius = 4, effect = CONST_ME_POISONAREA, target = false},
-	{name ="combat", interval = 2000, chance = 15, type = COMBAT_LIFEDRAIN, minDamage = 0, maxDamage = -90, length = 7, spread = 3, effect = CONST_ME_HITBYPOISON, target = false},
-	-- poison
-	{name ="condition", type = CONDITION_POISON, interval = 2000, chance = 10, minDamage = -40, maxDamage = -80, range = 7, shootEffect = CONST_ANI_POISON, target = false},
-	{name ="lancer beetle curse", interval = 2000, chance = 5, range = 5, target = false}
+	{name ="melee", interval = 2000, chance = 100, skill = 40, attack = 60},
+	{name ="combat", interval = 2000, chance = 20, length = 8, spread = 3, type = COMBAT_EARTHDAMAGE, effect = CONST_ME_POISONAREA, target = false}
 }
 
 monster.defenses = {
-	defense = 20,
-	armor = 20,
-	{name ="invisible", interval = 2000, chance = 10, effect = CONST_ME_GROUNDSHAKER}
+	defense = 0,
+	armor = 0,
+	{name ="invisible", interval = 1000, chance = 10, effect = CONST_ME_MAGIC_RED}
 }
 
 monster.elements = {
-	{type = COMBAT_PHYSICALDAMAGE, percent = 0},
+	{type = COMBAT_PHYSICALDAMAGE, percent = 5},
 	{type = COMBAT_ENERGYDAMAGE, percent = 0},
 	{type = COMBAT_EARTHDAMAGE, percent = 100},
-	{type = COMBAT_FIREDAMAGE, percent = 0},
+	{type = COMBAT_FIREDAMAGE, percent = -10},
 	{type = COMBAT_LIFEDRAIN, percent = 100},
 	{type = COMBAT_MANADRAIN, percent = 0},
 	{type = COMBAT_DROWNDAMAGE, percent = 0},
-	{type = COMBAT_ICEDAMAGE, percent = 0},
+	{type = COMBAT_ICEDAMAGE, percent = -5},
 	{type = COMBAT_HOLYDAMAGE , percent = 0},
 	{type = COMBAT_DEATHDAMAGE , percent = 50}
 }

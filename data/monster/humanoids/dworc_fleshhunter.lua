@@ -1,8 +1,8 @@
 local mType = Game.createMonsterType("Dworc Fleshhunter")
 local monster = {}
 
-monster.description = "a dworc fleshhunter"
-monster.experience = 40
+monster.description = "um dworc fleshhunter"
+monster.experience = 65
 monster.outfit = {
 	lookType = 215,
 	lookHead = 0,
@@ -23,15 +23,15 @@ monster.Bestiary = {
 	CharmsPoints = 15,
 	Stars = 2,
 	Occurrence = 0,
-	Locations = "South of Port Hope (Trapwood) on ground level and underground."
+	Locations = "x."
 	}
 
 monster.health = 85
 monster.maxHealth = 85
 monster.race = "blood"
-monster.corpse = 6058
-monster.speed = 148
-monster.manaCost = 0
+monster.corpse = 4307
+monster.speed = 135
+monster.manaCost = 300
 monster.maxSummons = 0
 
 monster.changeTarget = {
@@ -72,26 +72,22 @@ monster.light = {
 monster.voices = {
 	interval = 5000,
 	chance = 10,
-	{text = "Brak brrretz!", yell = false},
+	{text = "Grak brrretz!", yell = false},
 	{text = "Grow truk grrrrr.", yell = false},
 	{text = "Prek tars, dekklep zurk.", yell = false}
 }
 
 monster.loot = {
-	{id = 2050, chance = 4750},
-	{name = "gold coin", chance = 69000, maxCount = 13},
-	{id = 2229, chance = 3300, maxCount = 3},
-	{name = "poison dagger", chance = 2250},
-	{name = "bone shield", chance = 1000},
-	{name = "cleaver", chance = 9750},
-	{name = "ripper lance", chance = 90},
-	{name = "hunting spear", chance = 2000},
-	{name = "tribal mask", chance = 500}
+	{id = 2148, chance = 90000, maxCount = 15},
+	{id = 2229, chance = 20000, maxCount = 2},
+	{id = 2467, chance = 10000},
+	{id = 2541, chance = 6000},
+	{id = 2411, chance = 250}
 }
 
 monster.attacks = {
-	{name ="melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -25, condition = {type = CONDITION_POISON, totalDamage = 20, interval = 4000}},
-	{name ="combat", interval = 2000, chance = 10, type = COMBAT_PHYSICALDAMAGE, minDamage = 0, maxDamage = -15, range = 7, shootEffect = CONST_ANI_THROWINGKNIFE, target = false}
+	{name ="melee", interval = 2000, chance = 100, minDamage = -12, maxDamage = -30},
+	{name ="combat", interval = 2600, chance = 99, minDamage = -8, maxDamage = -17, type = COMBAT_PHYSICALDAMAGE, range = 7, ShootEffect = CONST_ANI_THROWINGKNIFE, target = false}
 }
 
 monster.defenses = {
@@ -103,13 +99,13 @@ monster.elements = {
 	{type = COMBAT_PHYSICALDAMAGE, percent = 0},
 	{type = COMBAT_ENERGYDAMAGE, percent = 0},
 	{type = COMBAT_EARTHDAMAGE, percent = 100},
-	{type = COMBAT_FIREDAMAGE, percent = -10},
+	{type = COMBAT_FIREDAMAGE, percent = 0},
 	{type = COMBAT_LIFEDRAIN, percent = 0},
 	{type = COMBAT_MANADRAIN, percent = 0},
 	{type = COMBAT_DROWNDAMAGE, percent = 0},
-	{type = COMBAT_ICEDAMAGE, percent = -10},
+	{type = COMBAT_ICEDAMAGE, percent = 0},
 	{type = COMBAT_HOLYDAMAGE , percent = 0},
-	{type = COMBAT_DEATHDAMAGE , percent = -15}
+	{type = COMBAT_DEATHDAMAGE , percent = 0}
 }
 
 monster.immunities = {

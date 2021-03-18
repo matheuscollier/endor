@@ -9,7 +9,7 @@ for i = 70, 80 do
 	condition:setParameter(CONDITION_PARAM_TICKS, 20000)
 	condition:setParameter(CONDITION_PARAM_SKILL_MELEEPERCENT, i)
 	condition:setParameter(CONDITION_PARAM_SKILL_FISTPERCENT, i)
-	combat[i]:addCondition(condition)
+	combat[i]:setCondition(condition)
 end
 
 function onCastSpell(creature, var)

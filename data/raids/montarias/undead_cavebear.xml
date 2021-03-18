@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<raid>
+  <!--Announcements-->
+  <announce delay="1000" type="Event" message="O Undead Cavebear esta vivo!" /> 
+  <!--Single Spawns-->
+  <singlespawn delay="1000" name="Undead Cavebear" x="1418" y="674" z="7" />
+</raid>

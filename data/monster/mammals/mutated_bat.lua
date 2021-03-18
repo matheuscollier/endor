@@ -1,8 +1,8 @@
 local mType = Game.createMonsterType("Mutated Bat")
 local monster = {}
 
-monster.description = "a mutated bat"
-monster.experience = 615
+monster.description = "um mutated bat"
+monster.experience = 825
 monster.outfit = {
 	lookType = 307,
 	lookHead = 0,
@@ -13,37 +13,17 @@ monster.outfit = {
 	lookMount = 0
 }
 
-monster.raceId = 509
-monster.Bestiary = {
-	class = "Mammal",
-	race = BESTY_RACE_MAMMAL,
-	toKill = 1000,
-	FirstUnlock = 50,
-	SecondUnlock = 500,
-	CharmsPoints = 25,
-	Stars = 3,
-	Occurrence = 0,
-	Locations = "Cemetery Quarter (around 10 underground on the west side along with banshees, \z
-		and 4 bats on the church roof), Alchemist Quarter (4 found on top of roofs), \z
-		Arena and Zoo Quarter (2 under the arena with other mutated creatures), \z
-		Razzachai, Northern Zao Plantations, Souleater Mountains, Middle Spike, Vengoth and Vengoth Castle."
-	}
-
 monster.health = 900
 monster.maxHealth = 900
 monster.race = "blood"
 monster.corpse = 9829
-monster.speed = 186
+monster.speed = 245
 monster.manaCost = 0
 monster.maxSummons = 0
 
 monster.changeTarget = {
-	interval = 4000,
-	chance = 10
-}
-
-monster.strategiesTarget = {
-	nearest = 100,
+	interval = 5000,
+	chance = 8
 }
 
 monster.flags = {
@@ -58,12 +38,12 @@ monster.flags = {
 	canPushCreatures = true,
 	staticAttackChance = 90,
 	targetDistance = 1,
-	runHealth = 300,
+	runHealth = 0,
 	healthHidden = false,
 	isBlockable = false,
 	canWalkOnEnergy = false,
 	canWalkOnFire = false,
-	canWalkOnPoison = true,
+	canWalkOnPoison = false,
 	pet = false
 }
 
@@ -75,47 +55,37 @@ monster.light = {
 monster.voices = {
 	interval = 5000,
 	chance = 10,
-	{text = "Shriiiiiek", yell = false}
 }
 
 monster.loot = {
-	{name = "black pearl", chance = 720, maxCount = 3},
-	{name = "gold coin", chance = 53000, maxCount = 50},
-	{name = "gold coin", chance = 40000, maxCount = 70},
-	{name = "small amethyst", chance = 500, maxCount = 2},
-	{name = "energy ring", chance = 990},
-	{name = "battle shield", chance = 7760},
-	{name = "black shield", chance = 70},
-	{name = "star herb", chance = 7260},
-	{name = "star herb", chance = 5060},
-	{name = "bat wing", chance = 4900, maxCount = 2},
-	{name = "mercenary sword", chance = 110},
-	{id = 9808, chance = 12530},
-	{id = 9809, chance = 12530, maxCount = 2},
-	{name = "batwing hat", chance = 80},
-	{name = "mutated bat ear", chance = 4900}
+	{id = 2148, chance = 20000, maxCount = 50},
+	{id = 2800, chance = 13000},
+	{id = 5894, chance = 5200, maxCount = 2},
+	{id = 2534, chance = 45},
+	{id = 2150, chance = 800},
+	{id = 2144, chance = 600, maxCount = 3},
+	{id = 7407, chance = 100},
+	{id = 2165, chance = 650},
+	{id = 10016, chance = 150}
 }
 
 monster.attacks = {
-	{name ="melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -168, condition = {type = CONDITION_POISON, totalDamage = 120, interval = 4000}},
-	{name ="combat", interval = 2000, chance = 15, type = COMBAT_EARTHDAMAGE, minDamage = -70, maxDamage = -180, range = 7, shootEffect = CONST_ANI_POISON, target = false},
-	{name ="combat", interval = 2000, chance = 15, type = COMBAT_DROWNDAMAGE, minDamage = -30, maxDamage = -90, radius = 6, effect = CONST_ME_SOUND_WHITE, target = false},
-	{name ="mutated bat curse", interval = 2000, chance = 10, target = false},
-	-- poison
-	{name ="condition", type = CONDITION_POISON, interval = 2000, chance = 15, minDamage = -190, maxDamage = -240, length = 4, spread = 3, effect = CONST_ME_POISONAREA, target = false}
+	{name ="melee", interval = 2000, chance = 100, minDamage = -104, maxDamage = -176},
+	{name ="combat", interval = 2500, chance = 25, minDamage = -60, maxDamage = -110, type = COMBAT_EARTHDAMAGE, range = 7, ShootEffect = CONST_ANI_POISON, target = true},
+	{name ="combat", interval = 3200, chance = 15, minDamage = -100, maxDamage = -130, type = COMBAT_DROWNDAMAGE, effect = CONST_ME_SOUND_WHITE, target = false},
+	{name ="drunk", interval = 7000, chance = 30, effect = CONST_ME_SOUND_YELLOW, target = false}
 }
 
 monster.defenses = {
-	defense = 20,
-	armor = 20,
-	{name ="combat", interval = 2000, chance = 10, type = COMBAT_HEALING, minDamage = 80, maxDamage = 95, effect = CONST_ME_MAGIC_BLUE, target = false}
+	defense = 0,
+	armor = 0
 }
 
 monster.elements = {
 	{type = COMBAT_PHYSICALDAMAGE, percent = 0},
 	{type = COMBAT_ENERGYDAMAGE, percent = 0},
 	{type = COMBAT_EARTHDAMAGE, percent = 100},
-	{type = COMBAT_FIREDAMAGE, percent = -10},
+	{type = COMBAT_FIREDAMAGE, percent = 0},
 	{type = COMBAT_LIFEDRAIN, percent = 0},
 	{type = COMBAT_MANADRAIN, percent = 0},
 	{type = COMBAT_DROWNDAMAGE, percent = 100},

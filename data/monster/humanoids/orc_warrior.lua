@@ -1,69 +1,48 @@
 local mType = Game.createMonsterType("Orc Warrior")
 local monster = {}
 
-monster.description = "an orc warrior"
+monster.description = "um orc warrior"
 monster.experience = 50
 monster.outfit = {
 	lookType = 7,
-	lookHead = 0,
-	lookBody = 0,
-	lookLegs = 0,
-	lookFeet = 0,
+	lookHead = 20,
+	lookBody = 30,
+	lookLegs = 40,
+	lookFeet = 50,
 	lookAddons = 0,
 	lookMount = 0
 }
 
-monster.raceId = 7
-monster.Bestiary = {
-	class = "Humanoid",
-	race = BESTY_RACE_HUMANOID,
-	toKill = 500,
-	FirstUnlock = 25,
-	SecondUnlock = 250,
-	CharmsPoints = 15,
-	Stars = 2,
-	Occurrence = 0,
-	Locations = "Ancient Temple in Thais, Orc Fort, below Point of No Return in Outlaw Camp and inside a \z
-		mountain north of it, Orc Peninsula, Folda, Edron Orc cave, Maze of Lost Souls, Elvenbane Castle, \z
-		Foreigner Quarter, Zao Orc Land."
-	}
-
 monster.health = 125
 monster.maxHealth = 125
 monster.race = "blood"
-monster.corpse = 5979
+monster.corpse = 2862
 monster.speed = 190
 monster.manaCost = 360
 monster.maxSummons = 0
 
 monster.changeTarget = {
-	interval = 4000,
-	chance = 0
-}
-
-monster.strategiesTarget = {
-	nearest = 100,
+	interval = 2000,
+	chance = 5
 }
 
 monster.flags = {
-	summonable = true,
-	attackable = true,
-	hostile = true,
-	convinceable = true,
-	pushable = true,
-	rewardBoss = false,
+	isSummonable = true,
+	isAttackable = true,
+	isHostile = true,
+	isConvinceable = true,
+	isPushable = false,
+	isBoss = false,
 	illusionable = true,
-	canPushItems = false,
+	canPushItems = true,
 	canPushCreatures = false,
-	staticAttackChance = 90,
+	staticAttackChance = 50,
 	targetDistance = 1,
-	runHealth = 11,
-	healthHidden = false,
-	isBlockable = false,
-	canWalkOnEnergy = false,
-	canWalkOnFire = false,
-	canWalkOnPoison = false,
-	pet = false
+	runHealth = 0,
+	isHealthHidden = false,
+	canwalkonenergy = false,
+	canwalkonfire = false,
+	canwalkonpoison = false
 }
 
 monster.light = {
@@ -74,44 +53,43 @@ monster.light = {
 monster.voices = {
 	interval = 5000,
 	chance = 10,
-	{text = "Grow truk grrrr.", yell = false},
-	{text = "Trak grrrr brik.", yell = false},
-	{text = "Alk!", yell = false}
+	{text = "Alk!", yell = false},
+	{text = "Trak grrr brik.", yell = false}
 }
 
 monster.loot = {
-	{name = "gold coin", chance = 65000, maxCount = 15},
-	{name = "poison dagger", chance = 120},
-	{name = "chain armor", chance = 7360},
-	{name = "copper shield", chance = 560},
-	{name = "meat", chance = 15000},
-	{name = "orc tooth", chance = 700},
-	{name = "broken helmet", chance = 10800},
-	{name = "orc leather", chance = 4000},
-	{name = "skull belt", chance = 980},
-	{id = 26654, chance = 1000}
+	{id = 11113, chance = 2000},
+	{id = 2148, chance = 100000, maxCount = 25},
+	{id = 2666, chance = 40000, maxCount = 2},
+	{id = 2512, chance = 7000},
+	{id = 2530, chance = 3000},
+	{id = 2385, chance = 5500},
+	{id = 2411, chance = 200},
+	{id = 2464, chance = 4000},
+	{id = 2420, chance = 3000},
+	{id = 2007, chance = 3000}
 }
 
 monster.attacks = {
-	{name ="melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -60}
+	{name ="melee", interval = 2000, chance = 100, minDamage = -20, maxDamage = -60}
 }
 
 monster.defenses = {
-	defense = 15,
-	armor = 15
+	defense = 0,
+	armor = 0
 }
 
 monster.elements = {
 	{type = COMBAT_PHYSICALDAMAGE, percent = 0},
-	{type = COMBAT_ENERGYDAMAGE, percent = 30},
-	{type = COMBAT_EARTHDAMAGE, percent = -10},
+	{type = COMBAT_ENERGYDAMAGE, percent = 0},
+	{type = COMBAT_EARTHDAMAGE, percent = 0},
 	{type = COMBAT_FIREDAMAGE, percent = 0},
 	{type = COMBAT_LIFEDRAIN, percent = 0},
 	{type = COMBAT_MANADRAIN, percent = 0},
 	{type = COMBAT_DROWNDAMAGE, percent = 0},
 	{type = COMBAT_ICEDAMAGE, percent = 0},
-	{type = COMBAT_HOLYDAMAGE , percent = 10},
-	{type = COMBAT_DEATHDAMAGE , percent = -10}
+	{type = COMBAT_HOLYDAMAGE , percent = 0},
+	{type = COMBAT_DEATHDAMAGE , percent = 0}
 }
 
 monster.immunities = {

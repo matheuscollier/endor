@@ -1,8 +1,8 @@
 local mType = Game.createMonsterType("Magma Crawler")
 local monster = {}
 
-monster.description = "a magma crawler"
-monster.experience = 2700
+monster.description = "magma crawler"
+monster.experience = 3700
 monster.outfit = {
 	lookType = 492,
 	lookHead = 0,
@@ -23,11 +23,11 @@ monster.Bestiary = {
 	CharmsPoints = 50,
 	Stars = 4,
 	Occurrence = 0,
-	Locations = "Warzone 2."
+	Locations = "x."
 	}
 
-monster.health = 4800
-monster.maxHealth = 4800
+monster.health = 5200
+monster.maxHealth = 5200
 monster.race = "fire"
 monster.corpse = 17336
 monster.speed = 460
@@ -40,8 +40,10 @@ monster.changeTarget = {
 }
 
 monster.strategiesTarget = {
-	nearest = 80,
-	random = 20,
+	nearest = 70,
+	health = 10,
+	damage = 10,
+	random = 10
 }
 
 monster.flags = {
@@ -73,53 +75,37 @@ monster.light = {
 monster.voices = {
 	interval = 5000,
 	chance = 10,
-	{text = "Crrroak!", yell = false}
+	{text = "Crrroak!", yell = false},
+	{text = "Rrroarrr", yell = false}
 }
 
 monster.loot = {
-	{name = "small diamond", chance = 8800, maxCount = 3},
-	{name = "gold coin", chance = 50000, maxCount = 100},
-	{name = "gold coin", chance = 50000, maxCount = 99},
-	{name = "platinum coin", chance = 100000, maxCount = 5},
-	{name = "yellow gem", chance = 1030},
-	{name = "energy ring", chance = 1650},
-	{name = "fire sword", chance = 1680},
-	{name = "black shield", chance = 1550},
-	{name = "iron ore", chance = 4280},
-	{name = "white piece of cloth", chance = 2310},
-	{name = "red piece of cloth", chance = 930},
-	{name = "yellow piece of cloth", chance = 2980},
-	{name = "great mana potion", chance = 6500},
-	{name = "great health potion", chance = 7270},
-	{name = "magma amulet", chance = 3120},
-	{name = "magma boots", chance = 1820},
-	{name = "wand of draconia", chance = 4280},
-	{name = "fiery heart", chance = 7810},
-	{id = 13757, chance = 1675},
-	{name = "crystalline arrow", chance = 5950, maxCount = 10},
-	{name = "wand of everblazing", chance = 690},
-	{name = "blue crystal shard", chance = 3930, maxCount = 2},
-	{name = "brown crystal splinter", chance = 8500, maxCount = 2},
-	{name = "green crystal fragment", chance = 7000},
-	{name = "magma clump", chance = 11600},
-	{name = "blazing bone", chance = 11500},
-	{name = "blazing bone", chance = 12220}
+	{id = 2152, chance = 100000, maxCount = 3},
+	{id = 2145, chance = 800, maxCount = 3},
+	{id = 10553, chance = 7000},
+	{id = 18425, chance = 4300},
+	{id = 2173, chance = 800},
+	{id = 7894, chance = 500},
+	{id = 5914, chance = 3000},
+	{id = 2392, chance = 800},
+	{id = 7891, chance = 600},
+	{id = 2154, chance = 1200},
+	{id = 2187, chance = 1500}
 }
 
 monster.attacks = {
-	{name ="melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -203},
-	{name ="combat", interval = 2000, chance = 10, type = COMBAT_DEATHDAMAGE, minDamage = -300, maxDamage = -1100, length = 8, spread = 3, effect = CONST_ME_MORTAREA, target = false},
+	{name ="melee", interval = 1700, chance = 100, minDamage = -300, maxDamage = -500},
+	{name ="combat", interval = 2000, chance = 10, type = COMBAT_DEATHDAMAGE, minDamage = -300, maxDamage = -700, length = 8, spread = 3, effect = CONST_ME_MORTAREA, target = false},
 	{name ="magma crawler wave", interval = 2000, chance = 15, minDamage = -290, maxDamage = -800, target = false},
 	{name ="magma crawler soulfire", interval = 2000, chance = 20, target = false},
 	{name ="soulfire", interval = 2000, chance = 10, target = false},
 	{name ="combat", interval = 2000, chance = 15, type = COMBAT_FIREDAMAGE, minDamage = -140, maxDamage = -180, radius = 3, effect = CONST_ME_HITBYFIRE, target = false},
-	{name ="speed", interval = 2000, chance = 10, speedChange = -800, radius = 2, effect = CONST_ME_MAGIC_RED, target = false, duration = 20000}
+	{name ="speed", interval = 2000, chance = 10, speedChange = -800, radius = 2, effect = CONST_ME_MAGIC_RED, target = false, duration = 20000}																																		 
 }
 
 monster.defenses = {
 	defense = 45,
-	armor = 45,
-	{name ="invisible", interval = 2000, chance = 10, effect = CONST_ME_MAGIC_BLUE}
+	armor = 45
 }
 
 monster.elements = {
@@ -127,12 +113,12 @@ monster.elements = {
 	{type = COMBAT_ENERGYDAMAGE, percent = 10},
 	{type = COMBAT_EARTHDAMAGE, percent = 100},
 	{type = COMBAT_FIREDAMAGE, percent = 100},
-	{type = COMBAT_LIFEDRAIN, percent = 0},
+	{type = COMBAT_LIFEDRAIN, percent = 100},
 	{type = COMBAT_MANADRAIN, percent = 0},
 	{type = COMBAT_DROWNDAMAGE, percent = 0},
 	{type = COMBAT_ICEDAMAGE, percent = 10},
 	{type = COMBAT_HOLYDAMAGE , percent = 0},
-	{type = COMBAT_DEATHDAMAGE , percent = 5}
+	{type = COMBAT_DEATHDAMAGE , percent = 30}
 }
 
 monster.immunities = {

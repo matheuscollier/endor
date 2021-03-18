@@ -1,7 +1,7 @@
 local mType = Game.createMonsterType("Tiger")
 local monster = {}
 
-monster.description = "a tiger"
+monster.description = "um tiger"
 monster.experience = 40
 monster.outfit = {
 	lookType = 125,
@@ -13,40 +13,21 @@ monster.outfit = {
 	lookMount = 0
 }
 
-monster.raceId = 125
-monster.Bestiary = {
-	class = "Mammal",
-	race = BESTY_RACE_MAMMAL,
-	toKill = 500,
-	FirstUnlock = 25,
-	SecondUnlock = 250,
-	CharmsPoints = 15,
-	Stars = 2,
-	Occurrence = 0,
-	Locations = "Tiquanda, Meriana, Arena and Zoo Quarter. Three unreachable ones are found in the Rookgaard Academy, \z
-		below Ankrahmun (during the Nomads Land Quest), and on Charles's ship."
-	}
-
 monster.health = 75
 monster.maxHealth = 75
 monster.race = "blood"
-monster.corpse = 6051
+monster.corpse = 4292
 monster.speed = 200
 monster.manaCost = 420
 monster.maxSummons = 0
 
 monster.changeTarget = {
-	interval = 4000,
-	chance = 0
-}
-
-monster.strategiesTarget = {
-	nearest = 70,
-	damage = 30,
+	interval = 10000,
+	chance = 5
 }
 
 monster.flags = {
-	summonable = true,
+	summonable = false,
 	attackable = true,
 	hostile = true,
 	convinceable = true,
@@ -55,7 +36,7 @@ monster.flags = {
 	illusionable = true,
 	canPushItems = true,
 	canPushCreatures = true,
-	staticAttackChance = 70,
+	staticAttackChance = 95,
 	targetDistance = 1,
 	runHealth = 0,
 	healthHidden = false,
@@ -77,18 +58,18 @@ monster.voices = {
 }
 
 monster.loot = {
-	{name = "meat", chance = 35190, maxCount = 4},
-	{name = "striped fur", chance = 10830}
+	{id = 2671, chance = 22000, maxCount = 2},
+	{id = 2666, chance = 55000, maxCount = 3}
 }
 
 monster.attacks = {
-	{name ="melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -40}
+	{name ="melee", interval = 2000, chance = 100, minDamage = -10, maxDamage = -25}
 }
 
 monster.defenses = {
-	defense = 15,
-	armor = 15,
-	{name ="speed", interval = 2000, chance = 15, speedChange = 200, effect = CONST_ME_MAGIC_RED, target = false, duration = 5000}
+	defense = 0,
+	armor = 0,
+	{name ="speed", interval = 5000, chance = 15, SpeedChange = 200, Duration = 4000}
 }
 
 monster.elements = {
@@ -99,9 +80,9 @@ monster.elements = {
 	{type = COMBAT_LIFEDRAIN, percent = 0},
 	{type = COMBAT_MANADRAIN, percent = 0},
 	{type = COMBAT_DROWNDAMAGE, percent = 0},
-	{type = COMBAT_ICEDAMAGE, percent = -1},
+	{type = COMBAT_ICEDAMAGE, percent = 0},
 	{type = COMBAT_HOLYDAMAGE , percent = 0},
-	{type = COMBAT_DEATHDAMAGE , percent = -10}
+	{type = COMBAT_DEATHDAMAGE , percent = 0}
 }
 
 monster.immunities = {

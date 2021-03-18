@@ -1,8 +1,8 @@
 local mType = Game.createMonsterType("Nightstalker")
 local monster = {}
 
-monster.description = "a nightstalker"
-monster.experience = 500
+monster.description = ""
+monster.experience = 530
 monster.outfit = {
 	lookType = 320,
 	lookHead = 0,
@@ -12,19 +12,6 @@ monster.outfit = {
 	lookAddons = 0,
 	lookMount = 0
 }
-
-monster.raceId = 520
-monster.Bestiary = {
-	class = "Magical",
-	race = BESTY_RACE_MAGICAL,
-	toKill = 1000,
-	FirstUnlock = 50,
-	SecondUnlock = 500,
-	CharmsPoints = 25,
-	Stars = 3,
-	Occurrence = 0,
-	Locations = "Cemetery Quarter, Vengoth Castle, Vandura Mountain, Robson Isle."
-	}
 
 monster.health = 700
 monster.maxHealth = 700
@@ -37,13 +24,6 @@ monster.maxSummons = 0
 monster.changeTarget = {
 	interval = 0,
 	chance = 8
-}
-
-monster.strategiesTarget = {
-	nearest = 70,
-	health = 10,
-	damage = 10,
-	random = 10,
 }
 
 monster.flags = {
@@ -75,33 +55,28 @@ monster.light = {
 monster.voices = {
 	interval = 5000,
 	chance = 10,
-	{text = "The sunlight is so depressing.", yell = false},
-	{text = "Come with me, my child.", yell = false},
-	{text = "I've been in the shadow under your bed last night.", yell = false},
+	{text = "The sunlight is so depressing.", yell = true},
+	{text = "Come with me, my child.", yell = true},
+	{text = "I've been in the shadow under your bed last night.", yell = true},
 	{text = "You never know what hides in the night.", yell = false},
-	{text = "I remember your face - and I know where you sleep.", yell = false},
-	{text = "Only the sweetest and cruelest dreams for you, my love.", yell = false}
+	{text = "I remember your face - and I know where you sleep", yell = false}
 }
 
 monster.loot = {
-	{id = 2124, chance = 1030},
-	{name = "gold coin", chance = 50000, maxCount = 100},
-	{name = "gold coin", chance = 50000, maxCount = 10},
-	{name = "platinum amulet", chance = 121},
-	{name = "boots of haste", chance = 121},
-	{name = "protection amulet", chance = 847},
-	{name = "shadow herb", chance = 4761},
-	{name = "haunted blade", chance = 318},
-	{name = "chaos mace", chance = 121},
-	{name = "strong mana potion", chance = 1612},
-	{name = "spirit cloak", chance = 520},
-	{name = "crystal of balance", chance = 127}
+	{id = 2148, chance = 25600, maxCount = 65},
+	{id = 2148, chance = 26900, maxCount = 45},
+	{id = 2804, chance = 10000},
+	{id = 2124, chance = 500},
+	{id = 2200, chance = 100},
+	{id = 2171, chance = 210},
+	{id = 7407, chance = 50},
+	{id = 7427, chance = 20}
 }
 
 monster.attacks = {
-	{name ="melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -90, condition = {type = CONDITION_POISON, totalDamage = 80, interval = 4000}},
-	{name ="combat", interval = 2000, chance = 20, type = COMBAT_LIFEDRAIN, minDamage = -60, maxDamage = -170, range = 7, effect = CONST_ME_HOLYAREA, target = true},
-	{name ="speed", interval = 2000, chance = 15, speedChange = -600, effect = CONST_ME_SLEEP, target = true, duration = 15000}
+	{name ="melee", interval = 1800, chance = 100, minDamage = -80, maxDamage = -160},
+	{name ="speed", interval = 3200, chance = 15, SpeedChange = -900, Duration = 2000},
+	{name ="combat", interval = 2300, chance = 99, minDamage = -90, maxDamage = -160, type = COMBAT_HOLYDAMAGE, ShootEffect = CONST_ANI_HOLY, target = false}
 }
 
 monster.defenses = {
@@ -118,15 +93,15 @@ monster.defenses = {
 }
 
 monster.elements = {
-	{type = COMBAT_PHYSICALDAMAGE, percent = -5},
-	{type = COMBAT_ENERGYDAMAGE, percent = -5},
+	{type = COMBAT_PHYSICALDAMAGE, percent = -25},
+	{type = COMBAT_ENERGYDAMAGE, percent = -15},
 	{type = COMBAT_EARTHDAMAGE, percent = 0},
 	{type = COMBAT_FIREDAMAGE, percent = 0},
 	{type = COMBAT_LIFEDRAIN, percent = 0},
 	{type = COMBAT_MANADRAIN, percent = 0},
 	{type = COMBAT_DROWNDAMAGE, percent = 0},
 	{type = COMBAT_ICEDAMAGE, percent = 20},
-	{type = COMBAT_HOLYDAMAGE , percent = 20},
+	{type = COMBAT_HOLYDAMAGE , percent = 10},
 	{type = COMBAT_DEATHDAMAGE , percent = -5}
 }
 

@@ -1,7 +1,7 @@
 local mType = Game.createMonsterType("Death Blob")
 local monster = {}
 
-monster.description = "a death blob"
+monster.description = "uma death blob"
 monster.experience = 300
 monster.outfit = {
 	lookType = 315,
@@ -13,38 +13,17 @@ monster.outfit = {
 	lookMount = 0
 }
 
-monster.raceId = 514
-monster.Bestiary = {
-	class = "Slime",
-	race = BESTY_RACE_SLIME,
-	toKill = 1000,
-	FirstUnlock = 50,
-	SecondUnlock = 500,
-	CharmsPoints = 25,
-	Stars = 3,
-	Occurrence = 0,
-	Locations = "Alchemist Quarter, Drefia, Razzachai, Souleater Mountains, \z
-		Northern Zao Plantations and Raging Mage tower."
-	}
-
-monster.health = 320
-monster.maxHealth = 320
+monster.health = 325
+monster.maxHealth = 325
 monster.race = "undead"
-monster.corpse = 9960
-monster.speed = 160
+monster.corpse = 9963
+monster.speed = 280
 monster.manaCost = 0
-monster.maxSummons = 3
+monster.maxSummons = 4
 
 monster.changeTarget = {
 	interval = 5000,
 	chance = 0
-}
-
-monster.strategiesTarget = {
-	nearest = 70,
-	health = 10,
-	damage = 10,
-	random = 10,
 }
 
 monster.flags = {
@@ -64,7 +43,7 @@ monster.flags = {
 	isBlockable = false,
 	canWalkOnEnergy = false,
 	canWalkOnFire = false,
-	canWalkOnPoison = true,
+	canWalkOnPoison = false,
 	pet = false
 }
 
@@ -74,42 +53,37 @@ monster.light = {
 }
 
 monster.summons = {
-	{name = "Death Blob", chance = 10, interval = 2000}
+	{name = "Death Blob", chance = 10, interval = 3000}
 }
 
 monster.voices = {
 	interval = 5000,
 	chance = 10,
-	{text = "Shlorz", yell = false}
 }
 
 monster.loot = {
-	{name = "glob of tar", chance = 18470}
 }
 
 monster.attacks = {
-	{name ="melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -100},
-	{name ="combat", interval = 2000, chance = 25, type = COMBAT_PHYSICALDAMAGE, minDamage = -35, maxDamage = -60, range = 3, radius = 4, effect = CONST_ME_POFF, target = false},
-	{name ="death blob curse", interval = 2000, chance = 5, range = 5, target = false}
+	{name ="melee", interval = 1900, chance = 100, minDamage = -50, maxDamage = -150}
 }
 
 monster.defenses = {
-	defense = 15,
-	armor = 15,
-	{name ="combat", interval = 2000, chance = 5, type = COMBAT_HEALING, minDamage = 20, maxDamage = 30, effect = CONST_ME_MAGIC_BLUE, target = false}
+	defense = 0,
+	armor = 0
 }
 
 monster.elements = {
 	{type = COMBAT_PHYSICALDAMAGE, percent = 30},
-	{type = COMBAT_ENERGYDAMAGE, percent = -10},
-	{type = COMBAT_EARTHDAMAGE, percent = 100},
+	{type = COMBAT_ENERGYDAMAGE, percent = -5},
+	{type = COMBAT_EARTHDAMAGE, percent = 0},
 	{type = COMBAT_FIREDAMAGE, percent = -10},
 	{type = COMBAT_LIFEDRAIN, percent = 0},
 	{type = COMBAT_MANADRAIN, percent = 0},
 	{type = COMBAT_DROWNDAMAGE, percent = 0},
-	{type = COMBAT_ICEDAMAGE, percent = 10},
-	{type = COMBAT_HOLYDAMAGE , percent = -10},
-	{type = COMBAT_DEATHDAMAGE , percent = 100}
+	{type = COMBAT_ICEDAMAGE, percent = 20},
+	{type = COMBAT_HOLYDAMAGE , percent = -25},
+	{type = COMBAT_DEATHDAMAGE , percent = 0}
 }
 
 monster.immunities = {

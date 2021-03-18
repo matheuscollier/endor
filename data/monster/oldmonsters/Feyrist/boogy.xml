@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<monster name="Boogy" nameDescription="a boogy" race="blood" experience="950" speed="220" manacost="450">
+	<health now="1350" max="1350" />
+	<look type="981" corpse="29106" />
+	<targetchange interval="4000" chance="10" />
+	<flags>
+		<flag summonable="0" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="1" />
+		<flag convinceable="0" />
+		<flag pushable="0" />
+		<flag canpushitems="1" />
+		<flag canpushcreatures="0" />
+		<flag targetDistance="1" />
+		<flag staticattack="90" />
+		<flag runonhealth="20" />
+		<flag canwalkonenergy="0" />
+		<flag canWalkOnFire="0" />
+		<flag canwalkonpoison="0" />
+	</flags>
+	<attacks>
+		<attack name="melee" interval="2000" min="200" max="-520" />
+		<attack name="earth" interval="2000" chance="15" range="7" target="1" min="-130" max="-215">
+			<attribute key="shootEffect" value="poison" />
+		</attack>
+	</attacks>
+	<defenses armor="20" defense="20" />
+	<elements>
+		<element icePercent="10" />
+		<element firePercent="10" />
+		<element holyPercent="5" />
+		<element deathPercent="-5" />
+		<element physicalPercent="25" />
+	</elements>
+	<voices interval="5000" chance="10">
+		<voice sentence="Go to sleep!" />
+		<voice sentence="Roarrr!" />
+	</voices>
+	<loot>
+		<item name="terra amulet" chance="60" />
+		<item name="terra legs" chance="600" />
+		<item name="terra mantle" chance="300" />
+		<item name="terra hood" chance="1200" />
+		<item id="2515" chance="850" />
+		<item name="golden sickle" chance="20" />
+		<item name="mandrake" chance="20" />
+		<item name="leaf star" countmax="5" chance="200" />
+		<item name="gold coin" countmax="100" chance="30000" />
+		<item name="stealth ring" chance="492" />
+		<item id="2684" countmax="3" chance="5500" />
+		<item name="orange mushroom" chance="1000" />
+		<item name="orange mushroom" chance="2155" />
+		<item name="wood cape" chance="591" />
+		<item name="Small Ruby" countmax="2" chance="1400" />
+	</loot>
+</monster>

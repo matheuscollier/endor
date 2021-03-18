@@ -1,8 +1,8 @@
 local mType = Game.createMonsterType("Dworc Venomsniper")
 local monster = {}
 
-monster.description = "a dworc venomsniper"
-monster.experience = 35
+monster.description = "um dworc venomsniper"
+monster.experience = 70
 monster.outfit = {
 	lookType = 216,
 	lookHead = 0,
@@ -23,15 +23,15 @@ monster.Bestiary = {
 	CharmsPoints = 15,
 	Stars = 2,
 	Occurrence = 0,
-	Locations = "South of Port Hope (Trapwood) on ground level and underground and on Foreigner Quarter of Yalahar."
+	Locations = "x."
 	}
 
 monster.health = 80
 monster.maxHealth = 80
 monster.race = "blood"
-monster.corpse = 6059
-monster.speed = 152
-monster.manaCost = 0
+monster.corpse = 4310
+monster.speed = 135
+monster.manaCost = 300
 monster.maxSummons = 0
 
 monster.changeTarget = {
@@ -72,46 +72,43 @@ monster.light = {
 monster.voices = {
 	interval = 5000,
 	chance = 10,
-	{text = "Brak brrretz!", yell = false},
+	{text = "Grak brrretz!", yell = false},
 	{text = "Grow truk grrrrr.", yell = false},
 	{text = "Prek tars, dekklep zurk.", yell = false}
 }
 
 monster.loot = {
-	{id = 2050, chance = 6000},
-	{name = "gold coin", chance = 75000, maxCount = 13},
-	{name = "bronze amulet", chance = 110},
+	{id = 2148, chance = 80000, maxCount = 15},
+	{id = 3983, chance = 500},
+	{id = 2172, chance = 700},
+	{id = 2467, chance = 5000},
+	{id = 2411, chance = 500},
 	{id = 2229, chance = 1000, maxCount = 2},
-	{name = "poison dagger", chance = 1500},
-	{name = "leather armor", chance = 10000},
-	{name = "poison arrow", chance = 5000, maxCount = 3},
-	{name = "tribal mask", chance = 510},
-	{name = "bast skirt", chance = 100},
-	{name = "seeds", chance = 200}
+	{id = 2410, chance = 15000, maxCount = 3},
+	{id = 3967, chance = 500}
 }
 
 monster.attacks = {
-	{name ="melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -15},
-	-- poison
-	{name ="condition", type = CONDITION_POISON, interval = 2000, chance = 15, minDamage = -20, maxDamage = -40, range = 5, shootEffect = CONST_ANI_POISON, target = false}
+	{name ="melee", interval = 2000, chance = 100, minDamage = -10, maxDamage = -45},
+	{name ="condition", type = CONDITION_POISON, interval = 4000, chance = 30, minDamage = -40, maxDamage = -80, range = 5, ShootEffect = CONST_ANI_POISON, target = false}
 }
 
 monster.defenses = {
-	defense = 10,
-	armor = 10
+	defense = 0,
+	armor = 0
 }
 
 monster.elements = {
 	{type = COMBAT_PHYSICALDAMAGE, percent = 0},
 	{type = COMBAT_ENERGYDAMAGE, percent = 0},
 	{type = COMBAT_EARTHDAMAGE, percent = 100},
-	{type = COMBAT_FIREDAMAGE, percent = -15},
+	{type = COMBAT_FIREDAMAGE, percent = 0},
 	{type = COMBAT_LIFEDRAIN, percent = 0},
 	{type = COMBAT_MANADRAIN, percent = 0},
 	{type = COMBAT_DROWNDAMAGE, percent = 0},
-	{type = COMBAT_ICEDAMAGE, percent = -13},
-	{type = COMBAT_HOLYDAMAGE , percent = 20},
-	{type = COMBAT_DEATHDAMAGE , percent = -10}
+	{type = COMBAT_ICEDAMAGE, percent = 0},
+	{type = COMBAT_HOLYDAMAGE , percent = 0},
+	{type = COMBAT_DEATHDAMAGE , percent = 0}
 }
 
 monster.immunities = {

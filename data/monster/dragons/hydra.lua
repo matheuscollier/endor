@@ -1,8 +1,8 @@
 local mType = Game.createMonsterType("Hydra")
 local monster = {}
 
-monster.description = "a hydra"
-monster.experience = 2100
+monster.description = "uma hydra"
+monster.experience = 2350
 monster.outfit = {
 	lookType = 121,
 	lookHead = 0,
@@ -23,14 +23,9 @@ monster.Bestiary = {
 	CharmsPoints = 25,
 	Stars = 3,
 	Occurrence = 0,
-	Locations = "Many on the northern Hydra Mountain in east Tiquanda, 3-4 on the southern Hydra Mountain, \z
-		1 at the Hydra Egg Quest in Tiquanda, 1 north-east of the Elephant Tusk Quest, \z
-		2 above the Forbidden Lands hydra cave here and many inside it, many in Deeper Banuta, \z
-		many on Talahu surface, a few in Ferumbras Citadel basement on Kharos, \z
-		2 on a hill in the Yalahar Arena and Zoo Quarter, 1 deep in the Yalahar Foreigner Quarter (Crystal Lake), \z
-		many in the Oramond Hydra/Bog Raider Cave."
-	}
-
+	Locations = "x."
+	}	
+	
 monster.health = 2350
 monster.maxHealth = 2350
 monster.race = "blood"
@@ -85,32 +80,25 @@ monster.voices = {
 }
 
 monster.loot = {
-	{name = "small sapphire", chance = 5000},
-	{name = "gold coin", chance = 34000, maxCount = 100},
-	{name = "gold coin", chance = 34000, maxCount = 100},
-	{name = "gold coin", chance = 20000, maxCount = 46},
-	{name = "platinum coin", chance = 48000, maxCount = 3},
-	{name = "life crystal", chance = 570},
-	{name = "boots of haste", chance = 130},
-	{name = "stone skin amulet", chance = 900},
-	{name = "ring of healing", chance = 1190},
-	{name = "warrior helmet", chance = 890},
-	{name = "knight armor", chance = 1000},
-	{name = "royal helmet", chance = 210},
-	{name = "medusa shield", chance = 270},
-	{name = "ham", chance = 60000, maxCount = 4},
-	{name = "hydra egg", chance = 930},
-	{name = "strong mana potion", chance = 380},
-	{name = "cucumber", chance = 4780},
-	{name = "hydra head", chance = 10120}
+	{id = 2666, chance = 20000, maxCount = 4},
+	{id = 2671, chance = 15000, maxCount = 4},
+	{id = 2148, chance = 80000, maxCount = 200},
+	{id = 13508, chance = 80},
+	{id = 2498, chance = 750},
+	{id = 2475, chance = 600},
+	{id = 2536, chance = 350},
+	{id = 2195, chance = 600},
+	{id = 2214, chance = 500},
+	{id = 2146, chance = 500},
+	{id = 2197, chance = 300}
 }
 
 monster.attacks = {
-	{name ="melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -270},
+	{name ="melee", interval = 2000, chance = 100, minDamage = -210, maxDamage = -350},
 	{name ="speed", interval = 2000, chance = 25, speedChange = -700, range = 7, radius = 4, shootEffect = CONST_ANI_POISON, effect = CONST_ME_GREEN_RINGS, target = true, duration = 15000},
-	{name ="combat", interval = 2000, chance = 10, type = COMBAT_ICEDAMAGE, minDamage = -100, maxDamage = -250, length = 8, spread = 3, effect = CONST_ME_LOSEENERGY, target = false},
-	{name ="combat", interval = 2000, chance = 10, type = COMBAT_ICEDAMAGE, minDamage = -80, maxDamage = -155, shootEffect = CONST_ANI_SMALLICE, target = true},
-	{name ="combat", interval = 2000, chance = 10, type = COMBAT_EARTHDAMAGE, minDamage = -66, maxDamage = -320, length = 8, spread = 3, effect = CONST_ME_CARNIPHILA, target = false}
+	{name ="condition", type = CONDITION_POISON, interval = 4000, chance = 30, minDamage = -200, maxDamage = -320, range = 7, radius = 3, effect = CONST_ME_HITBYPOISON, target = true},
+	{name ="combat", interval = 1750, chance = 20, minDamage = -230, maxDamage = -390, type = COMBAT_PHYSICALDAMAGE, length = 8, spread = 3, effect = CONST_ME_LOSEENERGY, target = false},
+	{name ="combat", interval = 3100, chance = 25, minDamage = -215, maxDamage = -330, length = 8, spread = 3, type = COMBAT_EARTHDAMAGE, effect = CONST_ME_POISONAREA, target = false}
 }
 
 monster.defenses = {
@@ -138,5 +126,6 @@ monster.immunities = {
 	{type = "invisible", condition = true},
 	{type = "bleed", condition = false}
 }
+
 
 mType:register(monster)

@@ -1,7 +1,7 @@
 local mType = Game.createMonsterType("Priestess")
 local monster = {}
 
-monster.description = "a priestess"
+monster.description = "uma priestess"
 monster.experience = 420
 monster.outfit = {
 	lookType = 58,
@@ -13,19 +13,6 @@ monster.outfit = {
 	lookMount = 0
 }
 
-monster.raceId = 58
-monster.Bestiary = {
-	class = "Human",
-	race = BESTY_RACE_HUMAN,
-	toKill = 1000,
-	FirstUnlock = 50,
-	SecondUnlock = 500,
-	CharmsPoints = 25,
-	Stars = 3,
-	Occurrence = 0,
-	Locations = "Hero Cave, Drefia ruins, Lich Hell, Tombs, Magician Quarter in Yalahar, Vengoth Castle."
-	}
-
 monster.health = 390
 monster.maxHealth = 390
 monster.race = "blood"
@@ -35,12 +22,8 @@ monster.manaCost = 0
 monster.maxSummons = 2
 
 monster.changeTarget = {
-	interval = 4000,
-	chance = 10
-}
-
-monster.strategiesTarget = {
-	nearest = 100,
+	interval = 2000,
+	chance = 50
 }
 
 monster.flags = {
@@ -53,7 +36,7 @@ monster.flags = {
 	illusionable = true,
 	canPushItems = true,
 	canPushCreatures = true,
-	staticAttackChance = 90,
+	staticAttackChance = 95,
 	targetDistance = 4,
 	runHealth = 0,
 	healthHidden = false,
@@ -70,64 +53,55 @@ monster.light = {
 }
 
 monster.summons = {
-	{name = "ghoul", chance = 10, interval = 2000, max = 2}
+	{name = "ghoul", chance = 33, interval = 3000, max = 2}
 }
 
 monster.voices = {
 	interval = 5000,
 	chance = 10,
 	{text = "Your energy is mine.", yell = false},
-	{text = "Now your life is come to the end, hahahaha!", yell = false},
+	{text = "Now, your life has come to an end, hahahha!", yell = false},
 	{text = "Throw the soul on the altar!", yell = false}
 }
 
 monster.loot = {
-	{id = 1962, chance = 890},
-	{id = 2070, chance = 1410},
-	{name = "piggy bank", chance = 90},
-	{name = "crystal necklace", chance = 640},
-	{name = "talon", chance = 750},
-	{name = "hailstorm rod", chance = 1100},
-	{id = 2192, chance = 1250},
-	{id = 2070, chance = 1400},
-	{name = "clerical mace", chance = 1500},
-	{name = "black shield", chance = 210},
-	{name = "red apple", chance = 7500, maxCount = 2},
-	{name = "goat grass", chance = 11720},
-	{name = "wood mushroom", chance = 3240},
-	{name = "sling herb", chance = 13200},
-	{name = "powder herb", chance = 5900},
-	{name = "mana potion", chance = 850},
-	{name = "cultish robe", chance = 1800},
-	{name = "black hood", chance = 5230},
-	{name = "dark rosary", chance = 9840}
+	{id = 2529, chance = 320},
+	{id = 2183, chance = 850},
+	{id = 2200, chance = 100},
+	{id = 10556, chance = 1500},
+	{id = 2148, chance = 90000, maxCount = 40},
+	{id = 2070, chance = 1000},
+	{id = 2032, chance = 2000},
+	{id = 2143, chance = 500},
+	{id = 2114, chance = 690},
+	{id = 2134, chance = 550},
+	{id = 2151, chance = 150},
+	{id = 2145, chance = 200}
 }
 
 monster.attacks = {
-	{name ="melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -75},
-	{name ="combat", interval = 2000, chance = 20, type = COMBAT_DEATHDAMAGE, minDamage = -55, maxDamage = -120, range = 7, shootEffect = CONST_ANI_SUDDENDEATH, effect = CONST_ME_MORTAREA, target = false},
-	{name ="combat", interval = 2000, chance = 15, type = COMBAT_MANADRAIN, minDamage = -2, maxDamage = -170, range = 7, target = false},
-	-- poison
-	{name ="condition", type = CONDITION_POISON, interval = 2000, chance = 15, range = 7, shootEffect = CONST_ANI_POISON, target = false}
+	{name ="melee", interval = 2200, chance = 100, minDamage = -20, maxDamage = -60, condition = {type = CONDITION_POISON, startDamage = 250, interval = 4000}},
+	{name ="combat", interval = 2000, chance = 25, minDamage = -55, maxDamage = -95, type = COMBAT_PHYSICALDAMAGE, range = 7, ShootEffect = CONST_ANI_SUDDENDEATH, target = false},
+	{name ="combat", interval = 5200, chance = 25, minDamage = -50, maxDamage = -100, type = COMBAT_MANADRAIN, range = 7, target = false}
 }
 
 monster.defenses = {
-	defense = 15,
-	armor = 15,
-	{name ="combat", interval = 2000, chance = 15, type = COMBAT_HEALING, minDamage = 50, maxDamage = 80, effect = CONST_ME_MAGIC_BLUE, target = false}
+	defense = 0,
+	armor = 0,
+	{name ="combat", interval = 1700, chance = 15, minDamage = 34, maxDamage = 56, type = COMBAT_HEALING, effect = CONST_ME_MAGIC_BLUE, target = false}
 }
 
 monster.elements = {
-	{type = COMBAT_PHYSICALDAMAGE, percent = -5},
-	{type = COMBAT_ENERGYDAMAGE, percent = 0},
-	{type = COMBAT_EARTHDAMAGE, percent = 70},
-	{type = COMBAT_FIREDAMAGE, percent = 40},
+	{type = COMBAT_PHYSICALDAMAGE, percent = 0},
+	{type = COMBAT_ENERGYDAMAGE, percent = 100},
+	{type = COMBAT_EARTHDAMAGE, percent = 100},
+	{type = COMBAT_FIREDAMAGE, percent = 100},
 	{type = COMBAT_LIFEDRAIN, percent = 0},
 	{type = COMBAT_MANADRAIN, percent = 0},
 	{type = COMBAT_DROWNDAMAGE, percent = 0},
 	{type = COMBAT_ICEDAMAGE, percent = 0},
-	{type = COMBAT_HOLYDAMAGE , percent = -10},
-	{type = COMBAT_DEATHDAMAGE , percent = 5}
+	{type = COMBAT_HOLYDAMAGE , percent = 0},
+	{type = COMBAT_DEATHDAMAGE , percent = 0}
 }
 
 monster.immunities = {

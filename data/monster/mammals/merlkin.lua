@@ -1,8 +1,8 @@
 local mType = Game.createMonsterType("Merlkin")
 local monster = {}
 
-monster.description = "a merlkin"
-monster.experience = 145
+monster.description = "um merlkin"
+monster.experience = 135
 monster.outfit = {
 	lookType = 117,
 	lookHead = 0,
@@ -13,34 +13,17 @@ monster.outfit = {
 	lookMount = 0
 }
 
-monster.raceId = 117
-monster.Bestiary = {
-	class = "Mammal",
-	race = BESTY_RACE_MAMMAL,
-	toKill = 500,
-	FirstUnlock = 25,
-	SecondUnlock = 250,
-	CharmsPoints = 15,
-	Stars = 2,
-	Occurrence = 0,
-	Locations = "Banuta, north-east of Port Hope."
-	}
-
-monster.health = 235
-monster.maxHealth = 235
+monster.health = 230
+monster.maxHealth = 230
 monster.race = "blood"
-monster.corpse = 6044
-monster.speed = 194
+monster.corpse = 4271
+monster.speed = 155
 monster.manaCost = 0
 monster.maxSummons = 0
 
 monster.changeTarget = {
-	interval = 4000,
-	chance = 10
-}
-
-monster.strategiesTarget = {
-	nearest = 100,
+	interval = 2000,
+	chance = 50
 }
 
 monster.flags = {
@@ -53,14 +36,14 @@ monster.flags = {
 	illusionable = true,
 	canPushItems = true,
 	canPushCreatures = false,
-	staticAttackChance = 70,
-	targetDistance = 4,
+	staticAttackChance = 95,
+	targetDistance = 2,
 	runHealth = 0,
 	healthHidden = false,
 	isBlockable = false,
 	canWalkOnEnergy = false,
 	canWalkOnFire = false,
-	canWalkOnPoison = true,
+	canWalkOnPoison = false,
 	pet = false
 }
 
@@ -78,47 +61,43 @@ monster.voices = {
 }
 
 monster.loot = {
-	{name = "gold coin", chance = 69500, maxCount = 45},
-	{name = "small amethyst", chance = 260},
-	{id = 2162, chance = 3000},
-	{name = "wand of decay", chance = 1050},
-	{name = "orange", chance = 1000, maxCount = 5},
-	{name = "banana", chance = 30350, maxCount = 12},
-	{name = "banana staff", chance = 100},
-	{name = "ape fur", chance = 1000},
-	{name = "mana potion", chance = 660},
-	{name = "banana sash", chance = 1800}
+	{id = 5883, chance = 4000},
+	{id = 3966, chance = 100},
+	{id = 2158, chance = 500},
+	{id = 2150, chance = 500},
+	{id = 2148, chance = 100000, maxCount = 55},
+	{id = 2676, chance = 10000, maxCount = 10}
 }
 
 monster.attacks = {
-	{name ="melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -30},
-	{name ="combat", interval = 2000, chance = 15, type = COMBAT_FIREDAMAGE, minDamage = -60, maxDamage = -90, range = 7, shootEffect = CONST_ANI_FIRE, effect = CONST_ME_HITBYFIRE, target = false},
-	{name ="combat", interval = 2000, chance = 20, type = COMBAT_ENERGYDAMAGE, minDamage = -15, maxDamage = -45, range = 7, shootEffect = CONST_ANI_ENERGY, effect = CONST_ME_ENERGYHIT, target = false},
-	{name ="poisonfield", interval = 2000, chance = 15, range = 7, radius = 1, shootEffect = CONST_ANI_POISON, target = true}
+	{name ="melee", interval = 2000, chance = 100, minDamage = -15, maxDamage = -40},
+	{name ="combat", interval = 1800, chance = 9, minDamage = -15, maxDamage = -30, type = COMBAT_FIREDAMAGE, range = 7, ShootEffect = CONST_ANI_FIRE, effect = CONST_ME_FIREAREA, target = false},
+	{name ="combat", interval = 3200, chance = 99, minDamage = -10, maxDamage = -30, type = COMBAT_ENERGYDAMAGE, range = 7, ShootEffect = CONST_ANI_ENERGY, effect = CONST_ME_ENERGYHIT, target = false},
+	{name ="poisonfield", interval = 2300, chance = 20, range = 7, ShootEffect = CONST_ANI_ENERGY, target = true}
 }
 
 monster.defenses = {
-	defense = 15,
-	armor = 15,
-	{name ="combat", interval = 2000, chance = 25, type = COMBAT_HEALING, minDamage = 30, maxDamage = 40, effect = CONST_ME_MAGIC_BLUE, target = false}
+	defense = 0,
+	armor = 0,
+	{name ="combat", interval = 4000, chance = 10, minDamage = 10, maxDamage = 25, type = COMBAT_HEALING, effect = CONST_ME_MAGIC_BLUE, target = false}
 }
 
 monster.elements = {
 	{type = COMBAT_PHYSICALDAMAGE, percent = 0},
-	{type = COMBAT_ENERGYDAMAGE, percent = 10},
+	{type = COMBAT_ENERGYDAMAGE, percent = 100},
 	{type = COMBAT_EARTHDAMAGE, percent = 0},
-	{type = COMBAT_FIREDAMAGE, percent = 20},
+	{type = COMBAT_FIREDAMAGE, percent = 0},
 	{type = COMBAT_LIFEDRAIN, percent = 0},
 	{type = COMBAT_MANADRAIN, percent = 0},
 	{type = COMBAT_DROWNDAMAGE, percent = 0},
-	{type = COMBAT_ICEDAMAGE, percent = -15},
-	{type = COMBAT_HOLYDAMAGE , percent = 10},
-	{type = COMBAT_DEATHDAMAGE , percent = -5}
+	{type = COMBAT_ICEDAMAGE, percent = 0},
+	{type = COMBAT_HOLYDAMAGE , percent = 0},
+	{type = COMBAT_DEATHDAMAGE , percent = 0}
 }
 
 monster.immunities = {
 	{type = "paralyze", condition = false},
-	{type = "outfit", condition = true},
+	{type = "outfit", condition = false},
 	{type = "invisible", condition = true},
 	{type = "bleed", condition = false}
 }

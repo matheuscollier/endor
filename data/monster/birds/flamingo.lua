@@ -1,7 +1,7 @@
 local mType = Game.createMonsterType("Flamingo")
 local monster = {}
 
-monster.description = "a flamingo"
+monster.description = "um flamingo"
 monster.experience = 0
 monster.outfit = {
 	lookType = 212,
@@ -23,9 +23,9 @@ monster.Bestiary = {
 	CharmsPoints = 5,
 	Stars = 1,
 	Occurrence = 0,
-	Locations = "Tiquanda, Shattered Isles, Gardens of Night."
+	Locations = "x."
 	}
-
+	
 monster.health = 25
 monster.maxHealth = 25
 monster.race = "blood"
@@ -75,13 +75,14 @@ monster.voices = {
 }
 
 monster.loot = {
-	{name = "downy feather", chance = 1180}
 }
+
 
 monster.defenses = {
 	defense = 5,
 	armor = 1
 }
+
 
 monster.elements = {
 	{type = COMBAT_PHYSICALDAMAGE, percent = 0},

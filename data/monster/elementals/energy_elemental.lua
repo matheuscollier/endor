@@ -1,7 +1,7 @@
 local mType = Game.createMonsterType("Energy Elemental")
 local monster = {}
 
-monster.description = "an energy elemental"
+monster.description = "um energy elemental"
 monster.experience = 550
 monster.outfit = {
 	lookType = 293,
@@ -23,7 +23,7 @@ monster.Bestiary = {
 	CharmsPoints = 25,
 	Stars = 3,
 	Occurrence = 0,
-	Locations = "Kha'zeel, Energy Elemental Lair, Vandura Mountain, Vengoth's mountain."
+	Locations = "x."
 	}
 
 monster.health = 500
@@ -78,20 +78,13 @@ monster.voices = {
 }
 
 monster.loot = {
-	{id = 2124, chance = 2000},
+	{id = 2124, chance = 1200},
 	{name = "gold coin", chance = 50000, maxCount = 100},
 	{name = "gold coin", chance = 50000, maxCount = 70},
-	{name = "small amethyst", chance = 5000, maxCount = 2},
+	{name = "small amethyst", chance = 500, maxCount = 2},
 	{name = "energy ring", chance = 892},
-	{name = "silver amulet", chance = 1020},
-	{name = "wand of cosmic energy", chance = 636},
-	{name = "throwing star", chance = 9900, maxCount = 5},
-	{name = "obsidian lance", chance = 3571},
-	{name = "guardian shield", chance = 243},
-	{name = "crystal sword", chance = 5882},
-	{name = "strong mana potion", chance = 7692},
-	{name = "mana potion", chance = 11711},
-	{id = 7838, chance = 10000, maxCount = 10}
+	{name = "guardian shield", chance = 50},
+	{id = 7838, chance = 5000, maxCount = 10}
 }
 
 monster.attacks = {
@@ -106,6 +99,7 @@ monster.defenses = {
 	armor = 15,
 	{name ="combat", interval = 2000, chance = 10, type = COMBAT_HEALING, minDamage = 90, maxDamage = 150, effect = CONST_ME_MAGIC_BLUE, target = false}
 }
+
 
 monster.elements = {
 	{type = COMBAT_PHYSICALDAMAGE, percent = 30},

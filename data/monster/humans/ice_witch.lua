@@ -1,7 +1,7 @@
 local mType = Game.createMonsterType("Ice Witch")
 local monster = {}
 
-monster.description = "an ice witch"
+monster.description = "uma ice witch"
 monster.experience = 580
 monster.outfit = {
 	lookType = 149,
@@ -13,35 +13,17 @@ monster.outfit = {
 	lookMount = 0
 }
 
-monster.raceId = 331
-monster.Bestiary = {
-	class = "Human",
-	race = BESTY_RACE_HUMAN,
-	toKill = 1000,
-	FirstUnlock = 50,
-	SecondUnlock = 500,
-	CharmsPoints = 25,
-	Stars = 3,
-	Occurrence = 0,
-	Locations = "Ice Witch Temple, tower in Krimhorn, caves around Hrodmir ('camps' area), \z
-		Formorgar Glacier deepest mines, Magician Quarter in Yalahar (Level 60 Requirement Door)."
-	}
-
-monster.health = 650
-monster.maxHealth = 650
+monster.health = 540
+monster.maxHealth = 540
 monster.race = "blood"
 monster.corpse = 20423
-monster.speed = 228
+monster.speed = 260
 monster.manaCost = 0
 monster.maxSummons = 0
 
 monster.changeTarget = {
-	interval = 4000,
-	chance = 10
-}
-
-monster.strategiesTarget = {
-	nearest = 100,
+	interval = 2000,
+	chance = 5
 }
 
 monster.flags = {
@@ -51,11 +33,11 @@ monster.flags = {
 	convinceable = false,
 	pushable = false,
 	rewardBoss = false,
-	illusionable = false,
+	illusionable = true,
 	canPushItems = true,
 	canPushCreatures = false,
-	staticAttackChance = 70,
-	targetDistance = 4,
+	staticAttackChance = 50,
+	targetDistance = 3,
 	runHealth = 0,
 	healthHidden = false,
 	isBlockable = false,
@@ -79,44 +61,43 @@ monster.voices = {
 }
 
 monster.loot = {
-	{name = "gold coin", chance = 29630, maxCount = 90},
-	{name = "clerical mace", chance = 920},
-	{name = "mystic turban", chance = 430},
-	{name = "green mushroom", chance = 1310},
-	{name = "shard", chance = 530},
-	{name = "diamond sceptre", chance = 330},
-	{id = 7441, chance = 10000},
-	{name = "crystal sword", chance = 400},
-	{name = "pair of earmuffs", chance = 90},
-	{name = "strong mana potion", chance = 820},
-	{name = "glacier shoes", chance = 280}
+	{id = 2148, chance = 100000, maxCount = 40},
+	{id = 2436, chance = 800},
+	{id = 7441, chance = 1200},
+	{id = 7387, chance = 250},
+	{id = 2195, chance = 650},
+	{id = 2445, chance = 600},
+	{id = 2423, chance = 1650},
+	{id = 2796, chance = 9999, maxCount = 3},
+	{id = 2663, chance = 500},
+	{id = 7459, chance = 450}
 }
 
 monster.attacks = {
-	{name ="melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -60},
+	{name ="melee", interval = 2000, chance = 100, minDamage = -90, maxDamage = -210},
 	{name ="outfit", interval = 2000, chance = 1, range = 7, shootEffect = CONST_ANI_SNOWBALL, effect = CONST_ME_MAGIC_BLUE, target = false, duration = 4000, outfitItem = 7172},
-	{name ="combat", interval = 2000, chance = 10, type = COMBAT_ICEDAMAGE, minDamage = -60, maxDamage = -130, length = 5, spread = 2, effect = CONST_ME_ICETORNADO, target = false},
-	{name ="combat", interval = 2000, chance = 20, type = COMBAT_ICEDAMAGE, minDamage = -55, maxDamage = -115, range = 7, shootEffect = CONST_ANI_SMALLICE, effect = CONST_ME_ICEATTACK, target = true},
-	{name ="speed", interval = 2000, chance = 15, speedChange = -600, range = 7, shootEffect = CONST_ANI_SMALLICE, effect = CONST_ME_ICETORNADO, target = false, duration = 20000}
+	{name ="combat", interval = 2950, chance = 33, minDamage = -110, maxDamage = -190, type = COMBAT_PHYSICALDAMAGE, range = 6, effect = CONST_ME_BIGCLOUDS, target = false},
+	{name ="combat", interval = 2750, chance = 99, minDamage = -90, maxDamage = -180, type = COMBAT_PHYSICALDAMAGE, range = 7, ShootEffect = CONST_ANI_SNOWBALL, target = true},
+	{name ="speed", interval = 6000, chance = 20, SpeedChange = -600, Duration = 5000}
 }
 
 monster.defenses = {
-	defense = 20,
-	armor = 20,
-	{name ="combat", interval = 2000, chance = 25, type = COMBAT_HEALING, minDamage = 90, maxDamage = 120, effect = CONST_ME_MAGIC_BLUE, target = false}
+	defense = 0,
+	armor = 0,
+	{name ="combat", interval = 5200, chance = 25, minDamage = 50, maxDamage = 90, type = COMBAT_HEALING, effect = CONST_ME_MAGIC_BLUE, target = false}
 }
 
 monster.elements = {
-	{type = COMBAT_PHYSICALDAMAGE, percent = 0},
-	{type = COMBAT_ENERGYDAMAGE, percent = -10},
-	{type = COMBAT_EARTHDAMAGE, percent = 40},
-	{type = COMBAT_FIREDAMAGE, percent = 50},
+	{type = COMBAT_PHYSICALDAMAGE, percent = 5},
+	{type = COMBAT_ENERGYDAMAGE, percent = 75},
+	{type = COMBAT_EARTHDAMAGE, percent = 35},
+	{type = COMBAT_FIREDAMAGE, percent = 0},
 	{type = COMBAT_LIFEDRAIN, percent = 0},
 	{type = COMBAT_MANADRAIN, percent = 0},
 	{type = COMBAT_DROWNDAMAGE, percent = 0},
-	{type = COMBAT_ICEDAMAGE, percent = 100},
-	{type = COMBAT_HOLYDAMAGE , percent = 30},
-	{type = COMBAT_DEATHDAMAGE , percent = -10}
+	{type = COMBAT_ICEDAMAGE, percent = 95},
+	{type = COMBAT_HOLYDAMAGE , percent = 0},
+	{type = COMBAT_DEATHDAMAGE , percent = 30}
 }
 
 monster.immunities = {

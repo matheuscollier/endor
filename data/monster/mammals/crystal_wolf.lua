@@ -1,4 +1,4 @@
-local mType = Game.createMonsterType("Crystal Wolf")
+local mType = Game.createMonsterType("crystal wolf")
 local monster = {}
 
 monster.description = "a crystal wolf"
@@ -13,34 +13,17 @@ monster.outfit = {
 	lookMount = 0
 }
 
-monster.raceId = 740
-monster.Bestiary = {
-	class = "Magical",
-	race = BESTY_RACE_MAGICAL,
-	toKill = 5,
-	FirstUnlock = 2,
-	SecondUnlock = 3,
-	CharmsPoints = 50,
-	Stars = 3,
-	Occurrence = 3,
-	Locations = "Shadowthorn."
-	}
-
 monster.health = 750
 monster.maxHealth = 750
-monster.race = "undead"
-monster.corpse = 13584
-monster.speed = 320
+monster.race = "blood"
+monster.corpse = 13594
+monster.speed = 195
 monster.manaCost = 0
 monster.maxSummons = 0
 
 monster.changeTarget = {
-	interval = 4000,
-	chance = 10
-}
-
-monster.strategiesTarget = {
-	nearest = 100,
+	interval = 2000,
+	chance = 0
 }
 
 monster.flags = {
@@ -48,14 +31,14 @@ monster.flags = {
 	attackable = true,
 	hostile = true,
 	convinceable = false,
-	pushable = false,
+	pushable = true,
 	rewardBoss = false,
 	illusionable = true,
-	canPushItems = true,
-	canPushCreatures = true,
+	canPushItems = false,
+	canPushCreatures = false,
 	staticAttackChance = 90,
 	targetDistance = 1,
-	runHealth = 20,
+	runHealth = 8,
 	healthHidden = false,
 	isBlockable = false,
 	canWalkOnEnergy = false,
@@ -72,30 +55,26 @@ monster.light = {
 monster.voices = {
 	interval = 5000,
 	chance = 10,
-	{text = "Raaarrr!", yell = false},
-	{text = "Aaaauuuuuooooooo!!", yell = false}
+	{text = "Raaarrr!", yell = false}
 }
 
 monster.loot = {
-	{name = "gold coin", chance = 56000, maxCount = 52},
-	{name = "hailstorm rod", chance = 7400},
-	{name = "meat", chance = 52000, maxCount = 4},
-	{name = "wolf paw", chance = 3700},
-	{name = "shiver arrow", chance = 11000, maxCount = 10},
-	{name = "crystalline armor", chance = 3700}
+	{id = 2148, chance = 50000, maxCount = 34},
+	{id = 2666, chance = 90000, maxCount = 4},
+	{id = 8878, chance = 1000}
 }
 
 monster.attacks = {
-	{name ="melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -80},
-	{name ="crystal wolf wave", interval = 2000, chance = 15, minDamage = -60, maxDamage = -130, target = false},
-	{name ="combat", interval = 2000, chance = 15, type = COMBAT_ICEDAMAGE, minDamage = -80, maxDamage = -150, range = 6, radius = 3, shootEffect = CONST_ANI_SMALLICE, effect = CONST_ME_GIANTICE, target = true},
-	{name ="combat", interval = 2000, chance = 10, type = COMBAT_MANADRAIN, minDamage = -25, maxDamage = -80, range = 7, target = false}
+	{name ="melee", interval = 1500, chance = 100, skill = 34, attack = 33},
+	{name ="combat", interval = 3000, chance = 18, minDamage = -30, maxDamage = -80, type = COMBAT_EARTHDAMAGE, length = 3, spread = 3, effect = CONST_ME_BIGPLANTS, target = false},
+	{name ="combat", interval = 2000, chance = 9, minDamage = -20, maxDamage = -55, type = COMBAT_MANADRAIN, effect = CONST_ME_MAGIC_BLUE, target = false},
+	{name ="combat", interval = 2000, chance = 9, minDamage = -10, maxDamage = -55, type = COMBAT_ICEDAMAGE, length = 3, spread = 4, effect = CONST_ME_ICEAREA, target = false}
 }
 
 monster.defenses = {
-	defense = 20,
-	armor = 20,
-	{name ="combat", interval = 2000, chance = 5, type = COMBAT_HEALING, minDamage = 15, maxDamage = 55, effect = CONST_ME_MAGIC_BLUE, target = false}
+	defense = 0,
+	armor = 0,
+	{name ="combat", interval = 2000, chance = 15, minDamage = 5, maxDamage = 75, type = COMBAT_HEALING, effect = CONST_ME_MAGIC_BLUE, target = false}
 }
 
 monster.elements = {
@@ -112,9 +91,9 @@ monster.elements = {
 }
 
 monster.immunities = {
-	{type = "paralyze", condition = true},
+	{type = "paralyze", condition = false},
 	{type = "outfit", condition = false},
-	{type = "invisible", condition = true},
+	{type = "invisible", condition = false},
 	{type = "bleed", condition = false}
 }
 

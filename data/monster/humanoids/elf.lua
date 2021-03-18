@@ -1,8 +1,8 @@
 local mType = Game.createMonsterType("Elf")
 local monster = {}
 
-monster.description = "an elf"
-monster.experience = 42
+monster.description = "um elf"
+monster.experience = 70
 monster.outfit = {
 	lookType = 62,
 	lookHead = 0,
@@ -23,14 +23,13 @@ monster.Bestiary = {
 	CharmsPoints = 15,
 	Stars = 2,
 	Occurrence = 0,
-	Locations = "Yalahar Foreigner Quarter and Trade Quarter, Maze of Lost Souls, Orc Fort (unreachable), \z
-		Hellgate, Shadowthorn, Ab'Dendriel elf caves, Elvenbane, north of Thais."
+	Locations = "x."
 	}
 
 monster.health = 100
 monster.maxHealth = 100
 monster.race = "blood"
-monster.corpse = 6003
+monster.corpse = 2945
 monster.speed = 190
 monster.manaCost = 320
 monster.maxSummons = 0
@@ -77,30 +76,30 @@ monster.voices = {
 	{text = "Bahaha aka!", yell = false},
 	{text = "You are not welcome here.", yell = false},
 	{text = "Flee as long as you can.", yell = false},
-	{text = "Death to the Defilers!", yell = false}
+	{text = "Death to the defilers!", yell = false}
 }
 
 monster.loot = {
-	{name = "gold coin", chance = 44000, maxCount = 30},
-	{name = "longsword", chance = 10800},
-	{name = "studded helmet", chance = 13500},
-	{name = "studded armor", chance = 8960},
-	{name = "plate shield", chance = 9300},
-	{name = "arrow", chance = 7060, maxCount = 3},
-	{name = "leather boots", chance = 11410},
-	{id = 5921, chance = 940},
-	{name = "plum", chance = 20000, maxCount = 2},
-	{name = "elvish talisman", chance = 2100}
+	{id = 2484, chance = 7000},
+	{id = 2643, chance = 3000},
+	{id = 2511, chance = 7777},
+	{id = 2482, chance = 5000},
+	{id = 2642, chance = 250},
+	{id = 2397, chance = 1000},
+	{id = 2456, chance = 6666},
+	{id = 2148, chance = 100000, maxCount = 45},
+	{id = 2674, chance = 30000, maxCount = 5},
+	{id = 2544, chance = 800000, maxCount = 15}
 }
 
 monster.attacks = {
-	{name ="melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -15},
-	{name ="combat", interval = 2000, chance = 10, type = COMBAT_PHYSICALDAMAGE, minDamage = 0, maxDamage = -25, range = 7, shootEffect = CONST_ANI_ARROW, target = false}
+	{name ="melee", interval = 2000, chance = 100, minDamage = -10, maxDamage = -30},
+	{name ="combat", interval = 3550, chance = 99, minDamage = -15, maxDamage = -25, type = COMBAT_PHYSICALDAMAGE, range = 7, ShootEffect = CONST_ANI_ARROW, target = false}
 }
 
 monster.defenses = {
-	defense = 10,
-	armor = 10
+	defense = 0,
+	armor = 0
 }
 
 monster.elements = {
@@ -112,8 +111,8 @@ monster.elements = {
 	{type = COMBAT_MANADRAIN, percent = 0},
 	{type = COMBAT_DROWNDAMAGE, percent = 0},
 	{type = COMBAT_ICEDAMAGE, percent = 0},
-	{type = COMBAT_HOLYDAMAGE , percent = 20},
-	{type = COMBAT_DEATHDAMAGE , percent = -1}
+	{type = COMBAT_HOLYDAMAGE , percent = 0},
+	{type = COMBAT_DEATHDAMAGE , percent = 0}
 }
 
 monster.immunities = {

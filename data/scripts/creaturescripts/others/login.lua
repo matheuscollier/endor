@@ -23,20 +23,39 @@ local playerLogin = CreatureEvent("PlayerLogin")
 function playerLogin.onLogin(player)
 	local items = {
 		{2120, 1},
-		{2148, 3}
+		{2675, 3},
+		{9680, 1},
+		{2175, 1}	
 	}
 	if player:getLastLoginSaved() == 0 then
 		player:sendOutfitWindow()
 		local backpack = player:addItem(1988)
+		player:addItem(2652)
+		player:addItem(2649)
+		player:addItem(2642)
+		player:addItem(2461)
+		player:addItem(2512)
+		
 		if backpack then
 			for i = 1, #items do
 				backpack:addItem(items[i][1], items[i][2])
 			end
 		end
-		player:addItem(2050, 1, true, 1, CONST_SLOT_AMMO)
+		
+		if player:getVocation():getId() == 1 then
+			player:addItem(2190)
+		elseif player:getVocation():getId() == 2 then
+			player:addItem(2182)
+		elseif player:getVocation():getId() == 3 then
+			player:addItem(5907)
+		elseif player:getVocation():getId() == 4 then
+			player:addItem(2406)
+		end
+		
+		player:setStorageValue(task_points, 0)
 	else
-		player:sendTextMessage(MESSAGE_STATUS, "Welcome to " .. SERVER_NAME .. "!")
-		player:sendTextMessage(MESSAGE_LOGIN, string.format("Your last visit in ".. SERVER_NAME ..": %s.", os.date("%d. %b %Y %X", player:getLastLoginSaved())))
+		player:sendTextMessage(MESSAGE_STATUS, "Bem vindo ao " .. SERVER_NAME .. "!")
+		player:sendTextMessage(MESSAGE_LOGIN, string.format("Sua última visita foi ".. SERVER_NAME ..": %s.", os.date("%d. %b %Y %X", player:getLastLoginSaved())))
 	end
 
 	local playerId = player:getId()
@@ -63,76 +82,6 @@ function playerLogin.onLogin(player)
 	if isPremium(player) then
 		player:setStorageValue(Storage.PremiumAccount, 1)
 	end
-	-- Premium Ends Teleport to Temple, change addon (citizen) houseless
-	local defaultTown = "Thais" -- default town where player is teleported if his home town is in premium area
-	local freeTowns = {"Ab'Dendriel", "Carlin", "Kazordoon", "Thais", "Venore", "Rookgaard", "Dawnport", "Dawnport Tutorial", "Island of Destiny"} -- towns in free account area
-
-	if isPremium(player) == false and isInArray(freeTowns, player:getTown():getName()) == false then
-		local town = player:getTown()
-		local sex = player:getSex()
-		local home = getHouseByPlayerGUID(getPlayerGUID(player))
-		town = isInArray(freeTowns, town:getName()) and town or Town(defaultTown)
-		player:teleportTo(town:getTemplePosition())
-		player:setTown(town)
-		player:sendTextMessage(MESSAGE_FAILURE, "Your premium time has expired.")
-		player:setStorageValue(Storage.PremiumAccount, 0)
-		if sex == 1 then
-			player:setOutfit({lookType = 128, lookFeet = 114, lookLegs = 134, lookHead = 114,lookAddons = 0})
-        elseif sex == 0 then
-			player:setOutfit({lookType = 136, lookFeet = 114, lookLegs = 134, lookHead = 114, lookAddons = 0})
-        end
-        if home ~= nil and not isPremium(player) then
-            setHouseOwner(home, 0)
-            player:sendTextMessage(MESSAGE_GAME_HIGHLIGHT, 'You\'ve lost your house because you are not premium anymore.')
-			player:sendTextMessage(MESSAGE_GAME_HIGHLIGHT, 'Your items from house are send to your inbox.')
-        end
-	end
-	-- End 'Premium Ends Teleport to Temple'
-
-	-- Recruiter system
-	local resultId = db.storeQuery('SELECT `recruiter` from `accounts` where `id`='..getAccountNumberByPlayerName(getPlayerName(player)))
-	local recruiterStatus = result.getNumber(resultId, 'recruiter')
-	local sex = player:getSex()
-	if recruiterStatus >= 1 then
-		if sex == 1 then
-			local outfit = player:hasOutfit(746)
-			if outfit == false then
-				player:addOutfit(746)
-			end
-		else
-			local outfit = player:hasOutfit(745)
-			if outfit == false then
-				player:addOutfit(745)
-			end
-		end
-	end
-	if recruiterStatus >= 3 then
-		if sex == 1 then
-			local outfit = player:hasOutfit(746,1)
-			if outfit == false then
-				player:addOutfitAddon(746,1)
-			end
-		else
-			local outfit = player:hasOutfit(745,1)
-			if outfit == false then
-				player:addOutfit(745,1)
-			end
-		end
-	end
-	if recruiterStatus >= 10 then
-		if sex == 1 then
-			local outfit = player:hasOutfit(746,2)
-			if outfit == false then
-				player:addOutfitAddon(746,2)
-			end
-		else
-			local outfit = player:hasOutfit(745,2)
-			if outfit == false then
-				player:addOutfit(745,2)
-			end
-		end
-	end
-	-- End recruiter system
 
 	DailyReward.init(playerId)
 
@@ -142,8 +91,8 @@ function playerLogin.onLogin(player)
 		player:setGhostMode(true)
 	end
 	-- Boosted creature
-	player:sendTextMessage(MESSAGE_BOOSTED_CREATURE, "Today's boosted creature: " .. Game.getBoostedCreature() .. " \
-	Boosted creatures yield more experience points, carry more loot than usual and respawn at a faster rate.")
+	player:sendTextMessage(MESSAGE_BOOSTED_CREATURE, "Boosted Creature de hoje: " .. Game.getBoostedCreature() .. " \
+	As Boosted Creature dão mais pontos de experiência, carregam mais loot que o usual e nascem numa mais rapidamente.")
 
 	-- Stamina
 	nextUseStaminaTime[playerId] = 1
@@ -186,15 +135,8 @@ function playerLogin.onLogin(player)
 	end
 
 	-- Open channels
-	if player:getClient().version < 1200 then
-		player:openChannel(9)
-	end
-	if table.contains({TOWNS_LIST.DAWNPORT, TOWNS_LIST.DAWNPORT_TUTORIAL}, player:getTown():getId())then
-		player:openChannel(3) -- World chat
-	else
 		player:openChannel(3) -- World chat
 		player:openChannel(5) -- Advertsing main
-	end
 
 	-- Rewards
 	local rewards = #player:getRewardList()
@@ -213,6 +155,7 @@ function playerLogin.onLogin(player)
 		player:setStorageValue(Storage.combatProtectionStorage, 1)
 		onMovementRemoveProtection(playerId, player:getPosition(), 10)
 	end
+	
 	-- Set Client XP Gain Rate
 	local baseExp = 100
 	if Game.getStorageValue(GlobalStorage.XpDisplayMode) > 0 then

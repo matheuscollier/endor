@@ -1,10 +1,10 @@
 local mType = Game.createMonsterType("Dark Monk")
 local monster = {}
 
-monster.description = "a dark monk"
+monster.description = "um dark monk"
 monster.experience = 145
 monster.outfit = {
-	lookType = 225,
+	lookType = 57,
 	lookHead = 0,
 	lookBody = 0,
 	lookLegs = 0,
@@ -13,40 +13,21 @@ monster.outfit = {
 	lookMount = 0
 }
 
-monster.raceId = 225
-monster.Bestiary = {
-	class = "Human",
-	race = BESTY_RACE_HUMAN,
-	toKill = 500,
-	FirstUnlock = 25,
-	SecondUnlock = 250,
-	CharmsPoints = 15,
-	Stars = 2,
-	Occurrence = 0,
-	Locations = "Dark Cathedral, Vandura (Cult Cave), Foreigner Quarter."
-	}
-
 monster.health = 190
 monster.maxHealth = 190
 monster.race = "blood"
-monster.corpse = 20562
+monster.corpse = 20371
 monster.speed = 230
 monster.manaCost = 480
 monster.maxSummons = 0
 
 monster.changeTarget = {
-	interval = 5000,
-	chance = 0
-}
-
-monster.strategiesTarget = {
-	nearest = 70,
-	health = 20,
-	damage = 10,
+	interval = 2000,
+	chance = 5
 }
 
 monster.flags = {
-	summonable = true,
+	summonable = false,
 	attackable = true,
 	hostile = true,
 	convinceable = true,
@@ -55,7 +36,7 @@ monster.flags = {
 	illusionable = true,
 	canPushItems = true,
 	canPushCreatures = true,
-	staticAttackChance = 90,
+	staticAttackChance = 95,
 	targetDistance = 1,
 	runHealth = 0,
 	healthHidden = false,
@@ -74,42 +55,36 @@ monster.light = {
 monster.voices = {
 	interval = 5000,
 	chance = 10,
-	{text = "You are no match to us!", yell = false},
 	{text = "This is where your path will end!", yell = false},
-	{text = "Your end has come!", yell = false}
+	{text = "Your end has come.", yell = false},
+	{text = "You are no match for us!", yell = false}
 }
 
 monster.loot = {
-	{id = 1949, chance = 1790},
-	{name = "brown flask", chance = 380},
-	{id = 2044, chance = 550},
-	{name = "gold coin", chance = 14600, maxCount = 18},
-	{name = "power ring", chance = 120},
-	{name = "life crystal", chance = 990},
-	{name = "ankh", chance = 900},
-	{name = "sandals", chance = 890},
-	{name = "bread", chance = 20550},
-	{name = "mana potion", chance = 790},
-	{name = "book of prayers", chance = 1900},
-	{name = "dark rosary", chance = 10500},
-	{name = "rope belt", chance = 6666},
-	{name = "safety pin", chance = 990}
+	{id = 12448, chance = 2000},
+	{id = 2148, chance = 100000, maxCount = 35},
+	{id = 2467, chance = 10000},
+	{id = 2642, chance = 300},
+	{id = 2401, chance = 600},
+	{id = 1949, chance = 1000},
+	{id = 2044, chance = 3000},
+	{id = 2689, chance = 20000, maxCount = 3}
 }
 
 monster.attacks = {
-	{name ="melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -100},
-	{name ="combat", interval = 2000, chance = 15, type = COMBAT_LIFEDRAIN, minDamage = -20, maxDamage = -50, range = 1, effect = CONST_ME_MAGIC_RED, target = false}
+	{name ="melee", interval = 2000, chance = 100, minDamage = -50, maxDamage = -70},
+	{name ="combat", interval = 3200, chance = 35, minDamage = -25, maxDamage = -49, type = COMBAT_LIFEDRAIN, range = 1, target = false}
 }
 
 monster.defenses = {
-	defense = 25,
-	armor = 25,
-	{name ="combat", interval = 2000, chance = 15, type = COMBAT_HEALING, minDamage = 25, maxDamage = 49, effect = CONST_ME_MAGIC_BLUE, target = false},
-	{name ="speed", interval = 2000, chance = 15, speedChange = 300, effect = CONST_ME_MAGIC_RED, target = false, duration = 6000}
+	defense = 0,
+	armor = 0,
+	{name ="combat", interval = 2800, chance = 20, minDamage = 25, maxDamage = 49, type = COMBAT_HEALING, effect = CONST_ME_MAGIC_BLUE, target = false},
+	{name ="speed", interval = 5000, chance = 10, SpeedChange = 400, Duration = 4000}
 }
 
 monster.elements = {
-	{type = COMBAT_PHYSICALDAMAGE, percent = -20},
+	{type = COMBAT_PHYSICALDAMAGE, percent = 0},
 	{type = COMBAT_ENERGYDAMAGE, percent = 0},
 	{type = COMBAT_EARTHDAMAGE, percent = 0},
 	{type = COMBAT_FIREDAMAGE, percent = 0},
@@ -117,8 +92,8 @@ monster.elements = {
 	{type = COMBAT_MANADRAIN, percent = 0},
 	{type = COMBAT_DROWNDAMAGE, percent = 0},
 	{type = COMBAT_ICEDAMAGE, percent = 0},
-	{type = COMBAT_HOLYDAMAGE , percent = -10},
-	{type = COMBAT_DEATHDAMAGE , percent = 40}
+	{type = COMBAT_HOLYDAMAGE , percent = 0},
+	{type = COMBAT_DEATHDAMAGE , percent = 0}
 }
 
 monster.immunities = {

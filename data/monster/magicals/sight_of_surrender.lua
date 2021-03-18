@@ -1,8 +1,8 @@
 local mType = Game.createMonsterType("Sight of Surrender")
 local monster = {}
 
-monster.description = "a sight of surrender"
-monster.experience = 17000
+monster.description = "Sight of Surrender"
+monster.experience = 25000
 monster.outfit = {
 	lookType = 583,
 	lookHead = 0,
@@ -13,38 +13,17 @@ monster.outfit = {
 	lookMount = 0
 }
 
-monster.raceId = 1012
-monster.Bestiary = {
-	class = "Magical",
-	race = BESTY_RACE_MAGICAL,
-	toKill = 2500,
-	FirstUnlock = 100,
-	SecondUnlock = 1000,
-	CharmsPoints = 50,
-	Stars = 4,
-	Occurrence = 0,
-	Locations = "Dark Grounds, Guzzlemaw Valley (if less than 100 Blowing Horns tasks \z
-		have been done the day before) and the Silencer Plateau (when Silencer Resonating Chambers are used there)."
-	}
-
-monster.health = 28000
-monster.maxHealth = 28000
+monster.health = 22000
+monster.maxHealth = 22000
 monster.race = "undead"
 monster.corpse = 22478
-monster.speed = 340
+monster.speed = 300
 monster.manaCost = 0
 monster.maxSummons = 0
 
 monster.changeTarget = {
 	interval = 4000,
 	chance = 20
-}
-
-monster.strategiesTarget = {
-	nearest = 70,
-	health = 10,
-	damage = 10,
-	random = 10,
 }
 
 monster.flags = {
@@ -62,9 +41,9 @@ monster.flags = {
 	runHealth = 0,
 	healthHidden = false,
 	isBlockable = false,
-	canWalkOnEnergy = true,
-	canWalkOnFire = true,
-	canWalkOnPoison = true,
+	canWalkOnEnergy = false,
+	canWalkOnFire = false,
+	canWalkOnPoison = false,
 	pet = false
 }
 
@@ -83,57 +62,46 @@ monster.voices = {
 }
 
 monster.loot = {
-	{name = "platinum coin", chance = 100000, maxCount = 15},
-	{name = "might ring", chance = 8000},
-	{name = "stone skin amulet", chance = 18000},
-	{name = "hammer of wrath", chance = 1380},
-	{name = "crystal mace", chance = 5500},
-	{name = "magic plate armor", chance = 1380},
-	{name = "crown legs", chance = 920},
-	{name = "crusader helmet", chance = 920},
-	{name = "tower shield", chance = 1380},
-	{name = "steel boots", chance = 920},
-	{name = "onyx flail", chance = 920},
-	{name = "jade hammer", chance = 920},
-	{name = "great mana potion", chance = 78000, maxCount = 5},
-	{name = "great spirit potion", chance = 72000, maxCount = 5},
-	{name = "ultimate health potion", chance = 30000, maxCount = 5},
-	{name = "blue crystal shard", chance = 23000, maxCount = 3},
-	{name = "violet crystal shard", chance = 32000, maxCount = 3},
-	{name = "green crystal shard", chance = 21600, maxCount = 3},
-	{name = "green crystal splinter", chance = 30000, maxCount = 5},
-	{name = "brown crystal splinter", chance = 30410, maxCount = 5},
-	{name = "blue crystal splinter", chance = 40000, maxCount = 5},
-	{name = "cluster of solace", chance = 1800},
-	{name = "sight of surrender's eye", chance = 100000},
-	{name = "broken visor", chance = 100000},
+	{id = 2152, chance = 100000, maxCount = 20},
+	{id = 15643, chance = 30},
+	{id = 18404, chance = 300},
+	{id = 18405, chance = 300},
+	{id = 18406, chance = 300},
+	{id = 2169, chance = 300},
+	{id = 18413, chance = 2000, maxCount = 3},
+	{id = 18414, chance = 1500, maxCount = 3},
+	{id = 18416, chance = 2000, maxCount = 5},
+	{id = 18417, chance = 1500, maxCount = 5},
+	{id = 22396, chance = 1800},
+	{id = 22517, chance = 100000},
+	{id = 22518, chance = 100000},
 	{id = 22542, chance = 460}
 }
 
 monster.attacks = {
-	{name ="melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -1100},
-	{name ="combat", interval = 2000, chance = 15, type = COMBAT_ENERGYDAMAGE, minDamage = -500, maxDamage = -800, length = 8, spread = 3, effect = CONST_ME_YELLOWENERGY, target = true},
-	{name ="combat", interval = 2000, chance = 20, type = COMBAT_PHYSICALDAMAGE, minDamage = 0, maxDamage = -500, radius = 1, shootEffect = CONST_ANI_LARGEROCK, target = true}
+	{name ="melee", interval = 2000, chance = 100, minDamage = -900, maxDamage = -1250},
+	{name ="combat", interval = 2000, chance = 15, minDamage = -500, maxDamage = -800, type = COMBAT_ENERGYDAMAGE, length = 8, spread = 3, effect = CONST_ME_YELLOWENERGY, target = true},
+	{name ="combat", interval = 2000, chance = 20, minDamage = -500, maxDamage = -650, type = COMBAT_PHYSICALDAMAGE, ShootEffect = CONST_ANI_LARGEROCK, target = true}
 }
 
 monster.defenses = {
-	defense = 70,
-	armor = 70,
-	{name ="combat", interval = 2000, chance = 30, type = COMBAT_HEALING, minDamage = 550, maxDamage = 1100, effect = CONST_ME_MAGIC_BLUE, target = false},
-	{name ="speed", interval = 2000, chance = 15, speedChange = 520, effect = CONST_ME_MAGIC_RED, target = false, duration = 5000}
+	defense = 0,
+	armor = 0,
+	{name ="combat", interval = 2000, chance = 30, minDamage = 350, maxDamage = 500, type = COMBAT_HEALING, effect = CONST_ME_MAGIC_BLUE, target = false},
+	{name ="speed", interval = 2000, chance = 15, SpeedChange = 520, Duration = 5000}
 }
 
 monster.elements = {
-	{type = COMBAT_PHYSICALDAMAGE, percent = 40},
-	{type = COMBAT_ENERGYDAMAGE, percent = 10},
-	{type = COMBAT_EARTHDAMAGE, percent = 10},
-	{type = COMBAT_FIREDAMAGE, percent = 35},
+	{type = COMBAT_PHYSICALDAMAGE, percent = 20},
+	{type = COMBAT_ENERGYDAMAGE, percent = 80},
+	{type = COMBAT_EARTHDAMAGE, percent = 20},
+	{type = COMBAT_FIREDAMAGE, percent = 25},
 	{type = COMBAT_LIFEDRAIN, percent = 0},
 	{type = COMBAT_MANADRAIN, percent = 0},
 	{type = COMBAT_DROWNDAMAGE, percent = 0},
-	{type = COMBAT_ICEDAMAGE, percent = 30},
-	{type = COMBAT_HOLYDAMAGE , percent = -5},
-	{type = COMBAT_DEATHDAMAGE , percent = 10}
+	{type = COMBAT_ICEDAMAGE, percent = 20},
+	{type = COMBAT_HOLYDAMAGE , percent = 80},
+	{type = COMBAT_DEATHDAMAGE , percent = 30}
 }
 
 monster.immunities = {

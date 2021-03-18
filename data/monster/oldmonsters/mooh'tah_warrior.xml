@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Mooh'Tah Warrior" nameDescription="a mooh'tah warrior" race="blood" experience="15000" speed="300" manacost="0">
+	<health now="15000" max="15000"/>
+	<look type="611" corpse="23368"/>
+	<targetchange interval="2000" chance="40"/>
+	<flags>
+        <flag summonable="0"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="0"/>
+		<flag convinceable="0"/>
+		<flag pushable="0"/>
+		<flag canpushitems="1"/>
+		<flag canpushcreatures="1"/>
+		<flag targetDistance="1"/>
+		<flag staticattack="90"/>
+		<flag runonhealth="0"/>
+	</flags>
+	<attacks>
+		<attack name="melee" interval="2000" min="-410" max="-575" />
+		<attack name="energy" interval="2000" chance="14" length="4" spread="0" min="-350" max="-510">
+			<attribute key="areaEffect" value="yellowenergy" />
+		</attack>
+		<attack name="physical" interval="2000" chance="11" range="7" min="-490" max="-685">
+			<attribute key="areaEffect" value="explosionarea" />
+			<attribute key="shootEffect" value="largerock" />
+		</attack>
+		<attack name="lifedrain" interval="2000" chance="15" radius="3" target="0" min="-350" max="-500">
+			<attribute key="areaEffect" value="blackspark" />
+		</attack>
+	</attacks>
+	<defenses armor="30" defense="30">
+		<defense name="healing" interval="2000" chance="30" min="110" max="160">
+			<attribute key="areaEffect" value="blueshimmer" />
+		</defense>
+		<defense name="haste" interval="2000" chance="20" speedchange="300" duration="1000">
+			<attribute key="areaEffect" value="redshimmer" />
+		</defense>
+	</defenses>
+	<elements><element physicalPercent="5"/>
+		<element physicalPercent="25"/>
+		<element icePercent="15"/>
+		<element poisonPercent="40"/>
+		<element firePercent="20"/>
+		<element energyPercent="35"/>
+		<element holyPercent="30"/>
+		<element deathPercent="30"/>
+	</elements>
+	<immunities>
+		<immunity invisible="1"/>
+	</immunities>
+	<voices interval="5000" chance="10">
+		<voice sentence="Feel the power of the Mooh'Tah!"/>
+		<voice sentence="Ommm!"/>
+	</voices>
+	<loot>
+		<item id="2148" countmax="120" chance="100000"/>	<!-- gold coin -->
+		<item id="2152" countmax="3" chance="40000"/>		<!-- platinum coin -->
+		<!-- mooh'tah shell -->
+		<item id="7589" chance="700"/>						<!-- strong mana potion -->
+		<item id="5878" chance="2500"/>						<!-- minotaur leather -->
+		<item id="2147" chance="500"/>						<!-- small ruby -->
+		<item id="2149" countmax="1" chance="500"/>						<!-- small emerald -->
+		<item id="2150" countmax="1" chance="500"/>						<!-- small amethyst -->
+		<item id="9970" chance="5000"/>						<!-- small topaz -->
+		<item id="12428" countmax="2" chance="4700"/>		<!-- minotaur horn -->
+		<!-- cowtana -->
+		<item id="2207" chance="1100"/>						<!-- sword ring -->
+		<!-- mooh'tah plate -->
+		<item id="2515" chance="1200"/>						<!-- guardian shield -->
+		<item id="2477" chance="710"/>						<!-- knight legs -->
+		<item id="5911" chance="150"/>						<!-- red piece of cloth -->
+		<item id="2476" chance="490"/>						<!-- knight armor -->
+		<item id="7401" chance="150"/>						<!-- minotaur trophy -->
+	</loot>
+</monster>

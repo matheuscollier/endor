@@ -13,55 +13,36 @@ monster.outfit = {
 	lookMount = 0
 }
 
-monster.raceId = 256
-monster.Bestiary = {
-	class = "Undead",
-	race = BESTY_RACE_UNDEAD,
-	toKill = 500,
-	FirstUnlock = 25,
-	SecondUnlock = 250,
-	CharmsPoints = 15,
-	Stars = 2,
-	Occurrence = 0,
-	Locations = "Nargor Undead Cave, Goroma, Treasure Island, Drefia, The Cave, Chyllfroest."
-	}
-
 monster.health = 190
 monster.maxHealth = 190
 monster.race = "undead"
 monster.corpse = 6070
-monster.speed = 176
+monster.speed = 180
 monster.manaCost = 0
 monster.maxSummons = 0
 
 monster.changeTarget = {
-	interval = 5000,
-	chance = 0
-}
-
-monster.strategiesTarget = {
-	nearest = 100,
+	interval = 2000,
+	chance = 5
 }
 
 monster.flags = {
-	summonable = false,
-	attackable = true,
-	hostile = true,
-	convinceable = false,
-	pushable = true,
-	rewardBoss = false,
+	isSummonable = false,
+	isAttackable = true,
+	isHostile = true,
+	isConvinceable = false,
+	isPushable = false,
+	isBoss = false,
 	illusionable = false,
 	canPushItems = true,
 	canPushCreatures = false,
-	staticAttackChance = 90,
+	staticAttackChance = 50,
 	targetDistance = 1,
 	runHealth = 20,
-	healthHidden = false,
-	isBlockable = false,
-	canWalkOnEnergy = false,
-	canWalkOnFire = false,
-	canWalkOnPoison = false,
-	pet = false
+	isHealthHidden = false,
+	canwalkonenergy = false,
+	canwalkonfire = false,
+	canwalkonpoison = false
 }
 
 monster.light = {
@@ -75,23 +56,20 @@ monster.voices = {
 }
 
 monster.loot = {
-	{name = "gold coin", chance = 48000, maxCount = 25},
-	{id = 2229, chance = 4460},
-	{id = 2230, chance = 4250},
-	{id = 2231, chance = 5140},
-	{id = 2376, chance = 550},
-	{name = "short sword", chance = 1003},
-	{name = "bone club", chance = 960},
-	{name = "spooky blue eye", chance = 4730}
+	{id = 2229, chance = 9727, maxCount = 2},
+	{id = 2231, chance = 14000},
+	{id = 2376, chance = 10000},
+	{id = 2449, chance = 8000},
+	{id = 2148, chance = 40000, maxCount = 25}
 }
 
 monster.attacks = {
-	{name ="melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -50}
+	{name ="melee", interval = 2000, chance = 100, minDamage = -30, maxDamage = -70}
 }
 
 monster.defenses = {
-	defense = 15,
-	armor = 15
+	defense = 0,
+	armor = 0
 }
 
 monster.elements = {
@@ -103,8 +81,8 @@ monster.elements = {
 	{type = COMBAT_MANADRAIN, percent = 0},
 	{type = COMBAT_DROWNDAMAGE, percent = 0},
 	{type = COMBAT_ICEDAMAGE, percent = 0},
-	{type = COMBAT_HOLYDAMAGE , percent = -25},
-	{type = COMBAT_DEATHDAMAGE , percent = 100}
+	{type = COMBAT_HOLYDAMAGE , percent = 0},
+	{type = COMBAT_DEATHDAMAGE , percent = 0}
 }
 
 monster.immunities = {

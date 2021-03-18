@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<npc name="Grizzly Adams" script="task_system.lua" walkinterval="2000" floorchange="0">
+	<health now="100" max="100" />
+	<look type="144" head="116" body="78" legs="94" feet="78" addons="3" />
+<parameters>
+<parameter key="message_greet" value="Ola {|PLAYERNAME|}, sou Grizzly Adams, O Provedor de Tasks. Estou precisando de ajuda para eliminar alguns monstros e ofereco recompensa para os bravos guerreiros capazes de cumprir essas perigosas tarefas. Voce gostaria de receber uma {task}?" />
+</parameters>
+</npc>

@@ -1,7 +1,7 @@
 local mType = Game.createMonsterType("Pirate Buccaneer")
 local monster = {}
 
-monster.description = "a pirate buccaneer"
+monster.description = "um pirate buccaneer"
 monster.experience = 250
 monster.outfit = {
 	lookType = 97,
@@ -13,49 +13,32 @@ monster.outfit = {
 	lookMount = 0
 }
 
-monster.raceId = 249
-monster.Bestiary = {
-	class = "Human",
-	race = BESTY_RACE_HUMAN,
-	toKill = 1000,
-	FirstUnlock = 50,
-	SecondUnlock = 500,
-	CharmsPoints = 25,
-	Stars = 3,
-	Occurrence = 0,
-	Locations = "Nargor, Tyrsung (on the ship), Yalahar (Foreign Quarter), Krailos Steppe."
-	}
-
 monster.health = 425
 monster.maxHealth = 425
 monster.race = "blood"
 monster.corpse = 20471
-monster.speed = 218
-monster.manaCost = 595
+monster.speed = 180
+monster.manaCost = 0
 monster.maxSummons = 0
 
 monster.changeTarget = {
-	interval = 4000,
-	chance = 15
-}
-
-monster.strategiesTarget = {
-	nearest = 100,
+	interval = 2000,
+	chance = 5
 }
 
 monster.flags = {
-	summonable = true,
+	summonable = false,
 	attackable = true,
 	hostile = true,
-	convinceable = true,
+	convinceable = false,
 	pushable = false,
 	rewardBoss = false,
 	illusionable = false,
 	canPushItems = true,
-	canPushCreatures = true,
-	staticAttackChance = 90,
+	canPushCreatures = false,
+	staticAttackChance = 50,
 	targetDistance = 1,
-	runHealth = 50,
+	runHealth = 0,
 	healthHidden = false,
 	isBlockable = false,
 	canWalkOnEnergy = false,
@@ -72,52 +55,41 @@ monster.light = {
 monster.voices = {
 	interval = 5000,
 	chance = 10,
-	{text = "Give up!", yell = false},
-	{text = "Hiyaa", yell = false},
-	{text = "Plundeeeeer!", yell = false}
+	{text = "Give up!", yell = false}
 }
 
 monster.loot = {
-	{id = 2050, chance = 10190},
-	{name = "gold coin", chance = 67740, maxCount = 59},
-	{name = "worn leather boots", chance = 9900},
-	{name = "sabre", chance = 10100},
-	{name = "throwing knife", chance = 9000, maxCount = 5},
-	{name = "plate armor", chance = 1130},
-	{name = "battle shield", chance = 3850},
-	{id = 5091, chance = 1000},
-	{name = "rum flask", chance = 120},
-	{id = 5792, chance = 40},
-	{name = "pirate backpack", chance = 430},
-	{name = "pirate shirt", chance = 1200},
-	{name = "hook", chance = 450},
-	{name = "eye patch", chance = 420},
-	{name = "peg leg", chance = 510},
-	{name = "strong health potion", chance = 670},
-	{name = "compass", chance = 9780}
+	{id = 11219, chance = 800},
+	{id = 2385, chance = 2500},
+	{id = 2463, chance = 650},
+	{id = 2238, chance = 3000},
+	{id = 6097, chance = 3000},
+	{id = 6098, chance = 2000},
+	{id = 6126, chance = 1000},
+	{id = 2148, chance = 40000, maxCount = 40}
 }
 
 monster.attacks = {
-	{name ="melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -160},
-	{name ="combat", interval = 2000, chance = 20, type = COMBAT_PHYSICALDAMAGE, minDamage = 0, maxDamage = -100, range = 4, shootEffect = CONST_ANI_THROWINGKNIFE, target = false}
+	{name ="melee", interval = 2000, chance = 100, minDamage = -50, maxDamage = -125},
+	{name ="combat", interval = 3150, chance = 99, minDamage = -25, maxDamage = -66, type = COMBAT_PHYSICALDAMAGE, range = 5, ShootEffect = CONST_ANI_THROWINGKNIFE, target = false}
 }
 
 monster.defenses = {
-	defense = 30,
-	armor = 30
+	defense = 0,
+	armor = 0
 }
 
 monster.elements = {
-	{type = COMBAT_PHYSICALDAMAGE, percent = -10},
-	{type = COMBAT_ENERGYDAMAGE, percent = -5},
-	{type = COMBAT_EARTHDAMAGE, percent = 10},
-	{type = COMBAT_FIREDAMAGE, percent = -5},
+	{type = COMBAT_PHYSICALDAMAGE, percent = 0},
+	{type = COMBAT_ENERGYDAMAGE, percent = 0},
+	{type = COMBAT_EARTHDAMAGE, percent = 0},
+	{type = COMBAT_FIREDAMAGE, percent = 0},
 	{type = COMBAT_LIFEDRAIN, percent = 0},
 	{type = COMBAT_MANADRAIN, percent = 0},
 	{type = COMBAT_DROWNDAMAGE, percent = 0},
-	{type = COMBAT_ICEDAMAGE, percent = -5},
-	{type = COMBAT_HOLYDAMAGE , percent = 10},
-	{type = COMBAT_DEATHDAMAGE , percent = -5}
+	{type = COMBAT_ICEDAMAGE, percent = 0},
+	{type = COMBAT_HOLYDAMAGE , percent = 0},
+	{type = COMBAT_DEATHDAMAGE , percent = 0}
 }
 
 monster.immunities = {

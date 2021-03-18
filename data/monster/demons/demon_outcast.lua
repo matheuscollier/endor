@@ -1,8 +1,8 @@
 local mType = Game.createMonsterType("Demon Outcast")
 local monster = {}
 
-monster.description = "a demon outcast"
-monster.experience = 6200
+monster.description = "um demon outcast"
+monster.experience = 5800
 monster.outfit = {
 	lookType = 590,
 	lookHead = 0,
@@ -23,7 +23,7 @@ monster.Bestiary = {
 	CharmsPoints = 50,
 	Stars = 4,
 	Occurrence = 0,
-	Locations = "Roshamuul Prison."
+	Locations = "Roshamuul."
 	}
 
 monster.health = 6900
@@ -86,39 +86,34 @@ monster.voices = {
 }
 
 monster.loot = {
-	{name = "small diamond", chance = 10000, maxCount = 5},
-	{name = "small sapphire", chance = 10000, maxCount = 5},
-	{name = "small ruby", chance = 12000, maxCount = 5},
-	{name = "gold coin", chance = 100000, maxCount = 100},
-	{name = "small emerald", chance = 10000, maxCount = 5},
-	{name = "platinum coin", chance = 100000, maxCount = 6},
-	{name = "might ring", chance = 910},
-	{name = "stealth ring", chance = 1300},
-	{name = "platinum amulet", chance = 1000},
-	{name = "ring of healing", chance = 3000},
-	{name = "giant sword", chance = 2000},
-	{name = "ice rapier", chance = 660},
-	{name = "devil helmet", chance = 910},
-	{name = "crusader helmet", chance = 740},
-	{name = "crown shield", chance = 740},
-	{name = "demon shield", chance = 170},
-	{name = "fire mushroom", chance = 20600, maxCount = 6},
-	{id = 5906, chance = 1000},
-	{name = "assassin star", chance = 8340, maxCount = 10},
-	{name = "demonrage sword", chance = 350},
-	{name = "great mana potion", chance = 18000, maxCount = 2},
-	{name = "ultimate health potion", chance = 20500, maxCount = 3},
-	{name = "small topaz", chance = 9300, maxCount = 5},
-	{name = "cluster of solace", chance = 550}
+	{id = 2148, chance = 100000, maxCount = 100},
+	{id = 2152, chance = 100000, maxCount = 6},
+	{id = 2145, chance = 5000, maxCount = 3},
+	{id = 2146, chance = 600},
+	{id = 2147, chance = 500},
+	{id = 2149, chance = 500},
+	{id = 2165, chance = 1300},
+	{id = 2171, chance = 1000},
+	{id = 2214, chance = 3000},
+	{id = 2393, chance = 1200},
+	{id = 2462, chance = 910},
+	{id = 2497, chance = 540},
+	{id = 2519, chance = 350},
+	{id = 2520, chance = 80},
+	{id = 6550, chance = 800},
+	{id = 2795, chance = 20600, maxCount = 6},
+	{id = 7368, chance = 8340, maxCount = 10},
+	{id = 9970, chance = 300, maxCount = 5},
+	{id = 22396, chance = 180}
 }
 
 monster.attacks = {
-	{name ="melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -400},
-	{name ="combat", interval = 2000, chance = 10, type = COMBAT_ENERGYDAMAGE, minDamage = -250, maxDamage = -450, length = 6, spread = 3, effect = CONST_ME_PURPLEENERGY, target = true},
-	{name ="combat", interval = 2000, chance = 10, type = COMBAT_ENERGYDAMAGE, minDamage = -350, maxDamage = -550, length = 8, spread = 3, effect = CONST_ME_YELLOWENERGY, target = true},
-	{name ="combat", interval = 2000, chance = 20, type = COMBAT_ENERGYDAMAGE, minDamage = -100, maxDamage = -250, radius = 3, effect = CONST_ME_ENERGYHIT, target = true},
-	{name ="demon outcast skill reducer", interval = 2000, chance = 10, range = 5, target = false},
-	{name ="combat", interval = 2000, chance = 10, type = COMBAT_MANADRAIN, minDamage = -80, maxDamage = -150, radius = 4, effect = CONST_ME_MAGIC_GREEN, target = false}
+	{name ="melee", interval = 2000, chance = 100, minDamage = -190, maxDamage = -250},
+	{name ="combat", interval = 2000, chance = 10, minDamage = -250, maxDamage = -350, type = COMBAT_ENERGYDAMAGE, length = 6, spread = 3, effect = CONST_ME_PURPLEENERGY, target = true},
+	{name ="combat", interval = 2000, chance = 10, minDamage = -350, maxDamage = -420, type = COMBAT_ENERGYDAMAGE, length = 8, spread = 3, effect = CONST_ME_YELLOWENERGY, target = true},
+	{name ="combat", interval = 2000, chance = 20, minDamage = -180, maxDamage = -250, type = COMBAT_ENERGYDAMAGE, effect = CONST_ME_ENERGYHIT, target = true},
+	{name ="demon outcast skill reducer", interval = 2000, chance = 10, range = 5, target = false},																							
+	{name ="combat", interval = 2000, chance = 10, minDamage = -80, maxDamage = -150, type = COMBAT_MANADRAIN, effect = CONST_ME_MAGIC_GREEN, target = false}
 }
 
 monster.defenses = {
@@ -137,7 +132,7 @@ monster.elements = {
 	{type = COMBAT_DROWNDAMAGE, percent = 0},
 	{type = COMBAT_ICEDAMAGE, percent = 5},
 	{type = COMBAT_HOLYDAMAGE , percent = -5},
-	{type = COMBAT_DEATHDAMAGE , percent = 5}
+	{type = COMBAT_DEATHDAMAGE , percent = 45}
 }
 
 monster.immunities = {

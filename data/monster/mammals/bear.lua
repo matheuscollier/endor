@@ -1,7 +1,7 @@
 local mType = Game.createMonsterType("Bear")
 local monster = {}
 
-monster.description = "a bear"
+monster.description = "um bear"
 monster.experience = 23
 monster.outfit = {
 	lookType = 16,
@@ -13,41 +13,21 @@ monster.outfit = {
 	lookMount = 0
 }
 
-monster.raceId = 16
-monster.Bestiary = {
-	class = "Mammal",
-	race = BESTY_RACE_MAMMAL,
-	toKill = 500,
-	FirstUnlock = 25,
-	SecondUnlock = 250,
-	CharmsPoints = 15,
-	Stars = 2,
-	Occurrence = 0,
-	Locations = "Several spawns near Kazordoon, Femor Hills, north of Thais, near the White Flower Temple, \z
-		Rookgaard Bear Cave, Bear Room Quest in Rookgaard, Rookgaard Bear Mountain, South of Villa Scapula, \z
-		Ferngrims Gate, North of Carlin, Fields of Glory, Edron Troll Cave, south of Venore, Desert Dungeon, \z
-		first floor of the Orc Fort mountain and west of Outlaw Camp."
-	}
-
 monster.health = 80
 monster.maxHealth = 80
 monster.race = "blood"
-monster.corpse = 5975
-monster.speed = 156
+monster.corpse = 2849
+monster.speed = 150
 monster.manaCost = 300
 monster.maxSummons = 0
 
 monster.changeTarget = {
-	interval = 4000,
+	interval = 2000,
 	chance = 0
 }
 
-monster.strategiesTarget = {
-	nearest = 100,
-}
-
 monster.flags = {
-	summonable = true,
+	summonable = false,
 	attackable = true,
 	hostile = true,
 	convinceable = true,
@@ -56,7 +36,7 @@ monster.flags = {
 	illusionable = true,
 	canPushItems = false,
 	canPushCreatures = false,
-	staticAttackChance = 90,
+	staticAttackChance = 95,
 	targetDistance = 1,
 	runHealth = 15,
 	healthHidden = false,
@@ -80,19 +60,19 @@ monster.voices = {
 }
 
 monster.loot = {
-	{name = "meat", chance = 39750, maxCount = 4},
-	{name = "ham", chance = 20000, maxCount = 3},
-	{name = "bear paw", chance = 2000},
-	{name = "honeycomb", chance = 460}
+	{id = 5896, chance = 8000},
+	{id = 5902, chance = 70000},
+	{id = 2671, chance = 90000, maxCount = 3},
+	{id = 2666, chance = 90000, maxCount = 3}
 }
 
 monster.attacks = {
-	{name ="melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -25}
+	{name ="melee", interval = 2000, chance = 100, minDamage = -5, maxDamage = -15}
 }
 
 monster.defenses = {
-	defense = 10,
-	armor = 10
+	defense = 0,
+	armor = 0
 }
 
 monster.elements = {
@@ -103,9 +83,9 @@ monster.elements = {
 	{type = COMBAT_LIFEDRAIN, percent = 0},
 	{type = COMBAT_MANADRAIN, percent = 0},
 	{type = COMBAT_DROWNDAMAGE, percent = 0},
-	{type = COMBAT_ICEDAMAGE, percent = -10},
-	{type = COMBAT_HOLYDAMAGE , percent = 10},
-	{type = COMBAT_DEATHDAMAGE , percent = -5}
+	{type = COMBAT_ICEDAMAGE, percent = 0},
+	{type = COMBAT_HOLYDAMAGE , percent = 0},
+	{type = COMBAT_DEATHDAMAGE , percent = 0}
 }
 
 monster.immunities = {

@@ -2,7 +2,7 @@ local mType = Game.createMonsterType("Acid Blob")
 local monster = {}
 
 monster.description = "an acid blob"
-monster.experience = 250
+monster.experience = 320
 monster.outfit = {
 	lookType = 314,
 	lookHead = 0,
@@ -13,37 +13,17 @@ monster.outfit = {
 	lookMount = 0
 }
 
-monster.raceId = 513
-monster.Bestiary = {
-	class = "Slime",
-	race = BESTY_RACE_SLIME,
-	toKill = 1000,
-	FirstUnlock = 50,
-	SecondUnlock = 500,
-	CharmsPoints = 25,
-	Stars = 3,
-	Occurrence = 0,
-	Locations = "Alchemist Quarter, Deeper Banuta."
-	}
-
-monster.health = 250
-monster.maxHealth = 250
+monster.health = 350
+monster.maxHealth = 350
 monster.race = "venom"
-monster.corpse = 9962
-monster.speed = 120
+monster.corpse = 9965
+monster.speed = 210
 monster.manaCost = 0
-monster.maxSummons = 3
+monster.maxSummons = 2
 
 monster.changeTarget = {
 	interval = 5000,
 	chance = 0
-}
-
-monster.strategiesTarget = {
-	nearest = 70,
-	health = 10,
-	damage = 10,
-	random = 10,
 }
 
 monster.flags = {
@@ -63,7 +43,7 @@ monster.flags = {
 	isBlockable = false,
 	canWalkOnEnergy = false,
 	canWalkOnFire = false,
-	canWalkOnPoison = true,
+	canWalkOnPoison = false,
 	pet = false
 }
 
@@ -73,40 +53,37 @@ monster.light = {
 }
 
 monster.summons = {
-	{name = "Acid Blob", chance = 10, interval = 2000}
+	{name = "Acid Blob", chance = 8, interval = 4000}
 }
 
 monster.voices = {
 	interval = 5000,
 	chance = 10,
-	{text = "Kzzchhhh", yell = false}
 }
 
 monster.loot = {
-	{name = "glob of acid slime", chance = 18520}
 }
 
 monster.attacks = {
-	{name ="melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -80},
-	{name ="combat", interval = 2000, chance = 30, type = COMBAT_EARTHDAMAGE, minDamage = -10, maxDamage = -20, radius = 4, effect = CONST_ME_HITBYPOISON, target = false},
-	{name ="combat", interval = 2000, chance = 15, type = COMBAT_EARTHDAMAGE, minDamage = -40, maxDamage = -60, length = 5, spread = 3, effect = CONST_ME_GREEN_RINGS, target = false},
-	{name ="combat", interval = 2000, chance = 10, type = COMBAT_EARTHDAMAGE, range = 7, shootEffect = CONST_ANI_POISON, target = true}
+	{name ="melee", interval = 2000, chance = 100, minDamage = -90, maxDamage = -130},
+	{name ="combat", interval = 3000, chance = 25, minDamage = -10, maxDamage = -22, type = COMBAT_EARTHDAMAGE, effect = CONST_ME_HITBYPOISON, target = false},
+	{name ="combat", interval = 3000, chance = 8, minDamage = -49, maxDamage = -54, type = COMBAT_EARTHDAMAGE, length = 5, spread = 3, effect = CONST_ME_POISONAREA, target = false}
 }
 
 monster.defenses = {
-	defense = 1,
-	armor = 1
+	defense = 0,
+	armor = 0
 }
 
 monster.elements = {
-	{type = COMBAT_PHYSICALDAMAGE, percent = 10},
-	{type = COMBAT_ENERGYDAMAGE, percent = 10},
+	{type = COMBAT_PHYSICALDAMAGE, percent = 5},
+	{type = COMBAT_ENERGYDAMAGE, percent = -10},
 	{type = COMBAT_EARTHDAMAGE, percent = 100},
-	{type = COMBAT_FIREDAMAGE, percent = -10},
+	{type = COMBAT_FIREDAMAGE, percent = -5},
 	{type = COMBAT_LIFEDRAIN, percent = 0},
 	{type = COMBAT_MANADRAIN, percent = 0},
 	{type = COMBAT_DROWNDAMAGE, percent = 0},
-	{type = COMBAT_ICEDAMAGE, percent = 20},
+	{type = COMBAT_ICEDAMAGE, percent = 8},
 	{type = COMBAT_HOLYDAMAGE , percent = 0},
 	{type = COMBAT_DEATHDAMAGE , percent = 100}
 }

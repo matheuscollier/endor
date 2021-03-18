@@ -1,8 +1,8 @@
 local mType = Game.createMonsterType("Behemoth")
 local monster = {}
 
-monster.description = "a behemoth"
-monster.experience = 2500
+monster.description = "um behemoth"
+monster.experience = 2900
 monster.outfit = {
 	lookType = 55,
 	lookHead = 0,
@@ -17,15 +17,13 @@ monster.raceId = 55
 monster.Bestiary = {
 	class = "Giant",
 	race = BESTY_RACE_GIANT,
-	toKill = 1000,
-	FirstUnlock = 50,
-	SecondUnlock = 500,
-	CharmsPoints = 25,
+	toKill = 1500,
+	FirstUnlock = 100,
+	SecondUnlock = 750,
+	CharmsPoints = 50,
 	Stars = 3,
 	Occurrence = 0,
-	Locations = "Cyclopolis, deepest part of Tarpit Tomb after the flame, Forbidden Lands, Vandura Mountain, \z
-		Deeper Banuta, Serpentine Tower (unreachable), deep into the Formorgar Mines, Arena and Zoo Quarter, \z
-		The Dark Path, Lower Spike, Chyllfroest, Medusa Tower and Underground Glooth Factory (west side)."
+	Locations = "x."
 	}
 
 monster.health = 4000
@@ -76,41 +74,26 @@ monster.voices = {
 	interval = 5000,
 	chance = 10,
 	{text = "You're so little!", yell = false},
-	{text = "Human flesh -  delicious!", yell = false},
-	{text = "Crush the intruders!", yell = false}
+	{text = "Human flesh - delicious!", yell = false},
+	{text = "Crush the intruders!", yell = true}
 }
 
 monster.loot = {
-	{id = 2023, chance = 100},
-	{name = "crystal necklace", chance = 2530},
-	{name = "gold coin", chance = 595300, maxCount = 100},
-	{name = "gold coin", chance = 40000, maxCount = 99},
-	{name = "small amethyst", chance = 6380, maxCount = 5},
-	{name = "platinum coin", chance = 59800, maxCount = 5},
-	{name = "strange symbol", chance = 750},
-	{id = 2231, chance = 670},
-	{name = "two handed sword", chance = 5980},
-	{name = "double axe", chance = 10510},
-	{name = "giant sword", chance = 1006},
-	{name = "crowbar", chance = 100},
-	{name = "war axe", chance = 50},
-	{name = "plate armor", chance = 3930},
-	{name = "dark armor", chance = 4370},
-	{id = 2553, chance = 650},
-	{name = "steel boots", chance = 380},
-	{name = "meat", chance = 30000, maxCount = 6},
-	{name = "perfect behemoth fang", chance = 1090},
-	{name = "behemoth claw", chance = 430},
-	{name = "assassin star", chance = 9750, maxCount = 5},
-	{id = 7396, chance = 170},
-	{name = "titan axe", chance = 90},
-	{name = "great health potion", chance = 5120},
-	{name = "battle stone", chance = 14000}
+	{id = 12403, chance = 1800},
+	{id = 5893, chance = 5000},
+	{id = 2393, chance = 350},
+	{id = 2666, chance = 20000, maxCount = 6},
+	{id = 2645, chance = 450},
+	{id = 2174, chance = 800},
+	{id = 2148, chance = 50000, maxCount = 80},
+	{id = 2377, chance = 3200},
+	{id = 2125, chance = 450},
+	{id = 2387, chance = 1200}
 }
 
 monster.attacks = {
-	{name ="melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -450},
-	{name ="combat", interval = 2000, chance = 15, type = COMBAT_PHYSICALDAMAGE, minDamage = 0, maxDamage = -200, range = 7, shootEffect = CONST_ANI_LARGEROCK, target = false}
+	{name ="melee", interval = 2000, chance = 100, minDamage = -146, maxDamage = -350},
+	{name ="combat", interval = 2000, chance = 35, minDamage = -120, maxDamage = -450, type = COMBAT_PHYSICALDAMAGE, range = 6, ShootEffect = CONST_ANI_LARGEROCK, target = false}
 }
 
 monster.defenses = {

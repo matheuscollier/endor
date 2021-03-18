@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Oxyurus" nameDescription="um oxyurus" race="blood" experience="13500" speed="270" manacost="0">
+	<health now="12500" max="12500"/>
+    <look type="295" corpse="8947"/>
+    <targetchange interval="6000" chance="35"/>
+    <strategy attack="100" defense="0"/>
+	
+    <flags>
+      <flag summonable="0"/>
+      <flag attackable="1"/>
+      <flag hostile="1"/>
+      <flag illusionable="0"/>
+      <flag convinceable="0"/>
+      <flag pushable="0"/>
+      <flag canpushitems="1"/>
+      <flag staticattack="50"/>
+      <flag targetDistance="1"/>
+      <flag runonhealth="0"/>
+    </flags>
+	
+<elements><element physicalPercent="15"/>
+	<element icePercent="70"/>
+	<element poisonPercent="90"/>
+	<element firePercent="10"/>
+	<element energyPercent="50"/>
+	<element holyPercent="35"/>
+	<element deathPercent="90"/>
+</elements>
+
+<immunities>
+	<immunity drown="1"/>
+	<immunity lifedrain="1"/>
+    <immunity paralyze="1"/>
+    <immunity outfit="1"/>
+    <immunity drunk="1"/>
+    <immunity invisible="1"/>
+</immunities>
+	
+    <attacks>
+		<attack name="melee" interval="2000" min="-336" max="-552"/>
+			
+		<attack name="earth" interval="2000" chance="25" range="7" target="1" min="-415" max="-730">
+			<attribute key="shootEffect" value="earth"/>
+			<attribute key="areaEffect" value="greenbubble"/>
+		</attack>
+	
+		<attack name="earth" interval="2500" chance="45" length="5" spread="0" target="0" min="-275" max="-490">
+			<attribute key="areaEffect" value="bigplants"/>
+		</attack>
+	
+		<attack name="speed" interval="2100" chance="20" range="7" target="1" speedchange="-800" duration="3000">
+			<attribute key="areaEffect" value="smallplants"/>
+		</attack>
+	</attacks>
+	
+    <defenses armor="0" defense="0">
+		
+	</defenses>
+	
+	<loot>
+    <item id="2527" chance="3150"/> 
+	<item id="2475" chance="750"/> 
+	<item id="11355" chance="600"/> 
+	<item id="2477" chance="900"/> 
+	<item id="7452" chance="300"/> 
+	<item id="3976" countmax="45" chance1="20000"/> 
+	<item id="2148" countmax="320" chance1="25000"/>
+	<item id="2148" countmax="70" chance1="50000"/>
+	<item id="2150" countmax="2" chance1="300"/> 
+	<item id="2144" countmax="2" chance1="300"/> 
+	<item id="2143" countmax="2" chance1="300"/> 
+	<item id="2145" countmax="2" chance1="300"/> 
+    </loot>
+	
+</monster>
+
+
+

@@ -36,7 +36,7 @@ local foundItem = data[item.itemid]
 			player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "Your health has been refilled.")
 		elseif foundItem.Type == "skill" then
 			player:addCondition(lemon)
-			player:sendTextMessage(MESSAGE_FAILURE, "You feel more focused.")
+			player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You feel more focused.")
 		end
 		player:say("Mmmm.",TALKTYPE_ORANGE_1)
 		item:remove(1)

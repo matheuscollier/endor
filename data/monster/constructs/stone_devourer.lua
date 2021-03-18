@@ -1,8 +1,8 @@
 local mType = Game.createMonsterType("Stone Devourer")
 local monster = {}
 
-monster.description = "a stone devourer"
-monster.experience = 2900
+monster.description = "stone devourer"
+monster.experience = 12000
 monster.outfit = {
 	lookType = 486,
 	lookHead = 0,
@@ -23,11 +23,11 @@ monster.Bestiary = {
 	CharmsPoints = 50,
 	Stars = 4,
 	Occurrence = 1,
-	Locations = "Warzone 1."
+	Locations = "x."
 	}
-
-monster.health = 4200
-monster.maxHealth = 4200
+	
+monster.health = 9000
+monster.maxHealth = 9000
 monster.race = "undead"
 monster.corpse = 18375
 monster.speed = 300
@@ -43,7 +43,7 @@ monster.strategiesTarget = {
 	nearest = 70,
 	health = 10,
 	damage = 10,
-	random = 10,
+	random = 10
 }
 
 monster.flags = {
@@ -55,10 +55,10 @@ monster.flags = {
 	rewardBoss = false,
 	illusionable = false,
 	canPushItems = true,
-	canPushCreatures = false,
-	staticAttackChance = 80,
+	canPushCreatures = true,
+	staticAttackChance = 90,
 	targetDistance = 1,
-	runHealth = 1,
+	runHealth = 0,
 	healthHidden = false,
 	isBlockable = false,
 	canWalkOnEnergy = false,
@@ -79,53 +79,41 @@ monster.voices = {
 }
 
 monster.loot = {
-	{name = "gold coin", chance = 100000, maxCount = 100},
-	{name = "platinum coin", chance = 92000, maxCount = 7},
-	{name = "stone skin amulet", chance = 2270},
-	{name = "dwarven ring", chance = 2840},
-	{name = "giant sword", chance = 570},
-	{name = "crystal mace", chance = 850},
-	{name = "war axe", chance = 920},
-	{name = "sapphire hammer", chance = 1490},
-	{name = "spiked squelcher", chance = 1490},
-	{name = "glorious axe", chance = 3340},
-	{name = "strong health potion", chance = 13840, maxCount = 2},
-	{name = "strong mana potion", chance = 14900, maxCount = 2},
-	{name = "great mana potion", chance = 15610, maxCount = 2},
-	{name = "mana potion", chance = 15050, maxCount = 2},
-	{name = "ultimate health potion", chance = 14410},
-	{id = 8748, chance = 11360},
-	{name = "ancient stone", chance = 12850},
-	{name = "crystalline arrow", chance = 9940, maxCount = 10},
-	{name = "green crystal splinter", chance = 6960},
-	{name = "cyan crystal fragment", chance = 6810},
-	{name = "stone nose", chance = 18679},
-	{name = "crystalline spikes", chance = 16320}
+	{id = 2148, chance = 99900, maxCount = 200},
+	{id = 18419, chance = 2500, maxCount = 5},
+	{id = 18421, chance = 2500, maxCount = 5},
+	{id = 12658, chance = 600},
+	{id = 12659, chance = 2000},
+	{id = 2496, chance = 90},
+	{id = 2536, chance = 220},
+	{id = 8880, chance = 120},
+	{id = 2444, chance = 150}
 }
 
 monster.attacks = {
-	{name ="melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -990},
-	{name ="combat", interval = 2000, chance = 15, type = COMBAT_EARTHDAMAGE, minDamage = -230, maxDamage = -460, range = 7, shootEffect = CONST_ANI_SMALLEARTH, effect = CONST_ME_STONES, target = true},
-	{name ="combat", interval = 2000, chance = 15, type = COMBAT_PHYSICALDAMAGE, minDamage = 0, maxDamage = -650, range = 7, shootEffect = CONST_ANI_LARGEROCK, target = true},
-	{name ="combat", interval = 2000, chance = 15, type = COMBAT_LIFEDRAIN, minDamage = -150, maxDamage = -260, length = 5, spread = 3, effect = CONST_ME_STONES, target = false}
+	{name ="melee", interval = 2000, chance = 100, skill = 100, attack = 170},
+	{name ="combat", interval = 2000, chance = 30, minDamage = -200, maxDamage = -300, type = COMBAT_EARTHDAMAGE, effect = CONST_ME_POISONAREA, target = false},
+	{name ="combat", interval = 5000, chance = 5, minDamage = -200, maxDamage = -350, type = COMBAT_ENERGYDAMAGE, effect = CONST_ME_ENERGYHIT, target = false},
+	{name ="combat", interval = 2000, chance = 15, type = COMBAT_LIFEDRAIN, minDamage = -150, maxDamage = -260, length = 5, spread = 3, effect = CONST_ME_STONES, target = false}																																										  
 }
 
 monster.defenses = {
 	defense = 35,
-	armor = 35
+	armor = 35,
+	{name ="combat", interval = 1000, chance = 10, minDamage = 100, maxDamage = 250, type = COMBAT_HEALING, effect = CONST_ME_MAGIC_BLUE, target = false}
 }
 
 monster.elements = {
-	{type = COMBAT_PHYSICALDAMAGE, percent = 1},
-	{type = COMBAT_ENERGYDAMAGE, percent = 30},
+	{type = COMBAT_PHYSICALDAMAGE, percent = 50},
+	{type = COMBAT_ENERGYDAMAGE, percent = 99},
 	{type = COMBAT_EARTHDAMAGE, percent = 100},
 	{type = COMBAT_FIREDAMAGE, percent = 100},
 	{type = COMBAT_LIFEDRAIN, percent = 0},
 	{type = COMBAT_MANADRAIN, percent = 0},
 	{type = COMBAT_DROWNDAMAGE, percent = 0},
-	{type = COMBAT_ICEDAMAGE, percent = 30},
-	{type = COMBAT_HOLYDAMAGE , percent = 30},
-	{type = COMBAT_DEATHDAMAGE , percent = 1}
+	{type = COMBAT_ICEDAMAGE, percent = 25},
+	{type = COMBAT_HOLYDAMAGE , percent = 25},
+	{type = COMBAT_DEATHDAMAGE , percent = 30}
 }
 
 monster.immunities = {

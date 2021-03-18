@@ -1,7 +1,7 @@
 local mType = Game.createMonsterType("Dog")
 local monster = {}
 
-monster.description = "a dog"
+monster.description = "um dog"
 monster.experience = 0
 monster.outfit = {
 	lookType = 32,
@@ -13,40 +13,21 @@ monster.outfit = {
 	lookMount = 0
 }
 
-monster.raceId = 32
-monster.Bestiary = {
-	class = "Mammal",
-	race = BESTY_RACE_MAMMAL,
-	toKill = 25,
-	FirstUnlock = 5,
-	SecondUnlock = 10,
-	CharmsPoints = 1,
-	Stars = 0,
-	Occurrence = 0,
-	Locations = "Isle of the Kings, North of the Thais temple, Lubos house, west of Carlin (with sheep), \z
-		Edron north of castle and one south towards Ivory Towers, Liberty Bay (Silverhand Manor), \z
-		Mintwallin central park and on the way to the old Mintwallin area, Factory Quarter (Yalahar)."
-	}
-
 monster.health = 20
 monster.maxHealth = 20
 monster.race = "blood"
-monster.corpse = 5971
+monster.corpse = 2839
 monster.speed = 124
 monster.manaCost = 220
 monster.maxSummons = 0
 
 monster.changeTarget = {
-	interval = 4000,
+	interval = 2000,
 	chance = 0
 }
 
-monster.strategiesTarget = {
-	nearest = 100,
-}
-
 monster.flags = {
-	summonable = true,
+	summonable = false,
 	attackable = true,
 	hostile = false,
 	convinceable = true,
@@ -55,7 +36,7 @@ monster.flags = {
 	illusionable = true,
 	canPushItems = false,
 	canPushCreatures = false,
-	staticAttackChance = 90,
+	staticAttackChance = 95,
 	targetDistance = 1,
 	runHealth = 8,
 	healthHidden = false,
@@ -80,9 +61,13 @@ monster.voices = {
 monster.loot = {
 }
 
+monster.attacks = {
+	{name ="melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = 0}
+}
+
 monster.defenses = {
-	defense = 5,
-	armor = 5
+	defense = 0,
+	armor = 0
 }
 
 monster.elements = {

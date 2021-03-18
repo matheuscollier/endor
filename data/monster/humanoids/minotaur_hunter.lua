@@ -2,7 +2,7 @@ local mType = Game.createMonsterType("Minotaur Hunter")
 local monster = {}
 
 monster.description = "a minotaur hunter"
-monster.experience = 1700
+monster.experience = 16000
 monster.outfit = {
 	lookType = 612,
 	lookHead = 0,
@@ -13,56 +13,36 @@ monster.outfit = {
 	lookMount = 0
 }
 
-monster.raceId = 1052
-monster.Bestiary = {
-	class = "Humanoid",
-	race = BESTY_RACE_HUMANOID,
-	toKill = 1000,
-	FirstUnlock = 50,
-	SecondUnlock = 500,
-	CharmsPoints = 25,
-	Stars = 3,
-	Occurrence = 0,
-	Locations = "Oramond/Southern Plains, Minotaur Hills, \z
-		Oramond Dungeon (depending on Magistrate votes), Underground Glooth Factory."
-	}
-
-monster.health = 1400
-monster.maxHealth = 1400
+monster.health = 13500
+monster.maxHealth = 13500
 monster.race = "blood"
 monster.corpse = 23466
-monster.speed = 230
+monster.speed = 300
 monster.manaCost = 0
 monster.maxSummons = 0
 
 monster.changeTarget = {
 	interval = 2000,
-	chance = 11
-}
-
-monster.strategiesTarget = {
-	nearest = 100,
+	chance = 40
 }
 
 monster.flags = {
-	summonable = false,
-	attackable = true,
-	hostile = true,
-	convinceable = false,
-	pushable = false,
-	rewardBoss = false,
+	isSummonable = false,
+	isAttackable = true,
+	isHostile = true,
+	isConvinceable = false,
+	isPushable = false,
+	isBoss = false,
 	illusionable = false,
 	canPushItems = true,
 	canPushCreatures = true,
 	staticAttackChance = 90,
 	targetDistance = 4,
-	runHealth = 300,
-	healthHidden = false,
-	isBlockable = false,
-	canWalkOnEnergy = false,
-	canWalkOnFire = false,
-	canWalkOnPoison = false,
-	pet = false
+	runHealth = 100,
+	isHealthHidden = false,
+	canwalkonenergy = false,
+	canwalkonfire = false,
+	canwalkonpoison = false
 }
 
 monster.light = {
@@ -76,61 +56,44 @@ monster.voices = {
 	{text = "You are marked for death!", yell = false},
 	{text = "This time the prey is you!", yell = false},
 	{text = "You are hunted!", yell = false},
-	{text = "Bullseye!", yell = false},
 	{text = "You'll make a fine trophy!", yell = false}
 }
 
 monster.loot = {
-	{id = 2260, chance = 13600, maxCount = 2},
 	{id = 2148, chance = 99500, maxCount = 199},
-	{id = 3965, chance = 14880, maxCount = 5},
-	{id = 2152, chance = 33890, maxCount = 3},
-	{id = 7378, chance = 11410, maxCount = 5},
-	{id = 7588, chance = 10350, maxCount = 2},
-	{id = 7589, chance = 10620, maxCount = 2},
-	{id = 5944, chance = 7430},
-	{id = 5878, chance = 5030},
-	{id = 12428, chance = 4720, maxCount = 2},
-	{id = 2147, chance = 2640, maxCount = 3},
-	{id = 2150, chance = 2580, maxCount = 3},
-	{id = 2165, chance = 2220},
-	{id = 5912, chance = 1670},
-	{id = 5910, chance = 1420},
-	{id = 5911, chance = 1360},
-	{id = 23546, chance = 640},
-	{id = 2154, chance = 470},
-	{id = 2156, chance = 400},
-	{id = 7401, chance = 190},
-	{id = 23537, chance = 170}
+	{id = 2152, chance = 33000, maxCount = 3},
+	{id = 5878, chance = 5000},
+	{id = 12428, chance = 4700, maxCount = 2},
+	{id = 3965, chance = 2000},
+	{id = 10316, chance = 200},
+	{id = 2496, chance = 120},
+	{id = 2195, chance = 1500}
 }
 
 monster.attacks = {
-	{name ="melee", interval = 2000, chance = 100, skill = 50, attack = 50},
-	{name ="combat", interval = 2000, chance = 22, type = COMBAT_PHYSICALDAMAGE, minDamage = 0, maxDamage = -150, range = 7, shootEffect = CONST_ANI_SPEAR, effect = CONST_ME_EXPLOSIONAREA, target = false},
-	-- bleed
-	{name ="condition", type = CONDITION_BLEEDING, interval = 2000, chance = 40, minDamage = -300, maxDamage = -400, range = 7, radius = 3, shootEffect = CONST_ANI_THROWINGKNIFE, effect = CONST_ME_HITAREA, target = true},
-	{name ="combat", interval = 2000, chance = 15, type = COMBAT_FIREDAMAGE, minDamage = -160, maxDamage = -260, range = 7, radius = 2, shootEffect = CONST_ANI_BURSTARROW, effect = CONST_ME_EXPLOSIONHIT, target = true},
-	{name ="combat", interval = 2000, chance = 14, type = COMBAT_LIFEDRAIN, minDamage = -35, maxDamage = -150, radius = 4, effect = CONST_ME_EXPLOSIONAREA, target = false}
+	{name ="melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -200},
+	{name ="combat", interval = 2000, chance = 100, minDamage = -350, maxDamage = -550, type = COMBAT_PHYSICALDAMAGE, range = 7, ShootEffect = CONST_ANI_THROWINGKNIFE, effect = CONST_ME_HITAREA, target = true},
+	{name ="combat", interval = 2000, chance = 22, minDamage = -450, maxDamage = -650, type = COMBAT_PHYSICALDAMAGE, range = 7, ShootEffect = CONST_ANI_EXPLOSION, effect = CONST_ME_EXPLOSIONAREA, target = true},
+	{name ="combat", interval = 2000, chance = 10, minDamage = -350, maxDamage = -650, type = COMBAT_PHYSICALDAMAGE, effect = CONST_ME_GROUNDSHAKER, target = false}
 }
 
 monster.defenses = {
-	defense = 30,
-	armor = 30,
-	{name ="combat", interval = 2000, chance = 7, type = COMBAT_HEALING, minDamage = 95, maxDamage = 180, effect = CONST_ME_MAGIC_BLUE, target = false},
-	{name ="speed", interval = 2000, chance = 10, speedChange = 520, effect = CONST_ME_POFF, target = false, duration = 5000}
+	defense = 0,
+	armor = 0,
+	{name ="combat", interval = 4000, chance = 15, minDamage = 130, maxDamage = 245, type = COMBAT_HEALING, effect = CONST_ME_MAGIC_BLUE, target = false}
 }
 
 monster.elements = {
-	{type = COMBAT_PHYSICALDAMAGE, percent = 0},
-	{type = COMBAT_ENERGYDAMAGE, percent = 0},
-	{type = COMBAT_EARTHDAMAGE, percent = 0},
-	{type = COMBAT_FIREDAMAGE, percent = 10},
+	{type = COMBAT_PHYSICALDAMAGE, percent = 15},
+	{type = COMBAT_ENERGYDAMAGE, percent = 35},
+	{type = COMBAT_EARTHDAMAGE, percent = 40},
+	{type = COMBAT_FIREDAMAGE, percent = 20},
 	{type = COMBAT_LIFEDRAIN, percent = 0},
 	{type = COMBAT_MANADRAIN, percent = 0},
 	{type = COMBAT_DROWNDAMAGE, percent = 0},
-	{type = COMBAT_ICEDAMAGE, percent = -5},
-	{type = COMBAT_HOLYDAMAGE , percent = 10},
-	{type = COMBAT_DEATHDAMAGE , percent = 0}
+	{type = COMBAT_ICEDAMAGE, percent = 20},
+	{type = COMBAT_HOLYDAMAGE , percent = 25},
+	{type = COMBAT_DEATHDAMAGE , percent = 25}
 }
 
 monster.immunities = {

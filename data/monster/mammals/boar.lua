@@ -13,38 +13,21 @@ monster.outfit = {
 	lookMount = 0
 }
 
-monster.raceId = 693
-monster.Bestiary = {
-	class = "Mammal",
-	race = BESTY_RACE_MAMMAL,
-	toKill = 500,
-	FirstUnlock = 25,
-	SecondUnlock = 250,
-	CharmsPoints = 15,
-	Stars = 2,
-	Occurrence = 0,
-	Locations = "Forest around Outlaw Camp."
-	}
-
 monster.health = 198
 monster.maxHealth = 198
 monster.race = "blood"
 monster.corpse = 13308
-monster.speed = 410
+monster.speed = 90
 monster.manaCost = 465
 monster.maxSummons = 0
 
 monster.changeTarget = {
-	interval = 4000,
+	interval = 2000,
 	chance = 0
 }
 
-monster.strategiesTarget = {
-	nearest = 100,
-}
-
 monster.flags = {
-	summonable = true,
+	summonable = false,
 	attackable = true,
 	hostile = true,
 	convinceable = true,
@@ -55,7 +38,7 @@ monster.flags = {
 	canPushCreatures = false,
 	staticAttackChance = 90,
 	targetDistance = 1,
-	runHealth = 30,
+	runHealth = 0,
 	healthHidden = false,
 	isBlockable = false,
 	canWalkOnEnergy = false,
@@ -72,22 +55,21 @@ monster.light = {
 monster.voices = {
 	interval = 5000,
 	chance = 10,
-	{text = "Grunt", yell = false},
-	{text = "Grunt! Grunt!", yell = false}
+	{text = "Grunt Grunt, Grunt", yell = false}
 }
 
 monster.loot = {
-	{name = "gold coin", chance = 25000, maxCount = 20},
-	{name = "haunch of boar", chance = 20000, maxCount = 2}
+	{id = 2148, chance = 20000, maxCount = 27},
+	{id = 2666, chance = 15000, maxCount = 4}
 }
 
 monster.attacks = {
-	{name ="melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -50}
+	{name ="melee", interval = 2000, chance = 100, skill = 20, attack = 24}
 }
 
 monster.defenses = {
-	defense = 35,
-	armor = 35
+	defense = 0,
+	armor = 0
 }
 
 monster.elements = {

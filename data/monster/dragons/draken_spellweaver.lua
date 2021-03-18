@@ -2,7 +2,7 @@ local mType = Game.createMonsterType("Draken Spellweaver")
 local monster = {}
 
 monster.description = "a draken spellweaver"
-monster.experience = 3100
+monster.experience = 6700
 monster.outfit = {
 	lookType = 340,
 	lookHead = 0,
@@ -23,14 +23,14 @@ monster.Bestiary = {
 	CharmsPoints = 50,
 	Stars = 4,
 	Occurrence = 0,
-	Locations = "Zao Palace, Razzachai, and Zzaion."
+	Locations = "x."
 	}
-
-monster.health = 5000
-monster.maxHealth = 5000
+	
+monster.health = 5700
+monster.maxHealth = 5700
 monster.race = "blood"
 monster.corpse = 11316
-monster.speed = 336
+monster.speed = 350
 monster.manaCost = 0
 monster.maxSummons = 0
 
@@ -78,33 +78,25 @@ monster.voices = {
 }
 
 monster.loot = {
-	{name = "ring of the sky", chance = 370},
-	{name = "small ruby", chance = 6910, maxCount = 5},
-	{name = "gold coin", chance = 41000, maxCount = 100},
-	{name = "gold coin", chance = 58000, maxCount = 100},
-	{name = "platinum coin", chance = 25510, maxCount = 5},
-	{name = "green gem", chance = 970},
-	{name = "wand of inferno", chance = 1660},
-	{name = "meat", chance = 30400},
-	{name = "great mana potion", chance = 4970},
-	{name = "focus cape", chance = 1450},
-	{name = "Zaoan shoes", chance = 1980},
-	{name = "weaver's wandtip", chance = 19790},
-	{name = "draken trophy", chance = 10},
-	{name = "spellweaver's robe", chance = 620},
-	{name = "Zaoan robe", chance = 770},
-	{name = "luminous orb", chance = 1980},
-	{name = "draken sulphur", chance = 3930},
-	{name = "harness", chance = 30},
-	{name = "bamboo leaves", chance = 180}
+	{id = 2152, chance = 6600, maxCount = 5},
+	{id = 2148, chance = 41300, maxCount = 100},
+	{id = 2148, chance = 41300, maxCount = 98},
+	{id = 2147, chance = 725},
+	{id = 8871, chance = 600},
+	{id = 2666, chance = 30400},
+	{id = 11303, chance = 400},
+	{id = 2187, chance = 800},
+	{id = 11314, chance = 15525},
+	{id = 2123, chance = 20},
+	{id = 11304, chance = 300}
 }
 
 monster.attacks = {
-	{name ="melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -252},
-	{name ="combat", interval = 2000, chance = 10, type = COMBAT_FIREDAMAGE, minDamage = -240, maxDamage = -480, length = 4, spread = 3, effect = CONST_ME_EXPLOSIONHIT, target = false},
-	{name ="combat", interval = 2000, chance = 10, type = COMBAT_FIREDAMAGE, minDamage = -100, maxDamage = -250, range = 7, shootEffect = CONST_ANI_FIRE, effect = CONST_ME_FIREAREA, target = true},
-	{name ="combat", interval = 2000, chance = 10, type = COMBAT_ENERGYDAMAGE, minDamage = -150, maxDamage = -300, range = 7, shootEffect = CONST_ANI_ENERGY, effect = CONST_ME_ENERGYHIT, target = true},
-	{name ="combat", interval = 2000, chance = 10, type = COMBAT_EARTHDAMAGE, minDamage = -200, maxDamage = -380, radius = 4, effect = CONST_ME_POFF, target = true},
+	{name ="melee", interval = 1900, chance = 100, minDamage = -240, maxDamage = -360},
+	{name ="combat", interval = 2000, chance = 10, type = COMBAT_FIREDAMAGE, minDamage = -240, maxDamage = -480, length = 4, spread = 3, effect = CONST_ME_EXPLOSIONHIT, target = false},																																												  
+	{name ="combat", interval = 2000, chance = 15, minDamage = -280, maxDamage = -350, type = COMBAT_FIREDAMAGE, range = 7, ShootEffect = CONST_ANI_FIRE, effect = CONST_ME_FIREAREA, target = true},
+	{name ="combat", interval = 1800, chance = 40, minDamage = -280, maxDamage = -420, type = COMBAT_FIREDAMAGE, length = 4, spread = 3, ShootEffect = CONST_ANI_EXPLOSION, effect = CONST_ME_EXPLOSIONHIT, target = false},
+	{name ="combat", interval = 2000, chance = 30, minDamage = -300, maxDamage = -380, type = COMBAT_ENERGYDAMAGE, range = 7, ShootEffect = CONST_ANI_ENERGYBALL, effect = CONST_ME_ENERGYHIT, target = true},
 	{name ="soulfire", interval = 2000, chance = 10, target = false},
 	-- poison
 	{name ="condition", type = CONDITION_POISON, interval = 2000, chance = 10, minDamage = -280, maxDamage = -360, shootEffect = CONST_ANI_POISON, target = true}
@@ -136,5 +128,4 @@ monster.immunities = {
 	{type = "invisible", condition = true},
 	{type = "bleed", condition = false}
 }
-
 mType:register(monster)

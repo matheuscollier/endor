@@ -13,41 +13,21 @@ monster.outfit = {
 	lookMount = 0
 }
 
-monster.raceId = 44
-monster.Bestiary = {
-	class = "Vermin",
-	race = BESTY_RACE_VERMIN,
-	toKill = 250,
-	FirstUnlock = 10,
-	SecondUnlock = 100,
-	CharmsPoints = 5,
-	Stars = 1,
-	Occurrence = 0,
-	Locations = "South of Thais, west of Ab'Dendriel, northeastern Cormaya, \z
-		Green Claw Swamp between Kazordoon and Venore, Wasp Tower in Rookgaard, \z
-		Wasp Towers in Darashia, all over Tiquanda, and all over Vandura."
-	}
-
 monster.health = 35
 monster.maxHealth = 35
 monster.race = "venom"
-monster.corpse = 5989
+monster.corpse = 2899
 monster.speed = 320
 monster.manaCost = 280
 monster.maxSummons = 0
 
 monster.changeTarget = {
-	interval = 4000,
+	interval = 2000,
 	chance = 10
 }
 
-monster.strategiesTarget = {
-	nearest = 60,
-	random = 40,
-}
-
 monster.flags = {
-	summonable = true,
+	summonable = false,
 	attackable = true,
 	hostile = true,
 	convinceable = true,
@@ -56,14 +36,14 @@ monster.flags = {
 	illusionable = true,
 	canPushItems = false,
 	canPushCreatures = false,
-	staticAttackChance = 90,
+	staticAttackChance = 95,
 	targetDistance = 1,
 	runHealth = 0,
 	healthHidden = false,
 	isBlockable = false,
 	canWalkOnEnergy = false,
 	canWalkOnFire = false,
-	canWalkOnPoison = true,
+	canWalkOnPoison = false,
 	pet = false
 }
 
@@ -75,27 +55,27 @@ monster.light = {
 monster.voices = {
 	interval = 5000,
 	chance = 10,
-	{text = "Bssssss", yell = false}
+	{text = "Bsssssss", yell = false}
 }
 
 monster.loot = {
-	{name = "honeycomb", chance = 3000}
+	{id = 19738, chance = 100000}
 }
 
 monster.attacks = {
-	{name ="melee", interval = 1500, chance = 100, minDamage = 0, maxDamage = -20, condition = {type = CONDITION_POISON, totalDamage = 20, interval = 4000}}
+	{name ="melee", interval = 2000, chance = 100, minDamage = -5, maxDamage = -10, condition = {type = CONDITION_POISON, startDamage = 10, interval = 4000}}
 }
 
 monster.defenses = {
-	defense = 10,
-	armor = 10
+	defense = 0,
+	armor = 0
 }
 
 monster.elements = {
 	{type = COMBAT_PHYSICALDAMAGE, percent = 0},
 	{type = COMBAT_ENERGYDAMAGE, percent = 0},
 	{type = COMBAT_EARTHDAMAGE, percent = 100},
-	{type = COMBAT_FIREDAMAGE, percent = -10},
+	{type = COMBAT_FIREDAMAGE, percent = 0},
 	{type = COMBAT_LIFEDRAIN, percent = 0},
 	{type = COMBAT_MANADRAIN, percent = 0},
 	{type = COMBAT_DROWNDAMAGE, percent = 0},

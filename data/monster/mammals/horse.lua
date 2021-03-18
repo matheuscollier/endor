@@ -4,7 +4,7 @@ local monster = {}
 monster.description = "a horse"
 monster.experience = 0
 monster.outfit = {
-	lookType = 435,
+	lookType = 436,
 	lookHead = 0,
 	lookBody = 0,
 	lookLegs = 0,
@@ -13,45 +13,27 @@ monster.outfit = {
 	lookMount = 0
 }
 
-monster.raceId = 750
-monster.Bestiary = {
-	class = "Mammal",
-	race = BESTY_RACE_MAMMAL,
-	toKill = 250,
-	FirstUnlock = 10,
-	SecondUnlock = 100,
-	CharmsPoints = 5,
-	Stars = 1,
-	Occurrence = 1,
-	Locations = "South-east, east and north-east of Thais depending on the Horse Station World Change; \z
-		one near Roswitha in Rathleton."
-	}
-
 monster.health = 75
 monster.maxHealth = 75
 monster.race = "blood"
-monster.corpse = 0
-monster.speed = 248
+monster.corpse = 2247
+monster.speed = 180
 monster.manaCost = 0
 monster.maxSummons = 0
 
 monster.changeTarget = {
-	interval = 4000,
-	chance = 20
-}
-
-monster.strategiesTarget = {
-	nearest = 100,
+	interval = 5000,
+	chance = 8
 }
 
 monster.flags = {
 	summonable = false,
 	attackable = true,
-	hostile = false,
+	hostile = true,
 	convinceable = false,
 	pushable = true,
 	rewardBoss = false,
-	illusionable = false,
+	illusionable = true,
 	canPushItems = false,
 	canPushCreatures = false,
 	staticAttackChance = 90,
@@ -73,12 +55,14 @@ monster.light = {
 monster.voices = {
 	interval = 5000,
 	chance = 10,
-	{text = "Weeeeheeeeeee", yell = false},
-	{text = "*snort*", yell = false},
-	{text = "*Weeeeheeeeaaa*", yell = false}
+	{text = "Weeeeheeeeeee snort Weeeeheeeeaaa", yell = false}
 }
 
 monster.loot = {
+}
+
+monster.attacks = {
+	{name ="melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = 0}
 }
 
 monster.defenses = {

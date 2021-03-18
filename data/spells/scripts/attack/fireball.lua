@@ -1,16 +1,27 @@
-local combat = Combat()
-combat:setParameter(COMBAT_PARAM_TYPE, COMBAT_FIREDAMAGE)
-combat:setParameter(COMBAT_PARAM_EFFECT, CONST_ME_FIREATTACK)
-combat:setParameter(COMBAT_PARAM_DISTANCEEFFECT, CONST_ANI_FIRE)
+local combat = createCombatObject()
+setCombatParam(combat, COMBAT_PARAM_TYPE, COMBAT_FIREDAMAGE)
+setCombatParam(combat, COMBAT_PARAM_EFFECT, CONST_ME_FIREATTACK)
+setCombatParam(combat, COMBAT_PARAM_DISTANCEEFFECT, CONST_ANI_FIRE)
 
-function onGetFormulaValues(player, level, maglevel)
-	local min = (level / 5) + (maglevel * 1.81) + 10
-	local max = (level / 5) + (maglevel * 3) + 18
-	return -min, -max
+
+function getCombatFormulas(cid, lv, maglv)
+local formula_min = ((lv*-0.19 + maglv*-0.19) * 1.8 - 5)
+local formula_max = ((lv*-0.23 + maglv*-0.23) * 1.8 - 5)
+if(formula_max < formula_min) then
+local tmp = formula_max
+formula_max = formula_min
+formula_min = tmp
+end
+return formula_min, formula_max
 end
 
-combat:setCallback(CALLBACK_PARAM_LEVELMAGICVALUE, "onGetFormulaValues")
+setCombatCallback(combat, CALLBACK_PARAM_LEVELMAGICVALUE, "getCombatFormulas")
 
-function onCastSpell(creature, var, isHotkey)
-	return combat:execute(creature, var)
+local area = createCombatArea(AREA_CIRCLE2X2)
+setCombatArea(combat, area)
+
+
+
+function onCastSpell(cid, var)
+return doCombat(cid, combat, var)
 end

@@ -1,7 +1,7 @@
 local mType = Game.createMonsterType("Juggernaut")
 local monster = {}
 
-monster.description = "a juggernaut"
+monster.description = "um juggernaut"
 monster.experience = 11200
 monster.outfit = {
 	lookType = 244,
@@ -23,8 +23,7 @@ monster.Bestiary = {
 	CharmsPoints = 50,
 	Stars = 4,
 	Occurrence = 0,
-	Locations = "Deep in Pits of Inferno (Apocalypse's throne room), The Dark Path, \z
-		The Blood Halls, The Vats, The Hive, The Shadow Nexus, a room deep in Formorgar Mines, Roshamuul Prison, Oramond Dungeon, Grounds of Destruction."
+	Locations = "x."
 	}
 
 monster.health = 20000
@@ -76,68 +75,49 @@ monster.light = {
 monster.voices = {
 	interval = 5000,
 	chance = 10,
+	{text = "WAHHHH!", yell = false},
 	{text = "RAAARRR!", yell = false},
-	{text = "GRRRRRR!", yell = false},
-	{text = "WAHHHH!", yell = false}
+	{text = "GRRRRRR!", yell = false}
 }
 
 monster.loot = {
-	{id = 2136, chance = 550},
-	{name = "small ruby", chance = 20000, maxCount = 4},
-	{name = "gold coin", chance = 100000, maxCount = 100},
-	{name = "gold coin", chance = 100000, maxCount = 100},
-	{name = "gold coin", chance = 100000, maxCount = 100},
-	{name = "gold coin", chance = 100000, maxCount = 100},
-	{name = "small emerald", chance = 20000, maxCount = 5},
-	{name = "platinum coin", chance = 100000, maxCount = 15},
-	{name = "violet gem", chance = 830},
-	{name = "green gem", chance = 869},
-	{name = "red gem", chance = 13850},
-	{name = "dragon hammer", chance = 9000},
-	{name = "heavy mace", chance = 400},
-	{name = "war axe", chance = 400},
-	{name = "golden armor", chance = 550},
-	{name = "golden legs", chance = 500},
-	{name = "knight armor", chance = 4990},
-	{name = "mastermind shield", chance = 800},
-	{id = 2578, chance = 280},
-	{name = "ham", chance = 60000, maxCount = 8},
-	{name = "soul orb", chance = 33333},
-	{name = "demonic essence", chance = 45333},
-	{name = "concentrated demonic blood", chance = 25000, maxCount = 4},
-	{name = "onyx arrow", chance = 11111, maxCount = 15},
-	{name = "assassin star", chance = 25000, maxCount = 10},
-	{name = "titan axe", chance = 4430},
-	{name = "spiked squelcher", chance = 7761},
-	{name = "great mana potion", chance = 35000},
-	{name = "great health potion", chance = 32000},
-	{name = "skullcracker armor", chance = 400},
-	{name = "gold ingot", chance = 7692, maxCount = 2}
+	{id = 2148, chance = 100000, maxCount = 100},
+	{id = 2152, chance = 10000, maxCount = 10},
+	{id = 2452, chance = 150},
+	{id = 2472, chance = 50},
+	{id = 7895, chance = 150},
+	{id = 7898, chance = 250},
+	{id = 7901, chance = 200},
+	{id = 2408, chance = 20},
+	{id = 5944, chance = 1333},
+	{id = 2416, chance = 40563},
+	{id = 2387, chance = 10000}
 }
 
 monster.attacks = {
-	{name ="melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -1470},
-	{name ="combat", interval = 2000, chance = 15, type = COMBAT_PHYSICALDAMAGE, minDamage = 0, maxDamage = -780, range = 7, shootEffect = CONST_ANI_LARGEROCK, target = false}
+	{name ="melee", interval = 1800, chance = 100, minDamage = -190, maxDamage = -470, condition = {type = CONDITION_DAZZLED, startDamage = 100, interval = 1000}},
+	{name ="combat", interval = 1900, chance = 99, minDamage = -230, maxDamage = -450, type = COMBAT_PHYSICALDAMAGE, range = 7, ShootEffect = CONST_ANI_LARGEROCK, target = false},
+	{name ="combat", interval = 3700, chance = 33, minDamage = -200, maxDamage = -400, type = COMBAT_PHYSICALDAMAGE, effect = CONST_ME_GROUNDSHAKER, target = false}
 }
 
 monster.defenses = {
 	defense = 60,
 	armor = 60,
 	{name ="speed", interval = 2000, chance = 15, speedChange = 520, effect = CONST_ME_MAGIC_RED, target = false, duration = 5000},
-	{name ="combat", interval = 2000, chance = 15, type = COMBAT_HEALING, minDamage = 400, maxDamage = 900, effect = CONST_ME_MAGIC_BLUE, target = false}
+	{name ="combat", interval = 2000, chance = 15, type = COMBAT_HEALING, minDamage = 100, maxDamage = 350, effect = CONST_ME_MAGIC_BLUE, target = false}
 }
 
 monster.elements = {
 	{type = COMBAT_PHYSICALDAMAGE, percent = 40},
 	{type = COMBAT_ENERGYDAMAGE, percent = -10},
-	{type = COMBAT_EARTHDAMAGE, percent = 20},
+	{type = COMBAT_EARTHDAMAGE, percent = 25},
 	{type = COMBAT_FIREDAMAGE, percent = 30},
-	{type = COMBAT_LIFEDRAIN, percent = 0},
+	{type = COMBAT_LIFEDRAIN, percent = 100},
 	{type = COMBAT_MANADRAIN, percent = 0},
 	{type = COMBAT_DROWNDAMAGE, percent = 0},
-	{type = COMBAT_ICEDAMAGE, percent = 10},
-	{type = COMBAT_HOLYDAMAGE , percent = -5},
-	{type = COMBAT_DEATHDAMAGE , percent = 0}
+	{type = COMBAT_ICEDAMAGE, percent = 30},
+	{type = COMBAT_HOLYDAMAGE , percent = 5},
+	{type = COMBAT_DEATHDAMAGE , percent = 30}
 }
 
 monster.immunities = {

@@ -1,8 +1,8 @@
 local mType = Game.createMonsterType("Lizard High Guard")
 local monster = {}
 
-monster.description = "a lizard high guard"
-monster.experience = 1450
+monster.description = "um lizard high guard"
+monster.experience = 6100
 monster.outfit = {
 	lookType = 337,
 	lookHead = 0,
@@ -13,35 +13,17 @@ monster.outfit = {
 	lookMount = 0
 }
 
-monster.raceId = 625
-monster.Bestiary = {
-	class = "Reptile",
-	race = BESTY_RACE_REPTILE,
-	toKill = 1000,
-	FirstUnlock = 50,
-	SecondUnlock = 500,
-	CharmsPoints = 25,
-	Stars = 3,
-	Occurrence = 0,
-	Locations = "Zzaion, Zao Palace and its antechambers, Muggy Plains, Zao Orc Land (single spawn in fort), \z
-		Corruption Hole, Razachai, Temple of Equilibrium, Northern Zao Plantations."
-	}
-
-monster.health = 1800
-monster.maxHealth = 1800
+monster.health = 7100
+monster.maxHealth = 7100
 monster.race = "blood"
-monster.corpse = 11272
-monster.speed = 238
+monster.corpse = 11269
+monster.speed = 340
 monster.manaCost = 0
 monster.maxSummons = 0
 
 monster.changeTarget = {
-	interval = 4000,
-	chance = 10
-}
-
-monster.strategiesTarget = {
-	nearest = 100,
+	interval = 8000,
+	chance = 8
 }
 
 monster.flags = {
@@ -61,7 +43,7 @@ monster.flags = {
 	isBlockable = false,
 	canWalkOnEnergy = false,
 	canWalkOnFire = false,
-	canWalkOnPoison = true,
+	canWalkOnPoison = false,
 	pet = false
 }
 
@@ -73,57 +55,53 @@ monster.light = {
 monster.voices = {
 	interval = 5000,
 	chance = 10,
-	{text = "Hizzzzzzz!", yell = false},
-	{text = "To armzzzz!", yell = false},
-	{text = "Engage zze aggrezzor!", yell = false}
+	{text = "Ssssss!", yell = false}
 }
 
 monster.loot = {
-	{name = "gold coin", chance = 32000, maxCount = 100},
-	{name = "gold coin", chance = 32000, maxCount = 100},
-	{name = "gold coin", chance = 32000, maxCount = 27},
-	{name = "small emerald", chance = 2520, maxCount = 4},
-	{name = "platinum coin", chance = 4900, maxCount = 2},
-	{name = "tower shield", chance = 1040},
-	{name = "lizard leather", chance = 1000},
-	{name = "lizard scale", chance = 970},
-	{name = "strong health potion", chance = 11925},
-	{name = "great health potion", chance = 7070},
-	{name = "red lantern", chance = 1220},
-	{name = "bunch of ripe rice", chance = 4950},
-	{name = "Zaoan armor", chance = 80},
-	{name = "Zaoan shoes", chance = 700},
-	{name = "Zaoan legs", chance = 720},
-	{name = "spiked iron ball", chance = 7000},
-	{name = "high guard flag", chance = 2990},
-	{name = "high guard shoulderplates", chance = 8150}
+	{id = 5876, chance = 3000},
+	{id = 5881, chance = 3000},
+	{id = 2506, chance = 160},
+	{id = 7885, chance = 380},
+	{id = 2492, chance = 150},
+	{id = 8880, chance = 700},
+	{id = 2477, chance = 320},
+	{id = 2645, chance = 180},
+	{id = 2672, chance = 10200, maxCount = 5},
+	{id = 2149, chance = 700},
+	{id = 2148, chance = 35000, maxCount = 65},
+	{id = 2148, chance = 35000, maxCount = 65},
+	{id = 2148, chance = 35000, maxCount = 65}
 }
 
 monster.attacks = {
-	{name ="melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -306}
+	{name ="melee", interval = 1900, chance = 100, minDamage = -304, maxDamage = -488},
+	{name ="combat", interval = 2300, chance = 30, minDamage = -150, maxDamage = -200, range = 7, type = COMBAT_PHYSICALDAMAGE, ShootEffect = CONST_ANI_WHIRLWINDCLUB, effect = CONST_ME_GREEN_RINGS, target = true},
+	{name ="combat", interval = 2500, chance = 30, minDamage = -200, maxDamage = -250, type = COMBAT_PHYSICALDAMAGE, range = 7, ShootEffect = CONST_ANI_WHIRLWINDCLUB, effect = CONST_ME_POFF, target = true},
+	{name ="combat", interval = 2800, chance = 35, minDamage = -220, maxDamage = -260, type = COMBAT_PHYSICALDAMAGE, effect = CONST_ME_MAGIC_GREEN, target = false},
+	{name ="condition", type = CONDITION_POISON, interval = 4000, chance = 30, minDamage = -400, maxDamage = -640, range = 1, effect = CONST_ME_GREEN_RINGS, target = true}
 }
 
 monster.defenses = {
-	defense = 35,
-	armor = 35,
-	{name ="combat", interval = 2000, chance = 10, type = COMBAT_HEALING, minDamage = 25, maxDamage = 75, effect = CONST_ME_MAGIC_GREEN, target = false}
+	defense = 0,
+	armor = 0
 }
 
 monster.elements = {
-	{type = COMBAT_PHYSICALDAMAGE, percent = 5},
-	{type = COMBAT_ENERGYDAMAGE, percent = 0},
-	{type = COMBAT_EARTHDAMAGE, percent = 100},
-	{type = COMBAT_FIREDAMAGE, percent = 45},
+	{type = COMBAT_PHYSICALDAMAGE, percent = 30},
+	{type = COMBAT_ENERGYDAMAGE, percent = 20},
+	{type = COMBAT_EARTHDAMAGE, percent = 85},
+	{type = COMBAT_FIREDAMAGE, percent = 30},
 	{type = COMBAT_LIFEDRAIN, percent = 0},
 	{type = COMBAT_MANADRAIN, percent = 0},
 	{type = COMBAT_DROWNDAMAGE, percent = 0},
-	{type = COMBAT_ICEDAMAGE, percent = -10},
-	{type = COMBAT_HOLYDAMAGE , percent = 0},
-	{type = COMBAT_DEATHDAMAGE , percent = 0}
+	{type = COMBAT_ICEDAMAGE, percent = 30},
+	{type = COMBAT_HOLYDAMAGE , percent = 30},
+	{type = COMBAT_DEATHDAMAGE , percent = 30}
 }
 
 monster.immunities = {
-	{type = "paralyze", condition = false},
+	{type = "paralyze", condition = true},
 	{type = "outfit", condition = false},
 	{type = "invisible", condition = true},
 	{type = "bleed", condition = false}

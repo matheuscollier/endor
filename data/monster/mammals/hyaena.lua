@@ -1,7 +1,7 @@
 local mType = Game.createMonsterType("Hyaena")
 local monster = {}
 
-monster.description = "a hyaena"
+monster.description = "uma hyaena"
 monster.experience = 20
 monster.outfit = {
 	lookType = 94,
@@ -13,38 +13,21 @@ monster.outfit = {
 	lookMount = 0
 }
 
-monster.raceId = 94
-monster.Bestiary = {
-	class = "Mammal",
-	race = BESTY_RACE_MAMMAL,
-	toKill = 500,
-	FirstUnlock = 25,
-	SecondUnlock = 250,
-	CharmsPoints = 15,
-	Stars = 2,
-	Occurrence = 0,
-	Locations = "Desert areas like those around Ankrahmun and Darashia."
-	}
-
 monster.health = 60
 monster.maxHealth = 60
 monster.race = "blood"
-monster.corpse = 6026
-monster.speed = 200
+monster.corpse = 3019
+monster.speed = 120
 monster.manaCost = 275
 monster.maxSummons = 0
 
 monster.changeTarget = {
-	interval = 5000,
+	interval = 2000,
 	chance = 0
 }
 
-monster.strategiesTarget = {
-	nearest = 100,
-}
-
 monster.flags = {
-	summonable = true,
+	summonable = false,
 	attackable = true,
 	hostile = true,
 	convinceable = true,
@@ -53,9 +36,9 @@ monster.flags = {
 	illusionable = true,
 	canPushItems = false,
 	canPushCreatures = false,
-	staticAttackChance = 90,
+	staticAttackChance = 95,
 	targetDistance = 1,
-	runHealth = 30,
+	runHealth = 5,
 	healthHidden = false,
 	isBlockable = false,
 	canWalkOnEnergy = false,
@@ -72,20 +55,22 @@ monster.light = {
 monster.voices = {
 	interval = 5000,
 	chance = 10,
+	{text = "Grrrrrr", yell = false},
+	{text = "Hou hou hou!", yell = false}
 }
 
 monster.loot = {
-	{name = "meat", chance = 30860, maxCount = 2},
-	{name = "worm", chance = 50130, maxCount = 3}
+	{id = 2666, chance = 50000, maxCount = 2},
+	{id = 2148, chance = 40000, maxCount = 15}
 }
 
 monster.attacks = {
-	{name ="melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -20}
+	{name ="melee", interval = 2000, chance = 100, minDamage = -5, maxDamage = -15}
 }
 
 monster.defenses = {
-	defense = 15,
-	armor = 15
+	defense = 0,
+	armor = 0
 }
 
 monster.elements = {

@@ -1,7 +1,7 @@
 local mType = Game.createMonsterType("Wyvern")
 local monster = {}
 
-monster.description = "a wyvern"
+monster.description = "um wyvern"
 monster.experience = 515
 monster.outfit = {
 	lookType = 239,
@@ -13,38 +13,17 @@ monster.outfit = {
 	lookMount = 0
 }
 
-monster.raceId = 290
-monster.Bestiary = {
-	class = "Reptile",
-	race = BESTY_RACE_REPTILE,
-	toKill = 1000,
-	FirstUnlock = 50,
-	SecondUnlock = 500,
-	CharmsPoints = 25,
-	Stars = 3,
-	Occurrence = 0,
-	Locations = "Beregar, Black Knight's Villa, Chor, Ghostlands, Chyllfroest, Crystal Gardens, \z
-		Crystal Grounds, Dragon Lair (Edron), Drillworm Cave, Folda, Hero Fortress, Kazordoon, \z
-		Green Djinn Tower, Mushroom Fields,Paradox Tower, Plains of Havoc, Plague Spike, \z
-		Poachers' Camp (Ferngrims Gate), Stonehome, Tiquanda, Truffels Garden, \z
-		Vandura Mountain, Vega, Venore, Wyvern Cave (Ferngrims Gate), Wyvern Hill and Wyvern Ulderek's Rock Cave."
-	}
-
 monster.health = 795
 monster.maxHealth = 795
 monster.race = "blood"
 monster.corpse = 6302
-monster.speed = 186
+monster.speed = 270
 monster.manaCost = 0
 monster.maxSummons = 0
 
 monster.changeTarget = {
-	interval = 4000,
-	chance = 10
-}
-
-monster.strategiesTarget = {
-	nearest = 100,
+	interval = 7000,
+	chance = 8
 }
 
 monster.flags = {
@@ -59,12 +38,12 @@ monster.flags = {
 	canPushCreatures = true,
 	staticAttackChance = 90,
 	targetDistance = 1,
-	runHealth = 300,
+	runHealth = 100,
 	healthHidden = false,
 	isBlockable = false,
 	canWalkOnEnergy = false,
 	canWalkOnFire = false,
-	canWalkOnPoison = true,
+	canWalkOnPoison = false,
 	pet = false
 }
 
@@ -76,50 +55,52 @@ monster.light = {
 monster.voices = {
 	interval = 5000,
 	chance = 10,
-	{text = "Shriiiek", yell = true}
+	{text = "Shiiiiiek", yell = true}
 }
 
 monster.loot = {
-	{name = "emerald bangle", chance = 540},
-	{name = "small sapphire", chance = 5000},
-	{name = "gold coin", chance = 100000, maxCount = 90},
-	{name = "wand of inferno", chance = 810},
-	{name = "power bolt", chance = 3400, maxCount = 2},
-	{name = "dragon ham", chance = 60500, maxCount = 3},
-	{name = "wyvern fang", chance = 410},
-	{name = "strong health potion", chance = 2500},
-	{name = "wyvern talisman", chance = 12300}
+	{id = 2148, chance = 100000, maxCount = 40},
+	{id = 2672, chance = 3000, maxCount = 3},
+	{id = 1976, chance = 3333},
+	{id = 10561, chance = 2600},
+	{id = 13758, chance = 2000},
+	{id = 2547, chance = 1000, maxCount = 3},
+	{id = 2647, chance = 270},
+	{id = 7408, chance = 300},
+	{id = 2127, chance = 1818},
+	{id = 2187, chance = 600},
+	{id = 2146, chance = 100}
 }
 
 monster.attacks = {
-	{name ="melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -120, condition = {type = CONDITION_POISON, totalDamage = 480, interval = 4000}},
-	-- poison
+	{name ="melee", interval = 2000, chance = 100, minDamage = -70, maxDamage = -170, condition = {type = CONDITION_POISON, startDamage = 30, interval = 4000}},
+	{name ="combat", interval = 3000, chance = 12, minDamage = -30, maxDamage = -120, length = 8, spread = 3, type = COMBAT_EARTHDAMAGE, effect = CONST_ME_POISONAREA, target = false},
+	{name ="melee", interval = 2000, chance = 12, minDamage = -30, maxDamage = -120},
 	{name ="condition", type = CONDITION_POISON, interval = 2000, chance = 15, minDamage = -240, maxDamage = -240, length = 8, spread = 3, effect = CONST_ME_POISONAREA, target = false},
-	{name ="drunk", interval = 2000, chance = 10, length = 3, spread = 2, effect = CONST_ME_SOUND_RED, target = false, duration = 5000}
+	{name ="drunk", interval = 4000, chance = 2, range = 7, ShootEffect = CONST_ANI_POISON, effect = CONST_ME_SOUND_RED, target = false}
 }
 
 monster.defenses = {
-	defense = 25,
-	armor = 25,
-	{name ="combat", interval = 2000, chance = 15, type = COMBAT_HEALING, minDamage = 45, maxDamage = 65, effect = CONST_ME_MAGIC_BLUE, target = false},
-	{name ="speed", interval = 2000, chance = 15, speedChange = 300, effect = CONST_ME_MAGIC_GREEN, target = false, duration = 5000}
+	defense = 0,
+	armor = 0,
+	{name ="combat", interval = 2200, chance = 22, minDamage = 34, maxDamage = 60, type = COMBAT_HEALING, effect = CONST_ME_MAGIC_BLUE, target = false}
 }
 
 monster.elements = {
-	{type = COMBAT_PHYSICALDAMAGE, percent = 0},
+	{type = COMBAT_PHYSICALDAMAGE, percent = 5},
 	{type = COMBAT_ENERGYDAMAGE, percent = 20},
-	{type = COMBAT_EARTHDAMAGE, percent = 100},
-	{type = COMBAT_FIREDAMAGE, percent = 0},
+	{type = COMBAT_EARTHDAMAGE, percent = 90},
+	{type = COMBAT_FIREDAMAGE, percent = 50},
 	{type = COMBAT_LIFEDRAIN, percent = 0},
 	{type = COMBAT_MANADRAIN, percent = 0},
 	{type = COMBAT_DROWNDAMAGE, percent = 0},
-	{type = COMBAT_ICEDAMAGE, percent = 10},
-	{type = COMBAT_HOLYDAMAGE , percent = 0},
-	{type = COMBAT_DEATHDAMAGE , percent = 0}
+	{type = COMBAT_ICEDAMAGE, percent = 0},
+	{type = COMBAT_HOLYDAMAGE , percent = 20},
+	{type = COMBAT_DEATHDAMAGE , percent = 20}
 }
 
 monster.immunities = {
-	{type = "paralyze", condition = false},
+	{type = "paralyze", condition = true},
 	{type = "outfit", condition = false},
 	{type = "invisible", condition = true},
 	{type = "bleed", condition = false}

@@ -1,8 +1,8 @@
 local mType = Game.createMonsterType("Dread Intruder")
 local monster = {}
 
-monster.description = "a dread intruder"
-monster.experience = 2400
+monster.description = "um dread intruder"
+monster.experience = 19000
 monster.outfit = {
 	lookType = 882,
 	lookHead = 0,
@@ -26,8 +26,8 @@ monster.Bestiary = {
 	Locations = "Otherworld."
 	}
 
-monster.health = 4500
-monster.maxHealth = 4500
+monster.health = 16000
+monster.maxHealth = 16000
 monster.race = "venom"
 monster.corpse = 26134
 monster.speed = 330
@@ -79,36 +79,33 @@ monster.voices = {
 }
 
 monster.loot = {
-	{id = 2148, chance = 100000, maxCount = 100},
-	{id = 2148, chance = 100000, maxCount = 89},
-	{id = 2152, chance = 100000, maxCount = 8},
-	{id = 26201, chance = 15000},
-	{id = 26191, chance = 15000},
-	{id = 26175, chance = 15000},
-	{id = 26172, chance = 15000},
-	{id = 8472, chance = 14000},
-	{id = 8473, chance = 13500},
-	{id = 7590, chance = 12700},
-	{id = 26179, chance = 11800},
-	{id = 26166, chance = 9600},
-	{id = 18418, chance = 9500},
-	{id = 18419, chance = 6200},
-	{id = 2147, chance = 5400, maxCount = 2},
-	{id = 2146, chance = 5400, maxCount = 2},
-	{id = 2150, chance = 5000, maxCount = 2},
-	{id = 18414, chance = 4500},
-	{id = 2153, chance = 1000},
-	{id = 26189, chance = 450},
-	{id = 26198, chance = 230},-- collar of blue plasma
-	{id = 26199, chance = 230},
-	{id = 26185, chance = 230}
+	{id = 2148, chance = 50000, maxCount = 100},
+	{id = 2152, chance = 50000, maxCount = 2},
+	{id = 26201, chance = 2000},
+	{id = 26191, chance = 2000},
+	{id = 26174, chance = 1000},
+	{id = 26163, chance = 700},
+	{id = 26167, chance = 1000},
+	{id = 26162, chance = 1000},
+	{id = 26170, chance = 1000},
+	{id = 18418, chance = 900, maxCount = 2},
+	{id = 18419, chance = 1300},
+	{id = 18413, chance = 1300},
+	{id = 18415, chance = 1500},
+	{id = 8879, chance = 120},
+	{id = 2474, chance = 330},
+	{id = 2123, chance = 90},
+	{id = 7893, chance = 300},
+	{id = 7895, chance = 300},
+	{id = 7901, chance = 300}
 }
 
 monster.attacks = {
-	{name ="melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -500},
-	-- energy damage
+	{name ="melee", interval = 2000, chance = 100, minDamage = -650, maxDamage = -950},
+	{name ="combat", interval = 2200, chance = 30, minDamage = -850, maxDamage = -920, type = COMBAT_ENERGYDAMAGE, range = 6, ShootEffect = CONST_ANI_ENERGY, effect = CONST_ME_PURPLEENERGY, target = true},
+	{name ="combat", interval = 2500, chance = 20, minDamage = -650, maxDamage = -800, type = COMBAT_ENERGYDAMAGE, range = 6, ShootEffect = CONST_ANI_ENERGY, effect = CONST_ME_PURPLEENERGY, target = true},
 	{name ="condition", type = CONDITION_ENERGY, interval = 2000, chance = 20, minDamage = -400, maxDamage = -600, radius = 5, effect = CONST_ME_ENERGYHIT, target = false},
-	{name ="combat", interval = 2000, chance = 25, type = COMBAT_DEATHDAMAGE, minDamage = -250, maxDamage = -400, range = 4, radius = 4, shootEffect = CONST_ANI_SUDDENDEATH, effect = CONST_ME_MORTAREA, target = true},
+	{name ="combat", interval = 2000, chance = 25, type = COMBAT_DEATHDAMAGE, minDamage = -550, maxDamage = -900, range = 4, radius = 4, shootEffect = CONST_ANI_SUDDENDEATH, effect = CONST_ME_MORTAREA, target = true},
 	{name ="dread intruder wave", interval = 2000, chance = 25, minDamage = -350, maxDamage = -550, target = false}
 }
 
@@ -119,11 +116,11 @@ monster.defenses = {
 }
 
 monster.elements = {
-	{type = COMBAT_PHYSICALDAMAGE, percent = 0},
-	{type = COMBAT_ENERGYDAMAGE, percent = 90},
-	{type = COMBAT_EARTHDAMAGE, percent = 0},
-	{type = COMBAT_FIREDAMAGE, percent = 10},
-	{type = COMBAT_LIFEDRAIN, percent = 0},
+	{type = COMBAT_PHYSICALDAMAGE, percent = 10},
+	{type = COMBAT_ENERGYDAMAGE, percent = 100},
+	{type = COMBAT_EARTHDAMAGE, percent = 30},
+	{type = COMBAT_FIREDAMAGE, percent = 30},
+	{type = COMBAT_LIFEDRAIN, percent = 100},
 	{type = COMBAT_MANADRAIN, percent = 0},
 	{type = COMBAT_DROWNDAMAGE, percent = 0},
 	{type = COMBAT_ICEDAMAGE, percent = 5},

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<monster name="Weakened Frazzlemaw" nameDescription="a weakened frazzlemaw" race="blood" experience="1000" speed="300" manacost="450">
+	<health now="1200" max="1200" />
+	<look type="594" corpse="22567" />
+	<targetchange interval="4000" chance="10" />
+	<flags>
+		<flag summonable="0" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="0" />
+		<flag convinceable="0" />
+		<flag pushable="0" />
+		<flag canpushitems="1" />
+		<flag canpushcreatures="1" />
+		<flag targetDistance="1" />
+		<flag staticattack="90" />
+		<flag runonhealth="0" />
+	</flags>
+	<attacks>
+		<attack name="melee" interval="2000" skill="90" attack="80" />
+		<attack name="bleedcondition" interval="2000" chance="10" radius="3" target="0" min="-80" max="-200">
+			<attribute key="areaEffect" value="redspark" />
+		</attack>
+		<attack name="physical" interval="2000" chance="10" length="5" spread="0" target="1" min="0" max="-200">
+			<attribute key="areaEffect" value="explosionarea" />
+		</attack>
+		<attack name="physical" interval="2000" chance="15" radius="2" target="1" min="0" max="-100">
+			<attribute key="shootEffect" value="largerock" />
+			<attribute key="areaEffect" value="stones" />
+		</attack>
+		<attack name="speed" interval="2000" chance="15" radius="5" target="0" speedchange="-600" duration="15000">
+			<attribute key="areaEffect" value="redshimmer" />
+		</attack>
+		<attack name="manadrain" interval="2000" chance="10" radius="4" target="0" min="-80" max="-50">
+			<attribute key="areaEffect" value="redshimmer" />
+		</attack>
+	</attacks>
+	<defenses armor="30" defense="30">
+		<defense name="healing" interval="2000" chance="15" min="80" max="225">
+			<attribute key="areaEffect" value="greenspark" />
+		</defense>
+	</defenses>
+	<elements>
+		<element physicalPercent="20" />
+		<element deathPercent="15" />
+		<element firePercent="10" />
+		<element energyPercent="10" />
+		<element icePercent="5" />
+		<element earthPercent="20" />
+		<element holyPercent="-10" />
+	</elements>
+	<immunities>
+		<immunity energy="0" />
+		<immunity paralyze="1" />
+		<immunity invisible="1" />
+	</immunities>
+	<voices interval="2000" chance="7">
+		<voice sentence="Mwaaaahnducate youuuuuu *gurgle*" />
+		<voice sentence="mwaaah!" />
+	</voices>
+	<loot>
+		<item id="2148" countmax="100" chance="100000" /><!-- gold coin -->
+		<item id="2152" countmax="2" chance="100000" /><!-- platinum coin -->
+		<item id="2667" countmax="3" chance="6750" /><!-- fish -->
+		<item id="2671" countmax="2" chance="6000" /><!-- ham -->
+		<item id="5880" chance="700" /><!-- iron ore -->
+		<item id="5895" chance="500" /><!-- fish fin -->
+		<item id="5925" chance="400" /><!-- hardened bone -->
+		<item id="5951" chance="1800" /><!-- fish tail -->
+		<item id="7407" chance="70" /><!-- haunted blade -->
+		<item id="18414" chance="100" /><!-- violet crystal shard -->
+		<item id="18417" chance="200" /><!-- brown crystal splinter -->
+		<item id="18420" chance="600" /><!-- red crystal fragment -->
+		<item id="22396" chance="50" /><!-- cluster of solace -->
+		<item id="22532" chance="360" /><!-- frazzle tongue -->
+		<item id="22533" chance="600" /><!-- frazzle skin -->
+	</loot>
+</monster>

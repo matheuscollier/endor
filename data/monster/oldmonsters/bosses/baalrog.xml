@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Baalrog" nameDescription="Baalrog" race="fire" experience="450000" speed="350" manacost="0">
+  <health now="65000" max="65000"/>
+  <look type="243" head="0" body="0" legs="0" feet="0" corpse="6324"/>
+  <targetchange interval="2000" chance="5"/>
+  <strategy attack="100" defense="0"/>
+  
+  <flags>
+	<flag looteable="1"/>
+    <flag summonable="0"/>
+    <flag attackable="1"/>
+    <flag hostile="1"/>
+    <flag illusionable="0"/>
+    <flag convinceable="0"/>
+    <flag pushable="0"/>
+    <flag canpushitems="1"/>
+    <flag canpushcreatures="1"/>
+    <flag targetDistance="1"/>
+    <flag runonhealth="0"/>
+  </flags>
+
+<attacks>
+	<attack name="melee" interval="1800" min="-800" max="-1600"/>
+	
+	<attack name="firefield" interval="3300" chance="55" range="7" radius="5" target="1">
+		<attribute key="shootEffect" value="fire"/>
+	</attack>
+
+	<attack name="fire" interval="2200" chance="35" range="7" radius="3" target="1" min="-500" max="-850">
+		<attribute key="shootEffect" value="flammingarrow"/>
+		<attribute key="areaEffect" value="firearea"/>
+    </attack>
+	
+	<attack name="fire" interval="2500" chance="99" range="7" radius="2" target="1" min="-250" max="-300">
+		<attribute key="shootEffect" value="fire"/>
+		<attribute key="areaEffect" value="explosionarea"/>
+	</attack>
+	
+	<attack name="fire" interval="4100" chance="23" range="7" radius="11" target="0" min="-1200" max="-2000">
+			<attribute key="areaEffect" value="fireattack"/>
+	</attack>
+	
+	<attack name="physical" interval="1800" chance="15" length="8" spread="0" min="-1600" max="-2600">
+		<attribute key="areaEffect" value="poff"/>
+	</attack>
+</attacks>
+
+	<defenses armor="0" defense="0">
+		<defense name="healing" interval="3200" chance="38" min="500" max="900">
+			<attribute key="areaEffect" value="redfirework"/>
+		</defense>
+		<defense name="healing" interval="900" chance="100" min="100" max="200"/>
+	</defenses>
+
+<elements><element physicalPercent="5"/>
+	<element physicalPercent="30"/>
+	<element icePercent="30"/>
+	<element poisonPercent="20"/>
+	<element firePercent="80"/>
+	<element energyPercent="30"/>
+	<element holyPercent="20"/>
+	<element deathPercent="40"/>
+</elements>
+
+<immunities>
+	<immunity drown="0"/>
+	<immunity lifedrain="1"/>
+    <immunity paralyze="1"/>
+    <immunity outfit="1"/>
+    <immunity drunk="1"/>
+    <immunity invisible="1"/>
+</immunities>
+  
+<summons maxSummons="5">
+	<summon name="spirit of fire" interval="2000" chance="17" max="1"/>
+	<summon name="hellfire fighter" interval="2500" chance="15" max="1"/>
+	<summon name="fire elemental" interval="2000" chance="35" max="3"/>
+</summons>
+
+<loot>
+    <item id="8886"  chance="300" />
+	<item id="9933"  chance="250" />
+	<item id="18448"  chance="450" />
+	<item id="8867" chance="450" />
+	<item id="2495" chance="600" />
+	<item id="2421" chance="450" />
+	<item id="2539" chance="500" />
+    <item id="2160" chance="8000" countmax="6" />
+	<item id="2156" chance="25000" />
+	<item id="2138" chance="12000" />
+	<item id="2353" chance="12000" />
+	<item id="7899" chance="12000" />
+	<item id="7891" chance="12000" />
+	<item id="7894" chance="12000" />
+	<item id="6550" chance="45000" countmax="1" />
+
+
+</loot>
+
+</monster>

@@ -1,6 +1,6 @@
-local combat = Combat()
-combat:setParameter(COMBAT_PARAM_TYPE, COMBAT_PHYSICALDAMAGE)
-combat:setParameter(COMBAT_PARAM_EFFECT, CONST_ME_SMALLCLOUDS)
+local combat = createCombatObject()
+setCombatParam(combat, COMBAT_PARAM_TYPE, COMBAT_PHYSICALDAMAGE)
+setCombatParam(combat, COMBAT_PARAM_EFFECT, CONST_ME_SMALLCLOUDS)
 
 	arr = {
 		{0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0},
@@ -10,9 +10,9 @@ combat:setParameter(COMBAT_PARAM_EFFECT, CONST_ME_SMALLCLOUDS)
 	}
 
 local area = createCombatArea(arr)
-	combat:setArea(area)
+	setCombatArea(combat, area)
 
 
-function onCastSpell(creature, var)
-	return combat:execute(creature, var)
+function onCastSpell(cid, var)
+	return doCombat(cid, combat, var)
 end

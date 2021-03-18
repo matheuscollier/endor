@@ -1,7 +1,7 @@
 local mType = Game.createMonsterType("Poison Spider")
 local monster = {}
 
-monster.description = "a poison spider"
+monster.description = "uma poison spider"
 monster.experience = 22
 monster.outfit = {
 	lookType = 36,
@@ -13,38 +13,21 @@ monster.outfit = {
 	lookMount = 0
 }
 
-monster.raceId = 36
-monster.Bestiary = {
-	class = "Vermin",
-	race = BESTY_RACE_VERMIN,
-	toKill = 250,
-	FirstUnlock = 10,
-	SecondUnlock = 100,
-	CharmsPoints = 5,
-	Stars = 1,
-	Occurrence = 0,
-	Locations = "Found in various caves and plains around Tibia (including Rookgaard)."
-	}
-
 monster.health = 26
 monster.maxHealth = 26
 monster.race = "venom"
-monster.corpse = 5974
+monster.corpse = 2848
 monster.speed = 160
 monster.manaCost = 270
 monster.maxSummons = 0
 
 monster.changeTarget = {
-	interval = 4000,
+	interval = 2000,
 	chance = 0
 }
 
-monster.strategiesTarget = {
-	nearest = 100,
-}
-
 monster.flags = {
-	summonable = true,
+	summonable = false,
 	attackable = true,
 	hostile = true,
 	convinceable = true,
@@ -53,14 +36,14 @@ monster.flags = {
 	illusionable = true,
 	canPushItems = false,
 	canPushCreatures = false,
-	staticAttackChance = 90,
+	staticAttackChance = 95,
 	targetDistance = 1,
 	runHealth = 6,
 	healthHidden = false,
 	isBlockable = false,
 	canWalkOnEnergy = false,
 	canWalkOnFire = false,
-	canWalkOnPoison = true,
+	canWalkOnPoison = false,
 	pet = false
 }
 
@@ -75,24 +58,25 @@ monster.voices = {
 }
 
 monster.loot = {
-	{name = "gold coin", chance = 75000, maxCount = 4},
-	{name = "poison spider shell", chance = 1140}
+	{id = 2148, chance = 70000, maxCount = 4},
+	{id = 5879, chance = 3000},
+	{id = 5886, chance = 5000}
 }
 
 monster.attacks = {
-	{name ="melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -20, condition = {type = CONDITION_POISON, totalDamage = 30, interval = 4000}}
+	{name ="melee", interval = 2000, chance = 100, skill = 25, attack = 12, condition = {type = CONDITION_POISON, startDamage = 30, interval = 4000}}
 }
 
 monster.defenses = {
-	defense = 5,
-	armor = 5
+	defense = 0,
+	armor = 0
 }
 
 monster.elements = {
 	{type = COMBAT_PHYSICALDAMAGE, percent = 0},
 	{type = COMBAT_ENERGYDAMAGE, percent = 0},
 	{type = COMBAT_EARTHDAMAGE, percent = 100},
-	{type = COMBAT_FIREDAMAGE, percent = -10},
+	{type = COMBAT_FIREDAMAGE, percent = 0},
 	{type = COMBAT_LIFEDRAIN, percent = 0},
 	{type = COMBAT_MANADRAIN, percent = 0},
 	{type = COMBAT_DROWNDAMAGE, percent = 0},

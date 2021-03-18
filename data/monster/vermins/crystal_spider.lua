@@ -1,8 +1,8 @@
 local mType = Game.createMonsterType("Crystal Spider")
 local monster = {}
 
-monster.description = "a crystal spider"
-monster.experience = 900
+monster.description = "uma crystal spider"
+monster.experience = 950
 monster.outfit = {
 	lookType = 263,
 	lookHead = 0,
@@ -13,37 +13,17 @@ monster.outfit = {
 	lookMount = 0
 }
 
-monster.raceId = 330
-monster.Bestiary = {
-	class = "Magical",
-	race = BESTY_RACE_MAGICAL,
-	toKill = 1000,
-	FirstUnlock = 50,
-	SecondUnlock = 500,
-	CharmsPoints = 25,
-	Stars = 3,
-	Occurrence = 0,
-	Locations = "Atop of the Formorgar Glacier and deep inside Formorgar Mines, Frost Dragon Tunnel, \z
-		Ice Witch Temple, Nibelor Ice Cave, the Crystal Caves in The Inquisition Quest, Mushroom Gardens."
-	}
-
 monster.health = 1250
 monster.maxHealth = 1250
-monster.race = "venom"
+monster.race = "undead"
 monster.corpse = 7344
-monster.speed = 230
+monster.speed = 280
 monster.manaCost = 0
 monster.maxSummons = 0
 
 monster.changeTarget = {
 	interval = 4000,
-	chance = 15
-}
-
-monster.strategiesTarget = {
-	nearest = 70,
-	health = 20,
-	random = 10,
+	chance = 10
 }
 
 monster.flags = {
@@ -56,14 +36,14 @@ monster.flags = {
 	illusionable = true,
 	canPushItems = true,
 	canPushCreatures = false,
-	staticAttackChance = 80,
+	staticAttackChance = 1,
 	targetDistance = 1,
 	runHealth = 0,
 	healthHidden = false,
 	isBlockable = false,
 	canWalkOnEnergy = false,
-	canWalkOnFire = true,
-	canWalkOnPoison = true,
+	canWalkOnFire = false,
+	canWalkOnPoison = false,
 	pet = false
 }
 
@@ -79,50 +59,42 @@ monster.voices = {
 }
 
 monster.loot = {
-	{id = 2124, chance = 1560},
-	{name = "crystal necklace", chance = 1640},
-	{name = "gold coin", chance = 99998, maxCount = 100},
-	{name = "gold coin", chance = 99998, maxCount = 92},
-	{id = 2169, chance = 1480},
-	{name = "platinum amulet", chance = 130},
-	{name = "steel helmet", chance = 5200},
-	{name = "plate armor", chance = 9993},
-	{name = "knight armor", chance = 560},
-	{name = "knight legs", chance = 760},
-	{name = "jewelled backpack", chance = 80},
-	{name = "spider silk", chance = 2010},
-	{name = "shard", chance = 740},
-	{name = "sniper arrow", chance = 5840, maxCount = 6},
-	{name = "sapphire hammer", chance = 140},
-	{name = "crystal sword", chance = 2490},
-	{name = "strong mana potion", chance = 14950},
-	{name = "glacier mask", chance = 670}
+	{id = 2152, chance = 30000},
+	{id = 2445, chance = 1530},
+	{id = 2171, chance = 1200},
+	{id = 5879, chance = 5000},
+	{id = 7407, chance = 650},
+	{id = 2158, chance = 1500},
+	{id = 7364, chance = 30000, maxCount = 4},
+	{id = 2145, chance = 2000},
+	{id = 2352, chance = 1000},
+	{id = 2158, chance = 700},
+	{id = 7290, chance = 700}
 }
 
 monster.attacks = {
-	{name ="melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -250, condition = {type = CONDITION_POISON, totalDamage = 160, interval = 4000}},
-	{name ="speed", interval = 2000, chance = 15, speedChange = -800, range = 7, radius = 6, effect = CONST_ME_POFF, target = false, duration = 15000},
-	{name ="combat", interval = 2000, chance = 15, type = COMBAT_ICEDAMAGE, minDamage = -50, maxDamage = -100, range = 7, shootEffect = CONST_ANI_ICE, effect = CONST_ME_ICEAREA, target = true},
-	{name ="speed", interval = 2000, chance = 20, speedChange = -600, range = 7, shootEffect = CONST_ANI_SNOWBALL, target = true, duration = 10000}
+	{name ="melee", interval = 2000, chance = 100, minDamage = -80, maxDamage = -232},
+	{name ="speed", interval = 2500, chance = 20, SpeedChange = -600, Duration = 7000},
+	{name ="combat", interval = 700, chance = 35, minDamage = -35, maxDamage = -80, type = COMBAT_ENERGYDAMAGE, range = 7, ShootEffect = CONST_ANI_ENERGY, effect = CONST_ME_ENERGYAREA, target = false}
 }
 
 monster.defenses = {
 	defense = 0,
-	armor = 43,
-	{name ="speed", interval = 2000, chance = 15, speedChange = 250, effect = CONST_ME_MAGIC_RED, target = false, duration = 5000}
+	armor = 0,
+	{name ="speed", interval = 4000, chance = 20, SpeedChange = 300, Duration = 6000}
 }
 
 monster.elements = {
-	{type = COMBAT_PHYSICALDAMAGE, percent = 0},
-	{type = COMBAT_ENERGYDAMAGE, percent = -20},
-	{type = COMBAT_EARTHDAMAGE, percent = 20},
-	{type = COMBAT_FIREDAMAGE, percent = 100},
-	{type = COMBAT_LIFEDRAIN, percent = 0},
+	{type = COMBAT_PHYSICALDAMAGE, percent = 5},
+	{type = COMBAT_ENERGYDAMAGE, percent = 80},
+	{type = COMBAT_EARTHDAMAGE, percent = 35},
+	{type = COMBAT_FIREDAMAGE, percent = 0},
+	{type = COMBAT_LIFEDRAIN, percent = 100},
 	{type = COMBAT_MANADRAIN, percent = 0},
 	{type = COMBAT_DROWNDAMAGE, percent = 0},
-	{type = COMBAT_ICEDAMAGE, percent = 100},
-	{type = COMBAT_HOLYDAMAGE , percent = 0},
-	{type = COMBAT_DEATHDAMAGE , percent = 0}
+	{type = COMBAT_ICEDAMAGE, percent = 95},
+	{type = COMBAT_HOLYDAMAGE , percent = 30},
+	{type = COMBAT_DEATHDAMAGE , percent = 25}
 }
 
 monster.immunities = {

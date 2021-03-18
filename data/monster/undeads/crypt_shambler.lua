@@ -1,7 +1,7 @@
 local mType = Game.createMonsterType("Crypt Shambler")
 local monster = {}
 
-monster.description = "a crypt shambler"
+monster.description = "um crypt shambler"
 monster.experience = 195
 monster.outfit = {
 	lookType = 100,
@@ -13,40 +13,21 @@ monster.outfit = {
 	lookMount = 0
 }
 
-monster.raceId = 100
-monster.Bestiary = {
-	class = "Undead",
-	race = BESTY_RACE_UNDEAD,
-	toKill = 500,
-	FirstUnlock = 25,
-	SecondUnlock = 250,
-	CharmsPoints = 15,
-	Stars = 2,
-	Occurrence = 0,
-	Locations = "Ankrahmun Tombs, Trapwood, Ramoa, Hellgate, Helheim, Mount Sternum Undead Cave, Deeper Catacombs, \z
-		Cemetery Quarter, Treasure Island, Upper Spike, Lion's Rock."
-	}
-
 monster.health = 330
 monster.maxHealth = 330
 monster.race = "undead"
-monster.corpse = 6029
+monster.corpse = 3028
 monster.speed = 140
 monster.manaCost = 580
 monster.maxSummons = 0
 
 monster.changeTarget = {
-	interval = 4000,
-	chance = 10
-}
-
-monster.strategiesTarget = {
-	nearest = 70,
-	damage = 30,
+	interval = 2000,
+	chance = 4
 }
 
 monster.flags = {
-	summonable = true,
+	summonable = false,
 	attackable = true,
 	hostile = true,
 	convinceable = true,
@@ -55,14 +36,14 @@ monster.flags = {
 	illusionable = true,
 	canPushItems = true,
 	canPushCreatures = true,
-	staticAttackChance = 90,
+	staticAttackChance = 95,
 	targetDistance = 1,
 	runHealth = 0,
 	healthHidden = false,
 	isBlockable = false,
 	canWalkOnEnergy = false,
 	canWalkOnFire = false,
-	canWalkOnPoison = true,
+	canWalkOnPoison = false,
 	pet = false
 }
 
@@ -74,34 +55,31 @@ monster.light = {
 monster.voices = {
 	interval = 5000,
 	chance = 10,
+	{text = "Uhhhhhhh!", yell = false},
 	{text = "Aaaaahhhh!", yell = false},
 	{text = "Hoooohhh!", yell = false},
-	{text = "Uhhhhhhh!", yell = false},
 	{text = "Chhhhhhh!", yell = false}
 }
 
 monster.loot = {
-	{name = "small diamond", chance = 510},
-	{name = "gold coin", chance = 57000, maxCount = 55},
-	{name = "rotten meat", chance = 1850},
-	{id = 2230, chance = 5000},
-	{name = "throwing star", chance = 910, maxCount = 3},
-	{name = "bone sword", chance = 1000},
-	{name = "iron helmet", chance = 2130},
-	{name = "iron helmet", chance = 2000},
-	{name = "bone shield", chance = 1000},
-	{name = "worm", chance = 9000, maxCount = 10},
-	{name = "half-digested piece of meat", chance = 5000}
+	{id = 2459, chance = 2000},
+	{id = 2377, chance = 500},
+	{id = 2541, chance = 500},
+	{id = 2450, chance = 1000},
+	{id = 5930, chance = 5000, maxCount = 2},
+	{id = 5925, chance = 2000},
+	{id = 2148, chance = 90000, maxCount = 20},
+	{id = 2145, chance = 600}
 }
 
 monster.attacks = {
-	{name ="melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -140},
-	{name ="combat", interval = 2000, chance = 15, type = COMBAT_LIFEDRAIN, minDamage = -28, maxDamage = -55, range = 1, target = true}
+	{name ="melee", interval = 1800, chance = 100, minDamage = -65, maxDamage = -140},
+	{name ="combat", interval = 2000, chance = 23, minDamage = -25, maxDamage = -65, type = COMBAT_LIFEDRAIN, range = 1, target = false}
 }
 
 monster.defenses = {
-	defense = 25,
-	armor = 25
+	defense = 0,
+	armor = 0
 }
 
 monster.elements = {
@@ -111,10 +89,10 @@ monster.elements = {
 	{type = COMBAT_FIREDAMAGE, percent = 0},
 	{type = COMBAT_LIFEDRAIN, percent = 100},
 	{type = COMBAT_MANADRAIN, percent = 0},
-	{type = COMBAT_DROWNDAMAGE, percent = 100},
+	{type = COMBAT_DROWNDAMAGE, percent = 0},
 	{type = COMBAT_ICEDAMAGE, percent = 0},
-	{type = COMBAT_HOLYDAMAGE , percent = -25},
-	{type = COMBAT_DEATHDAMAGE , percent = 100}
+	{type = COMBAT_HOLYDAMAGE , percent = 0},
+	{type = COMBAT_DEATHDAMAGE , percent = 0}
 }
 
 monster.immunities = {

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<monster name="Pooka" nameDescription="a pooka" race="blood" experience="500" speed="220" manacost="450">
+	<look type="977" corpse="29110" />
+	<health now="600" max="600" />
+	<targetchange interval="4000" chance="10" />
+	<flags>
+		<flag summonable="0" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="1" />
+		<flag convinceable="0" />
+		<flag pushable="0" />
+		<flag canpushitems="1" />
+		<flag canpushcreatures="0" />
+		<flag targetDistance="1" />
+		<flag staticattack="90" />
+		<flag runonhealth="20" />
+		<flag canwalkonenergy="0" />
+		<flag canWalkOnFire="0" />
+		<flag canwalkonpoison="0" />
+	</flags>
+	<attacks>
+		<attack name="melee" interval="2000" min="80" max="-230" />
+		<attack name="earth" interval="2000" chance="15" range="7" target="1" min="-30" max="-95">
+			<attribute key="shootEffect" value="poison" />
+		</attack>
+	</attacks>
+	<defenses armor="20" defense="20" />
+	<elements>
+		<element icePercent="10" />
+		<element firePercent="10" />
+		<element holyPercent="5" />
+		<element deathPercent="-5" />
+		<element physicalPercent="-5" />
+	</elements>
+	<voices interval="5000" chance="10">
+		<voice sentence="Hoppel-di-hopp!" />
+		<voice sentence="Jinx!" />
+	</voices>
+	<loot>
+		<item name="small stone" countmax="5" chance="200" />
+		<item name="gold coin" countmax="100" chance="30000" />
+		<item name="stealth ring" chance="492" />
+		<item id="2684" countmax="3" chance="55000" />
+		<item name="orange mushroom" chance="10000" />
+		<item name="Small Ruby" countmax="3" chance="3400" />
+	</loot>
+</monster>

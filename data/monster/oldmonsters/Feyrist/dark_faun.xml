@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<monster name="Dark Faun" nameDescription="a dark faun" race="blood" experience="850" speed="250" manacost="450">
+	<look type="980" head="94" body="114" legs="57" feet="94" corpse="29101" />
+	<health now="1000" max="1000" />
+	<targetchange interval="4000" chance="10" />
+	<flags>
+		<flag summonable="0" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="1" />
+		<flag convinceable="0" />
+		<flag pushable="0" />
+		<flag canpushitems="1" />
+		<flag canpushcreatures="0" />
+		<flag targetDistance="1" />
+		<flag staticattack="90" />
+		<flag runonhealth="20" />
+		<flag canwalkonenergy="0" />
+		<flag canWalkOnFire="0" />
+		<flag canwalkonpoison="0" />
+	</flags>
+	<attacks>
+		<attack name="melee" interval="2000" min="260" max="-415" />
+		<attack name="earth" interval="2000" chance="15" range="7" target="1" min="-160" max="-235">
+			<attribute key="shootEffect" value="poison" />
+		</attack>
+		<attack name="drunk" interval="3000" chance="11" radius="6" target="0" duration="25000">
+			<attribute key="areaEffect" value="purplenote" />
+		</attack>
+	</attacks>
+	<defenses armor="25" defense="25">
+		<defense name="healing" interval="2000" chance="15" min="85" max="105">
+			<attribute key="areaEffect" value="blueshimmer" />
+		</defense>
+	</defenses>
+	<elements>
+		<element icePercent="10" />
+		<element firePercent="10" />
+		<element holyPercent="5" />
+		<element deathPercent="-5" />
+		<element physicalPercent="15" />
+	</elements>
+	<voices interval="5000" chance="10">
+		<voice sentence="Are you posing a threat to this realm? I suppose so." />
+		<voice sentence="Hicks!" />
+		<voice sentence="This is will be your last dance!" />
+		<voice sentence="You're a threat to this realm! You have to die!" />
+		<voice sentence="This is a nightmare and you won't wake up!" />
+	</voices>
+	<loot>
+		<item name="small diamond" chance="200" />
+		<item name="gold coin" countmax="112" chance="30000" />
+		<item name="wood cape" chance="492" />
+		<item name="mandrake" chance="50" />
+		<item name="small stone" countmax="4" chance="492" />
+		<item name="small sapphire" countmax="3" chance="1692" />
+		<item name="shimmering beetles" chance="492" />
+		<item name="leaf legs" chance="719" />
+		<item name="dark mushroom" chance="1719" />
+		<item name="grapes" chance="30100" />
+		<item name="strong health potion" countmax="2" chance="800" />
+		<item id="2515" chance="450" />
+		<item id="2195" chance="450" />
+	</loot>
+</monster>

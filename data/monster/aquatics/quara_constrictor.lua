@@ -1,8 +1,8 @@
 local mType = Game.createMonsterType("Quara Constrictor")
 local monster = {}
 
-monster.description = "a quara constrictor"
-monster.experience = 250
+monster.description = "um quara constrictor"
+monster.experience = 350
 monster.outfit = {
 	lookType = 46,
 	lookHead = 0,
@@ -23,9 +23,9 @@ monster.Bestiary = {
 	CharmsPoints = 25,
 	Stars = 3,
 	Occurrence = 0,
-	Locations = "Calassa, Frozen Trench underwater sites, Yalahar (Sunken Quarter)."
+	Locations = "x"
 	}
-
+	
 monster.health = 450
 monster.maxHealth = 450
 monster.race = "blood"
@@ -64,6 +64,7 @@ monster.flags = {
 	pet = false
 }
 
+
 monster.light = {
 	level = 0,
 	color = 0
@@ -79,13 +80,13 @@ monster.voices = {
 }
 
 monster.loot = {
-	{name = "gold coin", chance = 87500, maxCount = 100},
-	{name = "quara tentacle", chance = 14520},
-	{name = "longsword", chance = 6931},
-	{name = "shrimp", chance = 5140, maxCount = 5},
-	{name = "brass armor", chance = 4810},
-	{name = "small amethyst", chance = 3060},
-	{name = "fish fin", chance = 490}
+	{id = 2460, chance = 500},
+	{id = 2397, chance = 500},
+	{id = 2465, chance = 500},
+	{id = 2447, chance = 300},
+	{id = 2148, chance = 50000, maxCount = 30},
+	{id = 2670, chance = 25000, maxCount = 5},
+	{id = 2150, chance = 500}
 }
 
 monster.attacks = {
@@ -102,7 +103,7 @@ monster.defenses = {
 }
 
 monster.elements = {
-	{type = COMBAT_PHYSICALDAMAGE, percent = 0},
+	{type = COMBAT_PHYSICALDAMAGE, percent = -10},
 	{type = COMBAT_ENERGYDAMAGE, percent = -25},
 	{type = COMBAT_EARTHDAMAGE, percent = -10},
 	{type = COMBAT_FIREDAMAGE, percent = 100},
@@ -117,7 +118,7 @@ monster.elements = {
 monster.immunities = {
 	{type = "paralyze", condition = true},
 	{type = "outfit", condition = false},
-	{type = "invisible", condition = false},
+	{type = "invisible", condition = true},
 	{type = "bleed", condition = false}
 }
 

@@ -1,8 +1,8 @@
 local mType = Game.createMonsterType("Nightmare")
 local monster = {}
 
-monster.description = "a nightmare"
-monster.experience = 1666
+monster.description = "um nightmare"
+monster.experience = 2350
 monster.outfit = {
 	lookType = 245,
 	lookHead = 0,
@@ -13,38 +13,17 @@ monster.outfit = {
 	lookMount = 0
 }
 
-monster.raceId = 299
-monster.Bestiary = {
-	class = "Magical",
-	race = BESTY_RACE_MAGICAL,
-	toKill = 1000,
-	FirstUnlock = 50,
-	SecondUnlock = 500,
-	CharmsPoints = 25,
-	Stars = 3,
-	Occurrence = 0,
-	Locations = "Pits of Inferno, Formorgar Mines, Cemetery Quarter, Edron \z
-		(In multiple places during The Inquisition Quest), Alchemist Quarter, Vengoth Castle, Deeper Banuta, Krailos Ruins."
-	}
-
 monster.health = 2700
 monster.maxHealth = 2700
-monster.race = "blood"
+monster.race = "undead"
 monster.corpse = 6340
-monster.speed = 464
+monster.speed = 220
 monster.manaCost = 0
 monster.maxSummons = 0
 
 monster.changeTarget = {
-	interval = 4000,
-	chance = 10
-}
-
-monster.strategiesTarget = {
-	nearest = 70,
-	health = 10,
-	damage = 10,
-	random = 10,
+	interval = 2000,
+	chance = 5
 }
 
 monster.flags = {
@@ -57,14 +36,14 @@ monster.flags = {
 	illusionable = true,
 	canPushItems = true,
 	canPushCreatures = true,
-	staticAttackChance = 90,
+	staticAttackChance = 95,
 	targetDistance = 1,
-	runHealth = 300,
+	runHealth = 0,
 	healthHidden = false,
 	isBlockable = false,
 	canWalkOnEnergy = false,
 	canWalkOnFire = false,
-	canWalkOnPoison = true,
+	canWalkOnPoison = false,
 	pet = false
 }
 
@@ -76,62 +55,41 @@ monster.light = {
 monster.voices = {
 	interval = 5000,
 	chance = 10,
-	{text = "Close your eyes... I want to show you something.", yell = false},
-	{text = "I will haunt you forever!", yell = false},
-	{text = "Pffffrrrrrrrrrrrr.", yell = false},
-	{text = "I will make you scream.", yell = false},
-	{text = "Take a ride with me.", yell = false},
-	{text = "Weeeheeheeeheee!", yell = false}
 }
 
 monster.loot = {
-	{name = "gold coin", chance = 50000, maxCount = 100},
-	{name = "gold coin", chance = 50000, maxCount = 55},
-	{name = "platinum coin", chance = 2564, maxCount = 3},
-	{name = "boots of haste", chance = 337},
-	{name = "war axe", chance = 95},
-	{name = "knight legs", chance = 961},
-	{name = "ancient shield", chance = 990},
-	{name = "power bolt", chance = 9090, maxCount = 4},
-	{name = "ham", chance = 29000, maxCount = 2},
-	{name = "mysterious voodoo skull", chance = 123},
-	{name = "soul orb", chance = 20000},
-	{id = 6300, chance = 1298},
-	{name = "demonic essence", chance = 10000},
-	{name = "skeleton decoration", chance = 337},
-	{name = "concentrated demonic blood", chance = 19666, maxCount = 2},
-	{name = "essence of a bad dream", chance = 15240},
-	{name = "scythe leg", chance = 9090}
+	{id = 6500, chance = 1000},
+	{id = 7891, chance = 200},
+	{id = 2148, chance = 100000, maxCount = 70},
+	{id = 2148, chance = 100000, maxCount = 70}
 }
 
 monster.attacks = {
-	{name ="melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -150},
-	{name ="combat", interval = 2000, chance = 10, type = COMBAT_DEATHDAMAGE, minDamage = -120, maxDamage = -170, range = 7, radius = 1, shootEffect = CONST_ANI_DEATH, effect = CONST_ME_SMALLCLOUDS, target = true},
-	{name ="combat", interval = 2000, chance = 20, type = COMBAT_EARTHDAMAGE, minDamage = -150, maxDamage = -350, range = 7, radius = 4, shootEffect = CONST_ANI_POISON, effect = CONST_ME_POISONAREA, target = true}
+	{name ="melee", interval = 2000, chance = 100, minDamage = -160, maxDamage = -240},
+	{name ="combat", interval = 500, chance = 99, minDamage = -15, maxDamage = -30, type = COMBAT_FIREDAMAGE, range = 7, ShootEffect = CONST_ANI_FIRE, effect = CONST_ME_EXPLOSIONAREA, target = false}
 }
 
 monster.defenses = {
-	defense = 25,
-	armor = 25,
-	{name ="combat", interval = 2000, chance = 10, type = COMBAT_HEALING, minDamage = 60, maxDamage = 100, effect = CONST_ME_MAGIC_BLUE, target = false},
-	{name ="speed", interval = 2000, chance = 15, speedChange = 420, effect = CONST_ME_MAGIC_RED, target = false, duration = 5000}
+	defense = 0,
+	armor = 0,
+	{name ="combat", interval = 6000, chance = 15, minDamage = 100, maxDamage = 200, type = COMBAT_HEALING, effect = CONST_ME_MAGIC_BLUE, target = false}
 }
 
 monster.elements = {
-	{type = COMBAT_PHYSICALDAMAGE, percent = 0},
-	{type = COMBAT_ENERGYDAMAGE, percent = 20},
-	{type = COMBAT_EARTHDAMAGE, percent = 100},
-	{type = COMBAT_FIREDAMAGE, percent = 20},
+	{type = COMBAT_PHYSICALDAMAGE, percent = 5},
+	{type = COMBAT_ENERGYDAMAGE, percent = 30},
+	{type = COMBAT_EARTHDAMAGE, percent = 20},
+	{type = COMBAT_FIREDAMAGE, percent = 30},
 	{type = COMBAT_LIFEDRAIN, percent = 100},
 	{type = COMBAT_MANADRAIN, percent = 0},
 	{type = COMBAT_DROWNDAMAGE, percent = 0},
-	{type = COMBAT_ICEDAMAGE, percent = 10},
-	{type = COMBAT_HOLYDAMAGE , percent = -25},
-	{type = COMBAT_DEATHDAMAGE , percent = 100}
+	{type = COMBAT_ICEDAMAGE, percent = 20},
+	{type = COMBAT_HOLYDAMAGE , percent = 20},
+	{type = COMBAT_DEATHDAMAGE , percent = 30}
 }
 
 monster.immunities = {
-	{type = "paralyze", condition = false},
+	{type = "paralyze", condition = true},
 	{type = "outfit", condition = false},
 	{type = "invisible", condition = true},
 	{type = "bleed", condition = false}

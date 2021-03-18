@@ -1,8 +1,8 @@
 local mType = Game.createMonsterType("Defiler")
 local monster = {}
 
-monster.description = "a defiler"
-monster.experience = 3700
+monster.description = "um defiler"
+monster.experience = 2500
 monster.outfit = {
 	lookType = 238,
 	lookHead = 0,
@@ -13,37 +13,17 @@ monster.outfit = {
 	lookMount = 0
 }
 
-monster.raceId = 289
-monster.Bestiary = {
-	class = "Slime",
-	race = BESTY_RACE_SLIME,
-	toKill = 2500,
-	FirstUnlock = 100,
-	SecondUnlock = 1000,
-	CharmsPoints = 50,
-	Stars = 4,
-	Occurrence = 0,
-	Locations = "Pits of Inferno, The Vats - Edron."
-	}
-
 monster.health = 3650
 monster.maxHealth = 3650
 monster.race = "venom"
 monster.corpse = 6532
-monster.speed = 160
+monster.speed = 150
 monster.manaCost = 0
 monster.maxSummons = 0
 
 monster.changeTarget = {
-	interval = 4000,
-	chance = 10
-}
-
-monster.strategiesTarget = {
-	nearest = 70,
-	health = 10,
-	damage = 10,
-	random = 10,
+	interval = 2000,
+	chance = 0
 }
 
 monster.flags = {
@@ -53,17 +33,17 @@ monster.flags = {
 	convinceable = false,
 	pushable = false,
 	rewardBoss = false,
-	illusionable = true,
+	illusionable = false,
 	canPushItems = true,
-	canPushCreatures = true,
-	staticAttackChance = 80,
+	canPushCreatures = false,
+	staticAttackChance = 95,
 	targetDistance = 1,
-	runHealth = 85,
+	runHealth = 0,
 	healthHidden = false,
 	isBlockable = false,
 	canWalkOnEnergy = false,
 	canWalkOnFire = false,
-	canWalkOnPoison = true,
+	canWalkOnPoison = false,
 	pet = false
 }
 
@@ -75,58 +55,46 @@ monster.light = {
 monster.voices = {
 	interval = 5000,
 	chance = 10,
-	{text = "Blubb", yell = false},
-	{text = "Blubb Blubb", yell = false}
 }
 
 monster.loot = {
-	{name = "small diamond", chance = 2439, maxCount = 2},
-	{name = "small ruby", chance = 3000, maxCount = 2},
-	{name = "gold coin", chance = 100000, maxCount = 100},
-	{name = "gold coin", chance = 100000, maxCount = 100},
-	{name = "gold coin", chance = 100000, maxCount = 72},
-	{name = "small emerald", chance = 5366, maxCount = 3},
-	{name = "talon", chance = 5710},
-	{name = "platinum coin", chance = 95000, maxCount = 6},
-	{name = "yellow gem", chance = 1219},
-	{name = "green gem", chance = 613},
-	{name = "red gem", chance = 1538},
-	{name = "blue gem", chance = 300},
-	{name = "soul orb", chance = 20000},
-	{id = 6300, chance = 3030},
-	{name = "demonic essence", chance = 20320},
-	{name = "glob of acid slime", chance = 14210},
-	{name = "glob of tar", chance = 12000}
+	{id = 2132, chance = 3500},
+	{id = 2170, chance = 2000},
+	{id = 2181, chance = 1800},
+	{id = 2188, chance = 1700},
+	{id = 2411, chance = 1500},
+	{id = 2229, chance = 25000},
+	{id = 2501, chance = 250},
+	{id = 2148, chance = 20000, maxCount = 100},
+	{id = 2149, chance = 800},
+	{id = 2168, chance = 1000},
+	{id = 2155, chance = 2000},
+	{id = 2545, chance = 12000, maxCount = 10}
 }
 
 monster.attacks = {
-	{name ="melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -240, condition = {type = CONDITION_POISON, totalDamage = 150, interval = 4000}},
-	{name ="combat", interval = 2000, chance = 20, type = COMBAT_EARTHDAMAGE, minDamage = -160, maxDamage = -270, range = 7, shootEffect = CONST_ANI_POISON, target = false},
-	-- poison
+	{name ="melee", interval = 2000, chance = 100, minDamage = -120, maxDamage = -240},
+	{name ="poisonfield", interval = 3500, chance = 70, minDamage = -70, maxDamage = -100, effect = CONST_ME_POISONAREA, target = false},
 	{name ="condition", type = CONDITION_POISON, interval = 2000, chance = 15, minDamage = -400, maxDamage = -640, range = 7, radius = 7, effect = CONST_ME_HITBYPOISON, target = false},
-	{name ="combat", interval = 2000, chance = 20, type = COMBAT_EARTHDAMAGE, minDamage = -120, maxDamage = -170, radius = 3, effect = CONST_ME_POISONAREA, target = false},
-	-- poison
-	{name ="condition", type = CONDITION_POISON, interval = 2000, chance = 10, minDamage = -500, maxDamage = -1000, length = 8, spread = 3, effect = CONST_ME_SMALLPLANTS, target = false},
-	{name ="speed", interval = 2000, chance = 15, speedChange = -700, length = 8, spread = 3, effect = CONST_ME_SMALLCLOUDS, target = false, duration = 15000}
+	{name ="combat", interval = 1900, chance = 90, minDamage = -90, maxDamage = -200, range = 6, type = COMBAT_EARTHDAMAGE, ShootEffect = CONST_ANI_POISON, effect = CONST_ME_POISONAREA, target = true}
 }
 
 monster.defenses = {
-	defense = 20,
-	armor = 20,
-	{name ="combat", interval = 2000, chance = 10, type = COMBAT_HEALING, minDamage = 280, maxDamage = 350, effect = CONST_ME_MAGIC_BLUE, target = false}
+	defense = 0,
+	armor = 0
 }
 
 monster.elements = {
-	{type = COMBAT_PHYSICALDAMAGE, percent = 0},
-	{type = COMBAT_ENERGYDAMAGE, percent = 10},
-	{type = COMBAT_EARTHDAMAGE, percent = 100},
-	{type = COMBAT_FIREDAMAGE, percent = -25},
-	{type = COMBAT_LIFEDRAIN, percent = 0},
+	{type = COMBAT_PHYSICALDAMAGE, percent = 5},
+	{type = COMBAT_ENERGYDAMAGE, percent = 50},
+	{type = COMBAT_EARTHDAMAGE, percent = 99},
+	{type = COMBAT_FIREDAMAGE, percent = 45},
+	{type = COMBAT_LIFEDRAIN, percent = 100},
 	{type = COMBAT_MANADRAIN, percent = 0},
 	{type = COMBAT_DROWNDAMAGE, percent = 0},
-	{type = COMBAT_ICEDAMAGE, percent = 20},
-	{type = COMBAT_HOLYDAMAGE , percent = 0},
-	{type = COMBAT_DEATHDAMAGE , percent = 0}
+	{type = COMBAT_ICEDAMAGE, percent = 40},
+	{type = COMBAT_HOLYDAMAGE , percent = 55},
+	{type = COMBAT_DEATHDAMAGE , percent = 45}
 }
 
 monster.immunities = {

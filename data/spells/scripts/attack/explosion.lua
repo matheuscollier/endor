@@ -1,18 +1,24 @@
-local combat = Combat()
-combat:setParameter(COMBAT_PARAM_TYPE, COMBAT_PHYSICALDAMAGE)
-combat:setParameter(COMBAT_PARAM_EFFECT, CONST_ME_EXPLOSIONAREA)
-combat:setParameter(COMBAT_PARAM_DISTANCEEFFECT, CONST_ANI_EXPLOSION)
-combat:setParameter(COMBAT_PARAM_BLOCKARMOR, 1)
-combat:setArea(createCombatArea(AREA_CIRCLE1X1))
+local combat = createCombatObject()
+setCombatParam(combat, COMBAT_PARAM_TYPE, COMBAT_PHYSICALDAMAGE)
+setCombatParam(combat, COMBAT_PARAM_EFFECT, CONST_ME_EXPLOSIONAREA)
+setCombatParam(combat, COMBAT_PARAM_DISTANCEEFFECT, CONST_ANI_EXPLOSION)
 
-function onGetFormulaValues(player, level, maglevel)
-	local min = 0
-	local max = (level / 5) + (maglevel * 4.8)
-	return -min, -max
+function getCombatFormulas(cid, lv, maglv)
+local formula_min = ((lv*-0.8 + maglv*-0.8) * 1.5 )
+local formula_max = ((lv*-1.0 + maglv*-1.2) * 1.5 )
+if(formula_max < formula_min) then
+local tmp = formula_max
+formula_max = formula_min
+formula_min = tmp
+end
+return formula_min, formula_max
 end
 
-combat:setCallback(CALLBACK_PARAM_LEVELMAGICVALUE, "onGetFormulaValues")
+setCombatCallback(combat, CALLBACK_PARAM_LEVELMAGICVALUE, "getCombatFormulas")
 
-function onCastSpell(creature, var, isHotkey)
-	return combat:execute(creature, var)
+local area = createCombatArea(AREA_CROSS1X1)
+setCombatArea(combat, area)
+
+function onCastSpell(cid, var)
+	return doCombat(cid, combat, var)
 end

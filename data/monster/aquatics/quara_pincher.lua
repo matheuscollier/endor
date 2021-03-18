@@ -1,8 +1,8 @@
 local mType = Game.createMonsterType("Quara Pincher")
 local monster = {}
 
-monster.description = "a quara pincher"
-monster.experience = 1200
+monster.description = "uma quara pincher"
+monster.experience = 1300
 monster.outfit = {
 	lookType = 77,
 	lookHead = 0,
@@ -23,9 +23,9 @@ monster.Bestiary = {
 	CharmsPoints = 25,
 	Stars = 3,
 	Occurrence = 0,
-	Locations = "Calassa, Frozen Trench, Yalahar (Sunken Quarter)."
+	Locations = "x"
 	}
-
+	
 monster.health = 1800
 monster.maxHealth = 1800
 monster.race = "blood"
@@ -72,41 +72,39 @@ monster.light = {
 monster.voices = {
 	interval = 5000,
 	chance = 10,
-	{text = "Clank! Clank!", yell = false},
+	{text = "Clank clank!", yell = false},
 	{text = "Clap!", yell = false},
 	{text = "Crrrk! Crrrk!", yell = false}
 }
 
 monster.loot = {
-	{name = "gold coin", chance = 50000, maxCount = 100},
-	{name = "gold coin", chance = 50000, maxCount = 50},
-	{name = "platinum coin", chance = 40000},
-	{name = "quara pincers", chance = 14285},
-	{name = "great health potion", chance = 10630},
-	{name = "small ruby", chance = 7761, maxCount = 2},
-	{name = "halberd", chance = 6861},
-	{name = "shrimp", chance = 5245, maxCount = 5},
-	{name = "fish fin", chance = 1600},
-	{name = "warrior helmet", chance = 1460},
-	{name = "crown armor", chance = 280},
-	{name = "glacier robe", chance = 120},
-	{name = "giant shrimp", chance = 40}
+	{id = 2475, chance = 333},
+	{id = 7387, chance = 150},
+	{id = 2536, chance = 180},
+	{id = 2487, chance = 100},
+	{id = 2670, chance = 4500, maxCount = 5},
+	{id = 5895, chance = 2000},
+	{id = 2148, chance = 25000, maxCount = 100},
+	{id = 2148, chance = 25000, maxCount = 100},
+	{id = 2147, chance = 500}
 }
 
 monster.attacks = {
-	{name ="melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -342, effect = CONST_ME_DRAWBLOOD},
+	{name ="melee", interval = 2000, chance = 100, minDamage = -160, maxDamage = -240, effect = CONST_ME_DRAWBLOOD},
+	{name ="combat", interval = 2750, chance = 25, minDamage = -80, maxDamage = -200, type = COMBAT_PHYSICALDAMAGE, length = 8, spread = 3, effect = CONST_ME_LOSEENERGY, target = false},
 	{name ="speed", interval = 2000, chance = 20, speedChange = -600, range = 1, effect = CONST_ME_MAGIC_RED, target = false, duration = 3000}
 }
 
 monster.defenses = {
-	defense = 50,
-	armor = 50
+	defense = 30,
+	armor = 30,
+	{name ="combat", interval = 1500, chance = 18, minDamage = 113, maxDamage = 187, type = COMBAT_HEALING, effect = CONST_ME_MAGIC_BLUE, target = false}
 }
 
 monster.elements = {
-	{type = COMBAT_PHYSICALDAMAGE, percent = 10},
+	{type = COMBAT_PHYSICALDAMAGE, percent = 0},
 	{type = COMBAT_ENERGYDAMAGE, percent = -25},
-	{type = COMBAT_EARTHDAMAGE, percent = -10},
+	{type = COMBAT_EARTHDAMAGE, percent = -20},
 	{type = COMBAT_FIREDAMAGE, percent = 100},
 	{type = COMBAT_LIFEDRAIN, percent = 100},
 	{type = COMBAT_MANADRAIN, percent = 0},

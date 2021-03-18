@@ -1,8 +1,8 @@
 local mType = Game.createMonsterType("Deepling Warrior")
 local monster = {}
 
-monster.description = "a deepling warrior"
-monster.experience = 1500
+monster.description = "um deepling warrior"
+monster.experience = 15000
 monster.outfit = {
 	lookType = 441,
 	lookHead = 0,
@@ -23,14 +23,14 @@ monster.Bestiary = {
 	CharmsPoints = 25,
 	Stars = 3,
 	Occurrence = 0,
-	Locations = "Fiehonja."
+	Locations = "Atlantida."
 	}
-
-monster.health = 1600
-monster.maxHealth = 1600
+	
+monster.health = 16000					 
+monster.maxHealth = 16000
 monster.race = "blood"
 monster.corpse = 15175
-monster.speed = 290
+monster.speed = 450
 monster.manaCost = 0
 monster.maxSummons = 0
 
@@ -79,27 +79,24 @@ monster.voices = {
 }
 
 monster.loot = {
-	{name = "gold coin", chance = 60000, maxCount = 100},
-	{name = "gold coin", chance = 60000, maxCount = 80},
-	{name = "deepling filet", chance = 15285},
-	{name = "deeptags", chance = 14975},
-	{name = "deepling ridge", chance = 11111},
-	{name = "great mana potion", chance = 10210},
-	{name = "deepling warts", chance = 10040},
-	{name = "great health potion", chance = 10030},
-	{name = "vortex bolt", chance = 3431, maxCount = 5},
-	{name = "small emerald", chance = 3104},
-	{name = "life ring", chance = 3001},
-	{name = "heavy trident", chance = 999},
-	{name = "fish fin", chance = 870},
-	{name = "warrior's shield", chance = 610},
-	{name = "eye of a deepling", chance = 610},
-	{name = "warrior's axe", chance = 510}
+	{id = 2168, chance = 6000},
+	{id = 15404, chance = 100},
+	{id = 2149, chance = 300},
+	{id = 15425, chance = 700},
+	{id = 15453, chance = 600},
+	{id = 15430, chance = 5000},
+	{id = 13870, chance = 5500},
+	{id = 2475, chance = 800},
+	{id = 5949, chance = 80000}
 }
 
 monster.attacks = {
-	{name ="melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -300, effect = CONST_ME_DRAWBLOOD},
-	{name ="combat", interval = 2000, chance = 20, type = COMBAT_PHYSICALDAMAGE, minDamage = 0, maxDamage = -290, range = 7, shootEffect = CONST_ANI_WHIRLWINDAXE, target = true}
+	{name ="melee", interval = 1800, chance = 100, minDamage = -200, maxDamage = -300, effect = CONST_ME_DRAWBLOOD},
+	{name ="combat", interval = 2000, chance = 20, minDamage = -550, maxDamage = -650, type = COMBAT_LIFEDRAIN, range = 1, effect = CONST_ME_MAGIC_RED, target = false},
+	{name ="combat", interval = 3000, chance = 25, minDamage = -250, maxDamage = -450, type = COMBAT_LIFEDRAIN, range = 7, effect = CONST_ME_GROUNDSHAKER, target = true},
+	{name ="combat", interval = 2500, chance = 50, minDamage = -400, maxDamage = -700, type = COMBAT_LIFEDRAIN, range = 7, effect = CONST_ME_STUN, target = true},
+	{name ="speed", interval = 2000, chance = 35, SpeedChange = -500, Duration = 80000},
+	{name ="combat", interval = 2000, chance = 30, minDamage = -500, maxDamage = -600, type = COMBAT_LIFEDRAIN, length = 7, spread = 3, effect = CONST_ME_DRAWBLOOD, target = false}
 }
 
 monster.defenses = {
@@ -108,21 +105,22 @@ monster.defenses = {
 	{name ="combat", interval = 2000, chance = 15, type = COMBAT_HEALING, minDamage = 50, maxDamage = 150, effect = CONST_ME_MAGIC_BLUE, target = false}
 }
 
+
 monster.elements = {
-	{type = COMBAT_PHYSICALDAMAGE, percent = 0},
-	{type = COMBAT_ENERGYDAMAGE, percent = -10},
-	{type = COMBAT_EARTHDAMAGE, percent = -10},
-	{type = COMBAT_FIREDAMAGE, percent = 100},
+	{type = COMBAT_PHYSICALDAMAGE, percent = 60},
+	{type = COMBAT_ENERGYDAMAGE, percent = 20},
+	{type = COMBAT_EARTHDAMAGE, percent = 10},
+	{type = COMBAT_FIREDAMAGE, percent = 20},
 	{type = COMBAT_LIFEDRAIN, percent = 0},
 	{type = COMBAT_MANADRAIN, percent = 0},
 	{type = COMBAT_DROWNDAMAGE, percent = 100},
 	{type = COMBAT_ICEDAMAGE, percent = 100},
-	{type = COMBAT_HOLYDAMAGE , percent = 0},
-	{type = COMBAT_DEATHDAMAGE , percent = 10}
+	{type = COMBAT_HOLYDAMAGE , percent = 25},
+	{type = COMBAT_DEATHDAMAGE , percent = 30}
 }
 
 monster.immunities = {
-	{type = "paralyze", condition = false},
+	{type = "paralyze", condition = true},
 	{type = "outfit", condition = false},
 	{type = "invisible", condition = true},
 	{type = "bleed", condition = false}

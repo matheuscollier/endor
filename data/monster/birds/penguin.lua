@@ -23,14 +23,14 @@ monster.Bestiary = {
 	CharmsPoints = 5,
 	Stars = 1,
 	Occurrence = 0,
-	Locations = "In and north of Formorgar Glacier, Nibelor, Helheim, Grimlund, south of Svargrond, Chyllfroest."
+	Locations = "x."
 	}
-
+	
 monster.health = 33
 monster.maxHealth = 33
 monster.race = "blood"
 monster.corpse = 7334
-monster.speed = 116
+monster.speed = 130
 monster.manaCost = 300
 monster.maxSummons = 0
 
@@ -75,9 +75,9 @@ monster.voices = {
 }
 
 monster.loot = {
-	{id = 2667, chance = 7830, maxCount = 2},
-	{name = "rainbow trout", chance = 70},
-	{name = "green perch", chance = 130}
+	{id = 2667, chance = 65000, maxCount = 3},
+	{id = 7159, chance = 600},
+	{id = 7158, chance = 500}
 }
 
 monster.attacks = {

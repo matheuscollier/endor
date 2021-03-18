@@ -13,38 +13,21 @@ monster.outfit = {
 	lookMount = 0
 }
 
-monster.raceId = 123
-monster.Bestiary = {
-	class = "Mammal",
-	race = BESTY_RACE_MAMMAL,
-	toKill = 500,
-	FirstUnlock = 25,
-	SecondUnlock = 250,
-	CharmsPoints = 15,
-	Stars = 2,
-	Occurrence = 0,
-	Locations = "South of Port Hope around Trapwood, as well as a lone specimen in the Arena Quarter."
-	}
-
 monster.health = 80
 monster.maxHealth = 80
 monster.race = "blood"
-monster.corpse = 6049
+monster.corpse = 4286
 monster.speed = 156
 monster.manaCost = 300
 monster.maxSummons = 0
 
 monster.changeTarget = {
-	interval = 4000,
+	interval = 2000,
 	chance = 0
 }
 
-monster.strategiesTarget = {
-	nearest = 100,
-}
-
 monster.flags = {
-	summonable = true,
+	summonable = false,
 	attackable = true,
 	hostile = true,
 	convinceable = true,
@@ -53,7 +36,7 @@ monster.flags = {
 	illusionable = true,
 	canPushItems = false,
 	canPushCreatures = false,
-	staticAttackChance = 90,
+	staticAttackChance = 95,
 	targetDistance = 1,
 	runHealth = 15,
 	healthHidden = false,
@@ -77,25 +60,24 @@ monster.voices = {
 }
 
 monster.loot = {
-	{name = "meat", chance = 70500, maxCount = 4},
-	{name = "ham", chance = 39000, maxCount = 2},
-	{name = "bamboo stick", chance = 10000}
+	{id = 2671, chance = 40000, maxCount = 2},
+	{id = 2666, chance = 70000, maxCount = 4}
 }
 
 monster.attacks = {
-	{name ="melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -20}
+	{name ="melee", interval = 2000, chance = 100, skill = 14, attack = 15}
 }
 
 monster.defenses = {
-	defense = 10,
-	armor = 10
+	defense = 0,
+	armor = 0
 }
 
 monster.elements = {
 	{type = COMBAT_PHYSICALDAMAGE, percent = 0},
 	{type = COMBAT_ENERGYDAMAGE, percent = 0},
 	{type = COMBAT_EARTHDAMAGE, percent = 100},
-	{type = COMBAT_FIREDAMAGE, percent = -10},
+	{type = COMBAT_FIREDAMAGE, percent = 0},
 	{type = COMBAT_LIFEDRAIN, percent = 0},
 	{type = COMBAT_MANADRAIN, percent = 0},
 	{type = COMBAT_DROWNDAMAGE, percent = 0},

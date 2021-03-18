@@ -95,79 +95,8 @@ function Player.addManaSpent(...)
 	return ret
 end
 
--- Functions From OTServBR-Global
-function Player.getCookiesDelivered(self)
-	local storage, amount = {
-		Storage.WhatAFoolish.CookieDelivery.SimonTheBeggar, Storage.WhatAFoolish.CookieDelivery.Markwin, Storage.WhatAFoolish.CookieDelivery.Ariella,
-		Storage.WhatAFoolish.CookieDelivery.Hairycles, Storage.WhatAFoolish.CookieDelivery.Djinn, Storage.WhatAFoolish.CookieDelivery.AvarTar,
-		Storage.WhatAFoolish.CookieDelivery.OrcKing, Storage.WhatAFoolish.CookieDelivery.Lorbas, Storage.WhatAFoolish.CookieDelivery.Wyda,
-		Storage.WhatAFoolish.CookieDelivery.Hjaern
-	}, 0
-	for i = 1, #storage do
-		if self:getStorageValue(storage[i]) == 1 then
-			amount = amount + 1
-		end
-	end
-	return amount
-end
-
 function Player.allowMovement(self, allow)
 	return self:setStorageValue(STORAGE.blockMovementStorage, allow and -1 or 1)
-end
-
-function Player.checkGnomeRank(self)
-	local points = self:getStorageValue(Storage.BigfootBurden.Rank)
-	local questProgress = self:getStorageValue(Storage.BigfootBurden.QuestLine)
-	if points >= 30 and points < 120 then
-		if questProgress <= 25 then
-			self:setStorageValue(Storage.BigfootBurden.QuestLine, 26)
-			self:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
-			self:addAchievement('Gnome Little Helper')
-		end
-	elseif points >= 120 and points < 480 then
-		if questProgress <= 26 then
-			self:setStorageValue(Storage.BigfootBurden.QuestLine, 27)
-			self:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
-			self:addAchievement('Gnome Little Helper')
-			self:addAchievement('Gnome Friend')
-		end
-	elseif points >= 480 and points < 1440 then
-		if questProgress <= 27 then
-			self:setStorageValue(Storage.BigfootBurden.QuestLine, 28)
-			self:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
-			self:addAchievement('Gnome Little Helper')
-			self:addAchievement('Gnome Friend')
-			self:addAchievement('Gnomelike')
-		end
-	elseif points >= 1440 then
-		if questProgress <= 29 then
-			self:setStorageValue(Storage.BigfootBurden.QuestLine, 30)
-			self:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
-			self:addAchievement('Gnome Little Helper')
-			self:addAchievement('Gnome Friend')
-			self:addAchievement('Gnomelike')
-			self:addAchievement('Honorary Gnome')
-		end
-	end
-	return true
-end
-
-function Player.addFamePoint(self)
-	local points = self:getStorageValue(SPIKE_FAME_POINTS)
-	local current = math.max(0, points)
-	self:setStorageValue(SPIKE_FAME_POINTS, current + 1)
-	self:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You have received a fame point.")
-end
-
-function Player.getFamePoints(self)
-	local points = self:getStorageValue(SPIKE_FAME_POINTS)
-	return math.max(0, points)
-end
-
-function Player.removeFamePoints(self, amount)
-	local points = self:getStorageValue(SPIKE_FAME_POINTS)
-	local current = math.max(0, points)
-	self:setStorageValue(SPIKE_FAME_POINTS, current - amount)
 end
 
 function Player.depositMoney(self, amount)
@@ -188,7 +117,7 @@ function Player.transferMoneyTo(self, target, amount)
 	local targetPlayer = Player(target)
 	if targetPlayer then
 		local town = targetPlayer:getTown()
-		if town and town:getId() ~= TOWNS_LIST.DAWNPORT or town:getId() ~= TOWNS_LIST.DAWNPORT_TUTORIAL then -- Blocking transfer to Dawnport
+		if town then
 			targetPlayer:setBankBalance(targetPlayer:getBankBalance() + amount)
 		end
 	else
@@ -198,13 +127,6 @@ function Player.transferMoneyTo(self, target, amount)
 
 		local query_town = db.storeQuery('SELECT `town_id` FROM `players` WHERE `name` = ' .. db.escapeString(target) ..' LIMIT 1;')
 		if query_town ~= false then
-			local town = result.getDataInt(query_town, "town_id")
-			if town then
-				local town_id = Town(town) and Town(town):getId()
-				if town_id and town_id  == TOWNS_LIST.DAWNPORT or town_id == TOWNS_LIST.DAWNPORT_TUTORIAL then -- Blocking transfer to Dawnport
-					return false
-				end
-			end
 			result.free(consulta)
 			db.query("UPDATE `players` SET `balance` = `balance` + '" .. amount .. "' WHERE `name` = " .. db.escapeString(target))
 		end
@@ -237,25 +159,24 @@ function Player.hasRookgaardShield(self)
 		or self:getItemCount(2530) > 0
 end
 
-
 function Player.isSorcerer(self)
-	return table.contains({VOCATION.ID.SORCERER, VOCATION.ID.MASTER_SORCERER}, self:getVocation():getId())
+	return table.contains({VOCATION.ID.MAGE}, self:getVocation():getId())
 end
 
 function Player.isDruid(self)
-	return table.contains({VOCATION.ID.DRUID, VOCATION.ID.ELDER_DRUID}, self:getVocation():getId())
+	return table.contains({VOCATION.ID.DRUID}, self:getVocation():getId())
 end
 
 function Player.isKnight(self)
-	return table.contains({VOCATION.ID.KNIGHT, VOCATION.ID.ELITE_KNIGHT}, self:getVocation():getId())
+	return table.contains({VOCATION.ID.WARRIOR}, self:getVocation():getId())
 end
 
 function Player.isPaladin(self)
-	return table.contains({VOCATION.ID.PALADIN, VOCATION.ID.ROYAL_PALADIN}, self:getVocation():getId())
+	return table.contains({VOCATION.ID.ARCHER}, self:getVocation():getId())
 end
 
 function Player.isMage(self)
-	return table.contains({VOCATION.ID.SORCERER, VOCATION.ID.MASTER_SORCERER, VOCATION.ID.DRUID, VOCATION.ID.ELDER_DRUID},
+	return table.contains({VOCATION.ID.MAGE, VOCATION.ID.DRUID},
 		self:getVocation():getId())
 end
 

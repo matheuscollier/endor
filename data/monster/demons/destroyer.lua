@@ -1,8 +1,8 @@
 local mType = Game.createMonsterType("Destroyer")
 local monster = {}
 
-monster.description = "a destroyer"
-monster.experience = 2500
+monster.description = "um destroyer"
+monster.experience = 4350
 monster.outfit = {
 	lookType = 236,
 	lookHead = 0,
@@ -23,7 +23,7 @@ monster.Bestiary = {
 	CharmsPoints = 25,
 	Stars = 3,
 	Occurrence = 0,
-	Locations = "Pits of Inferno, Formorgar Mines, Alchemist Quarter, Oramond Dungeon."
+	Locations = "x."
 	}
 
 monster.health = 3700
@@ -81,35 +81,18 @@ monster.voices = {
 }
 
 monster.loot = {
-	{name = "crystal necklace", chance = 578},
-	{name = "gold coin", chance = 60000, maxCount = 100},
-	{name = "gold coin", chance = 40000, maxCount = 100},
-	{name = "gold coin", chance = 40000, maxCount = 100},
-	{name = "gold coin", chance = 60000, maxCount = 41},
-	{name = "small amethyst", chance = 7692, maxCount = 2},
-	{name = "platinum coin", chance = 4166, maxCount = 3},
-	{name = "mind stone", chance = 564},
-	{name = "giant sword", chance = 1694},
-	{name = "crowbar", chance = 14285},
-	{name = "plate armor", chance = 4347},
-	{name = "dark armor", chance = 10000},
-	{name = "burst arrow", chance = 12500, maxCount = 12},
-	{id = 2553, chance = 6250},
-	{name = "steel boots", chance = 992},
-	{name = "meat", chance = 50000, maxCount = 6},
-	{name = "skull helmet", chance = 108},
-	{name = "soul orb", chance = 6666},
-	{id = 6300, chance = 144},
-	{name = "demonic essence", chance = 20000},
-	{name = "dreaded cleaver", chance = 833},
-	{name = "chaos mace", chance = 869},
-	{name = "great health potion", chance = 1136},
-	{name = "metal spike", chance = 7142}
+	{id = 11215, chance = 300},
+	{id = 2645, chance = 150},
+	{id = 5741, chance = 120},
+	{id = 2463, chance = 1200},
+	{id = 7419, chance = 60},
+	{id = 7427, chance = 80},
+	{id = 5926, chance = 100000}
 }
 
 monster.attacks = {
-	{name ="melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -500},
-	{name ="combat", interval = 2000, chance = 15, type = COMBAT_PHYSICALDAMAGE, minDamage = 0, maxDamage = -200, range = 7, shootEffect = CONST_ANI_LARGEROCK, target = false}
+	{name ="melee", interval = 1800, chance = 100, minDamage = -160, maxDamage = -400},
+	{name ="combat", interval = 2000, chance = 80, type = COMBAT_PHYSICALDAMAGE, minDamage = -150, maxDamage = -370, range = 7, shootEffect = CONST_ANI_LARGEROCK, target = false}
 }
 
 monster.defenses = {
@@ -121,14 +104,14 @@ monster.defenses = {
 monster.elements = {
 	{type = COMBAT_PHYSICALDAMAGE, percent = 25},
 	{type = COMBAT_ENERGYDAMAGE, percent = 100},
-	{type = COMBAT_EARTHDAMAGE, percent = 20},
-	{type = COMBAT_FIREDAMAGE, percent = 30},
+	{type = COMBAT_EARTHDAMAGE, percent = 45},
+	{type = COMBAT_FIREDAMAGE, percent = 65},
 	{type = COMBAT_LIFEDRAIN, percent = 0},
 	{type = COMBAT_MANADRAIN, percent = 0},
 	{type = COMBAT_DROWNDAMAGE, percent = 0},
 	{type = COMBAT_ICEDAMAGE, percent = -15},
-	{type = COMBAT_HOLYDAMAGE , percent = -3},
-	{type = COMBAT_DEATHDAMAGE , percent = 20}
+	{type = COMBAT_HOLYDAMAGE , percent = -5},
+	{type = COMBAT_DEATHDAMAGE , percent = 40}
 }
 
 monster.immunities = {

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Achilles" nameDescription="Achilles" race="blood" experience="750000" speed="400" manacost="0">
+  <health now="90000" max="90000"/>
+  <look type="134" head="78" body="57" legs="95" feet="57" addon="2" corpse="3058"/>
+  <targetchange interval="1900" chance="100"/>
+  <strategy attack="100" defense="0"/>
+  
+  <flags>
+	<flag rewardboss="1"/>
+    <flag looteable="1"/>
+    <flag summonable="0"/>
+    <flag attackable="1"/>
+    <flag hostile="1"/>
+    <flag illusionable="0"/>
+    <flag convinceable="0"/>
+    <flag pushable="0"/>
+    <flag canpushitems="1"/>
+    <flag canpushcreatures="1"/>
+    <flag targetDistance="1"/>
+    <flag runonhealth="0"/>
+  </flags>
+  
+<attacks>
+	<attack name="melee" interval="1200" min="-1200" max="-1500"/>
+	
+	<attack name="physical" interval="2500" chance="99" range="10" min="-1500" max="-2200">
+		<attribute key="shootEffect" value="spear"/>
+	</attack>
+	<attack name="physical" interval="1900" chance="99" target="1" range="8" min="-1600" max="-1800">
+			<attribute key="shooteffect" value="whirlwindaxe"/>
+			<attribute key="areaEffect" value="redspark"/>
+	</attack>
+	<attack name="physical" interval="2300" chance="25" target="0" radius="2" min="-900" max="-2000">
+		<attribute key="areaEffect" value="blackspark"/>
+	</attack>
+</attacks>
+  
+<defenses armor="0" defense="0">
+	<defense name="healing" interval="600" chance="300" min="500" max="1000"/>
+</defenses>
+  
+<immunities>
+    <immunity physical="0"/>
+    <immunity energy="0"/>
+    <immunity fire="0"/>
+    <immunity poison="0"/>
+	<immunity drown="0"/>
+	<immunity ice="0"/>
+	<immunity holy="0"/>
+	<immunity death="0"/>
+	<immunity lifedrain="1"/>
+    <immunity paralyze="1"/>
+    <immunity outfit="1"/>
+    <immunity drunk="1"/>
+    <immunity invisible="1"/>
+</immunities>
+
+	<elements><element physicalPercent="5"/>
+		<element physicalPercent="35"/>
+		<element icePercent="35"/>
+		<element poisonPercent="35"/>
+		<element firePercent="35"/>
+		<element energyPercent="35"/>
+		<element holyPercent="35"/>
+		<element deathPercent="35"/>
+	</elements>
+  
+<voices interval="5000" chance="10">
+</voices>
+  
+	<loot capacity="900">
+    <item id="11302" chance="12500"/>
+ 	<item id="9776" chance="8000"/>
+ 	<item id="9933" chance="5000"/>
+ 	<item id="6528" chance="800"/>
+ 	<item id="2425" chance="800"/>
+ 	<item id="8906" chance="800"/>
+	</loot>
+	
+</monster>

@@ -1,9 +1,4 @@
 -- Custom Modules, created to help us in this datapack
-local travelDiscounts = {
-	['postman'] = {price = 10, storage = Storage.Postman.Rank, value = 3},
-	['new frontier'] = {price = 50, storage = Storage.TheNewFrontier.Mission03, value = 1}
-}
-
 function StdModule.travelDiscount(player, discounts)
 	local discountPrice, discount = 0
 	if type(discounts) == 'string' then

@@ -1,7 +1,7 @@
 local mType = Game.createMonsterType("Badger")
 local monster = {}
 
-monster.description = "a badger"
+monster.description = "um badger"
 monster.experience = 5
 monster.outfit = {
 	lookType = 105,
@@ -13,38 +13,21 @@ monster.outfit = {
 	lookMount = 0
 }
 
-monster.raceId = 105
-monster.Bestiary = {
-	class = "Mammal",
-	race = BESTY_RACE_MAMMAL,
-	toKill = 250,
-	FirstUnlock = 10,
-	SecondUnlock = 100,
-	CharmsPoints = 5,
-	Stars = 1,
-	Occurrence = 0,
-	Locations = "Hrodmir, southern Tiquanda, unannounced raid in Ab'Dendriel and Edron."
-	}
-
 monster.health = 23
 monster.maxHealth = 23
 monster.race = "blood"
-monster.corpse = 6034
-monster.speed = 180
+monster.corpse = 3043
+monster.speed = 140
 monster.manaCost = 200
 monster.maxSummons = 0
 
 monster.changeTarget = {
-	interval = 4000,
+	interval = 2000,
 	chance = 0
 }
 
-monster.strategiesTarget = {
-	nearest = 100,
-}
-
 monster.flags = {
-	summonable = true,
+	summonable = false,
 	attackable = true,
 	hostile = true,
 	convinceable = true,
@@ -53,9 +36,9 @@ monster.flags = {
 	illusionable = true,
 	canPushItems = false,
 	canPushCreatures = false,
-	staticAttackChance = 90,
+	staticAttackChance = 95,
 	targetDistance = 1,
-	runHealth = 10,
+	runHealth = 5,
 	healthHidden = false,
 	isBlockable = false,
 	canWalkOnEnergy = false,
@@ -75,18 +58,16 @@ monster.voices = {
 }
 
 monster.loot = {
-	{id = 11216, chance = 10230},
-	{name = "beetroot", chance = 40710},
-	{name = "acorn", chance = 5130}
+	{id = 2666, chance = 50000}
 }
 
 monster.attacks = {
-	{name ="melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -12}
+	{name ="melee", interval = 2000, chance = 100, minDamage = -3, maxDamage = -6}
 }
 
 monster.defenses = {
-	defense = 5,
-	armor = 5
+	defense = 0,
+	armor = 0
 }
 
 monster.elements = {

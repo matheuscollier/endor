@@ -1,67 +1,48 @@
-local mType = Game.createMonsterType("Island Troll")
+local mType = Game.createMonsterType("Island troll")
 local monster = {}
 
-monster.description = "an island troll"
+monster.description = "a island troll"
 monster.experience = 20
 monster.outfit = {
-	lookType = 282,
-	lookHead = 0,
-	lookBody = 0,
-	lookLegs = 0,
-	lookFeet = 0,
+	lookType = 15,
+	lookHead = 20,
+	lookBody = 30,
+	lookLegs = 40,
+	lookFeet = 50,
 	lookAddons = 0,
 	lookMount = 0
 }
 
-monster.raceId = 277
-monster.Bestiary = {
-	class = "Humanoid",
-	race = BESTY_RACE_HUMANOID,
-	toKill = 250,
-	FirstUnlock = 10,
-	SecondUnlock = 100,
-	CharmsPoints = 5,
-	Stars = 1,
-	Occurrence = 0,
-	Locations = "Goroma."
-	}
-
 monster.health = 50
 monster.maxHealth = 50
 monster.race = "blood"
-monster.corpse = 7930
-monster.speed = 126
+monster.corpse = 5960
+monster.speed = 190
 monster.manaCost = 290
 monster.maxSummons = 0
 
 monster.changeTarget = {
 	interval = 5000,
-	chance = 0
-}
-
-monster.strategiesTarget = {
-	nearest = 100,
+	chance = 20
 }
 
 monster.flags = {
-	summonable = true,
-	attackable = true,
-	hostile = true,
-	convinceable = true,
-	pushable = true,
-	rewardBoss = false,
-	illusionable = true,
-	canPushItems = false,
+	isSummonable = true,
+	isAttackable = true,
+	isHostile = true,
+	isConvinceable = true,
+	isPushable = true,
+	isBoss = false,
+	illusionable = false,
+	canPushItems = true,
 	canPushCreatures = false,
 	staticAttackChance = 90,
 	targetDistance = 1,
 	runHealth = 15,
-	healthHidden = false,
-	isBlockable = false,
-	canWalkOnEnergy = false,
-	canWalkOnFire = false,
-	canWalkOnPoison = false,
-	pet = false
+	isHealthHidden = false,
+	canwalkonenergy = false,
+	canwalkonfire = false,
+	canwalkonpoison = false
 }
 
 monster.light = {
@@ -73,34 +54,34 @@ monster.voices = {
 	interval = 5000,
 	chance = 10,
 	{text = "Hmmm, turtles", yell = false},
-	{text = "Hmmm, dogs", yell = false},
-	{text = "Hmmm, worms", yell = false},
+	{text = "HHmmm, dogs", yell = false},
 	{text = "Groar", yell = false},
 	{text = "Gruntz!", yell = false}
 }
 
 monster.loot = {
-	{id = 2120, chance = 8000},
-	{name = "gold coin", chance = 60000, maxCount = 10},
-	{name = "silver amulet", chance = 70},
-	{name = "hand axe", chance = 18000},
-	{name = "spear", chance = 20000},
-	{name = "studded club", chance = 5000},
-	{name = "leather helmet", chance = 10000},
-	{id = 2512, chance = 16000},
-	{name = "leather boots", chance = 10500},
-	{name = "mango", chance = 5000},
-	{id = 5901, chance = 30000},
-	{name = "marlin", chance = 40}
+	{id = 3976, chance = 50000, maxCount = 10},
+	{id = 2148, chance = 100000, maxCount = 10},
+	{id = 2389, chance = 33333},
+	{id = 2643, chance = 10000},
+	{id = 2461, chance = 20000},
+	{id = 2120, chance = 23333},
+	{id = 2172, chance = 3333},
+	{id = 5901, chance = 5000},
+	{id = 2512, chance = 6666},
+	{id = 2666, chance = 30000, maxCount = 2},
+	{id = 2380, chance = 10000},
+	{id = 2170, chance = 1428},
+	{id = 2448, chance = 10000}
 }
 
 monster.attacks = {
-	{name ="melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -10}
+	{name ="melee", interval = 2000, chance = 100, skill = 19, attack = 12}
 }
 
 monster.defenses = {
-	defense = 10,
-	armor = 10
+	defense = 0,
+	armor = 0
 }
 
 monster.elements = {

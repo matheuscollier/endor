@@ -1,7 +1,7 @@
 local mType = Game.createMonsterType("Bat")
 local monster = {}
 
-monster.description = "a bat"
+monster.description = "um bat"
 monster.experience = 10
 monster.outfit = {
 	lookType = 122,
@@ -13,39 +13,21 @@ monster.outfit = {
 	lookMount = 0
 }
 
-monster.raceId = 122
-monster.Bestiary = {
-	class = "Mammal",
-	race = BESTY_RACE_MAMMAL,
-	toKill = 250,
-	FirstUnlock = 10,
-	SecondUnlock = 100,
-	CharmsPoints = 5,
-	Stars = 1,
-	Occurrence = 0,
-	Locations = "Dark Cathedral, Tiquanda, Drefia, Mount Sternum, Folda, Ghostlands, Kazordoon, \z
-		Femor Hills, Thais Bat Dungeon, Thais Bandit Cave and in many other caves."
-	}
-
 monster.health = 30
 monster.maxHealth = 30
 monster.race = "blood"
-monster.corpse = 6053
-monster.speed = 230
+monster.corpse = 4298
+monster.speed = 180
 monster.manaCost = 250
 monster.maxSummons = 0
 
 monster.changeTarget = {
-	interval = 4000,
+	interval = 2000,
 	chance = 0
 }
 
-monster.strategiesTarget = {
-	nearest = 100,
-}
-
 monster.flags = {
-	summonable = true,
+	summonable = false,
 	attackable = true,
 	hostile = true,
 	convinceable = true,
@@ -54,7 +36,7 @@ monster.flags = {
 	illusionable = true,
 	canPushItems = false,
 	canPushCreatures = false,
-	staticAttackChance = 90,
+	staticAttackChance = 95,
 	targetDistance = 1,
 	runHealth = 3,
 	healthHidden = false,
@@ -73,26 +55,25 @@ monster.light = {
 monster.voices = {
 	interval = 5000,
 	chance = 10,
-	{text = "Flap!Flap!", yell = false}
+	{text = "Flap! Flap!", yell = false}
 }
 
 monster.loot = {
-	{name = "bat wing", chance = 1220}
 }
 
 monster.attacks = {
-	{name ="melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -8}
+	{name ="melee", interval = 2000, chance = 100, skill = 16, attack = 8}
 }
 
 monster.defenses = {
-	defense = 5,
-	armor = 5
+	defense = 0,
+	armor = 0
 }
 
 monster.elements = {
 	{type = COMBAT_PHYSICALDAMAGE, percent = 0},
 	{type = COMBAT_ENERGYDAMAGE, percent = 0},
-	{type = COMBAT_EARTHDAMAGE, percent = -20},
+	{type = COMBAT_EARTHDAMAGE, percent = 0},
 	{type = COMBAT_FIREDAMAGE, percent = 0},
 	{type = COMBAT_LIFEDRAIN, percent = 0},
 	{type = COMBAT_MANADRAIN, percent = 0},

@@ -1,7 +1,7 @@
 local mType = Game.createMonsterType("Cyclops Drone")
 local monster = {}
 
-monster.description = "a cyclops drone"
+monster.description = "um cyclops drone"
 monster.experience = 200
 monster.outfit = {
 	lookType = 280,
@@ -17,20 +17,20 @@ monster.raceId = 391
 monster.Bestiary = {
 	class = "Giant",
 	race = BESTY_RACE_GIANT,
-	toKill = 1000,
-	FirstUnlock = 50,
-	SecondUnlock = 500,
-	CharmsPoints = 25,
+	toKill = 1500,
+	FirstUnlock = 100,
+	SecondUnlock = 750,
+	CharmsPoints = 50,
 	Stars = 3,
 	Occurrence = 0,
-	Locations = "Cyclopolis, Mount Sternum, Mistrock and in the Cyclops version of the Forsaken Mine."
+	Locations = "x."
 	}
 
 monster.health = 325
 monster.maxHealth = 325
 monster.race = "blood"
 monster.corpse = 7847
-monster.speed = 198
+monster.speed = 250
 monster.manaCost = 525
 monster.maxSummons = 0
 
@@ -80,27 +80,25 @@ monster.voices = {
 }
 
 monster.loot = {
-	{name = "gold coin", chance = 82000, maxCount = 30},
-	{name = "club ring", chance = 90},
-	{name = "halberd", chance = 680},
-	{name = "short sword", chance = 8000},
-	{name = "dark helmet", chance = 190},
-	{name = "plate shield", chance = 2000},
-	{name = "battle shield", chance = 1600},
-	{name = "meat", chance = 50430, maxCount = 2},
-	{id = 7398, chance = 120},
-	{name = "strong health potion", chance = 520},
-	{name = "cyclops toe", chance = 6750}
+	{id = 2513, chance = 2500},
+	{id = 2490, chance = 1500},
+	{id = 2148, chance = 10000, maxCount = 80},
+	{id = 2666, chance = 5000, maxCount = 2},
+	{id = 2510, chance = 2000},
+	{id = 2442, chance = 2000},
+	{id = 2518, chance = 950},
+	{id = 2417, chance = 1250},
+	{id = 2148, chance = 4000, maxCount = 50}
 }
 
 monster.attacks = {
-	{name ="melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -105},
-	{name ="combat", interval = 2000, chance = 35, type = COMBAT_PHYSICALDAMAGE, minDamage = 0, maxDamage = -80, range = 7, shootEffect = CONST_ANI_LARGEROCK, target = false}
+	{name ="melee", interval = 2000, chance = 100, skill = 52, attack = 40},
+	{name ="combat", interval = 2000, chance = 99, minDamage = -46, maxDamage = -74, type = COMBAT_PHYSICALDAMAGE, range = 7, ShootEffect = CONST_ANI_LARGEROCK, target = false}
 }
 
 monster.defenses = {
-	defense = 20,
-	armor = 20
+	defense = 0,
+	armor = 0
 }
 
 monster.elements = {
@@ -119,7 +117,7 @@ monster.elements = {
 monster.immunities = {
 	{type = "paralyze", condition = false},
 	{type = "outfit", condition = false},
-	{type = "invisible", condition = false},
+	{type = "invisible", condition = true},
 	{type = "bleed", condition = false}
 }
 

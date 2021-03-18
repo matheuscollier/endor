@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<raid>
+  <!--Announcements-->
+  <announce delay="1000" type="Event" message="O Crystal Wolf esta vivo!" />
+  <!--Single Spawns-->
+  <singlespawn delay="1000" name="Crystal Wolf" x="1408" y="194" z="11" />
+</raid>

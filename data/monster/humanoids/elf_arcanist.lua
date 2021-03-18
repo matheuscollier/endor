@@ -1,8 +1,8 @@
 local mType = Game.createMonsterType("Elf Arcanist")
 local monster = {}
 
-monster.description = "an elf arcanist"
-monster.experience = 175
+monster.description = "um elf arcanist"
+monster.experience = 245
 monster.outfit = {
 	lookType = 63,
 	lookHead = 0,
@@ -23,14 +23,13 @@ monster.Bestiary = {
 	CharmsPoints = 15,
 	Stars = 2,
 	Occurrence = 0,
-	Locations = "Yalahar Foreigner Quarter, Demona, Shadowthorn, northwest of Ab'Dendriel, Maze of Lost Souls, \z
-		Cyclopolis, Elvenbane, near Mount Sternum."
+	Locations = "x."
 	}
 
 monster.health = 220
 monster.maxHealth = 220
 monster.race = "blood"
-monster.corpse = 6011
+monster.corpse = 2979
 monster.speed = 220
 monster.manaCost = 0
 monster.maxSummons = 0
@@ -76,58 +75,54 @@ monster.voices = {
 	{text = "Feel my wrath!", yell = false},
 	{text = "For the Daughter of the Stars!", yell = false},
 	{text = "I'll bring balance upon you!", yell = false},
-	{text = "Tha'shi Cenath", yell = false},
-	{text = "Vihil Ealuel", yell = false}
+	{text = "Tha'shi Cenath!", yell = false},
+	{text = "Vihil Ealuel!", yell = false}
 }
 
 monster.loot = {
-	{id = 1949, chance = 31000},
-	{name = "candlestick", chance = 2100},
-	{name = "gold coin", chance = 37000, maxCount = 47},
-	{name = "yellow gem", chance = 50},
-	{name = "life crystal", chance = 970},
-	{name = "wand of cosmic energy", chance = 1160},
-	{name = "elven amulet", chance = 1999},
-	{name = "blank rune", chance = 18000},
-	{name = "arrow", chance = 6000, maxCount = 3},
-	{id = 2600, chance = 1000},
-	{name = "sandals", chance = 950},
-	{name = "green tunic", chance = 7000},
-	{name = "melon", chance = 22000},
-	{name = "bread", chance = 14000},
-	{name = "grave flower", chance = 880},
-	{name = "sling herb", chance = 5000},
-	{name = "holy orchid", chance = 2100},
-	{name = "strong mana potion", chance = 3000},
-	{name = "health potion", chance = 4000},
-	{name = "elvish talisman", chance = 10000},
-	{name = "elven astral observer", chance = 7710}
+	{id = 2544, chance = 6000, maxCount = 3},
+	{id = 2260, chance = 18000},
+	{id = 2032, chance = 5500},
+	{id = 2689, chance = 14000},
+	{id = 2047, chance = 22000},
+	{id = 2198, chance = 30},
+	{id = 2747, chance = 7000},
+	{id = 2652, chance = 7000},
+	{id = 2600, chance = 9000},
+	{id = 2177, chance = 1000},
+	{id = 2682, chance = 22000},
+	{id = 2642, chance = 13000},
+	{id = 1949, chance = 30000},
+	{id = 2802, chance = 5000},
+	{id = 2401, chance = 11000},
+	{id = 2189, chance = 1000},
+	{id = 2154, chance = 200}
 }
 
 monster.attacks = {
-	{name ="melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -35},
-	{name ="combat", interval = 2000, chance = 10, type = COMBAT_PHYSICALDAMAGE, minDamage = 0, maxDamage = -70, range = 7, shootEffect = CONST_ANI_ARROW, target = false},
-	{name ="combat", interval = 2000, chance = 10, type = COMBAT_ENERGYDAMAGE, minDamage = -30, maxDamage = -50, range = 7, shootEffect = CONST_ANI_ENERGY, effect = CONST_ME_ENERGYHIT, target = false},
-	{name ="combat", interval = 2000, chance = 10, type = COMBAT_DEATHDAMAGE, minDamage = -70, maxDamage = -85, range = 7, shootEffect = CONST_ANI_SUDDENDEATH, effect = CONST_ME_MORTAREA, target = false}
+	{name ="melee", interval = 2000, chance = 100, skill = 25, attack = 20},
+	{name ="combat", interval = 1000, chance = 10, minDamage = -25, maxDamage = -65, type = COMBAT_PHYSICALDAMAGE, range = 7, ShootEffect = CONST_ANI_ARROW, target = false},
+	{name ="combat", interval = 1000, chance = 9, minDamage = -30, maxDamage = -50, type = COMBAT_ENERGYDAMAGE, range = 7, ShootEffect = CONST_ANI_ENERGY, effect = CONST_ME_ENERGYHIT, target = false},
+	{name ="combat", interval = 1000, chance = 12, minDamage = -60, maxDamage = -80, type = COMBAT_PHYSICALDAMAGE, range = 7, ShootEffect = CONST_ANI_SUDDENDEATH, target = false}
 }
 
 monster.defenses = {
-	defense = 15,
-	armor = 15,
-	{name ="combat", interval = 2000, chance = 15, type = COMBAT_HEALING, minDamage = 40, maxDamage = 60, effect = CONST_ME_MAGIC_BLUE, target = false}
+	defense = 10,
+	armor = 10,
+	{name ="combat", interval = 1000, chance = 20, minDamage = 42, maxDamage = 68, type = COMBAT_HEALING, effect = CONST_ME_MAGIC_BLUE, target = false}
 }
 
 monster.elements = {
 	{type = COMBAT_PHYSICALDAMAGE, percent = 0},
-	{type = COMBAT_ENERGYDAMAGE, percent = 20},
-	{type = COMBAT_EARTHDAMAGE, percent = 0},
-	{type = COMBAT_FIREDAMAGE, percent = 50},
+	{type = COMBAT_ENERGYDAMAGE, percent = 100},
+	{type = COMBAT_EARTHDAMAGE, percent = 100},
+	{type = COMBAT_FIREDAMAGE, percent = 100},
 	{type = COMBAT_LIFEDRAIN, percent = 0},
 	{type = COMBAT_MANADRAIN, percent = 0},
 	{type = COMBAT_DROWNDAMAGE, percent = 0},
 	{type = COMBAT_ICEDAMAGE, percent = 0},
-	{type = COMBAT_HOLYDAMAGE , percent = -10},
-	{type = COMBAT_DEATHDAMAGE , percent = 20}
+	{type = COMBAT_HOLYDAMAGE , percent = 0},
+	{type = COMBAT_DEATHDAMAGE , percent = 0}
 }
 
 monster.immunities = {

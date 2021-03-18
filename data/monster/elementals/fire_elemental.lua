@@ -1,7 +1,7 @@
 local mType = Game.createMonsterType("Fire Elemental")
 local monster = {}
 
-monster.description = "a fire elemental"
+monster.description = "um fire elemental"
 monster.experience = 220
 monster.outfit = {
 	lookType = 49,
@@ -23,8 +23,7 @@ monster.Bestiary = {
 	CharmsPoints = 25,
 	Stars = 3,
 	Occurrence = 0,
-	Locations = "Cyclopolis, Hero Cave in Edron, Ankrahmun tombs, Serpentine Tower, Factory Quarter in Yalahar, \z
-		Deeper Banuta, Goroma inside the volcano and beneath Fenrock."
+	Locations = "x."
 	}
 
 monster.health = 280
@@ -80,9 +79,9 @@ monster.loot = {
 }
 
 monster.attacks = {
-	{name ="melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -100},
-	{name ="combat", interval = 2000, chance = 20, type = COMBAT_FIREDAMAGE, minDamage = -45, maxDamage = -160, range = 7, radius = 2, shootEffect = CONST_ANI_FIRE, effect = CONST_ME_FIREAREA, target = true},
-	{name ="firefield", interval = 2000, chance = 25, range = 7, radius = 1, shootEffect = CONST_ANI_FIRE, target = true}
+	{name ="melee", interval = 2000, chance = 100, minDamage = -50, maxDamage = -100, condition = {type = CONDITION_FIRE, startDamage = 0, interval = 2500}},
+	{name ="combat", interval = 2100, chance = 35, minDamage = -55, maxDamage = -155, type = COMBAT_FIREDAMAGE, range = 7, ShootEffect = CONST_ANI_FIRE, effect = CONST_ME_FIREAREA, target = true},
+	{name ="firefield", interval = 2900, chance = 99, range = 7, ShootEffect = CONST_ANI_FIRE, target = true}
 }
 
 monster.defenses = {

@@ -36,95 +36,53 @@ end
 local potions = {
 	[6558] = {
 		transform = {
-			id = {7588, 7589}
+			id = {7589}
 		},
 		effect = CONST_ME_DRAWBLOOD
 	},
-	[7439] = {
-		vocations = {
-			VOCATION.CLIENT_ID.KNIGHT
-		},
-		condition = berserk,
-		effect = CONST_ME_MAGIC_RED,
-		description = "Only knights may drink this potion.",
-		text = "You feel stronger."
-	},
 	[7440] = {
-		vocations = {
-			VOCATION.CLIENT_ID.SORCERER,
-			VOCATION.CLIENT_ID.DRUID
-		},
+		vocations = {9,36,28,37,10,44,29,45},
 		condition = mastermind,
 		effect = CONST_ME_MAGIC_BLUE,
-		description = "Only sorcerers and druids may drink this potion.",
-		text = "You feel smarter."
+		description = "Apenas magos e druidas de terceira classe ou acima podem tomar esta poção.",
+		text = "Sua magia foi melhorada."
 	},
 	[7443] = {
-		vocations = {
-			VOCATION.CLIENT_ID.PALADIN
-		},
+		vocations = {12,25,33,26},
 		condition = bullseye,
 		effect = CONST_ME_MAGIC_GREEN,
-		description = "Only paladins may drink this potion.",
-		text = "You feel more accurate."
-	},
-	[40398] = {
-		vocations = {
-			VOCATION.CLIENT_ID.SORCERER,
-			VOCATION.CLIENT_ID.DRUID
-		},
-		level = 14,
-		func = magicshield,
-		effect = CONST_ME_ENERGYAREA,
-		description = "Only sorcerers and druids of level 14 or above may drink this potion.",
+		description = "Apenas arqueiros de terceira classe ou acima podem tomar esta poção.",
+		text = "Sua precisão foi melhorada."
 	},
 	[7588] = {
 		health = {
 			250,
 			350
 		},
-		vocations = {
-			VOCATION.CLIENT_ID.PALADIN,
-			VOCATION.CLIENT_ID.KNIGHT
-		},
-		level = 50,
+		vocations = {11,16,30,31},
+		level = 101,
 		flask = 7634,
-		description = "Only knights and paladins of level 50 or above may drink this fluid."
+		description = "Apenas guerreiros de level 101 ou maior podem tomar esta poção."
 	},
 	[7589] = {
+		vocations = {7,24,12,25,33,26,5,35,9,36,28,37,6,43,10,44,29,45},
 		mana = {
-			115,
-			185
+			200,
+			320
 		},
 		level = 50,
 		flask = 7634,
-		description = "Only players of level 50 or above may drink this fluid."
+		description = "Apenas arqueiros, magos e druidas de level 50 ou maior podem beber este fluído."
 	},
 	[7590] = {
 		mana = {
-			150,
-			250
+			450,
+			540
 		},
-		vocations = {
-			VOCATION.CLIENT_ID.SORCERER,
-			VOCATION.CLIENT_ID.DRUID,
-			VOCATION.CLIENT_ID.PALADIN
-		},
+		vocations = {5,35,9,36,28,37,6,43,10,44,29,45},
 		level = 80,
 		flask = 7635,
-		description = "Only sorcerers, druids and paladins of level 80 or above may drink this fluid."
-	},
-	[7591] = {
-		health = {
-			425,
-			575
-		},
-		vocations = {
-			VOCATION.CLIENT_ID.KNIGHT
-		},
-		level = 80,
-		flask = 7635,
-		description = "Only knights of level 80 or above may drink this fluid."
+		description = "Apenas magos e druidas de level 80 ou superior podem beber este fluído."
 	},
 	[7618] = {
 		health = {
@@ -135,35 +93,24 @@ local potions = {
 	},
 	[7620] = {
 		mana = {
-			75,
-			125
+			120,
+			175
 		},
 		flask = 7636
 	},
 	[8472] = {
 		health = {
-			250,
-			350
+			200,
+			300
 		},
 		mana = {
-			100,
-			200
+			200,
+			300
 		},
-		vocations = {
-			VOCATION.CLIENT_ID.PALADIN
-		},
+		vocations = {3,7,12,13,32,33,23,24,25,26,27},
 		level = 80,
 		flask = 7635,
-		description = "Only paladins of level 80 or above may drink this fluid."
-	},
-	[8473] = {
-		health = {650, 850},
-		vocations = {
-			VOCATION.CLIENT_ID.KNIGHT
-		},
-		level = 130,
-		flask = 7635,
-		description = "Only knights of level 130 or above may drink this fluid."
+		description = "Somente arqueiros de level 80 ou maior podem beber este fluído."
 	},
 	[8474] = {
 		combat = antidote,
@@ -175,47 +122,6 @@ local potions = {
 			90
 		},
 		flask = 7636
-	},
-	[26029] = {
-		mana = {
-			425,
-			575
-		},
-		vocations = {
-			VOCATION.CLIENT_ID.SORCERER,
-			VOCATION.CLIENT_ID.DRUID
-		},
-		level = 130,
-		flask = 7635,
-		description = "Only druids and sorcerers of level 130 or above may drink this fluid."
-	},
-	[26030] = {
-		health = {
-			420,
-			580
-		},
-		mana = {
-			250,
-			350
-		},
-		vocations = {
-			VOCATION.CLIENT_ID.PALADIN
-		},
-		level = 130,
-		flask = 7635,
-		description = "Only paladins of level 130 or above may drink this fluid."
-	},
-	[26031] = {
-		health = {
-			875,
-			1125
-		},
-		vocations = {
-			VOCATION.CLIENT_ID.KNIGHT
-		},
-		level = 200,
-		flask = 7635,
-		description = "Only knights of level 200 or above may drink this fluid."
 	}
 }
 
@@ -236,7 +142,7 @@ function flaskPotion.onUse(player, item, fromPosition, target, toPosition, isHot
 	end
 
 	local potion = potions[item:getId()]
-	if potion.level and player:getLevel() < potion.level or potion.vocations and not table.contains(potion.vocations, player:getVocation():getClientId()) and not (player:getGroup():getId() >= 2) then
+	if potion.level and player:getLevel() < potion.level or potion.vocations and not table.contains(potion.vocations, player:getVocation():getId()) and not (player:getGroup():getId() >= 2) then
 		player:say(potion.description, MESSAGE_POTION)
 		return true
 	end
@@ -258,8 +164,7 @@ function flaskPotion.onUse(player, item, fromPosition, target, toPosition, isHot
 		if potion.combat then
 			potion.combat:execute(target, Variant(target:getId()))
 		end
-
-		player:addAchievementProgress('Potion Addict', 100000)
+		
 		target:say("Aaaah...", MESSAGE_POTION)
 		player:addItem(potion.flask, 1)
 		player:addCondition(exhaust)

@@ -23,7 +23,7 @@ monster.Bestiary = {
 	CharmsPoints = 25,
 	Stars = 3,
 	Occurrence = 1,
-	Locations = "A few spawns in the Underground Glooth Factory, Glooth Factory, and Rathleton Sewers."
+	Locations = "x."
 	}
 
 monster.health = 3000
@@ -78,17 +78,8 @@ monster.voices = {
 }
 
 monster.loot = {
-	{id = 23569, chance = 3548},
-	{id = 23541, chance = 1490},
-	{id = 2148, chance = 100000, maxCount = 200},
-	{id = 2152, chance = 51610, maxCount = 3},
-	{id = 9970, chance = 16130, maxCount = 3},
-	{id = 2149, chance = 6450, maxCount = 2},
-	{id = 8472, chance = 3230},
-	{id = 7591, chance = 3230},
-	{id = 7590, chance = 2300},
-	{id = 23540, chance = 1780},
-	{id = 2645, chance = 450}
+	{id = 2148, chance = 82000, maxCount = 47},
+	{id = 2666, chance = 30070}
 }
 
 monster.attacks = {
@@ -103,16 +94,16 @@ monster.defenses = {
 }
 
 monster.elements = {
-	{type = COMBAT_PHYSICALDAMAGE, percent = 10},
-	{type = COMBAT_ENERGYDAMAGE, percent = 0},
-	{type = COMBAT_EARTHDAMAGE, percent = 50},
-	{type = COMBAT_FIREDAMAGE, percent = 35},
-	{type = COMBAT_LIFEDRAIN, percent = 100},
+	{type = COMBAT_PHYSICALDAMAGE, percent = 5},
+	{type = COMBAT_ENERGYDAMAGE, percent = 25},
+	{type = COMBAT_EARTHDAMAGE, percent = -10},
+	{type = COMBAT_FIREDAMAGE, percent = 0},
+	{type = COMBAT_LIFEDRAIN, percent = 0},
 	{type = COMBAT_MANADRAIN, percent = 0},
 	{type = COMBAT_DROWNDAMAGE, percent = 0},
-	{type = COMBAT_ICEDAMAGE, percent = 5},
-	{type = COMBAT_HOLYDAMAGE , percent = 40},
-	{type = COMBAT_DEATHDAMAGE , percent = 10}
+	{type = COMBAT_ICEDAMAGE, percent = 0},
+	{type = COMBAT_HOLYDAMAGE , percent = 20},
+	{type = COMBAT_DEATHDAMAGE , percent = -10}
 }
 
 monster.immunities = {

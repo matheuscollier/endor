@@ -1,7 +1,7 @@
 local mType = Game.createMonsterType("Hellhound")
 local monster = {}
 
-monster.description = "a hellhound"
+monster.description = "um hellhound"
 monster.experience = 5440
 monster.outfit = {
 	lookType = 240,
@@ -23,8 +23,7 @@ monster.Bestiary = {
 	CharmsPoints = 50,
 	Stars = 4,
 	Occurrence = 0,
-	Locations = "Infernatil's Throneroom The Inquisition Quest Area, Hellgorge, \z
-		Roshamuul Prison, Chyllfroest, Oramond Dungeon, The Extension Site and under the Asura Palace."
+	Locations = "x."
 	}
 
 monster.health = 7500
@@ -76,59 +75,34 @@ monster.light = {
 monster.voices = {
 	interval = 5000,
 	chance = 10,
-	{text = "GROOOOWL!", yell = false}
+	{text = "Waaaaaaaaaaaaah!", yell = false},
+	{text = "Carnage!.", yell = false}
 }
 
 monster.loot = {
-	{id = 7426, chance = 2000},
-	{id = 7368, chance = 25000, maxCount = 10},
-	{id = 2231, chance = 900},
-	{id = 2144, chance = 9200, maxCount = 4},
-	{id = 18425, chance = 12500},
-	{id = 6558, chance = 20000},
-	{id = 6558, chance = 20000},
-	{id = 6500, chance = 20000},
-	{id = 4873, chance = 400},
-	{id = 10553, chance = 10000},
-	{id = 2392, chance = 7000},
-	{id = 2393, chance = 1000},
-	{id = 9971, chance = 1500},
-	{id = 7590, chance = 30000, maxCount = 3},
-	{id = 8472, chance = 20000},
-	{id = 2155, chance = 1000},
-	{id = 5910, chance = 5000},
-	{id = 2671, chance = 30000, maxCount = 6},
-	{id = 5925, chance = 10000},
-	{id = 10554, chance = 20000},
-	{id = 2430, chance = 7500},
-	{id = 7890, chance = 3000},
-	{id = 7891, chance = 1500},
-	{id = 7899, chance = 800},
-	{id = 7894, chance = 1000},
-	{id = 7900, chance = 900},
-	{id = 7421, chance = 1000},
-	{id = 2152, chance = 100000, maxCount = 7},
-	{id = 2156, chance = 4500},
-	{id = 5911, chance = 3000},
-	{id = 6553, chance = 1000},
-	{id = 2149, chance = 10000, maxCount = 3},
-	{id = 2147, chance = 10000, maxCount = 3},
-	{id = 9970, chance = 10000, maxCount = 3},
-	{id = 5944, chance = 20000},
-	{id = 8473, chance = 16000},
-	{id = 2187, chance = 7000},
-	{id = 2154, chance = 4500},
-	{id = 5914, chance = 6000}
+	{id = 2410, chance = 15000, maxCount = 11},
+	{id = 2231, chance = 8000},
+	{id = 5944, chance = 400},
+	{id = 2383, chance = 1000},
+	{id = 18425, chance = 3800},
+	{id = 2393, chance = 300},
+	{id = 6553, chance = 20},
+	{id = 2152, chance = 80000, maxCount = 4},
+	{id = 6558, chance = 1000},
+	{id = 6500, chance = 800},
+	{id = 2156, chance = 650},
+	{id = 2671, chance = 50000, maxCount = 6},
+	{id = 2144, chance = 1000, maxCount = 2}
 }
 
 monster.attacks = {
-	{name ="melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -520, condition = {type = CONDITION_POISON, totalDamage = 800, interval = 4000}},
-	{name ="combat", interval = 2000, chance = 5, type = COMBAT_EARTHDAMAGE, minDamage = -300, maxDamage = -700, length = 8, spread = 3, effect = CONST_ME_CARNIPHILA, target = false},
+	{name ="melee", interval = 2000, chance = 100, minDamage = -200, maxDamage = -320},
+	{name ="condition", type = CONDITION_POISON, interval = 2000, chance = 15, minDamage = -400, maxDamage = -640, range = 7, radius = 7, effect = CONST_ME_HITBYPOISON, target = false},
+	{name ="combat", interval = 2000, chance = 5, type = COMBAT_EARTHDAMAGE, minDamage = -160, maxDamage = -270, length = 8, spread = 3, effect = CONST_ME_CARNIPHILA, target = false},
+	{name ="combat", interval = 2450, chance = 20, minDamage = -120, maxDamage = -160, type = COMBAT_PHYSICALDAMAGE, effect = CONST_ME_DRAWBLOOD},
 	{name ="combat", interval = 2000, chance = 10, type = COMBAT_DEATHDAMAGE, minDamage = -395, maxDamage = -498, range = 7, shootEffect = CONST_ANI_SUDDENDEATH, effect = CONST_ME_SMALLCLOUDS, target = false},
-	{name ="combat", interval = 2000, chance = 10, type = COMBAT_FIREDAMAGE, minDamage = -350, maxDamage = -660, length = 8, spread = 3, effect = CONST_ME_FIREAREA, target = false},
-	{name ="combat", interval = 2000, chance = 10, type = COMBAT_LIFEDRAIN, minDamage = -350, maxDamage = -976, length = 8, spread = 3, effect = CONST_ME_MAGIC_RED, target = false},
-	{name ="combat", interval = 2000, chance = 10, type = COMBAT_FIREDAMAGE, minDamage = -200, maxDamage = -403, radius = 1, effect = CONST_ME_HITBYFIRE, target = true},
-	{name ="combat", interval = 2000, chance = 5, type = COMBAT_EARTHDAMAGE, minDamage = -300, maxDamage = -549, range = 7, shootEffect = CONST_ANI_POISON, effect = CONST_ME_POISONAREA, target = false}
+	{name ="combat", interval = 3150, chance = 20, minDamage = -100, maxDamage = -150, type = COMBAT_EARTHDAMAGE, range = 6, effect = CONST_ME_POISONAREA, target = false},
+	{name ="combat", interval = 3350, chance = 20, minDamage = -100, maxDamage = -150, type = COMBAT_FIREDAMAGE, range = 6, effect = CONST_ME_FIREAREA, target = false},
 }
 
 monster.defenses = {
@@ -139,16 +113,16 @@ monster.defenses = {
 }
 
 monster.elements = {
-	{type = COMBAT_PHYSICALDAMAGE, percent = 0},
-	{type = COMBAT_ENERGYDAMAGE, percent = 10},
-	{type = COMBAT_EARTHDAMAGE, percent = 20},
+	{type = COMBAT_PHYSICALDAMAGE, percent = 5},
+	{type = COMBAT_ENERGYDAMAGE, percent = 20},
+	{type = COMBAT_EARTHDAMAGE, percent = 50},
 	{type = COMBAT_FIREDAMAGE, percent = 100},
 	{type = COMBAT_LIFEDRAIN, percent = 0},
 	{type = COMBAT_MANADRAIN, percent = 0},
 	{type = COMBAT_DROWNDAMAGE, percent = 0},
 	{type = COMBAT_ICEDAMAGE, percent = -5},
-	{type = COMBAT_HOLYDAMAGE , percent = -25},
-	{type = COMBAT_DEATHDAMAGE , percent = 0}
+	{type = COMBAT_HOLYDAMAGE , percent = -15},
+	{type = COMBAT_DEATHDAMAGE , percent = 70}
 }
 
 monster.immunities = {

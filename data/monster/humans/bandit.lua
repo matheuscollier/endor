@@ -1,51 +1,33 @@
 local mType = Game.createMonsterType("Bandit")
 local monster = {}
 
-monster.description = "a bandit"
+monster.description = "um bandit"
 monster.experience = 65
 monster.outfit = {
 	lookType = 129,
 	lookHead = 58,
-	lookBody = 59,
-	lookLegs = 45,
-	lookFeet = 114,
+	lookBody = 40,
+	lookLegs = 24,
+	lookFeet = 95,
 	lookAddons = 0,
 	lookMount = 0
 }
 
-monster.raceId = 223
-monster.Bestiary = {
-	class = "Human",
-	race = BESTY_RACE_HUMAN,
-	toKill = 500,
-	FirstUnlock = 25,
-	SecondUnlock = 250,
-	CharmsPoints = 15,
-	Stars = 2,
-	Occurrence = 0,
-	Locations = "Dark Cathedral, Tiquanda Bandit Caves, Outlaw Camp, mountain pass west of Ankrahmun, \z
-		Tyrsung, Thais Bandit Cave, Formorgar Mines. Also summoned by Gamel."
-	}
-
 monster.health = 245
 monster.maxHealth = 245
 monster.race = "blood"
-monster.corpse = 20331
-monster.speed = 180
+monster.corpse = 20332
+monster.speed = 160
 monster.manaCost = 450
 monster.maxSummons = 0
 
 monster.changeTarget = {
-	interval = 5000,
-	chance = 0
-}
-
-monster.strategiesTarget = {
-	nearest = 100,
+	interval = 6000,
+	chance = 10
 }
 
 monster.flags = {
-	summonable = true,
+	summonable = false,
 	attackable = true,
 	hostile = true,
 	convinceable = true,
@@ -54,7 +36,7 @@ monster.flags = {
 	illusionable = true,
 	canPushItems = true,
 	canPushCreatures = false,
-	staticAttackChance = 90,
+	staticAttackChance = 95,
 	targetDistance = 1,
 	runHealth = 25,
 	healthHidden = false,
@@ -78,28 +60,25 @@ monster.voices = {
 }
 
 monster.loot = {
-	{name = "gold coin", chance = 49000, maxCount = 30},
-	{name = "axe", chance = 29900},
-	{name = "mace", chance = 10100},
-	{name = "chain helmet", chance = 5000},
-	{name = "iron helmet", chance = 520},
-	{name = "brass armor", chance = 2500},
-	{name = "brass shield", chance = 16800},
-	{name = "leather legs", chance = 15500},
-	{name = "tomato", chance = 7630, maxCount = 2}
+	{id = 2391, chance = 30},
+	{id = 2465, chance = 650},
+	{id = 2511, chance = 2500},
+	{id = 2478, chance = 400},
+	{id = 2460, chance = 3000},
+	{id = 2148, chance = 80000, maxCount = 25}
 }
 
 monster.attacks = {
-	{name ="melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -45}
+	{name ="melee", interval = 2000, chance = 100, minDamage = -20, maxDamage = -40}
 }
 
 monster.defenses = {
-	defense = 15,
-	armor = 15
+	defense = 0,
+	armor = 0
 }
 
 monster.elements = {
-	{type = COMBAT_PHYSICALDAMAGE, percent = -10},
+	{type = COMBAT_PHYSICALDAMAGE, percent = 0},
 	{type = COMBAT_ENERGYDAMAGE, percent = 0},
 	{type = COMBAT_EARTHDAMAGE, percent = 0},
 	{type = COMBAT_FIREDAMAGE, percent = 0},
@@ -108,7 +87,7 @@ monster.elements = {
 	{type = COMBAT_DROWNDAMAGE, percent = 0},
 	{type = COMBAT_ICEDAMAGE, percent = 0},
 	{type = COMBAT_HOLYDAMAGE , percent = 0},
-	{type = COMBAT_DEATHDAMAGE , percent = -5}
+	{type = COMBAT_DEATHDAMAGE , percent = 0}
 }
 
 monster.immunities = {

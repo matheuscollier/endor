@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Soldado" nameDescription="um soldado" race="blood" experience="225000" speed="290" manacost="590">
+  <health now="200" max="200"/>
+  <look type="255" head="114" body="132" legs="132" feet="132" corpse="6080"/>
+    <targetchange interval="5500" chance="0"/>
+    <strategy attack="100" defense="0"/>
+	
+    <flags>
+      <flag summonable="0"/>
+      <flag attackable="1"/>
+      <flag hostile="1"/>
+      <flag illusionable="0"/>
+      <flag convinceable="0"/>
+      <flag pushable="0"/>
+      <flag canpushitems="0"/>
+      <flag staticattack="70"/>
+      <flag lightlevel="0"/>
+      <flag lightcolor="0"/>
+      <flag targetDistance="3"/>
+      <flag runonhealth="0"/>
+    </flags>
+	
+	<attacks>
+		<attack name="melee" interval="1500" min="-40" max="-60"/>
+	</attacks>
+	
+	<defenses armor="0" defense="0">
+	</defenses>
+	
+	<elements><element physicalPercent="5"/>
+	</elements>
+
+	<immunities>
+	</immunities>
+	
+    <voices interval="8000" chance="10">
+    </voices>
+	
+	<script>
+		<event name="Sparta"/>
+	</script>
+	
+    <loot>
+    </loot>
+	
+  </monster>

@@ -1,7 +1,7 @@
 local mType = Game.createMonsterType("Carniphila")
 local monster = {}
 
-monster.description = "a carniphila"
+monster.description = "uma carniphila"
 monster.experience = 150
 monster.outfit = {
 	lookType = 120,
@@ -13,56 +13,37 @@ monster.outfit = {
 	lookMount = 0
 }
 
-monster.raceId = 120
-monster.Bestiary = {
-	class = "Plant",
-	race = BESTY_RACE_PLANT,
-	toKill = 1000,
-	FirstUnlock = 50,
-	SecondUnlock = 500,
-	CharmsPoints = 25,
-	Stars = 3,
-	Occurrence = 0,
-	Locations = "Deep inside the Tiquanda Jungle including Tiquanda Laboratory and a small cave, \z
-		Forbidden Lands, Deeper Banuta, Arena and Zoo quarter in Yalahar."
-	}
-
 monster.health = 255
 monster.maxHealth = 255
 monster.race = "venom"
-monster.corpse = 6047
+monster.corpse = 4280
 monster.speed = 110
-monster.manaCost = 0
+monster.manaCost = 490
 monster.maxSummons = 0
 
 monster.changeTarget = {
-	interval = 4000,
-	chance = 10
-}
-
-monster.strategiesTarget = {
-	nearest = 70,
-	damage = 30,
+	interval = 2000,
+	chance = 5
 }
 
 monster.flags = {
 	summonable = false,
 	attackable = true,
 	hostile = true,
-	convinceable = false,
+	convinceable = true,
 	pushable = false,
 	rewardBoss = false,
 	illusionable = false,
 	canPushItems = true,
 	canPushCreatures = true,
-	staticAttackChance = 90,
+	staticAttackChance = 95,
 	targetDistance = 1,
 	runHealth = 0,
 	healthHidden = false,
 	isBlockable = false,
 	canWalkOnEnergy = false,
 	canWalkOnFire = false,
-	canWalkOnPoison = true,
+	canWalkOnPoison = false,
 	pet = false
 }
 
@@ -77,37 +58,33 @@ monster.voices = {
 }
 
 monster.loot = {
-	{name = "gold coin", chance = 60000, maxCount = 40},
-	{name = "corncob", chance = 890},
-	{name = "dark mushroom", chance = 7692},
-	{name = "sling herb", chance = 446, maxCount = 2},
-	{name = "shadow herb", chance = 880},
-	{name = "seeds", chance = 490},
-	{name = "carniphila seeds", chance = 4166},
-	{name = "carrot on a stick", chance = 170}
+	{id = 5920, chance = 6000, maxCount = 3},
+	{id = 5015, chance = 5000},
+	{id = 2545, chance = 800, maxCount = 15},
+	{id = 2285, chance = 1000}
 }
 
 monster.attacks = {
-	{name ="melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -100, condition = {type = CONDITION_POISON, totalDamage = 100, interval = 4000}},
-	{name ="combat", interval = 2000, chance = 15, type = COMBAT_EARTHDAMAGE, minDamage = -60, maxDamage = -95, range = 7, shootEffect = CONST_ANI_POISON, effect = CONST_ME_GREEN_RINGS, target = false},
-	{name ="speed", interval = 2000, chance = 15, speedChange = -800, range = 7, shootEffect = CONST_ANI_POISON, effect = CONST_ME_GREEN_RINGS, target = false, duration = 30000},
-	{name ="combat", interval = 2000, chance = 10, type = COMBAT_EARTHDAMAGE, minDamage = -40, maxDamage = -130, radius = 3, effect = CONST_ME_POISONAREA, target = false}
+	{name ="melee", interval = 2000, chance = 100, minDamage = -35, maxDamage = -100, condition = {type = CONDITION_POISON, startDamage = 30, interval = 4000}},
+	{name ="combat", interval = 1000, chance = 25, minDamage = -60, maxDamage = -90, range = 7, type = COMBAT_EARTHDAMAGE, ShootEffect = CONST_ANI_POISON, effect = CONST_ME_HITBYPOISON, target = false},
+	{name ="speed", interval = 1000, chance = 34, SpeedChange = -540, Duration = 30000},
+	{name ="combat", interval = 1000, chance = 12, minDamage = -40, maxDamage = -130, type = COMBAT_EARTHDAMAGE, effect = CONST_ME_POISONAREA, target = false}
 }
 
 monster.defenses = {
-	defense = 15,
-	armor = 15
+	defense = 0,
+	armor = 0
 }
 
 monster.elements = {
 	{type = COMBAT_PHYSICALDAMAGE, percent = 0},
-	{type = COMBAT_ENERGYDAMAGE, percent = 10},
+	{type = COMBAT_ENERGYDAMAGE, percent = 0},
 	{type = COMBAT_EARTHDAMAGE, percent = 100},
-	{type = COMBAT_FIREDAMAGE, percent = -20},
-	{type = COMBAT_LIFEDRAIN, percent = 0},
+	{type = COMBAT_FIREDAMAGE, percent = 0},
+	{type = COMBAT_LIFEDRAIN, percent = 100},
 	{type = COMBAT_MANADRAIN, percent = 0},
 	{type = COMBAT_DROWNDAMAGE, percent = 0},
-	{type = COMBAT_ICEDAMAGE, percent = 35},
+	{type = COMBAT_ICEDAMAGE, percent = 0},
 	{type = COMBAT_HOLYDAMAGE , percent = 0},
 	{type = COMBAT_DEATHDAMAGE , percent = 0}
 }

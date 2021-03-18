@@ -1,7 +1,7 @@
 local mType = Game.createMonsterType("Crocodile")
 local monster = {}
 
-monster.description = "a crocodile"
+monster.description = "um crocodile"
 monster.experience = 40
 monster.outfit = {
 	lookType = 119,
@@ -13,40 +13,21 @@ monster.outfit = {
 	lookMount = 0
 }
 
-monster.raceId = 119
-monster.Bestiary = {
-	class = "Reptile",
-	race = BESTY_RACE_REPTILE,
-	toKill = 500,
-	FirstUnlock = 25,
-	SecondUnlock = 250,
-	CharmsPoints = 15,
-	Stars = 2,
-	Occurrence = 0,
-	Locations = "In the crocodile cave and the jungle east of Port Hope as well as the swamp to the north, \z
-		Fenrock, Arena and Zoo Quarter, Trade Quarter, Talahu, also located on Meriana and Laguna Islands."
-	}
-
 monster.health = 105
 monster.maxHealth = 105
 monster.race = "blood"
-monster.corpse = 6046
-monster.speed = 78
+monster.corpse = 4277
+monster.speed = 156
 monster.manaCost = 350
 monster.maxSummons = 0
 
 monster.changeTarget = {
-	interval = 5000,
-	chance = 0
-}
-
-monster.strategiesTarget = {
-	nearest = 70,
-	damage = 30,
+	interval = 2000,
+	chance = 5
 }
 
 monster.flags = {
-	summonable = true,
+	summonable = false,
 	attackable = true,
 	hostile = true,
 	convinceable = true,
@@ -55,7 +36,7 @@ monster.flags = {
 	illusionable = true,
 	canPushItems = true,
 	canPushCreatures = true,
-	staticAttackChance = 90,
+	staticAttackChance = 95,
 	targetDistance = 1,
 	runHealth = 10,
 	healthHidden = false,
@@ -77,30 +58,29 @@ monster.voices = {
 }
 
 monster.loot = {
-	{name = "gold coin", chance = 50000, maxCount = 10},
-	{name = "ham", chance = 40000},
-	{name = "crocodile boots", chance = 100},
-	{name = "piece of crocodile leather", chance = 20180}
+	{id = 2148, chance = 90000, maxCount = 14},
+	{id = 2671, chance = 20000, maxCount = 2},
+	{id = 3982, chance = 100}
 }
 
 monster.attacks = {
-	{name ="melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -40}
+	{name ="melee", interval = 2000, chance = 100, minDamage = -5, maxDamage = -15}
 }
 
 monster.defenses = {
-	defense = 15,
-	armor = 15
+	defense = 0,
+	armor = 0
 }
 
 monster.elements = {
-	{type = COMBAT_PHYSICALDAMAGE, percent = -5},
-	{type = COMBAT_ENERGYDAMAGE, percent = -5},
-	{type = COMBAT_EARTHDAMAGE, percent = 20},
-	{type = COMBAT_FIREDAMAGE, percent = -10},
+	{type = COMBAT_PHYSICALDAMAGE, percent = 0},
+	{type = COMBAT_ENERGYDAMAGE, percent = 0},
+	{type = COMBAT_EARTHDAMAGE, percent = 0},
+	{type = COMBAT_FIREDAMAGE, percent = 0},
 	{type = COMBAT_LIFEDRAIN, percent = 0},
 	{type = COMBAT_MANADRAIN, percent = 0},
 	{type = COMBAT_DROWNDAMAGE, percent = 0},
-	{type = COMBAT_ICEDAMAGE, percent = 10},
+	{type = COMBAT_ICEDAMAGE, percent = 0},
 	{type = COMBAT_HOLYDAMAGE , percent = 0},
 	{type = COMBAT_DEATHDAMAGE , percent = 0}
 }

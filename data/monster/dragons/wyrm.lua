@@ -1,8 +1,8 @@
 local mType = Game.createMonsterType("Wyrm")
 local monster = {}
 
-monster.description = "a wyrm"
-monster.experience = 1550
+monster.description = "um wyrm"
+monster.experience = 2950
 monster.outfit = {
 	lookType = 291,
 	lookHead = 0,
@@ -23,15 +23,14 @@ monster.Bestiary = {
 	CharmsPoints = 25,
 	Stars = 3,
 	Occurrence = 0,
-	Locations = "Drefia Wyrm Lair (after the Medusa Shield Quest room), Darashia Wyrm Hills, Arena and Zoo Quarter, \z
-		beneath Fenrock, Deeper Razachai, Lower Spike, Vandura Wyrm Cave and Vandura Mountain in Liberty Bay."
+	Locations = "x."
 	}
-
-monster.health = 1825
-monster.maxHealth = 1825
+	
+monster.health = 2500
+monster.maxHealth = 2500
 monster.race = "blood"
 monster.corpse = 8941
-monster.speed = 280
+monster.speed = 300
 monster.manaCost = 0
 monster.maxSummons = 0
 
@@ -76,37 +75,26 @@ monster.light = {
 monster.voices = {
 	interval = 5000,
 	chance = 10,
-	{text = "GRROARR", yell = false},
-	{text = "GRRR", yell = false}
+	{text = "GRRR!", yell = false},
+	{text = "GROOOOAAAAAAAAR!", yell = false}
 }
 
 monster.loot = {
-	{name = "small diamond", chance = 750, maxCount = 3},
-	{name = "gold coin", chance = 30000, maxCount = 100},
-	{name = "gold coin", chance = 30000, maxCount = 100},
-	{name = "gold coin", chance = 30000, maxCount = 30},
-	{name = "crossbow", chance = 5920},
-	{name = "burst arrow", chance = 7650, maxCount = 10},
-	{name = "dragon ham", chance = 34800, maxCount = 3},
-	{name = "dragonbone staff", chance = 110},
-	{name = "strong health potion", chance = 19970},
-	{name = "strong mana potion", chance = 15310},
-	{name = "lightning pendant", chance = 720},
-	{name = "composite hornbow", chance = 90},
-	{name = "focus cape", chance = 1250},
-	{name = "hibiscus dress", chance = 250},
-	{name = "wand of starstorm", chance = 420},
-	{name = "wand of draconia", chance = 990},
-	{name = "shockwave amulet", chance = 110},
-	{name = "wyrm scale", chance = 15360}
+	{id = 2672, chance = 10000, maxCount = 3},
+	{id = 2475, chance = 900},
+	{id = 10582, chance = 600},
+	{id = 2492, chance = 350},
+	{id = 2148, chance = 40000, maxCount = 75},
+	{id = 2146, chance = 400},
+	{id = 7886, chance = 1500}
 }
 
 monster.attacks = {
-	{name ="melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -235},
-	{name ="combat", interval = 2000, chance = 15, type = COMBAT_ENERGYDAMAGE, minDamage = -100, maxDamage = -220, radius = 3, effect = CONST_ME_YELLOWENERGY, target = false},
-	{name ="wyrm wave", interval = 2000, chance = 40, minDamage = -130, maxDamage = -200, target = false},
-	{name ="combat", interval = 2000, chance = 20, type = COMBAT_ENERGYDAMAGE, minDamage = -100, maxDamage = -125, range = 7, shootEffect = CONST_ANI_ENERGY, effect = CONST_ME_ENERGYHIT, target = false},
-	{name ="combat", interval = 2000, chance = 10, type = COMBAT_LIFEDRAIN, minDamage = -98, maxDamage = -145, length = 4, spread = 3, effect = CONST_ME_POFF, target = false}
+	{name ="melee", interval = 1900, chance = 100, minDamage = -250, maxDamage = -400},
+	{name ="combat", interval = 2000, chance = 15, minDamage = -150, maxDamage = -250, type = COMBAT_ENERGYDAMAGE, effect = CONST_ME_YELLOWENERGY, target = false},
+	{name ="wyrm wave", interval = 2000, chance = 40, minDamage = -230, maxDamage = -300, target = false},
+	{name ="combat", interval = 2000, chance = 20, minDamage = -100, maxDamage = -125, type = COMBAT_ENERGYDAMAGE, range = 7, ShootEffect = CONST_ANI_ENERGY, effect = CONST_ME_ENERGYHIT, target = false},
+	{name ="combat", interval = 2000, chance = 10, minDamage = -138, maxDamage = -200, type = COMBAT_LIFEDRAIN, length = 4, spread = 3, effect = CONST_ME_POFF, target = false}
 }
 
 monster.defenses = {

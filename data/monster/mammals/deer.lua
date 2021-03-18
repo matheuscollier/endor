@@ -1,7 +1,7 @@
 local mType = Game.createMonsterType("Deer")
 local monster = {}
 
-monster.description = "a deer"
+monster.description = "um deer"
 monster.experience = 0
 monster.outfit = {
 	lookType = 31,
@@ -13,39 +13,21 @@ monster.outfit = {
 	lookMount = 0
 }
 
-monster.raceId = 31
-monster.Bestiary = {
-	class = "Mammal",
-	race = BESTY_RACE_MAMMAL,
-	toKill = 250,
-	FirstUnlock = 10,
-	SecondUnlock = 100,
-	CharmsPoints = 5,
-	Stars = 1,
-	Occurrence = 0,
-	Locations = "Darama (Devourer, Kha'labal), in most grassy areas of Tibia, also found in \z
-		Rookgaard and on Tutorial Island. There are also 2 unreachable Deer found near Fiehonja's protection zone."
-	}
-
 monster.health = 25
 monster.maxHealth = 25
 monster.race = "blood"
-monster.corpse = 5970
-monster.speed = 196
+monster.corpse = 2835
+monster.speed = 150
 monster.manaCost = 260
 monster.maxSummons = 0
 
 monster.changeTarget = {
-	interval = 4000,
-	chance = 20
-}
-
-monster.strategiesTarget = {
-	nearest = 100,
+	interval = 2000,
+	chance = 0
 }
 
 monster.flags = {
-	summonable = true,
+	summonable = false,
 	attackable = true,
 	hostile = false,
 	convinceable = true,
@@ -54,7 +36,7 @@ monster.flags = {
 	illusionable = true,
 	canPushItems = false,
 	canPushCreatures = false,
-	staticAttackChance = 90,
+	staticAttackChance = 95,
 	targetDistance = 1,
 	runHealth = 25,
 	healthHidden = false,
@@ -76,18 +58,16 @@ monster.voices = {
 }
 
 monster.loot = {
-	{name = "meat", chance = 80000, maxCount = 4},
-	{name = "ham", chance = 50000, maxCount = 2},
-	{id = 11214, chance = 870}
+	{id = 2666, chance = 100000, maxCount = 4}
 }
 
 monster.attacks = {
-	{name ="melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -1}
+	{name ="melee", interval = 2000, chance = 100, skill = 10, attack = 2}
 }
 
 monster.defenses = {
-	defense = 5,
-	armor = 5
+	defense = 0,
+	armor = 0
 }
 
 monster.elements = {

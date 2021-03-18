@@ -1,70 +1,48 @@
 local mType = Game.createMonsterType("Orc Spearman")
 local monster = {}
 
-monster.description = "an orc spearman"
+monster.description = "um orc spearman"
 monster.experience = 38
 monster.outfit = {
 	lookType = 50,
-	lookHead = 0,
-	lookBody = 0,
-	lookLegs = 0,
-	lookFeet = 0,
+	lookHead = 20,
+	lookBody = 30,
+	lookLegs = 40,
+	lookFeet = 50,
 	lookAddons = 0,
 	lookMount = 0
 }
 
-monster.raceId = 50
-monster.Bestiary = {
-	class = "Humanoid",
-	race = BESTY_RACE_HUMANOID,
-	toKill = 500,
-	FirstUnlock = 25,
-	SecondUnlock = 250,
-	CharmsPoints = 15,
-	Stars = 2,
-	Occurrence = 0,
-	Locations = "Orc Fortress, Folda Dungeon, Edron Orc Cave and around it, Ancient Temple, \z
-		Venore Orc Cave, below the Point of No Return in Outlaw Camp, Plains of Havoc, \z
-		North of Thais in the Orc Peninsula, Elvenbane and Orc Camp in Foreigner Quarter. \z
-		Also found in Rookgaard West plains, Zao Orc Land."
-	}
-
 monster.health = 105
 monster.maxHealth = 105
 monster.race = "blood"
-monster.corpse = 5996
+monster.corpse = 2920
 monster.speed = 176
 monster.manaCost = 310
 monster.maxSummons = 0
 
 monster.changeTarget = {
-	interval = 4000,
-	chance = 10
-}
-
-monster.strategiesTarget = {
-	nearest = 100,
+	interval = 2000,
+	chance = 5
 }
 
 monster.flags = {
-	summonable = true,
-	attackable = true,
-	hostile = true,
-	convinceable = true,
-	pushable = true,
-	rewardBoss = false,
+	isSummonable = true,
+	isAttackable = true,
+	isHostile = true,
+	isConvinceable = true,
+	isPushable = false,
+	isBoss = false,
 	illusionable = true,
 	canPushItems = false,
 	canPushCreatures = false,
-	staticAttackChance = 90,
-	targetDistance = 4,
-	runHealth = 10,
-	healthHidden = false,
-	isBlockable = false,
-	canWalkOnEnergy = false,
-	canWalkOnFire = false,
-	canWalkOnPoison = false,
-	pet = false
+	staticAttackChance = 50,
+	targetDistance = 3,
+	runHealth = 0,
+	isHealthHidden = false,
+	canwalkonenergy = false,
+	canwalkonfire = false,
+	canwalkonpoison = false
 }
 
 monster.light = {
@@ -79,38 +57,36 @@ monster.voices = {
 }
 
 monster.loot = {
-	{name = "gold coin", chance = 25050, maxCount = 11},
-	{name = "spear", chance = 17440},
-	{name = "machete", chance = 3000},
-	{name = "studded legs", chance = 10000},
-	{name = "studded helmet", chance = 9000},
-	{name = "meat", chance = 30200},
-	{name = "orc tooth", chance = 150},
-	{name = "orc leather", chance = 2300},
-	{id = 26654, chance = 1000}
+	{id = 11113, chance = 2000},
+	{id = 2148, chance = 80000, maxCount = 10},
+	{id = 2666, chance = 80000, maxCount = 3},
+	{id = 2468, chance = 6000},
+	{id = 2220, chance = 5000},
+	{id = 2420, chance = 4000},
+	{id = 2389, chance = 30000, maxCount = 2}
 }
 
 monster.attacks = {
-	{name ="melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -25},
-	{name ="combat", interval = 2000, chance = 20, type = COMBAT_PHYSICALDAMAGE, minDamage = 0, maxDamage = -30, range = 7, shootEffect = CONST_ANI_SPEAR, target = false}
+	{name ="melee", interval = 2000, chance = 100, minDamage = -1, maxDamage = -15},
+	{name ="combat", interval = 3150, chance = 99, minDamage = -10, maxDamage = -25, type = COMBAT_PHYSICALDAMAGE, range = 5, ShootEffect = CONST_ANI_SPEAR, target = true}
 }
 
 monster.defenses = {
-	defense = 10,
-	armor = 10
+	defense = 0,
+	armor = 0
 }
 
 monster.elements = {
 	{type = COMBAT_PHYSICALDAMAGE, percent = 0},
-	{type = COMBAT_ENERGYDAMAGE, percent = 20},
-	{type = COMBAT_EARTHDAMAGE, percent = -10},
+	{type = COMBAT_ENERGYDAMAGE, percent = 0},
+	{type = COMBAT_EARTHDAMAGE, percent = 0},
 	{type = COMBAT_FIREDAMAGE, percent = 0},
 	{type = COMBAT_LIFEDRAIN, percent = 0},
 	{type = COMBAT_MANADRAIN, percent = 0},
 	{type = COMBAT_DROWNDAMAGE, percent = 0},
 	{type = COMBAT_ICEDAMAGE, percent = 0},
-	{type = COMBAT_HOLYDAMAGE , percent = 20},
-	{type = COMBAT_DEATHDAMAGE , percent = -10}
+	{type = COMBAT_HOLYDAMAGE , percent = 0},
+	{type = COMBAT_DEATHDAMAGE , percent = 0}
 }
 
 monster.immunities = {

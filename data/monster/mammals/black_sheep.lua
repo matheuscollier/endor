@@ -5,57 +5,40 @@ monster.description = "a black sheep"
 monster.experience = 0
 monster.outfit = {
 	lookType = 13,
-	lookHead = 0,
-	lookBody = 0,
-	lookLegs = 0,
-	lookFeet = 0,
+	lookHead = 20,
+	lookBody = 30,
+	lookLegs = 40,
+	lookFeet = 50,
 	lookAddons = 0,
 	lookMount = 0
 }
 
-monster.raceId = 13
-monster.Bestiary = {
-	class = "Mammal",
-	race = BESTY_RACE_MAMMAL,
-	toKill = 250,
-	FirstUnlock = 10,
-	SecondUnlock = 100,
-	CharmsPoints = 5,
-	Stars = 1,
-	Occurrence = 0,
-	Locations = "Femor Hills, cultist cave in Liberty Bay, Drefia."
-	}
-
 monster.health = 20
 monster.maxHealth = 20
 monster.race = "blood"
-monster.corpse = 5994
-monster.speed = 116
+monster.corpse = 2914
+monster.speed = 200
 monster.manaCost = 250
 monster.maxSummons = 0
 
 monster.changeTarget = {
-	interval = 4000,
-	chance = 20
-}
-
-monster.strategiesTarget = {
-	nearest = 100,
+	interval = 2000,
+	chance = 5
 }
 
 monster.flags = {
-	summonable = true,
+	summonable = false,
 	attackable = true,
-	hostile = false,
+	hostile = true,
 	convinceable = true,
-	pushable = true,
+	pushable = false,
 	rewardBoss = false,
 	illusionable = true,
 	canPushItems = false,
 	canPushCreatures = false,
-	staticAttackChance = 90,
-	targetDistance = 1,
-	runHealth = 20,
+	staticAttackChance = 50,
+	targetDistance = 8,
+	runHealth = 0,
 	healthHidden = false,
 	isBlockable = false,
 	canWalkOnEnergy = false,
@@ -72,17 +55,16 @@ monster.light = {
 monster.voices = {
 	interval = 5000,
 	chance = 10,
-	{text = "Maeh", yell = false}
+	{text = "maeeehhh!", yell = false}
 }
 
 monster.loot = {
-	{name = "meat", chance = 70860, maxCount = 5},
-	{name = "black wool", chance = 1000}
+	{id = 2666, chance = 100000, maxCount = 5}
 }
 
 monster.defenses = {
-	defense = 5,
-	armor = 5
+	defense = 0,
+	armor = 0
 }
 
 monster.elements = {

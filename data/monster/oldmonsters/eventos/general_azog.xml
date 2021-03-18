@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="General Azog" nameDescription="General Azog" race="blood" experience="500000" speed="430" manacost="0">
+  <health now="450000" max="450000"/>
+  <look type="4" head="20" body="30" legs="40" feet="50" corpse="2972"/>
+  <targetchange interval="5000" chance="70"/>
+  
+<flags>
+	<flag rewardboss="1"/>
+	<flag looteable="1"/>
+    <flag summonable="0"/>
+    <flag attackable="1"/>
+    <flag hostile="1"/>
+    <flag illusionable="0"/>
+    <flag convinceable="0"/>
+    <flag pushable="0"/>
+    <flag canpushitems="1"/>
+    <flag staticattack="50"/>
+    <flag lightlevel="0"/>
+    <flag lightcolor="0"/>
+    <flag targetDistance="1"/>
+    <flag runonhealth="0"/>
+</flags>
+
+<attacks>
+	<attack name="melee" interval="1700" min="-470" max="-700"/>
+
+	<attack name="physical" interval="1600" chance="99" range="7" target="1" min="-350" max="-680">
+		<attribute key="shootEffect" value="spear"/>
+	</attack>
+	
+	<attack name="physical" interval="1950" chance="35" target="0" radius="2" min="-590" max="-1070">
+		<attribute key="areaEffect" value="blackspark"/>
+	</attack>
+</attacks>
+
+<defenses armor="0" defense="0">
+	<defense name="healing" interval="1000" chance="100" min="80" max="110">
+		<attribute key="areaEffect" value="blueshimmer"/>
+	</defense>
+</defenses>
+
+<elements><element physicalPercent="5"/>
+	<element physicalPercent="70"/>
+	<element icePercent="60"/>
+	<element poisonPercent="70"/>
+	<element firePercent="70"/>
+	<element energyPercent="70"/>
+	<element holyPercent="70"/>
+	<element deathPercent="70"/>
+</elements>
+
+<immunities>
+	<immunity drown="1"/>
+	<immunity lifedrain="1"/>
+    <immunity paralyze="1"/>
+    <immunity outfit="0"/>
+    <immunity drunk="1"/>
+    <immunity invisible="1"/>
+</immunities>
+  
+<voices interval="10000" chance="5">
+	<voice sentence="Deixarei apenas as ruinas desta cidade para tras!"/>
+	<voice sentence="A montanha sera o seu tumulo!"/>
+	<voice sentence="FUTCHI MURUK HUMAK! URK SNAESA JEXLOXAX HUMAK BOARC!"/>
+</voices>
+
+<loot>
+	<item id="3957" chance="350"/> 
+	<item id="7388" chance="120"/> 
+	<item id="2514" chance="50"/>
+	<item id="2496" chance="300"/>
+	<item id="3968" chance="900"/>
+	<item id="2152" chance="50000" countmax="50"/> 
+	<item id="2152" chance="50000" countmax="50"/> 
+	<item id="2152" chance="50000" countmax="50"/> 
+	<item id="2152" chance="50000" countmax="50"/> 
+	<item id="2152" chance="50000" countmax="50"/> 
+	<item id="2152" chance="50000" countmax="50"/> 
+	<item id="2152" chance="50000" countmax="50"/> 
+</loot>
+
+</monster>

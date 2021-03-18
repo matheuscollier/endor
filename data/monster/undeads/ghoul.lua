@@ -1,7 +1,7 @@
 local mType = Game.createMonsterType("Ghoul")
 local monster = {}
 
-monster.description = "a ghoul"
+monster.description = "um ghoul"
 monster.experience = 85
 monster.outfit = {
 	lookType = 18,
@@ -13,45 +13,21 @@ monster.outfit = {
 	lookMount = 0
 }
 
-monster.raceId = 18
-monster.Bestiary = {
-	class = "Undead",
-	race = BESTY_RACE_UNDEAD,
-	toKill = 500,
-	FirstUnlock = 25,
-	SecondUnlock = 250,
-	CharmsPoints = 15,
-	Stars = 2,
-	Occurrence = 0,
-	Locations = "Ancient Temple in the Skeleton area, way to Mintwallin, Old Mintwallin Quest, \z
-		Alatar Lake, Magician Tower, Mount Sternum Undead Cave, Ghostlands, Hellgate, \z
-		Maze of Lost Souls, below Point of No Return in Outlaw Camp, Plains of Havoc in Necromant House, \z
-		Drefia and Drefia's underground caves, Edron ghoul hill, Venore Amazon Camp underground, \z
-		Venore Swamp Troll cave, Ghostship between Venore and Darashia, Triangle Tower, Dark Cathedral, \z
-		Ankrahmun tombs, Isle of the Kings, Treasure Island, Nargor Undead Cave, Helheim, Lion's Rock, \z
-		The Witches' Cliff (only accessible during a quest) and a cave northeast of Ab'Dendriel. \z
-		Also found behind a wall in both Rookgaard and Paradox Tower, although they cannot be reached."
-	}
-
 monster.health = 100
 monster.maxHealth = 100
 monster.race = "blood"
-monster.corpse = 5976
+monster.corpse = 2853
 monster.speed = 144
 monster.manaCost = 450
 monster.maxSummons = 0
 
 monster.changeTarget = {
-	interval = 4000,
+	interval = 2000,
 	chance = 0
 }
 
-monster.strategiesTarget = {
-	nearest = 100,
-}
-
 monster.flags = {
-	summonable = true,
+	summonable = false,
 	attackable = true,
 	hostile = true,
 	convinceable = true,
@@ -60,7 +36,7 @@ monster.flags = {
 	illusionable = true,
 	canPushItems = true,
 	canPushCreatures = false,
-	staticAttackChance = 90,
+	staticAttackChance = 95,
 	targetDistance = 1,
 	runHealth = 0,
 	healthHidden = false,
@@ -82,42 +58,41 @@ monster.voices = {
 }
 
 monster.loot = {
-	{id = 2050, chance = 5000},
-	{name = "gold coin", chance = 68000, maxCount = 30},
-	{name = "life ring", chance = 180},
-	{id = 2229, chance = 240},
-	{name = "viking helmet", chance = 990},
-	{name = "scale armor", chance = 1000},
-	{name = "worm", chance = 9600, maxCount = 2},
-	{name = "brown piece of cloth", chance = 1000},
-	{name = "rotten piece of cloth", chance = 14470},
-	{name = "ghoul snack", chance = 5130},
-	{name = "pile of grave earth", chance = 950},
-	{id = 26654, chance = 1000}
+	{id = 2483, chance = 500},
+	{id = 2460, chance = 950},
+	{id = 2473, chance = 1000},
+	{id = 2398, chance = 1200},
+	{id = 2229, chance = 2000},
+	{id = 2230, chance = 1600},
+	{id = 2231, chance = 900},
+	{id = 12440, chance = 2000},
+	{id = 2148, chance = 100000, maxCount = 23},
+	{id = 2050, chance = 20000},
+	{id = 2168, chance = 100}
 }
 
 monster.attacks = {
-	{name ="melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -70},
-	{name ="combat", interval = 2000, chance = 10, type = COMBAT_LIFEDRAIN, minDamage = -15, maxDamage = -27, range = 1, radius = 1, effect = CONST_ME_SMALLCLOUDS, target = true}
+	{name ="melee", interval = 2000, chance = 100, minDamage = -20, maxDamage = -60},
+	{name ="combat", interval = 3000, chance = 25, minDamage = -15, maxDamage = -25, type = COMBAT_LIFEDRAIN, range = 1, target = false}
 }
 
 monster.defenses = {
-	defense = 15,
-	armor = 15,
-	{name ="combat", interval = 2000, chance = 5, type = COMBAT_HEALING, minDamage = 9, maxDamage = 15, effect = CONST_ME_MAGIC_BLUE, target = false}
+	defense = 0,
+	armor = 0,
+	{name ="combat", interval = 2800, chance = 16, minDamage = 9, maxDamage = 15, type = COMBAT_HEALING, effect = CONST_ME_MAGIC_BLUE, target = false}
 }
 
 monster.elements = {
 	{type = COMBAT_PHYSICALDAMAGE, percent = 0},
-	{type = COMBAT_ENERGYDAMAGE, percent = 30},
-	{type = COMBAT_EARTHDAMAGE, percent = 20},
+	{type = COMBAT_ENERGYDAMAGE, percent = 0},
+	{type = COMBAT_EARTHDAMAGE, percent = 100},
 	{type = COMBAT_FIREDAMAGE, percent = 0},
 	{type = COMBAT_LIFEDRAIN, percent = 100},
 	{type = COMBAT_MANADRAIN, percent = 0},
-	{type = COMBAT_DROWNDAMAGE, percent = 100},
-	{type = COMBAT_ICEDAMAGE, percent = 10},
-	{type = COMBAT_HOLYDAMAGE , percent = -25},
-	{type = COMBAT_DEATHDAMAGE , percent = 100}
+	{type = COMBAT_DROWNDAMAGE, percent = 0},
+	{type = COMBAT_ICEDAMAGE, percent = 0},
+	{type = COMBAT_HOLYDAMAGE , percent = 0},
+	{type = COMBAT_DEATHDAMAGE , percent = 0}
 }
 
 monster.immunities = {

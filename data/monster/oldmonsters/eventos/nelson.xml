@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<monster name="Nelson" nameDescription="Nelson" race="blood" experience="20000" speed="250" manacost="650">
+  <health now="50" max="50"/>
+  <look type="70" head="0" body="0" legs="0" feet="0" corpse="2983"/>
+  <targetchange interval="2000" chance="5"/>
+  <strategy attack="70" defense="0"/>
+  
+  <flags>
+	<flag rewardboss="1"/>
+	<flag looteable="1"/>
+    <flag summonable="0"/>
+    <flag attackable="1"/>
+    <flag hostile="1"/>
+    <flag illusionable="0"/>
+    <flag convinceable="0"/>
+    <flag pushable="0"/>
+    <flag canpushitems="1"/>
+    <flag canpushcreatures="1"/>
+    <flag targetDistance="1"/>
+    <flag runonhealth="0"/>
+  </flags>
+
+<attacks>
+	<attack name="melee" interval="1200" min="-150" max="-300"/>
+</attacks>
+
+<defenses armor="0" defense="0"/>
+
+<immunities>
+    <immunity lifedrain="0"/>
+    <immunity paralyze="1"/>
+    <immunity outfit="1"/>
+    <immunity drunk="1"/>
+    <immunity invisible="1"/>
+</immunities>
+
+<elements><element physicalPercent="5"/>
+	<element physicalPercent="70"/>
+	<element icePercent="40"/>
+	<element poisonPercent="50"/>
+	<element firePercent="40"/>
+	<element energyPercent="30"/>
+	<element holyPercent="25"/>
+	<element deathPercent="35"/>
+</elements>
+
+  <voices interval="5000" chance="10">
+    <voice sentence="Words are like bullets!"/>
+    <voice sentence="They go right thru me!"/>
+  </voices>
+
+  	<summons maxSummons="5">
+		<summon name="Dwarf Geomancer" interval="2100" chance="1000"/>
+	</summons>
+  
+  <loot capacity="800">
+	<item id="2502" chance="30000"/> 
+ 	<item id="2503" chance="33000"/> 
+ 	<item id="2504" chance="33100"/> 
+ 	<item id="2387" chance="33000"/> 
+ 	<item id="2378" chance="32200"/> 
+ 	<item id="2513" chance="32300"/> 
+
+ 	<item id="1987" chance="100000">
+ 	
+	<item id="2787" countmax="5" chance1="60000"/> 
+	<item id="2787" countmax="5" chance1="60000"/> 
+	<item id="2787" countmax="5" chance1="60000"/> 
+	<item id="2150" countmax="1" chance1="130"/> 
+	<item id="2149" countmax="1" chance1="350"/> 
+ 	
+ 	</item>
+  </loot>
+
+</monster>

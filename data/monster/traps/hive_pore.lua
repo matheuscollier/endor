@@ -11,7 +11,7 @@ monster.health = 1
 monster.maxHealth = 1
 monster.race = "venom"
 monster.corpse = 0
-monster.speed = 0
+monster.speed = 80
 monster.manaCost = 355
 monster.maxSummons = 3
 
@@ -25,7 +25,7 @@ monster.strategiesTarget = {
 }
 
 monster.flags = {
-	summonable = true,
+	summonable = false,
 	attackable = true,
 	hostile = true,
 	convinceable = true,

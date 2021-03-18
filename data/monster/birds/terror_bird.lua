@@ -1,8 +1,8 @@
 local mType = Game.createMonsterType("Terror Bird")
 local monster = {}
 
-monster.description = "a terror bird"
-monster.experience = 150
+monster.description = "um terror bird"
+monster.experience = 215
 monster.outfit = {
 	lookType = 218,
 	lookHead = 0,
@@ -23,9 +23,9 @@ monster.Bestiary = {
 	CharmsPoints = 15,
 	Stars = 2,
 	Occurrence = 0,
-	Locations = "Around Port Hope, Arena and Zoo Quarter in Yalahar, few on Zao steppes."
+	Locations = "x."
 	}
-
+	
 monster.health = 300
 monster.maxHealth = 300
 monster.race = "blood"
@@ -79,23 +79,21 @@ monster.voices = {
 }
 
 monster.loot = {
-	{name = "gold coin", chance = 82430, maxCount = 30},
-	{name = "meat", chance = 48550, maxCount = 3},
-	{name = "terrorbird beak", chance = 10310},
-	{name = "worm", chance = 9540, maxCount = 3},
-	{name = "colourful feather", chance = 3090},
-	{name = "health potion", chance = 690},
-	{name = "seeds", chance = 280},
-	{name = "feather headdress", chance = 100}
+	{id = 21310, chance = 8000},
+	{id = 3976, chance = 100000, maxCount = 5},
+	{id = 2666, chance = 100000, maxCount = 5},
+	{id = 2148, chance = 100000, maxCount = 45}
 }
 
 monster.attacks = {
-	{name ="melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -90}
+	{name ="melee", interval = 2000, chance = 100, minDamage = -35, maxDamage = -90},
+	{name ="combat", interval = 3350, chance = 99, minDamage = -25, maxDamage = -60, type = COMBAT_PHYSICALDAMAGE, range = 6, ShootEffect = CONST_ANI_SMALLSTONE, target = false}
 }
 
 monster.defenses = {
-	defense = 13,
-	armor = 13
+	defense = 10,
+	armor = 10,
+	{name ="combat", interval = 5000, chance = 80, minDamage = 10, maxDamage = 40, type = COMBAT_HEALING, target = false}
 }
 
 monster.elements = {

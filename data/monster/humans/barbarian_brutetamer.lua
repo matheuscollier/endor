@@ -1,8 +1,8 @@
 local mType = Game.createMonsterType("Barbarian Brutetamer")
 local monster = {}
 
-monster.description = "a barbarian brutetamer"
-monster.experience = 90
+monster.description = "um brutetamer"
+monster.experience = 230
 monster.outfit = {
 	lookType = 264,
 	lookHead = 78,
@@ -13,37 +13,17 @@ monster.outfit = {
 	lookMount = 0
 }
 
-monster.raceId = 332
-monster.Bestiary = {
-	class = "Human",
-	race = BESTY_RACE_HUMAN,
-	toKill = 500,
-	FirstUnlock = 25,
-	SecondUnlock = 250,
-	CharmsPoints = 15,
-	Stars = 2,
-	Occurrence = 0,
-	Locations = "Krimhorn, Bittermor, Ragnir, and Fenrock."
-	}
-
-monster.health = 145
-monster.maxHealth = 145
+monster.health = 365
+monster.maxHealth = 365
 monster.race = "blood"
 monster.corpse = 20339
-monster.speed = 178
+monster.speed = 270
 monster.manaCost = 0
-monster.maxSummons = 2
+monster.maxSummons = 3
 
 monster.changeTarget = {
 	interval = 60000,
 	chance = 0
-}
-
-monster.strategiesTarget = {
-	nearest = 70,
-	health = 10,
-	damage = 10,
-	random = 10,
 }
 
 monster.flags = {
@@ -58,7 +38,7 @@ monster.flags = {
 	canPushCreatures = false,
 	staticAttackChance = 90,
 	targetDistance = 4,
-	runHealth = 10,
+	runHealth = 0,
 	healthHidden = false,
 	isBlockable = false,
 	canWalkOnEnergy = false,
@@ -73,55 +53,49 @@ monster.light = {
 }
 
 monster.summons = {
-	{name = "War Wolf", chance = 10, interval = 2000}
+	{name = "War Wolf", chance = 40, interval = 7000}
 }
 
 monster.voices = {
 	interval = 5000,
 	chance = 10,
 	{text = "To me, creatures of the wild!", yell = false},
-	{text = "Feel the power of the beast!", yell = false},
 	{text = "My instincts tell me about your cowardice.", yell = false}
 }
 
 monster.loot = {
-	{id = 1958, chance = 4750},
-	{name = "gold coin", chance = 90230, maxCount = 15},
-	{id = 2401, chance = 6550},
-	{name = "chain armor", chance = 9300},
-	{name = "corncob", chance = 10940, maxCount = 2},
-	{name = "hunting spear", chance = 5200},
-	{name = "fur bag", chance = 7590},
-	{name = "brutetamer's staff", chance = 340},
-	{name = "fur boots", chance = 170},
-	{name = "mammoth fur cape", chance = 150},
-	{name = "mammoth fur shorts", chance = 90},
-	{name = "mana potion", chance = 580}
+	{id = 2148, chance = 33333, maxCount = 14},
+	{id = 2686, chance = 10000, maxCount = 2},
+	{id = 2464, chance = 2200},
+	{id = 2401, chance = 1200},
+	{id = 7463, chance = 400},
+	{id = 3965, chance = 500},
+	{id = 7457, chance = 233},
+	{id = 7464, chance = 200}
 }
 
 monster.attacks = {
-	{name ="melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -20},
-	{name ="combat", interval = 2000, chance = 20, type = COMBAT_PHYSICALDAMAGE, minDamage = 0, maxDamage = -34, range = 7, radius = 1, shootEffect = CONST_ANI_SNOWBALL, target = true},
-	{name ="barbarian brutetamer skill reducer", interval = 2000, chance = 15, range = 5, target = false}
+	{name ="melee", interval = 2000, chance = 100, minDamage = -60, maxDamage = -120},
+	{name ="combat", interval = 3100, chance = 99, minDamage = -35, maxDamage = -70, type = COMBAT_ENERGYDAMAGE, range = 7, ShootEffect = CONST_ANI_FIRE, effect = CONST_ME_ENERGYHIT, target = false}
 }
 
 monster.defenses = {
 	defense = 0,
-	armor = 7,
-	{name ="combat", interval = 2000, chance = 40, type = COMBAT_HEALING, minDamage = 50, maxDamage = 80, effect = CONST_ME_MAGIC_BLUE, target = false}
+	armor = 0,
+	{name ="combat", interval = 6000, chance = 25, minDamage = 50, maxDamage = 80, type = COMBAT_HEALING, effect = CONST_ME_MAGIC_BLUE, target = false}
 }
 
 monster.elements = {
-	{type = COMBAT_PHYSICALDAMAGE, percent = -10},
-	{type = COMBAT_ENERGYDAMAGE, percent = 20},
-	{type = COMBAT_EARTHDAMAGE, percent = 0},
+	{type = COMBAT_PHYSICALDAMAGE, percent = 0},
+	{type = COMBAT_ENERGYDAMAGE, percent = 0},
+	{type = COMBAT_EARTHDAMAGE, percent = 100},
 	{type = COMBAT_FIREDAMAGE, percent = 0},
-	{type = COMBAT_LIFEDRAIN, percent = 0},
+	{type = COMBAT_LIFEDRAIN, percent = 100},
 	{type = COMBAT_MANADRAIN, percent = 0},
 	{type = COMBAT_DROWNDAMAGE, percent = 0},
-	{type = COMBAT_ICEDAMAGE, percent = 50},
-	{type = COMBAT_HOLYDAMAGE , percent = 10},
-	{type = COMBAT_DEATHDAMAGE , percent = -5}
+	{type = COMBAT_ICEDAMAGE, percent = 0},
+	{type = COMBAT_HOLYDAMAGE , percent = 0},
+	{type = COMBAT_DEATHDAMAGE , percent = 0}
 }
 
 monster.immunities = {

@@ -1,8 +1,8 @@
 local mType = Game.createMonsterType("Quara Predator")
 local monster = {}
 
-monster.description = "a quara predator"
-monster.experience = 1600
+monster.description = "uma quara predator"
+monster.experience = 1750
 monster.outfit = {
 	lookType = 20,
 	lookHead = 0,
@@ -23,10 +23,9 @@ monster.Bestiary = {
 	CharmsPoints = 25,
 	Stars = 3,
 	Occurrence = 0,
-	Locations = "Calassa, Frozen Trench, Sunken Quarter, Alchemist Quarter (unreachable), \z
-		The Inquisition Quest, Seacrest Grounds."
+	Locations = "x"
 	}
-
+	
 monster.health = 2200
 monster.maxHealth = 2200
 monster.race = "blood"
@@ -74,30 +73,25 @@ monster.voices = {
 	interval = 5000,
 	chance = 10,
 	{text = "Rrrah!", yell = false},
-	{text = "Rraaar!", yell = false},
-	{text = "Gnarrr!", yell = false},
-	{text = "Tcharrr!", yell = false}
+	{text = "Rraaar!", yell = false}
 }
 
 monster.loot = {
-	{name = "gold coin", chance = 28000, maxCount = 100},
-	{name = "gold coin", chance = 50000, maxCount = 54},
-	{name = "quara bone", chance = 9860},
-	{name = "royal spear", chance = 9240, maxCount = 7},
-	{name = "small diamond", chance = 5300, maxCount = 2},
-	{name = "shrimp", chance = 4980, maxCount = 5},
-	{name = "double axe", chance = 3011},
-	{name = "fish fin", chance = 1920, maxCount = 1},
-	{name = "great health potion", chance = 1040},
-	{name = "relic sword", chance = 670},
-	{name = "assassin star", chance = 530},
-	{name = "glacier robe", chance = 440},
-	{name = "skull helmet", chance = 390},
-	{name = "giant shrimp", chance = 10}
+	{id = 2670, chance = 4000, maxCount = 5},
+	{id = 7893, chance = 75},
+	{id = 5895, chance = 2000},
+	{id = 5461, chance = 350},
+	{id = 2483, chance = 1000},
+	{id = 2148, chance = 2500, maxCount = 88},
+	{id = 2148, chance = 2500, maxCount = 88},
+	{id = 2158, chance = 500},
+	{id = 2148, chance = 2500, maxCount = 88},
+	{id = 2145, chance = 429, maxCount = 2},
+	{id = 2457, chance = 856}
 }
 
 monster.attacks = {
-	{name ="melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -473, effect = CONST_ME_DRAWBLOOD}
+	{name ="melee", interval = 2000, chance = 100, minDamage = -160, maxDamage = -430, effect = CONST_ME_DRAWBLOOD}
 }
 
 monster.defenses = {
@@ -108,7 +102,7 @@ monster.defenses = {
 }
 
 monster.elements = {
-	{type = COMBAT_PHYSICALDAMAGE, percent = 0},
+	{type = COMBAT_PHYSICALDAMAGE, percent = -20},
 	{type = COMBAT_ENERGYDAMAGE, percent = -25},
 	{type = COMBAT_EARTHDAMAGE, percent = -10},
 	{type = COMBAT_FIREDAMAGE, percent = 100},

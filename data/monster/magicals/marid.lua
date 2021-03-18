@@ -2,7 +2,7 @@ local mType = Game.createMonsterType("Marid")
 local monster = {}
 
 monster.description = "a marid"
-monster.experience = 410
+monster.experience = 300
 monster.outfit = {
 	lookType = 104,
 	lookHead = 0,
@@ -13,34 +13,17 @@ monster.outfit = {
 	lookMount = 0
 }
 
-monster.raceId = 104
-monster.Bestiary = {
-	class = "Magical",
-	race = BESTY_RACE_MAGICAL,
-	toKill = 1000,
-	FirstUnlock = 50,
-	SecondUnlock = 500,
-	CharmsPoints = 25,
-	Stars = 3,
-	Occurrence = 0,
-	Locations = "Kha'zeel, Magician Quarter."
-	}
-
 monster.health = 550
 monster.maxHealth = 550
 monster.race = "blood"
-monster.corpse = 6033
+monster.corpse = 3040
 monster.speed = 234
 monster.manaCost = 0
 monster.maxSummons = 2
 
 monster.changeTarget = {
-	interval = 4000,
-	chance = 10
-}
-
-monster.strategiesTarget = {
-	nearest = 100,
+	interval = 2000,
+	chance = 0
 }
 
 monster.flags = {
@@ -53,7 +36,7 @@ monster.flags = {
 	illusionable = false,
 	canPushItems = true,
 	canPushCreatures = false,
-	staticAttackChance = 90,
+	staticAttackChance = 95,
 	targetDistance = 1,
 	runHealth = 0,
 	healthHidden = false,
@@ -70,7 +53,7 @@ monster.light = {
 }
 
 monster.summons = {
-	{name = "blue djinn", chance = 10, interval = 2000, max = 2}
+	{name = "blue djinn", chance = 15, interval = 1000, max = 2}
 }
 
 monster.voices = {
@@ -78,60 +61,50 @@ monster.voices = {
 	chance = 10,
 	{text = "Simsalabim", yell = false},
 	{text = "Feel the power of my magic, tiny mortal!", yell = false},
-	{text = "Wishes can come true", yell = false},
-	{text = "Be careful what you wish.", yell = false},
-	{text = "Djinns will soon again be the greatest!", yell = false}
+	{text = "Be careful what you wish for.", yell = false},
+	{text = "Wishes can come true.", yell = false}
 }
 
 monster.loot = {
-	{id = 1872, chance = 2560},
-	{name = "small oil lamp", chance = 110},
-	{name = "small sapphire", chance = 6200},
-	{name = "gold coin", chance = 60000, maxCount = 70},
-	{name = "gold coin", chance = 60000, maxCount = 30},
-	{name = "blue gem", chance = 110},
-	{name = "hailstorm rod", chance = 770},
-	{id = 2070, chance = 5000},
-	{name = "heavy machete", chance = 4530},
-	{name = "mystic turban", chance = 290},
-	{name = "blueberry", chance = 65000, maxCount = 29},
-	{name = "blue piece of cloth", chance = 3750},
-	{name = "royal spear", chance = 15500, maxCount = 3},
-	{name = "strong mana potion", chance = 9800},
-	{name = "seeds", chance = 2400},
-	{name = "magma monocle", chance = 320},
-	{name = "jewelled belt", chance = 7880},
-	{name = "noble turban", chance = 530}
+	{id = 2158, chance = 100},
+	{id = 1872, chance = 2500},
+	{id = 2677, chance = 25000, maxCount = 25},
+	{id = 2148, chance = 70000, maxCount = 70},
+	{id = 2442, chance = 20000},
+	{id = 2663, chance = 200},
+	{id = 2063, chance = 20000},
+	{id = 2146, chance = 700},
+	{id = 2183, chance = 500},
+	{id = 2070, chance = 300}
 }
 
 monster.attacks = {
-	{name ="melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -90},
-	{name ="combat", interval = 2000, chance = 10, type = COMBAT_ENERGYDAMAGE, minDamage = -100, maxDamage = -250, range = 7, shootEffect = CONST_ANI_ENERGYBALL, target = false},
-	{name ="combat", interval = 2000, chance = 15, type = COMBAT_LIFEDRAIN, minDamage = -30, maxDamage = -90, range = 7, effect = CONST_ME_MAGIC_RED, target = false},
-	{name ="speed", interval = 2000, chance = 15, speedChange = -650, range = 7, effect = CONST_ME_MAGIC_RED, target = false, duration = 1500},
-	{name ="drunk", interval = 2000, chance = 10, range = 7, shootEffect = CONST_ANI_ENERGY, target = false, duration = 6000},
-	{name ="outfit", interval = 2000, chance = 1, range = 7, effect = CONST_ME_MAGIC_BLUE, target = false, duration = 4000, outfitMonster = "rabbit"},
-	{name ="djinn electrify", interval = 2000, chance = 15, range = 5, target = false},
-	{name ="combat", interval = 2000, chance = 15, type = COMBAT_ENERGYDAMAGE, minDamage = -30, maxDamage = -90, radius = 3, effect = CONST_ME_ENERGYHIT, target = false}
+	{name ="melee", interval = 2000, chance = 100, skill = 55, attack = 35},
+	{name ="combat", interval = 1000, chance = 50, minDamage = -40, maxDamage = -110, type = COMBAT_FIREDAMAGE, range = 7, ShootEffect = CONST_ANI_FIRE, target = false},
+	{name ="combat", interval = 1000, chance = 25, minDamage = -65, maxDamage = -115, type = COMBAT_ENERGYDAMAGE, range = 7, ShootEffect = CONST_ANI_ENERGY, target = false},
+	{name ="combat", interval = 1000, chance = 20, minDamage = -60, maxDamage = -120, type = COMBAT_LIFEDRAIN, range = 7, ShootEffect = CONST_ANI_SUDDENDEATH, target = false},
+	{name ="speed", interval = 1000, chance = 13, SpeedChange = -300, Duration = 15000},
+	{name ="drunk", interval = 1000, chance = 20, range = 7, ShootEffect = CONST_ANI_ENERGY, effect = CONST_ME_ENERGYAREA, target = false},
+	{name ="djinn electrify", interval = 2000, chance = 15, range = 5, target = false}
 }
 
 monster.defenses = {
-	defense = 20,
-	armor = 20,
-	{name ="combat", interval = 2000, chance = 15, type = COMBAT_HEALING, minDamage = 50, maxDamage = 80, effect = CONST_ME_MAGIC_BLUE, target = false}
+	defense = 0,
+	armor = 0,
+	{name ="combat", interval = 1000, chance = 15, minDamage = 50, maxDamage = 80, type = COMBAT_HEALING, effect = CONST_ME_MAGIC_BLUE, target = false}
 }
 
 monster.elements = {
 	{type = COMBAT_PHYSICALDAMAGE, percent = 0},
-	{type = COMBAT_ENERGYDAMAGE, percent = 60},
-	{type = COMBAT_EARTHDAMAGE, percent = 1},
-	{type = COMBAT_FIREDAMAGE, percent = 90},
-	{type = COMBAT_LIFEDRAIN, percent = 0},
+	{type = COMBAT_ENERGYDAMAGE, percent = 100},
+	{type = COMBAT_EARTHDAMAGE, percent = 100},
+	{type = COMBAT_FIREDAMAGE, percent = 100},
+	{type = COMBAT_LIFEDRAIN, percent = 100},
 	{type = COMBAT_MANADRAIN, percent = 0},
 	{type = COMBAT_DROWNDAMAGE, percent = 0},
-	{type = COMBAT_ICEDAMAGE, percent = -1},
-	{type = COMBAT_HOLYDAMAGE , percent = 1},
-	{type = COMBAT_DEATHDAMAGE , percent = -1}
+	{type = COMBAT_ICEDAMAGE, percent = 0},
+	{type = COMBAT_HOLYDAMAGE , percent = 0},
+	{type = COMBAT_DEATHDAMAGE , percent = 0}
 }
 
 monster.immunities = {

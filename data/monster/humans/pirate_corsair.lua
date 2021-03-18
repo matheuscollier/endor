@@ -1,7 +1,7 @@
 local mType = Game.createMonsterType("Pirate Corsair")
 local monster = {}
 
-monster.description = "a pirate corsair"
+monster.description = "um pirate corsair"
 monster.experience = 350
 monster.outfit = {
 	lookType = 98,
@@ -13,49 +13,32 @@ monster.outfit = {
 	lookMount = 0
 }
 
-monster.raceId = 250
-monster.Bestiary = {
-	class = "Human",
-	race = BESTY_RACE_HUMAN,
-	toKill = 1000,
-	FirstUnlock = 50,
-	SecondUnlock = 500,
-	CharmsPoints = 25,
-	Stars = 3,
-	Occurrence = 0,
-	Locations = "Nargor, Trade Quarter, Foreigner Quarter (Dock), Krailos Steppe."
-	}
-
 monster.health = 675
 monster.maxHealth = 675
 monster.race = "blood"
 monster.corpse = 20475
-monster.speed = 238
-monster.manaCost = 775
+monster.speed = 240
+monster.manaCost = 0
 monster.maxSummons = 0
 
 monster.changeTarget = {
-	interval = 4000,
-	chance = 15
-}
-
-monster.strategiesTarget = {
-	nearest = 100,
+	interval = 2000,
+	chance = 5
 }
 
 monster.flags = {
-	summonable = true,
+	summonable = false,
 	attackable = true,
 	hostile = true,
-	convinceable = true,
+	convinceable = false,
 	pushable = false,
 	rewardBoss = false,
 	illusionable = false,
 	canPushItems = true,
-	canPushCreatures = true,
-	staticAttackChance = 90,
+	canPushCreatures = false,
+	staticAttackChance = 50,
 	targetDistance = 1,
-	runHealth = 40,
+	runHealth = 0,
 	healthHidden = false,
 	isBlockable = false,
 	canWalkOnEnergy = false,
@@ -72,53 +55,44 @@ monster.light = {
 monster.voices = {
 	interval = 5000,
 	chance = 10,
-	{text = "Give up!", yell = false},
-	{text = "Hiyaa!", yell = false},
-	{text = "Plundeeeeer!", yell = false}
 }
 
 monster.loot = {
-	{name = "piggy bank", chance = 150},
-	{name = "gold coin", chance = 50000, maxCount = 88},
-	{name = "sabre", chance = 10000},
-	{name = "throwing star", chance = 8400, maxCount = 12},
-	{name = "dark armor", chance = 1650},
-	{name = "dark shield", chance = 1000},
-	{name = "pirate boots", chance = 220},
-	{name = "rum flask", chance = 130},
-	{id = 5813, chance = 130},
-	{name = "pirate backpack", chance = 930},
-	{name = "pirate hat", chance = 1150},
-	{name = "hook", chance = 600},
-	{name = "eye patch", chance = 500},
-	{name = "peg leg", chance = 600},
-	{name = "strong health potion", chance = 820},
-	{name = "compass", chance = 11050},
-	{name = "compass", chance = 11020}
+	{id = 11219, chance = 1200},
+	{id = 2385, chance = 6000},
+	{id = 2489, chance = 850},
+	{id = 2521, chance = 900},
+	{id = 5462, chance = 850},
+	{id = 6096, chance = 1500},
+	{id = 2238, chance = 3000},
+	{id = 6097, chance = 3000},
+	{id = 6098, chance = 2000},
+	{id = 6126, chance = 1000},
+	{id = 2148, chance = 40000, maxCount = 50},
+	{id = 2114, chance = 150}
 }
 
 monster.attacks = {
-	{name ="melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -170},
-	{name ="combat", interval = 2000, chance = 20, type = COMBAT_PHYSICALDAMAGE, minDamage = 0, maxDamage = -150, range = 7, shootEffect = CONST_ANI_THROWINGSTAR, target = false},
-	{name ="pirate corsair skill reducer", interval = 2000, chance = 5, target = false}
+	{name ="melee", interval = 1800, chance = 100, minDamage = -70, maxDamage = -160},
+	{name ="combat", interval = 2850, chance = 99, minDamage = -60, maxDamage = -145, type = COMBAT_PHYSICALDAMAGE, range = 5, ShootEffect = CONST_ANI_THROWINGKNIFE, target = false}
 }
 
 monster.defenses = {
-	defense = 35,
-	armor = 35
+	defense = 0,
+	armor = 0
 }
 
 monster.elements = {
 	{type = COMBAT_PHYSICALDAMAGE, percent = 0},
 	{type = COMBAT_ENERGYDAMAGE, percent = 0},
-	{type = COMBAT_EARTHDAMAGE, percent = 20},
-	{type = COMBAT_FIREDAMAGE, percent = -10},
+	{type = COMBAT_EARTHDAMAGE, percent = 0},
+	{type = COMBAT_FIREDAMAGE, percent = 0},
 	{type = COMBAT_LIFEDRAIN, percent = 0},
 	{type = COMBAT_MANADRAIN, percent = 0},
 	{type = COMBAT_DROWNDAMAGE, percent = 0},
-	{type = COMBAT_ICEDAMAGE, percent = -5},
-	{type = COMBAT_HOLYDAMAGE , percent = 10},
-	{type = COMBAT_DEATHDAMAGE , percent = -5}
+	{type = COMBAT_ICEDAMAGE, percent = 0},
+	{type = COMBAT_HOLYDAMAGE , percent = 0},
+	{type = COMBAT_DEATHDAMAGE , percent = 0}
 }
 
 monster.immunities = {

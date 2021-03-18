@@ -4,7 +4,7 @@ combat:setParameter(COMBAT_PARAM_EFFECT, CONST_ME_HITAREA)
 local condition = Condition(CONDITION_PARALYZE)
 condition:setParameter(CONDITION_PARAM_TICKS, 10000)
 condition:setFormula(-0.4, 0, -0.7, 0)
-combat:addCondition(condition)
+combat:setCondition(condition)
 
 	arr = {
 		{0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0},
@@ -14,7 +14,7 @@ combat:addCondition(condition)
 
 local area = createCombatArea(arr)
 	combat:setArea(area)
-	combat:addCondition(condition)
+	combat:setCondition(condition)
 
 
 function onCastSpell(creature, var)

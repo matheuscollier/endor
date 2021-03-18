@@ -1,7 +1,7 @@
 local mType = Game.createMonsterType("Enraged White Deer")
 local monster = {}
 
-monster.description = "an enraged white deer"
+monster.description = "a enraged white deer"
 monster.experience = 165
 monster.outfit = {
 	lookType = 400,
@@ -17,17 +17,13 @@ monster.health = 255
 monster.maxHealth = 255
 monster.race = "blood"
 monster.corpse = 13513
-monster.speed = 210
+monster.speed = 275
 monster.manaCost = 0
 monster.maxSummons = 0
 
 monster.changeTarget = {
 	interval = 5000,
-	chance = 0
-}
-
-monster.strategiesTarget = {
-	nearest = 100,
+	chance = 8
 }
 
 monster.flags = {
@@ -35,10 +31,10 @@ monster.flags = {
 	attackable = true,
 	hostile = true,
 	convinceable = false,
-	pushable = true,
+	pushable = false,
 	rewardBoss = false,
 	illusionable = false,
-	canPushItems = false,
+	canPushItems = true,
 	canPushCreatures = false,
 	staticAttackChance = 90,
 	targetDistance = 1,
@@ -51,10 +47,6 @@ monster.flags = {
 	pet = false
 }
 
-monster.events = {
-	"WhiteDeerScoutsDeath"
-}
-
 monster.light = {
 	level = 0,
 	color = 0
@@ -63,26 +55,21 @@ monster.light = {
 monster.voices = {
 	interval = 5000,
 	chance = 10,
-	{text = "*wheeze*", yell = false},
-	{text = "ROOOAAARR!!", yell = false},
-	{text = "*sniff*", yell = false},
 	{text = "*bell*", yell = false}
 }
 
 monster.loot = {
-	{name = "ham", chance = 19850, maxCount = 3},
-	{name = "white deer antlers", chance = 19520},
-	{name = "white deer skin", chance = 20280}
+	{id = 2671, chance = 33333, maxCount = 3}
 }
 
 monster.attacks = {
-	{name ="melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -45}
+	{name ="melee", interval = 2000, chance = 100, skill = 20, attack = 10}
 }
 
 monster.defenses = {
-	defense = 15,
-	armor = 15,
-	{name ="combat", interval = 4000, chance = 15, type = COMBAT_HEALING, minDamage = 10, maxDamage = 40, effect = CONST_ME_MAGIC_BLUE, target = false}
+	defense = 0,
+	armor = 0,
+	{name ="combat", interval = 2000, chance = 15, minDamage = 10, maxDamage = 40, type = COMBAT_HEALING, effect = CONST_ME_MAGIC_BLUE, target = false}
 }
 
 monster.elements = {

@@ -1,7 +1,7 @@
 local mType = Game.createMonsterType("Betrayed Wraith")
 local monster = {}
 
-monster.description = "a betrayed wraith"
+monster.description = "uma betrayed wraith"
 monster.experience = 3500
 monster.outfit = {
 	lookType = 233,
@@ -13,34 +13,17 @@ monster.outfit = {
 	lookMount = 0
 }
 
-monster.raceId = 284
-monster.Bestiary = {
-	class = "Undead",
-	race = BESTY_RACE_UNDEAD,
-	toKill = 2500,
-	FirstUnlock = 100,
-	SecondUnlock = 1000,
-	CharmsPoints = 50,
-	Stars = 4,
-	Occurrence = 0,
-	Locations = "Pits of Inferno, Helheim, The Inquisition Quest, Roshamuul Prison."
-	}
-
 monster.health = 4200
 monster.maxHealth = 4200
 monster.race = "undead"
 monster.corpse = 6316
-monster.speed = 346
+monster.speed = 230
 monster.manaCost = 0
 monster.maxSummons = 0
 
 monster.changeTarget = {
 	interval = 4000,
 	chance = 15
-}
-
-monster.strategiesTarget = {
-	nearest = 100,
 }
 
 monster.flags = {
@@ -58,9 +41,9 @@ monster.flags = {
 	runHealth = 300,
 	healthHidden = false,
 	isBlockable = false,
-	canWalkOnEnergy = true,
-	canWalkOnFire = true,
-	canWalkOnPoison = true,
+	canWalkOnEnergy = false,
+	canWalkOnFire = false,
+	canWalkOnPoison = false,
 	pet = false
 }
 
@@ -78,37 +61,27 @@ monster.voices = {
 }
 
 monster.loot = {
-	{name = "small diamond", chance = 11800, maxCount = 4},
-	{name = "gold coin", chance = 100000, maxCount = 200},
-	{name = "platinum coin", chance = 100000, maxCount = 8},
-	{name = "power bolt", chance = 50000, maxCount = 5},
-	{name = "orichalcum pearl", chance = 8000, maxCount = 2},
-	{name = "skull helmet", chance = 390},
-	{name = "golden figurine", chance = 160},
-	{name = "soul orb", chance = 10000},
-	{id = 6300, chance = 390},
-	{name = "demonic essence", chance = 19430},
-	{name = "concentrated demonic blood", chance = 65250},
-	{name = "assassin star", chance = 10780, maxCount = 5},
-	{name = "mercenary sword", chance = 1890},
-	{name = "bloody edge", chance = 80},
-	{name = "great mana potion", chance = 15000, maxCount = 3},
-	{name = "ultimate health potion", chance = 15410},
-	{name = "unholy bone", chance = 18410}
+	{id = 2145, chance = 1800, maxCount = 4},
+	{id = 2148, chance = 100000, maxCount = 200},
+	{id = 2152, chance = 20000, maxCount = 8},
+	{id = 5741, chance = 900},
+	{id = 6500, chance = 930},
+	{id = 7368, chance = 1080, maxCount = 5},
+	{id = 2393, chance = 600}
 }
 
 monster.attacks = {
-	{name ="melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -450},
+	{name ="melee", interval = 2000, chance = 100, minDamage = 290, maxDamage = -420},
 	{name ="betrayed wraith skill reducer", interval = 2000, chance = 10, target = false},
-	{name ="speed", interval = 2000, chance = 20, speedChange = -600, range = 7, shootEffect = CONST_ANI_SUDDENDEATH, effect = CONST_ME_SMALLCLOUDS, target = true, duration = 3000}
+	{name ="speed", interval = 2000, chance = 20, SpeedChange = -600, Duration = 3000}
 }
 
 monster.defenses = {
 	defense = 55,
 	armor = 55,
-	{name ="combat", interval = 2000, chance = 30, type = COMBAT_HEALING, minDamage = 350, maxDamage = 600, effect = CONST_ME_MAGIC_BLUE, target = false},
-	{name ="invisible", interval = 2000, chance = 10},
-	{name ="speed", interval = 2000, chance = 15, speedChange = 460, effect = CONST_ME_MAGIC_RED, target = false, duration = 5000}
+	{name ="combat", interval = 2000, chance = 30, minDamage = 150, maxDamage = 200, type = COMBAT_HEALING, effect = CONST_ME_MAGIC_BLUE, target = false},
+	{name ="invisible", interval = 2000, chance = 10, effect = CONST_ME_DRAWBLOOD},
+	{name ="speed", interval = 2000, chance = 15, SpeedChange = 460, Duration = 5000}
 }
 
 monster.elements = {

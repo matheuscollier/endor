@@ -1,7 +1,7 @@
 local mType = Game.createMonsterType("Tarantula")
 local monster = {}
 
-monster.description = "a tarantula"
+monster.description = "uma tarantula"
 monster.experience = 120
 monster.outfit = {
 	lookType = 219,
@@ -13,43 +13,21 @@ monster.outfit = {
 	lookMount = 0
 }
 
-monster.raceId = 219
-monster.Bestiary = {
-	class = "Vermin",
-	race = BESTY_RACE_VERMIN,
-	toKill = 500,
-	FirstUnlock = 25,
-	SecondUnlock = 250,
-	CharmsPoints = 15,
-	Stars = 2,
-	Occurrence = 0,
-	Locations = "Tiquanda Tarantula Caves, Spider Caves, Trapwood ground level and underground, \z
-		in 2 small caves South of Thais, Dark Cathedral, single spawn on top of Crocodile den north of Port Hope, \z
-		Plains of Havoc, underground Liberty Bay, Nargor Undead Cave and other constituents of the Shattered Isles, \z
-		Green Claw Swamp, first floor up in the big building in the Cemetery Quarter, Robson Isle, Vengoth. \z
-		After the summer update of 2008, tarantulas can be seen on the beginner's island of Rookgaard."
-	}
-
 monster.health = 225
 monster.maxHealth = 225
 monster.race = "venom"
-monster.corpse = 6060
+monster.corpse = 4320
 monster.speed = 214
 monster.manaCost = 485
 monster.maxSummons = 0
 
 monster.changeTarget = {
-	interval = 4000,
-	chance = 10
-}
-
-monster.strategiesTarget = {
-	nearest = 70,
-	damage = 30,
+	interval = 2000,
+	chance = 5
 }
 
 monster.flags = {
-	summonable = true,
+	summonable = false,
 	attackable = true,
 	hostile = true,
 	convinceable = true,
@@ -58,14 +36,14 @@ monster.flags = {
 	illusionable = true,
 	canPushItems = true,
 	canPushCreatures = false,
-	staticAttackChance = 90,
+	staticAttackChance = 95,
 	targetDistance = 1,
 	runHealth = 0,
 	healthHidden = false,
 	isBlockable = false,
 	canWalkOnEnergy = false,
 	canWalkOnFire = false,
-	canWalkOnPoison = true,
+	canWalkOnPoison = false,
 	pet = false
 }
 
@@ -80,43 +58,42 @@ monster.voices = {
 }
 
 monster.loot = {
-	{name = "gold coin", chance = 79000, maxCount = 40},
-	{id = 2169, chance = 120},
-	{name = "steel helmet", chance = 990},
-	{name = "brass legs", chance = 3050},
-	{name = "plate shield", chance = 2000},
-	{name = "spider fangs", chance = 4820},
-	{name = "tarantula egg", chance = 10000}
+	{id = 2148, chance = 100000, maxCount = 50},
+	{id = 2483, chance = 1000},
+	{id = 2647, chance = 100},
+	{id = 2457, chance = 150},
+	{id = 5886, chance = 10000},
+	{id = 2652, chance = 10}
 }
 
 monster.attacks = {
-	{name ="melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -90, condition = {type = CONDITION_POISON, totalDamage = 40, interval = 4000}},
-	{name ="combat", interval = 2000, chance = 10, type = COMBAT_EARTHDAMAGE, range = 1, radius = 1, shootEffect = CONST_ANI_POISON, effect = CONST_ME_CARNIPHILA, target = true}
+	{name ="melee", interval = 2000, chance = 100, minDamage = -30, maxDamage = -60, condition = {type = CONDITION_POISON, startDamage = 30, interval = 3000}},
+	{name ="poisonfield", interval = 3200, chance = 80, range = 1, ShootEffect = CONST_ANI_POISON, effect = CONST_ME_POFF, target = false}
 }
 
 monster.defenses = {
-	defense = 10,
-	armor = 10,
-	{name ="speed", interval = 2000, chance = 15, speedChange = 220, effect = CONST_ME_MAGIC_RED, target = false, duration = 5000}
+	defense = 0,
+	armor = 0,
+	{name ="speed", interval = 5000, chance = 30, SpeedChange = 200, Duration = 4000}
 }
 
 monster.elements = {
-	{type = COMBAT_PHYSICALDAMAGE, percent = 0},
+	{type = COMBAT_PHYSICALDAMAGE, percent = 5},
 	{type = COMBAT_ENERGYDAMAGE, percent = 10},
-	{type = COMBAT_EARTHDAMAGE, percent = 100},
-	{type = COMBAT_FIREDAMAGE, percent = -15},
+	{type = COMBAT_EARTHDAMAGE, percent = 99},
+	{type = COMBAT_FIREDAMAGE, percent = 0},
 	{type = COMBAT_LIFEDRAIN, percent = 0},
 	{type = COMBAT_MANADRAIN, percent = 0},
 	{type = COMBAT_DROWNDAMAGE, percent = 0},
-	{type = COMBAT_ICEDAMAGE, percent = -10},
-	{type = COMBAT_HOLYDAMAGE , percent = 0},
-	{type = COMBAT_DEATHDAMAGE , percent = 0}
+	{type = COMBAT_ICEDAMAGE, percent = 15},
+	{type = COMBAT_HOLYDAMAGE , percent = 25},
+	{type = COMBAT_DEATHDAMAGE , percent = 25}
 }
 
 monster.immunities = {
 	{type = "paralyze", condition = false},
-	{type = "outfit", condition = true},
-	{type = "invisible", condition = false},
+	{type = "outfit", condition = false},
+	{type = "invisible", condition = true},
 	{type = "bleed", condition = false}
 }
 

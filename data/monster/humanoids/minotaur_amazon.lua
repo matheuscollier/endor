@@ -2,7 +2,7 @@ local mType = Game.createMonsterType("Minotaur Amazon")
 local monster = {}
 
 monster.description = "a minotaur amazon"
-monster.experience = 2200
+monster.experience = 14500
 monster.outfit = {
 	lookType = 608,
 	lookHead = 0,
@@ -13,21 +13,8 @@ monster.outfit = {
 	lookMount = 0
 }
 
-monster.raceId = 1045
-monster.Bestiary = {
-	class = "Humanoid",
-	race = BESTY_RACE_HUMANOID,
-	toKill = 2500,
-	FirstUnlock = 100,
-	SecondUnlock = 1000,
-	CharmsPoints = 50,
-	Stars = 4,
-	Occurrence = 0,
-	Locations = "Underground Glooth Factory, Oramond Minotaur Camp, Oramond Dungeon."
-	}
-
-monster.health = 2600
-monster.maxHealth = 2600
+monster.health = 13000
+monster.maxHealth = 13000
 monster.race = "blood"
 monster.corpse = 23371
 monster.speed = 250
@@ -36,32 +23,26 @@ monster.maxSummons = 0
 
 monster.changeTarget = {
 	interval = 2000,
-	chance = 11
-}
-
-monster.strategiesTarget = {
-	nearest = 100,
+	chance = 40
 }
 
 monster.flags = {
-	summonable = false,
-	attackable = true,
-	hostile = true,
-	convinceable = false,
-	pushable = false,
-	rewardBoss = false,
+	isSummonable = false,
+	isAttackable = true,
+	isHostile = true,
+	isConvinceable = false,
+	isPushable = false,
+	isBoss = false,
 	illusionable = false,
 	canPushItems = true,
 	canPushCreatures = true,
 	staticAttackChance = 90,
 	targetDistance = 4,
 	runHealth = 240,
-	healthHidden = false,
-	isBlockable = false,
-	canWalkOnEnergy = false,
-	canWalkOnFire = false,
-	canWalkOnPoison = false,
-	pet = false
+	isHealthHidden = false,
+	canwalkonenergy = false,
+	canwalkonfire = false,
+	canwalkonpoison = false
 }
 
 monster.light = {
@@ -74,43 +55,28 @@ monster.voices = {
 	chance = 10,
 	{text = "I'll protect the herd!", yell = false},
 	{text = "Never surrender!", yell = false},
-	{text = "You won't hurt us!", yell = false}
+	{text = "You won't hurt us!", yell = false},
+	{text = "I will not allow your evil to continue!", yell = false}
 }
 
 monster.loot = {
-	{id = 7368, chance = 3040, maxCount = 5},
-	{id = 23575, chance = 19830},
-	{id = 2148, chance = 100000, maxCount = 196},
-	{id = 2671, chance = 60780},
-	{id = 2666, chance = 4920},
-	{id = 2152, chance = 62080, maxCount = 3},
-	{id = 9971, chance = 290},
-	{id = 5878, chance = 17950},
-	{id = 7591, chance = 7670},
-	{id = 7590, chance = 7380},
-	{id = 12428, chance = 6800, maxCount = 2},
-	{id = 2214, chance = 3040},
-	{id = 2147, chance = 5500, maxCount = 2},
-	{id = 9970, chance = 900, maxCount = 2},
-	{id = 2150, chance = 970, maxCount = 2},
-	{id = 2149, chance = 4050, maxCount = 2},
-	{id = 23546, chance = 3040},
-	{id = 23545, chance = 1740},
-	{id = 5911, chance = 710},
-	{id = 2156, chance = 430},
-	{id = 2197, chance = 850},
-	{id = 2154, chance = 870},
-	{id = 2475, chance = 1160},
-	{id = 7443, chance = 720}
+	{id = 23571, chance = 500},
+	{id = 2148, chance = 99500, maxCount = 199},
+	{id = 2152, chance = 33000, maxCount = 3},
+	{id = 5878, chance = 5000},
+	{id = 12428, chance = 4700, maxCount = 2},
+	{id = 23545, chance = 600},
+	{id = 23546, chance = 500},
+	{id = 11303, chance = 30},
+	{id = 2500, chance = 1800}
 }
 
 monster.attacks = {
 	{name ="melee", interval = 2000, chance = 100, skill = 50, attack = 50},
-	{name ="combat", interval = 2000, chance = 10, type = COMBAT_MANADRAIN, minDamage = -50, maxDamage = -305, length = 8, spread = 3, effect = CONST_ME_MAGIC_RED, target = false},
-	{name ="combat", interval = 2000, chance = 16, type = COMBAT_LIFEDRAIN, minDamage = -50, maxDamage = -150, radius = 4, effect = CONST_ME_MAGIC_RED, target = false},
-	{name ="combat", interval = 2000, chance = 22, type = COMBAT_PHYSICALDAMAGE, minDamage = 0, maxDamage = -150, range = 7, shootEffect = CONST_ANI_HUNTINGSPEAR, effect = CONST_ME_EXPLOSIONAREA, target = false},
-	-- bleed
-	{name ="condition", type = CONDITION_BLEEDING, interval = 2000, chance = 40, minDamage = -300, maxDamage = -400, radius = 4, shootEffect = CONST_ANI_THROWINGKNIFE, target = true},
+	{name ="combat", interval = 2000, chance = 10, minDamage = -50, maxDamage = -305, type = COMBAT_MANADRAIN, length = 8, spread = 3, effect = CONST_ME_MAGIC_RED, target = false},
+	{name ="combat", interval = 2000, chance = 16, minDamage = -500, maxDamage = -700, type = COMBAT_LIFEDRAIN, effect = CONST_ME_MAGIC_RED, target = false},
+	{name ="combat", interval = 2000, chance = 100, minDamage = -400, maxDamage = -650, type = COMBAT_PHYSICALDAMAGE, range = 7, ShootEffect = CONST_ANI_HUNTINGSPEAR, effect = CONST_ME_EXPLOSIONAREA, target = false},
+	{name ="condition", type = CONDITION_BLEEDING, interval = 2000, chance = 40, minDamage = -500, maxDamage = -750, radius = 4, shootEffect = CONST_ANI_THROWINGKNIFE, effect = CONST_ME_DRAWBLOOD, target = true},
 	{name ="minotaur amazon paralyze", interval = 2000, chance = 15, target = false}
 }
 
@@ -120,16 +86,16 @@ monster.defenses = {
 }
 
 monster.elements = {
-	{type = COMBAT_PHYSICALDAMAGE, percent = 0},
-	{type = COMBAT_ENERGYDAMAGE, percent = -10},
-	{type = COMBAT_EARTHDAMAGE, percent = 0},
-	{type = COMBAT_FIREDAMAGE, percent = -5},
+	{type = COMBAT_PHYSICALDAMAGE, percent = 15},
+	{type = COMBAT_ENERGYDAMAGE, percent = 35},
+	{type = COMBAT_EARTHDAMAGE, percent = 40},
+	{type = COMBAT_FIREDAMAGE, percent = 20},
 	{type = COMBAT_LIFEDRAIN, percent = 0},
 	{type = COMBAT_MANADRAIN, percent = 0},
 	{type = COMBAT_DROWNDAMAGE, percent = 0},
-	{type = COMBAT_ICEDAMAGE, percent = 5},
-	{type = COMBAT_HOLYDAMAGE , percent = 10},
-	{type = COMBAT_DEATHDAMAGE , percent = 10}
+	{type = COMBAT_ICEDAMAGE, percent = 20},
+	{type = COMBAT_HOLYDAMAGE , percent = 25},
+	{type = COMBAT_DEATHDAMAGE , percent = 25}
 }
 
 monster.immunities = {

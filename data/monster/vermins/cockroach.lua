@@ -13,21 +13,17 @@ monster.outfit = {
 	lookMount = 0
 }
 
-monster.health = 1
-monster.maxHealth = 1
+monster.health = 3
+monster.maxHealth = 3
 monster.race = "venom"
 monster.corpse = 8593
-monster.speed = 180
+monster.speed = 100
 monster.manaCost = 0
 monster.maxSummons = 0
 
 monster.changeTarget = {
 	interval = 60000,
 	chance = 0
-}
-
-monster.strategiesTarget = {
-	nearest = 100,
 }
 
 monster.flags = {
@@ -62,18 +58,18 @@ monster.voices = {
 }
 
 monster.loot = {
-	{name = "cockroach leg", chance = 100000}
+	{id = 8710, chance = 99999}
 }
 
 monster.defenses = {
-	defense = 5,
-	armor = 10
+	defense = 0,
+	armor = 0
 }
 
 monster.elements = {
 	{type = COMBAT_PHYSICALDAMAGE, percent = 0},
 	{type = COMBAT_ENERGYDAMAGE, percent = 0},
-	{type = COMBAT_EARTHDAMAGE, percent = 0},
+	{type = COMBAT_EARTHDAMAGE, percent = 100},
 	{type = COMBAT_FIREDAMAGE, percent = 0},
 	{type = COMBAT_LIFEDRAIN, percent = 0},
 	{type = COMBAT_MANADRAIN, percent = 0},

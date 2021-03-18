@@ -1,7 +1,7 @@
 local mType = Game.createMonsterType("Insectoid Worker")
 local monster = {}
 
-monster.description = "an insectoid worker"
+monster.description = "a insectoid worker"
 monster.experience = 650
 monster.outfit = {
 	lookType = 403,
@@ -13,54 +13,37 @@ monster.outfit = {
 	lookMount = 0
 }
 
-monster.raceId = 796
-monster.Bestiary = {
-	class = "Vermin",
-	race = BESTY_RACE_VERMIN,
-	toKill = 1000,
-	FirstUnlock = 50,
-	SecondUnlock = 500,
-	CharmsPoints = 25,
-	Stars = 3,
-	Occurrence = 0,
-	Locations = "Hive, Hive Outpost."
-	}
-
 monster.health = 950
 monster.maxHealth = 950
-monster.race = "venom"
-monster.corpse = 13514
-monster.speed = 240
-monster.manaCost = 0
+monster.race = "blood"
+monster.corpse = 13525
+monster.speed = 210
+monster.manaCost = 390
 monster.maxSummons = 0
 
 monster.changeTarget = {
-	interval = 4000,
-	chance = 10
-}
-
-monster.strategiesTarget = {
-	nearest = 100,
+	interval = 5000,
+	chance = 8
 }
 
 monster.flags = {
 	summonable = false,
 	attackable = true,
 	hostile = true,
-	convinceable = false,
+	convinceable = true,
 	pushable = false,
 	rewardBoss = false,
 	illusionable = true,
 	canPushItems = true,
 	canPushCreatures = false,
 	staticAttackChance = 90,
-	targetDistance = 1,
-	runHealth = 0,
+	targetDistance = 0,
+	runHealth = 10,
 	healthHidden = false,
 	isBlockable = false,
 	canWalkOnEnergy = false,
 	canWalkOnFire = false,
-	canWalkOnPoison = true,
+	canWalkOnPoison = false,
 	pet = false
 }
 
@@ -75,32 +58,28 @@ monster.voices = {
 }
 
 monster.loot = {
-	{name = "gold coin", chance = 100000, maxCount = 90},
-	{name = "small emerald", chance = 2880},
-	{name = "epee", chance = 560},
-	{name = "health potion", chance = 5090},
-	{name = "compound eye", chance = 15380},
-	{id = 15622, chance = 14990}
+	{id = 2148, chance = 23000, maxCount = 80}
 }
 
 monster.attacks = {
-	{name ="melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -163, condition = {type = CONDITION_POISON, totalDamage = 160, interval = 4000}}
+	{name ="melee", interval = 2000, chance = 100, skill = 20, attack = 30},
+	{name ="combat", interval = 1000, chance = 10, minDamage = -5, maxDamage = -40, type = COMBAT_PHYSICALDAMAGE, range = 7, ShootEffect = CONST_ANI_THROWINGKNIFE, target = false}
 }
 
 monster.defenses = {
-	defense = 15,
-	armor = 15
+	defense = 0,
+	armor = 0
 }
 
 monster.elements = {
 	{type = COMBAT_PHYSICALDAMAGE, percent = 5},
-	{type = COMBAT_ENERGYDAMAGE, percent = -5},
-	{type = COMBAT_EARTHDAMAGE, percent = 100},
-	{type = COMBAT_FIREDAMAGE, percent = -10},
+	{type = COMBAT_ENERGYDAMAGE, percent = 0},
+	{type = COMBAT_EARTHDAMAGE, percent = 0},
+	{type = COMBAT_FIREDAMAGE, percent = 0},
 	{type = COMBAT_LIFEDRAIN, percent = 0},
 	{type = COMBAT_MANADRAIN, percent = 0},
 	{type = COMBAT_DROWNDAMAGE, percent = 0},
-	{type = COMBAT_ICEDAMAGE, percent = -5},
+	{type = COMBAT_ICEDAMAGE, percent = 0},
 	{type = COMBAT_HOLYDAMAGE , percent = 0},
 	{type = COMBAT_DEATHDAMAGE , percent = 0}
 }
@@ -108,7 +87,7 @@ monster.elements = {
 monster.immunities = {
 	{type = "paralyze", condition = false},
 	{type = "outfit", condition = false},
-	{type = "invisible", condition = true},
+	{type = "invisible", condition = false},
 	{type = "bleed", condition = false}
 }
 

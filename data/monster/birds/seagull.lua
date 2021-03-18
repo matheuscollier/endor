@@ -1,7 +1,7 @@
 local mType = Game.createMonsterType("Seagull")
 local monster = {}
 
-monster.description = "a seagull"
+monster.description = "um seagull"
 monster.experience = 0
 monster.outfit = {
 	lookType = 223,
@@ -23,17 +23,14 @@ monster.Bestiary = {
 	CharmsPoints = 5,
 	Stars = 1,
 	Occurrence = 0,
-	Locations = "Various locations, sighted in the Shattered Isles, Venore, Thais, Femor Hills, \z
-		Cormaya, Edron Troll-Goblin Peninsula, Liberty Bay, Port Hope, Fibula, Drefia, Factory Quarter, \z
-		bordering Orc Fort, Rookgaard Premium Zone (not reachable), AbDendriel elf caves, \z
-		Northern coast of Tibia between Dalbrect and Northport."
+	Locations = "x."
 	}
-
+	
 monster.health = 25
 monster.maxHealth = 25
 monster.race = "blood"
 monster.corpse = 6076
-monster.speed = 320
+monster.speed = 200
 monster.manaCost = 250
 monster.maxSummons = 0
 
@@ -66,6 +63,7 @@ monster.flags = {
 	canWalkOnPoison = false,
 	pet = false
 }
+
 
 monster.light = {
 	level = 0,

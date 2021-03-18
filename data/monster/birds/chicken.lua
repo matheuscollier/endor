@@ -1,7 +1,7 @@
 local mType = Game.createMonsterType("Chicken")
 local monster = {}
 
-monster.description = "a chicken"
+monster.description = "uma chicken"
 monster.experience = 0
 monster.outfit = {
 	lookType = 111,
@@ -23,11 +23,9 @@ monster.Bestiary = {
 	CharmsPoints = 5,
 	Stars = 1,
 	Occurrence = 0,
-	Locations = "Sabrehaven, Rookgaard, The McRonalds Farm in Thais, Northport, \z
-		Fibula, Carlin (killable but unreachable), Greenshore, Krimhorn, Orc Fortress, \z
-		Factory Quarter, also theres one in the farm near Edron."
+	Locations = "x."
 	}
-
+	
 monster.health = 15
 monster.maxHealth = 15
 monster.race = "blood"
@@ -79,10 +77,10 @@ monster.voices = {
 }
 
 monster.loot = {
-	{name = "meat", chance = 2120, maxCount = 2},
-	{id = 2695, chance = 950},
-	{name = "worm", chance = 10000, maxCount = 3},
-	{name = "chicken feather", chance = 20000}
+	{id = 2695, chance = 100000, maxCount = 3},
+	{id = 2666, chance = 100000, maxCount = 2},
+	{id = 5890, chance = 10000, maxCount = 5},
+	{id = 3976, chance = 100000, maxCount = 15}
 }
 
 monster.defenses = {

@@ -1,8 +1,8 @@
 local mType = Game.createMonsterType("Earth Elemental")
 local monster = {}
 
-monster.description = "an earth elemental"
-monster.experience = 450
+monster.description = "um earth elemental"
+monster.experience = 1150
 monster.outfit = {
 	lookType = 301,
 	lookHead = 0,
@@ -23,12 +23,11 @@ monster.Bestiary = {
 	CharmsPoints = 25,
 	Stars = 3,
 	Occurrence = 0,
-	Locations = "Edron Earth Elemental Cave (17 of them on the first floor), Vandura Mountain, \z
-		Deeper Banuta, Vengoth Castle, Robson Isle, Drillworm Caves, Crystal Grounds, Middle Spike."
+	Locations = "x."
 	}
 
-monster.health = 650
-monster.maxHealth = 650
+monster.health = 1300
+monster.maxHealth = 1300
 monster.race = "undead"
 monster.corpse = 8933
 monster.speed = 230
@@ -80,25 +79,21 @@ monster.voices = {
 }
 
 monster.loot = {
-	{name = "small stone", chance = 10000, maxCount = 10},
-	{name = "gold coin", chance = 43000, maxCount = 100},
-	{name = "gold coin", chance = 50000, maxCount = 30},
-	{name = "blank rune", chance = 10000},
-	{name = "strong mana potion", chance = 1910},
-	{name = "earth arrow", chance = 20160, maxCount = 30},
-	{id = 9808, chance = 350},
-	{name = "small topaz", chance = 620},
-	{name = "lump of earth", chance = 20460},
-	{name = "clay lump", chance = 570},
-	{id = 13757, chance = 470}
+	{id = 2148, chance = 20000, maxCount = 85},
+	{id = 7885, chance = 300},
+	{id = 7884, chance = 250},
+	{id = 1294, chance = 9000, maxCount = 5},
+	{id = 2796, chance = 2500, maxCount = 5},
+	{id = 7732, chance = 2500, maxCount = 2}
 }
 
 monster.attacks = {
-	{name ="melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -110},
-	{name ="combat", interval = 2000, chance = 10, type = COMBAT_EARTHDAMAGE, minDamage = -72, maxDamage = -105, range = 7, shootEffect = CONST_ANI_SMALLEARTH, effect = CONST_ME_GREEN_RINGS, target = true},
-	{name ="combat", interval = 2000, chance = 10, type = COMBAT_PHYSICALDAMAGE, minDamage = 0, maxDamage = -100, range = 7, radius = 2, shootEffect = CONST_ANI_LARGEROCK, effect = CONST_ME_POFF, target = true},
+	{name ="melee", interval = 2000, chance = 100, minDamage = -120, maxDamage = -304},
+	{name ="combat", interval = 2000, chance = 10, type = COMBAT_EARTHDAMAGE, minDamage = -72, maxDamage = -105, range = 7, shootEffect = CONST_ANI_SMALLEARTH, effect = CONST_ME_GREEN_RINGS, target = true},																																																	   
+	{name ="combat", interval = 3100, chance = 99, minDamage = -90, maxDamage = -160, type = COMBAT_PHYSICALDAMAGE, range = 7, ShootEffect = CONST_ANI_LARGEROCK, target = true},
 	-- poison
-	{name ="condition", type = CONDITION_POISON, interval = 2000, chance = 20, minDamage = -200, maxDamage = -260, length = 6, spread = 3, effect = CONST_ME_BIGPLANTS, target = false},
+	{name ="condition", type = CONDITION_POISON, interval = 2000, chance = 20, minDamage = -200, maxDamage = -260, length = 6, spread = 3, effect = CONST_ME_BIGPLANTS, target = false},	  
+	{name ="combat", interval = 2150, chance = 30, minDamage = -50, maxDamage = -90, type = COMBAT_EARTHDAMAGE, length = 5, spread = 3, effect = CONST_ME_SMALLPLANTS, target = false},
 	-- poison
 	{name ="condition", type = CONDITION_POISON, interval = 2000, chance = 10, minDamage = -100, maxDamage = -140, radius = 5, shootEffect = CONST_ANI_POISON, effect = CONST_ME_POISONAREA, target = false},
 	{name ="speed", interval = 2000, chance = 10, speedChange = -330, range = 5, effect = CONST_ME_SMALLPLANTS, target = true, duration = 5000}
@@ -118,8 +113,8 @@ monster.elements = {
 	{type = COMBAT_LIFEDRAIN, percent = 0},
 	{type = COMBAT_MANADRAIN, percent = 0},
 	{type = COMBAT_DROWNDAMAGE, percent = 0},
-	{type = COMBAT_ICEDAMAGE, percent = 85},
-	{type = COMBAT_HOLYDAMAGE , percent = 50},
+	{type = COMBAT_ICEDAMAGE, percent = -20},
+	{type = COMBAT_HOLYDAMAGE , percent = -20},
 	{type = COMBAT_DEATHDAMAGE , percent = 50}
 }
 

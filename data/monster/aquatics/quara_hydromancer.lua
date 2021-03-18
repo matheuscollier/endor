@@ -1,8 +1,8 @@
 local mType = Game.createMonsterType("Quara Hydromancer")
 local monster = {}
 
-monster.description = "a quara hydromancer"
-monster.experience = 800
+monster.description = "um quara hydromancer"
+monster.experience = 950
 monster.outfit = {
 	lookType = 47,
 	lookHead = 0,
@@ -23,9 +23,9 @@ monster.Bestiary = {
 	CharmsPoints = 25,
 	Stars = 3,
 	Occurrence = 0,
-	Locations = "Calassa, Frozen Trench, Yalahar (Sunken Quarter)."
+	Locations = "x"
 	}
-
+	
 monster.health = 1100
 monster.maxHealth = 1100
 monster.race = "blood"
@@ -81,25 +81,21 @@ monster.voices = {
 }
 
 monster.loot = {
-	{name = "gold coin", chance = 50000, maxCount = 60},
-	{name = "gold coin", chance = 40000, maxCount = 50},
-	{name = "quara eye", chance = 15930},
-	{name = "white pearl", chance = 5250},
-	{name = "small emerald", chance = 5111, maxCount = 2},
-	{name = "shrimp", chance = 4545, maxCount = 5},
-	{name = "black pearl", chance = 3150},
-	{name = "great mana potion", chance = 2880},
-	{name = "fish fin", chance = 1410},
-	{name = "ring of healing", chance = 1218},
-	{name = "wand of cosmic energy", chance = 980},
-	{name = "knight armor", chance = 230}
+	{id = 2148, chance = 100000, maxCount = 40},
+	{id = 2670, chance = 25000, maxCount = 6},
+	{id = 2401, chance = 3000},
+	{id = 2143, chance = 3000, maxCount = 2},
+	{id = 5895, chance = 300},
+	{id = 2189, chance = 400},
+	{id = 2214, chance = 350},
+	{id = 7896, chance = 300}
 }
 
 monster.attacks = {
-	{name ="melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -80, effect = CONST_ME_DRAWBLOOD, condition = {type = CONDITION_POISON, totalDamage = 100, interval = 4000}},
-	{name ="combat", interval = 2000, chance = 10, type = COMBAT_ICEDAMAGE, minDamage = -100, maxDamage = -180, length = 8, spread = 3, effect = CONST_ME_BUBBLES, target = false},
-	{name ="combat", interval = 2000, chance = 10, type = COMBAT_ICEDAMAGE, minDamage = -90, maxDamage = -150, radius = 3, effect = CONST_ME_BUBBLES, target = false},
-	{name ="combat", interval = 2000, chance = 10, type = COMBAT_LIFEDRAIN, minDamage = -170, maxDamage = -240, length = 8, spread = 3, effect = CONST_ME_HITBYPOISON, target = false},
+	{name ="melee", interval = 2000, chance = 100, minDamage = -48, maxDamage = -104, effect = CONST_ME_DRAWBLOOD, condition = {type = CONDITION_POISON, totalDamage = 100, interval = 4000}},
+	{name ="combat", interval = 2550, chance = 20, minDamage = -110, maxDamage = -180, type = COMBAT_ICEDAMAGE, length = 6, spread = 3, effect = CONST_ME_LOSEENERGY, target = false},
+	{name ="combat", interval = 2150, chance = 15, minDamage = -126, maxDamage = -140, type = COMBAT_ICEDAMAGE, effect = CONST_ME_LOSEENERGY, target = false},
+	{name ="combat", interval = 2725, chance = 20, minDamage = -110, maxDamage = -130, type = COMBAT_LIFEDRAIN, range = 2, target = false},
 	{name ="combat", interval = 2000, chance = 15, type = COMBAT_LIFEDRAIN, minDamage = 0, maxDamage = -170, range = 7, effect = CONST_ME_MAGIC_RED, target = true},
 	{name ="speed", interval = 2000, chance = 15, speedChange = -600, range = 7, effect = CONST_ME_MAGIC_RED, target = false, duration = 15000}
 }
@@ -111,7 +107,7 @@ monster.defenses = {
 }
 
 monster.elements = {
-	{type = COMBAT_PHYSICALDAMAGE, percent = 0},
+	{type = COMBAT_PHYSICALDAMAGE, percent = -20},
 	{type = COMBAT_ENERGYDAMAGE, percent = -25},
 	{type = COMBAT_EARTHDAMAGE, percent = -10},
 	{type = COMBAT_FIREDAMAGE, percent = 100},

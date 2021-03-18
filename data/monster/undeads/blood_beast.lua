@@ -2,7 +2,7 @@ local mType = Game.createMonsterType("Blood Beast")
 local monster = {}
 
 monster.description = "a blood beast"
-monster.experience = 1000
+monster.experience = 14000
 monster.outfit = {
 	lookType = 602,
 	lookHead = 0,
@@ -13,38 +13,17 @@ monster.outfit = {
 	lookMount = 0
 }
 
-monster.raceId = 1040
-monster.Bestiary = {
-	class = "Undead",
-	race = BESTY_RACE_UNDEAD,
-	toKill = 1000,
-	FirstUnlock = 50,
-	SecondUnlock = 500,
-	CharmsPoints = 25,
-	Stars = 3,
-	Occurrence = 0,
-	Locations = "Oramond/Southern Plains, Lower Rathleton, Oramond/Western Plains, \z
-		Underground Glooth Factory, Jaccus Maxxen's Dungeon."
-	}
-
-monster.health = 1600
-monster.maxHealth = 1600
+monster.health = 14000
+monster.maxHealth = 14000
 monster.race = "venom"
 monster.corpse = 23351
-monster.speed = 220
+monster.speed = 350
 monster.manaCost = 0
 monster.maxSummons = 0
 
 monster.changeTarget = {
-	interval = 2000,
-	chance = 4
-}
-
-monster.strategiesTarget = {
-	nearest = 70,
-	health = 10,
-	damage = 10,
-	random = 10,
+	interval = 5000,
+	chance = 70
 }
 
 monster.flags = {
@@ -62,9 +41,9 @@ monster.flags = {
 	runHealth = 0,
 	healthHidden = false,
 	isBlockable = false,
-	canWalkOnEnergy = true,
+	canWalkOnEnergy = false,
 	canWalkOnFire = false,
-	canWalkOnPoison = true,
+	canWalkOnPoison = false,
 	pet = false
 }
 
@@ -76,49 +55,48 @@ monster.light = {
 monster.voices = {
 	interval = 5000,
 	chance = 10,
+	{text = "Rawrrr!", yell = false},
+	{text = "*grlb*", yell = false},
 	{text = "Roarr!", yell = false}
 }
 
 monster.loot = {
-	{id = 23549, chance = 2010},
-	{id = 10557, chance = 3080},
-	{id = 23517, chance = 2720},
-	{id = 2148, chance = 100000, maxCount = 139},
-	{id = 23565, chance = 1040},
-	{id = 7588, chance = 7710},
-	{id = 7366, chance = 1290, maxCount = 5},
-	{id = 23554, chance = 250},
-	{id = 23550, chance = 210},
-	{id = 23549, chance = 210},
-	{id = 23551, chance = 250},
-	{id = 23529, chance = 280}
+	{id = 23535, chance = 40},
+	{id = 2536, chance = 250},
+	{id = 2475, chance = 300},
+	{id = 2152, chance = 30000, maxCount = 3},
+	{id = 2148, chance = 80000, maxCount = 100},
+	{id = 2167, chance = 1000},
+	{id = 10557, chance = 3000},
+	{id = 23566, chance = 800},
+	{id = 23517, chance = 1000},
+	{id = 23565, chance = 1000}
 }
 
 monster.attacks = {
-	{name ="melee", interval = 2000, chance = 100, skill = 82, attack = 50, condition = {type = CONDITION_POISON, totalDamage = 260, interval = 4000}},
-	{name ="combat", interval = 2000, chance = 10, type = COMBAT_EARTHDAMAGE, minDamage = -65, maxDamage = -105, range = 5, shootEffect = CONST_ANI_GREENSTAR, effect = CONST_ME_POISONAREA, target = true},
-	-- poison
-	{name ="condition", type = CONDITION_POISON, interval = 2000, chance = 17, minDamage = -300, maxDamage = -400, radius = 4, effect = CONST_ME_MAGIC_GREEN, target = false}
+	{name ="melee", interval = 2000, chance = 100, skill = 120, attack = 100, condition = {type = CONDITION_POISON, startDamage = 260, interval = 4000}},
+	{name ="combat", interval = 2000, chance = 80, minDamage = -550, maxDamage = -650, range = 5, type = COMBAT_EARTHDAMAGE, ShootEffect = CONST_ANI_GREENSTAR, effect = CONST_ME_POISONAREA, target = true},
+	{name ="condition", type = CONDITION_POISON, interval = 4000, chance = 60, minDamage = -640, maxDamage = -920, range = 5, effect = CONST_ME_MAGIC_GREEN, target = false}
 }
 
 monster.defenses = {
-	defense = 36,
-	armor = 23,
-	{name ="speed", interval = 2000, chance = 8, speedChange = 314, effect = CONST_ME_MAGIC_RED, target = false, duration = 6000},
-	{name ="combat", interval = 2000, chance = 7, type = COMBAT_HEALING, minDamage = 80, maxDamage = 120, effect = CONST_ME_MAGIC_BLUE, target = false}
+	defense = 0,
+	armor = 0,
+	{name ="speed", interval = 2000, chance = 8, SpeedChange = 314, Duration = 6000},
+	{name ="combat", interval = 2000, chance = 7, minDamage = 80, maxDamage = 120, type = COMBAT_HEALING, effect = CONST_ME_MAGIC_BLUE, target = false}
 }
 
 monster.elements = {
-	{type = COMBAT_PHYSICALDAMAGE, percent = 0},
-	{type = COMBAT_ENERGYDAMAGE, percent = 10},
+	{type = COMBAT_PHYSICALDAMAGE, percent = 25},
+	{type = COMBAT_ENERGYDAMAGE, percent = 25},
 	{type = COMBAT_EARTHDAMAGE, percent = 100},
-	{type = COMBAT_FIREDAMAGE, percent = -5},
+	{type = COMBAT_FIREDAMAGE, percent = 25},
 	{type = COMBAT_LIFEDRAIN, percent = 100},
 	{type = COMBAT_MANADRAIN, percent = 0},
 	{type = COMBAT_DROWNDAMAGE, percent = 0},
-	{type = COMBAT_ICEDAMAGE, percent = 0},
-	{type = COMBAT_HOLYDAMAGE , percent = 0},
-	{type = COMBAT_DEATHDAMAGE , percent = 0}
+	{type = COMBAT_ICEDAMAGE, percent = 25},
+	{type = COMBAT_HOLYDAMAGE , percent = 25},
+	{type = COMBAT_DEATHDAMAGE , percent = 25}
 }
 
 monster.immunities = {

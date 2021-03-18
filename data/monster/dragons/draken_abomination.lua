@@ -2,7 +2,7 @@ local mType = Game.createMonsterType("Draken Abomination")
 local monster = {}
 
 monster.description = "a draken abomination"
-monster.experience = 3800
+monster.experience = 9000
 monster.outfit = {
 	lookType = 357,
 	lookHead = 0,
@@ -23,14 +23,14 @@ monster.Bestiary = {
 	CharmsPoints = 50,
 	Stars = 4,
 	Occurrence = 0,
-	Locations = "Razachai including the Inner Sanctum."
+	Locations = "x."
 	}
 
-monster.health = 6250
-monster.maxHealth = 6250
+monster.health = 8100
+monster.maxHealth = 8100
 monster.race = "venom"
 monster.corpse = 12623
-monster.speed = 270
+monster.speed = 350
 monster.manaCost = 0
 monster.maxSummons = 2
 
@@ -83,33 +83,26 @@ monster.voices = {
 }
 
 monster.loot = {
-	{name = "gold coin", chance = 50000, maxCount = 100},
-	{name = "gold coin", chance = 47000, maxCount = 98},
-	{name = "platinum coin", chance = 50590, maxCount = 8},
-	{name = "meat", chance = 50450, maxCount = 4},
-	{name = "great mana potion", chance = 9950, maxCount = 3},
-	{name = "terra hood", chance = 8730},
-	{name = "great spirit potion", chance = 4905, maxCount = 3},
-	{name = "ultimate health potion", chance = 9400, maxCount = 3},
-	{name = "wand of voodoo", chance = 1020},
-	{name = "small topaz", chance = 2900, maxCount = 4},
-	{name = "Zaoan armor", chance = 470},
-	{name = "Zaoan helmet", chance = 560},
-	{name = "Zaoan legs", chance = 780},
-	{name = "eye of corruption", chance = 12110},
-	{name = "tail of corruption", chance = 6240},
-	{name = "scale of corruption", chance = 10940},
-	{name = "shield of corruption", chance = 10},
-	{name = "draken boots", chance = 540},
-	{name = "snake god's wristguard", chance = 10},
-	{name = "bamboo leaves", chance = 360}
+	{id = 2148, chance = 40825, maxCount = 100},
+	{id = 2148, chance = 40825, maxCount = 100},
+	{id = 2666, chance = 50450, maxCount = 4},
+	{id = 2152, chance = 28900, maxCount = 8},
+	{id = 12627, chance = 9250},
+	{id = 12628, chance = 6400},
+	{id = 12629, chance = 1167},
+	{id = 12646, chance = 150},
+	{id = 12630, chance = 60},
+	{id = 12645, chance = 135},
+	{id = 11301, chance = 135},
+	{id = 8880, chance = 835},
+	{id = 2123, chance = 30}
 }
 
 monster.attacks = {
-	{name ="melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -420},
-	{name ="combat", interval = 2000, chance = 10, type = COMBAT_FIREDAMAGE, minDamage = -310, maxDamage = -630, length = 4, spread = 3, effect = CONST_ME_EXPLOSIONHIT, target = false},
-	{name ="draken abomination curse", interval = 2000, chance = 10, range = 5, target = false},
-	{name ="combat", interval = 2000, chance = 15, type = COMBAT_DEATHDAMAGE, minDamage = -170, maxDamage = -370, length = 4, spread = 3, effect = CONST_ME_MORTAREA, target = false},
+	{name ="melee", interval = 1900, chance = 100, minDamage = -400, maxDamage = -480},
+	{name ="combat", interval = 2000, chance = 20, minDamage = -470, maxDamage = -630, type = COMBAT_FIREDAMAGE, length = 4, spread = 3, ShootEffect = CONST_ANI_EXPLOSION, effect = CONST_ME_EXPLOSIONHIT, target = false},
+	{name ="draken abomination curse", interval = 2000, chance = 10, range = 5, target = false},																						 
+	{name ="combat", interval = 2000, chance = 30, minDamage = -450, maxDamage = -620, type = COMBAT_DEATHDAMAGE, length = 8, spread = 3, effect = CONST_ME_MORTAREA, target = false},
 	{name ="drunk", interval = 2000, chance = 15, range = 7, radius = 4, shootEffect = CONST_ANI_POISON, effect = CONST_ME_POISONAREA, target = false, duration = 9000},
 	{name ="combat", interval = 2000, chance = 10, type = COMBAT_PHYSICALDAMAGE, range = 7, radius = 3, effect = CONST_ME_HITBYPOISON, target = false}
 }
@@ -121,7 +114,7 @@ monster.defenses = {
 }
 
 monster.elements = {
-	{type = COMBAT_PHYSICALDAMAGE, percent = 0},
+	{type = COMBAT_PHYSICALDAMAGE, percent = 25},
 	{type = COMBAT_ENERGYDAMAGE, percent = -5},
 	{type = COMBAT_EARTHDAMAGE, percent = 100},
 	{type = COMBAT_FIREDAMAGE, percent = 100},

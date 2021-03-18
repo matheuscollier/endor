@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<npc name="Celegorm" script="event.lua" walkinterval="2000" floorchange="0">
+	<health now="100" max="100" />
+	<look type="931" head="0" body="0" legs="81" feet="0" addons="3" />
+<parameters>
+<parameter key="message_greet" value="Olá {|PLAYERNAME|}, eu sou Celegorm, O NPC de Eventos. Estou aqui para oferecer premiações em troca de tokens obtidos nos eventos do Endor. Você gostaria de trocar {tokens}?" />
+</parameters>
+</npc>

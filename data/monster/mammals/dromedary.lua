@@ -2,7 +2,7 @@ local mType = Game.createMonsterType("Dromedary")
 local monster = {}
 
 monster.description = "a dromedary"
-monster.experience = 0
+monster.experience = 50
 monster.outfit = {
 	lookType = 404,
 	lookHead = 0,
@@ -13,34 +13,17 @@ monster.outfit = {
 	lookMount = 0
 }
 
-monster.raceId = 733
-monster.Bestiary = {
-	class = "Mammal",
-	race = BESTY_RACE_MAMMAL,
-	toKill = 250,
-	FirstUnlock = 10,
-	SecondUnlock = 10,
-	CharmsPoints = 5,
-	Stars = 1,
-	Occurrence = 0,
-	Locations = "Ankrahmun near way to Darashia, Ankrahmun near sea, also in few places around Darashia."
-	}
-
-monster.health = 45
-monster.maxHealth = 45
+monster.health = 60
+monster.maxHealth = 60
 monster.race = "blood"
 monster.corpse = 13528
-monster.speed = 114
+monster.speed = 150
 monster.manaCost = 0
 monster.maxSummons = 0
 
 monster.changeTarget = {
-	interval = 4000,
+	interval = 2000,
 	chance = 20
-}
-
-monster.strategiesTarget = {
-	nearest = 100,
 }
 
 monster.flags = {
@@ -54,8 +37,8 @@ monster.flags = {
 	canPushItems = false,
 	canPushCreatures = false,
 	staticAttackChance = 90,
-	targetDistance = 4,
-	runHealth = 45,
+	targetDistance = 0,
+	runHealth = 25,
 	healthHidden = false,
 	isBlockable = false,
 	canWalkOnEnergy = false,
@@ -77,17 +60,16 @@ monster.voices = {
 }
 
 monster.loot = {
-	{name = "meat", chance = 36000, maxCount = 2}
+	{id = 2666, chance = 20000, maxCount = 2}
 }
 
 monster.attacks = {
-	{name ="melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -8},
-	{name ="drunk", interval = 4000, chance = 5, range = 1, shootEffect = CONST_ANI_EXPLOSION, effect = CONST_ME_STUN, target = true, duration = 6000}
+	{name ="melee", interval = 2000, chance = 100, skill = 10, attack = 5}
 }
 
 monster.defenses = {
-	defense = 5,
-	armor = 5
+	defense = 0,
+	armor = 0
 }
 
 monster.elements = {

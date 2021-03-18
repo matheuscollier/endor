@@ -13,37 +13,17 @@ monster.outfit = {
 	lookMount = 0
 }
 
-monster.raceId = 919
-monster.Bestiary = {
-	class = "Plant",
-	race = BESTY_RACE_PLANT,
-	toKill = 500,
-	FirstUnlock = 25,
-	SecondUnlock = 250,
-	CharmsPoints = 15,
-	Stars = 2,
-	Occurrence = 0,
-	Locations = "Venore swamp area, Venore Salamander Cave, Tiquanda Laboratory."
-	}
-
 monster.health = 80
 monster.maxHealth = 80
 monster.race = "venom"
 monster.corpse = 19902
-monster.speed = 190
+monster.speed = 210
 monster.manaCost = 0
 monster.maxSummons = 0
 
 monster.changeTarget = {
-	interval = 4000,
-	chance = 0
-}
-
-monster.strategiesTarget = {
-	nearest = 70,
-	health = 10,
-	damage = 10,
-	random = 10,
+	interval = 5000,
+	chance = 8
 }
 
 monster.flags = {
@@ -75,27 +55,27 @@ monster.light = {
 monster.voices = {
 	interval = 5000,
 	chance = 10,
-	{text = "Gnark!", yell = false}
+	{text = "Gnark!", yell = false},
+	{text = "Crrrck!", yell = false}
 }
 
 monster.loot = {
-	{id = 2120, chance = 5080},
-	{name = "gold coin", chance = 84900, maxCount = 12},
-	{name = "white mushroom", chance = 10220, maxCount = 5},
-	{name = "swampling club", chance = 7410},
-	{name = "swampling moss", chance = 19900},
-	{name = "piece of swampling wood", chance = 14870}
+	{id = 10603, chance = 7000},
+	{id = 20103, chance = 6000},
+	{id = 2148, chance = 30000, maxCount = 10},
+	{id = 2787, chance = 880, maxCount = 5},
+	{id = 20138, chance = 450}
 }
 
 monster.attacks = {
-	{name ="melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -80},
-	{name ="combat", interval = 2000, chance = 15, type = COMBAT_EARTHDAMAGE, minDamage = -2, maxDamage = -15, range = 7, shootEffect = CONST_ANI_POISON, target = false},
-	{name ="speed", interval = 2000, chance = 15, speedChange = -300, length = 3, spread = 2, effect = CONST_ME_WATERSPLASH, target = false, duration = 5000}
+	{name ="melee", interval = 2000, chance = 100, skill = 30, attack = 40},
+	{name ="combat", interval = 2000, chance = 17, minDamage = 0, maxDamage = -10, type = COMBAT_LIFEDRAIN, length = 3, spread = 2, effect = CONST_ME_LOSEENERGY, target = false},
+	{name ="combat", interval = 3000, chance = 2500, minDamage = 0, maxDamage = -13, type = COMBAT_PHYSICALDAMAGE, target = false}
 }
 
 monster.defenses = {
-	defense = 10,
-	armor = 10
+	defense = 0,
+	armor = 0
 }
 
 monster.elements = {

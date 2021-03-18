@@ -1,7 +1,7 @@
 local mType = Game.createMonsterType("Mummy")
 local monster = {}
 
-monster.description = "a mummy"
+monster.description = "uma mummy"
 monster.experience = 150
 monster.outfit = {
 	lookType = 65,
@@ -13,55 +13,37 @@ monster.outfit = {
 	lookMount = 0
 }
 
-monster.raceId = 65
-monster.Bestiary = {
-	class = "Undead",
-	race = BESTY_RACE_UNDEAD,
-	toKill = 500,
-	FirstUnlock = 25,
-	SecondUnlock = 250,
-	CharmsPoints = 15,
-	Stars = 2,
-	Occurrence = 0,
-	Locations = "Drefia, Darama's Dark Pyramid, Draconia, Mount Sternum Undead Cave, Green Claw Swamp, \z
-		Venore Amazon Camp underground, Helheim, Upper Spike, all Tombs, Dark Cathedral, Lion's Rock."
-	}
-
 monster.health = 240
 monster.maxHealth = 240
 monster.race = "undead"
-monster.corpse = 6004
+monster.corpse = 2949
 monster.speed = 150
-monster.manaCost = 0
+monster.manaCost = 510
 monster.maxSummons = 0
 
 monster.changeTarget = {
-	interval = 4000,
-	chance = 10
-}
-
-monster.strategiesTarget = {
-	nearest = 100,
+	interval = 2000,
+	chance = 0
 }
 
 monster.flags = {
 	summonable = false,
 	attackable = true,
 	hostile = true,
-	convinceable = false,
+	convinceable = true,
 	pushable = false,
 	rewardBoss = false,
 	illusionable = true,
 	canPushItems = true,
 	canPushCreatures = false,
-	staticAttackChance = 90,
+	staticAttackChance = 95,
 	targetDistance = 1,
 	runHealth = 0,
 	healthHidden = false,
 	isBlockable = false,
 	canWalkOnEnergy = false,
 	canWalkOnFire = false,
-	canWalkOnPoison = true,
+	canWalkOnPoison = false,
 	pet = false
 }
 
@@ -74,39 +56,37 @@ monster.voices = {
 	interval = 5000,
 	chance = 10,
 	{text = "I will ssswallow your sssoul!", yell = false},
-	{text = "Mort ulhegh dakh visss.", yell = false},
-	{text = "Flesssh to dussst!", yell = false},
-	{text = "I will tassste life again!", yell = false},
 	{text = "Ahkahra exura belil mort!", yell = false},
-	{text = "Yohag Sssetham!", yell = false}
+	{text = "Yohag Sssetham!", yell = false},
+	{text = "I will tassste life again!", yell = false},
+	{text = "Mort ulhegh dakh visss.", yell = false},
+	{text = "Flesssh to dussst!", yell = false}
 }
 
 monster.loot = {
-	{id = 2124, chance = 1500},
-	{name = "silver brooch", chance = 4000},
-	{name = "black pearl", chance = 1000},
-	{name = "gold coin", chance = 38000, maxCount = 80},
-	{name = "strange talisman", chance = 5000},
-	{id = 2162, chance = 5800},
-	{name = "silver amulet", chance = 100},
-	{name = "poison dagger", chance = 450},
-	{name = "black shield", chance = 170},
-	{name = "worm", chance = 19000, maxCount = 3},
-	{name = "yellow piece of cloth", chance = 900},
-	{name = "gauze bandage", chance = 10000},
-	{name = "mini mummy", chance = 10},
-	{name = "flask of embalming fluid", chance = 11690}
+	{id = 2411, chance = 50},
+	{id = 2541, chance = 600},
+	{id = 2529, chance = 60},
+	{id = 2148, chance = 100000, maxCount = 30},
+	{id = 2161, chance = 600},
+	{id = 2162, chance = 1200},
+	{id = 12422, chance = 2000},
+	{id = 2134, chance = 900},
+	{id = 5914, chance = 500},
+	{id = 2144, chance = 1000},
+	{id = 2124, chance = 130},
+	{id = 2172, chance = 500}
 }
 
 monster.attacks = {
-	{name ="melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -85, condition = {type = CONDITION_POISON, totalDamage = 4, interval = 4000}},
-	{name ="combat", interval = 2000, chance = 20, type = COMBAT_DEATHDAMAGE, minDamage = -30, maxDamage = -40, range = 1, effect = CONST_ME_SMALLCLOUDS, target = true},
-	{name ="speed", interval = 2000, chance = 15, speedChange = -226, range = 7, effect = CONST_ME_MAGIC_RED, target = true, duration = 10000}
+	{name ="melee", interval = 2000, chance = 100, minDamage = -40, maxDamage = -80, condition = {type = CONDITION_POISON, startDamage = 50, interval = 2000}},
+	{name ="combat", interval = 2500, chance = 30, minDamage = -30, maxDamage = -60, type = COMBAT_LIFEDRAIN, range = 1, target = false},
+	{name ="speed", interval = 2800, chance = 30, SpeedChange = -800, Duration = 10000}
 }
 
 monster.defenses = {
-	defense = 15,
-	armor = 15
+	defense = 0,
+	armor = 0
 }
 
 monster.elements = {
@@ -116,10 +96,10 @@ monster.elements = {
 	{type = COMBAT_FIREDAMAGE, percent = 0},
 	{type = COMBAT_LIFEDRAIN, percent = 100},
 	{type = COMBAT_MANADRAIN, percent = 0},
-	{type = COMBAT_DROWNDAMAGE, percent = 100},
-	{type = COMBAT_ICEDAMAGE, percent = 20},
-	{type = COMBAT_HOLYDAMAGE , percent = -25},
-	{type = COMBAT_DEATHDAMAGE , percent = 100}
+	{type = COMBAT_DROWNDAMAGE, percent = 0},
+	{type = COMBAT_ICEDAMAGE, percent = 0},
+	{type = COMBAT_HOLYDAMAGE , percent = 0},
+	{type = COMBAT_DEATHDAMAGE , percent = 0}
 }
 
 monster.immunities = {

@@ -1,7 +1,7 @@
 local mType = Game.createMonsterType("Toad")
 local monster = {}
 
-monster.description = "a toad"
+monster.description = "um toad"
 monster.experience = 60
 monster.outfit = {
 	lookType = 222,
@@ -23,8 +23,7 @@ monster.Bestiary = {
 	CharmsPoints = 15,
 	Stars = 2,
 	Occurrence = 0,
-	Locations = "The Laguna Islands, Arena and Zoo Quarter, Tiquanda/Tarantula Caves, \z
-		Shadowthorn Bog God Temple, Northern Zao Plantations, Northern Brimstone Bug Cave."
+	Locations = "x."
 	}
 
 monster.health = 135
@@ -65,6 +64,7 @@ monster.flags = {
 	pet = false
 }
 
+
 monster.light = {
 	level = 0,
 	color = 0
@@ -73,16 +73,16 @@ monster.light = {
 monster.voices = {
 	interval = 5000,
 	chance = 10,
-	{text = "Ribbit! Ribbit!", yell = false},
-	{text = "Ribbit!", yell = false}
+	{text = "Ribbit!Ribbit!", yell = false}
 }
 
 monster.loot = {
-	{name = "gold coin", chance = 80000, maxCount = 20},
-	{name = "war hammer", chance = 148},
-	{name = "mace", chance = 2854},
-	{id = 2667, chance = 20000},
-	{name = "poisonous slime", chance = 4761}
+	{id = 2148, chance = 60000, maxCount = 12},
+	{id = 2666, chance = 12500, maxCount = 2},
+	{id = 2667, chance = 10362},
+	{id = 2398, chance = 7926},
+	{id = 2382, chance = 17132},
+	{id = 2391, chance = 100}
 }
 
 monster.attacks = {

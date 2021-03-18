@@ -1,7 +1,7 @@
 local mType = Game.createMonsterType("Crab")
 local monster = {}
 
-monster.description = "a crab"
+monster.description = "um crab"
 monster.experience = 30
 monster.outfit = {
 	lookType = 112,
@@ -23,10 +23,9 @@ monster.Bestiary = {
 	CharmsPoints = 15,
 	Stars = 2,
 	Occurrence = 0,
-	Locations = "Various locations like Goroma, Edron, Port Hope, Nargor and other Shattered Isles. \z
-		There is also one located underwater by The Tibianic, however it is unreachable."
+	Locations = "x."
 	}
-
+	
 monster.health = 55
 monster.maxHealth = 55
 monster.race = "undead"
@@ -76,9 +75,8 @@ monster.voices = {
 }
 
 monster.loot = {
-	{name = "gold coin", chance = 80000, maxCount = 10},
 	{id = 2667, chance = 20000},
-	{name = "crab pincers", chance = 20000}
+	{id = 2148, chance = 80000, maxCount = 10}
 }
 
 monster.attacks = {

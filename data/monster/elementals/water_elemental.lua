@@ -23,10 +23,9 @@ monster.Bestiary = {
 	CharmsPoints = 25,
 	Stars = 3,
 	Occurrence = 0,
-	Locations = "Water Elemental Cave in Port Hope, Water Elemental Dungeon, Deeper Banuta, Malada, Ramoa, \z
-		Talahu, Folda (7 spawn on the 3rd floor), Water Elemental Cave in Outlaw Camp (only during the Down the \z
-		Drain Mini World Change), Krailos Steppe underwater cave."
+	Locations = "x."
 	}
+
 
 monster.health = 550
 monster.maxHealth = 550
@@ -87,14 +86,7 @@ monster.loot = {
 	{name = "small emerald", chance = 1000, maxCount = 2},
 	{name = "platinum coin", chance = 10000},
 	{name = "energy ring", chance = 950},
-	{name = "life ring", chance = 930},
-	{id = 2667, chance = 20000},
-	{name = "rainbow trout", chance = 940},
-	{name = "green perch", chance = 1050},
-	{name = "strong health potion", chance = 10000},
-	{name = "strong mana potion", chance = 10000},
-	{id = 7632, chance = 800},
-	{id = 7633, chance = 800}
+	{name = "life ring", chance = 930}					 
 }
 
 monster.attacks = {

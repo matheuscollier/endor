@@ -1,6 +1,6 @@
-local combat = Combat()
-combat:setParameter(COMBAT_PARAM_TYPE, COMBAT_NONE)
-combat:setParameter(COMBAT_PARAM_EFFECT, CONST_ME_GROUNDSHAKER)
+local combat = createCombatObject()
+setCombatParam(combat, COMBAT_PARAM_TYPE, COMBAT_NONE)
+setCombatParam(combat, COMBAT_PARAM_EFFECT, CONST_ME_GROUNDSHAKER)
 
 arr = {
 {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
@@ -19,20 +19,21 @@ arr = {
 }
 
 local area = createCombatArea(arr)
-combat:setArea(area)
+setCombatArea(combat, area)
 
 local maxsummons = 2
 
-function onCastSpell(creature, var)
-	local summoncount = creature:getSummons()
+function onCastSpell(cid, var)
+	local summoncount = getCreatureSummons(cid)
 	if #summoncount < 2 then
 		for i = 1, maxsummons - #summoncount do
-			local mid = Game.createMonster("Carrion Worm", creature:getPosition())
-    		if not mid then
-				return
+			local mid = doSummonCreature("Carrion Worm", getCreaturePosition(cid))
+    			if mid == false then
+				return false
 			end
-			mid:setMaster(creature)
+			doConvinceCreature(cid, mid)
+
 		end
 	end
-	return combat:execute(creature, var)
+	return doCombat(cid, combat, var)
 end

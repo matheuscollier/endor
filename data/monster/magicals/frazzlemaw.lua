@@ -1,8 +1,8 @@
 local mType = Game.createMonsterType("Frazzlemaw")
 local monster = {}
 
-monster.description = "a frazzlemaw"
-monster.experience = 3740
+monster.description = "Frazzlemaw"
+monster.experience = 5000
 monster.outfit = {
 	lookType = 594,
 	lookHead = 0,
@@ -13,37 +13,17 @@ monster.outfit = {
 	lookMount = 0
 }
 
-monster.raceId = 1022
-monster.Bestiary = {
-	class = "Magical",
-	race = BESTY_RACE_MAGICAL,
-	toKill = 2500,
-	FirstUnlock = 100,
-	SecondUnlock = 1000,
-	CharmsPoints = 50,
-	Stars = 4,
-	Occurrence = 0,
-	Locations = "Lower Roshamuul, Guzzlemaw Valley, the entrance to Upper Roshamuul."
-	}
-
-monster.health = 4100
-monster.maxHealth = 4100
+monster.health = 5400
+monster.maxHealth = 5400
 monster.race = "blood"
 monster.corpse = 22567
-monster.speed = 400
+monster.speed = 250
 monster.manaCost = 0
 monster.maxSummons = 0
 
 monster.changeTarget = {
 	interval = 4000,
 	chance = 10
-}
-
-monster.strategiesTarget = {
-	nearest = 70,
-	health = 10,
-	damage = 10,
-	random = 10,
 }
 
 monster.flags = {
@@ -61,9 +41,9 @@ monster.flags = {
 	runHealth = 0,
 	healthHidden = false,
 	isBlockable = false,
-	canWalkOnEnergy = true,
-	canWalkOnFire = true,
-	canWalkOnPoison = true,
+	canWalkOnEnergy = false,
+	canWalkOnFire = false,
+	canWalkOnPoison = false,
 	pet = false
 }
 
@@ -75,71 +55,63 @@ monster.light = {
 monster.voices = {
 	interval = 5000,
 	chance = 10,
-	{text = "Mwaaaahnducate youuuuuu *gurgle*, mwaaah!", yell = false},
-	{text = "Mwaaahgod! Overmwaaaaah! *gurgle*", yell = false},
-	{text = "MMMWAHMWAHMWAHMWAAAAH!", yell = false},
-	{text = "Mmmwhamwhamwhah, mwaaah!", yell = false}
+	{text = "Mwaaaahnducate youuuuuu *gurgle*", yell = false},
+	{text = "mwaaah!", yell = false}
 }
 
 monster.loot = {
-	{name = "gold coin", chance = 100000, maxCount = 100},
-	{name = "platinum coin", chance = 100000, maxCount = 7},
-	{name = "banana skin", chance = 9500},
-	{name = "piece of iron", chance = 10400},
-	{name = "fishbone", chance = 10000},
+	{id = 2148, chance = 100000, maxCount = 100},
+	{id = 2152, chance = 100000, maxCount = 4},
+	{id = 2219, chance = 9500},
+	{id = 2225, chance = 10400},
+	{id = 2226, chance = 10000},
 	{id = 2229, chance = 12680},
 	{id = 2230, chance = 10000},
 	{id = 2231, chance = 5500},
-	{name = "two handed sword", chance = 3200},
+	{id = 2377, chance = 3200},
 	{id = 2667, chance = 6750, maxCount = 3},
-	{name = "ham", chance = 6000, maxCount = 2},
-	{name = "iron ore", chance = 3000},
-	{name = "fish fin", chance = 4700},
-	{name = "hardened bone", chance = 5000},
+	{id = 2671, chance = 6000, maxCount = 2},
+	{id = 5880, chance = 3000},
+	{id = 5895, chance = 2000},
+	{id = 5925, chance = 5000},
 	{id = 5951, chance = 10800},
-	{name = "assassin dagger", chance = 1000},
-	{name = "haunted blade", chance = 2240},
-	{name = "nightmare blade", chance = 1100},
-	{name = "great mana potion", chance = 15000, maxCount = 3},
-	{name = "great health potion", chance = 15000, maxCount = 2},
-	{name = "gold ingot", chance = 2300},
-	{name = "sai", chance = 1460},
-	{name = "violet crystal shard", chance = 3000},
-	{name = "brown crystal splinter", chance = 16000},
-	{name = "red crystal fragment", chance = 7600},
-	{id = 33539, chance = 10000},
-	{name = "cluster of solace", chance = 450},
-	{name = "frazzle tongue", chance = 18760},
-	{name = "frazzle skin", chance = 16000}
+	{id = 18414, chance = 1500},
+	{id = 18417, chance = 2000},
+	{id = 18420, chance = 7600},
+	{id = 18554, chance = 10000},
+	{id = 22396, chance = 450},
+	{id = 7407, chance = 30},
+	{id = 22532, chance = 1500},
+	{id = 22533, chance = 600},
+	{id = 2240, chance = 9420}
 }
 
 monster.attacks = {
-	{name ="melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -400},
-	-- bleed
-	{name ="condition", type = CONDITION_BLEEDING, interval = 2000, chance = 10, minDamage = -300, maxDamage = -400, radius = 3, target = false},
-	{name ="combat", interval = 2000, chance = 10, type = COMBAT_PHYSICALDAMAGE, minDamage = 0, maxDamage = -700, length = 5, spread = 3, effect = CONST_ME_EXPLOSIONAREA, target = false},
-	{name ="combat", interval = 2000, chance = 15, type = COMBAT_PHYSICALDAMAGE, minDamage = 0, maxDamage = -400, radius = 2, shootEffect = CONST_ANI_LARGEROCK, effect = CONST_ME_STONES, target = true},
-	{name ="speed", interval = 2000, chance = 15, speedChange = -600, radius = 5, effect = CONST_ME_MAGIC_RED, target = false, duration = 15000},
-	{name ="combat", interval = 2000, chance = 10, type = COMBAT_MANADRAIN, minDamage = -80, maxDamage = -150, radius = 4, effect = CONST_ME_MAGIC_RED, target = false}
+	{name ="melee", interval = 2000, chance = 100, skill = 90, attack = 90},
+	{name ="condition", type = CONDITION_BLEEDING, interval = 2000, chance = 10, minDamage = -370, maxDamage = -490, radius = 3, target = false},
+	{name ="combat", interval = 2000, chance = 10, minDamage = -200, maxDamage = -800, type = COMBAT_PHYSICALDAMAGE, length = 5, spread = 3, effect = CONST_ME_EXPLOSIONAREA, target = true},
+	{name ="combat", interval = 2000, chance = 15, minDamage = -100, maxDamage = -500, type = COMBAT_PHYSICALDAMAGE, ShootEffect = CONST_ANI_LARGEROCK, effect = CONST_ME_STONES, target = true},
+	{name ="speed", interval = 2000, chance = 15, SpeedChange = -600, Duration = 15000},
+	{name ="combat", interval = 2000, chance = 10, minDamage = -90, maxDamage = -180, type = COMBAT_MANADRAIN, effect = CONST_ME_MAGIC_RED, target = false}
 }
 
 monster.defenses = {
-	defense = 30,
-	armor = 30,
-	{name ="combat", interval = 2000, chance = 15, type = COMBAT_HEALING, minDamage = 250, maxDamage = 425, effect = CONST_ME_HITBYPOISON, target = false}
+	defense = 0,
+	armor = 0,
+	{name ="combat", interval = 2000, chance = 15, minDamage = 250, maxDamage = 425, type = COMBAT_HEALING, effect = CONST_ME_HITBYPOISON, target = false}
 }
 
 monster.elements = {
 	{type = COMBAT_PHYSICALDAMAGE, percent = 10},
-	{type = COMBAT_ENERGYDAMAGE, percent = 15},
+	{type = COMBAT_ENERGYDAMAGE, percent = 10},
 	{type = COMBAT_EARTHDAMAGE, percent = 20},
-	{type = COMBAT_FIREDAMAGE, percent = 10},
+	{type = COMBAT_FIREDAMAGE, percent = 5},
 	{type = COMBAT_LIFEDRAIN, percent = 0},
 	{type = COMBAT_MANADRAIN, percent = 0},
 	{type = COMBAT_DROWNDAMAGE, percent = 0},
-	{type = COMBAT_ICEDAMAGE, percent = 5},
-	{type = COMBAT_HOLYDAMAGE , percent = -10},
-	{type = COMBAT_DEATHDAMAGE , percent = 15}
+	{type = COMBAT_ICEDAMAGE, percent = 10},
+	{type = COMBAT_HOLYDAMAGE , percent = 10},
+	{type = COMBAT_DEATHDAMAGE , percent = 10}
 }
 
 monster.immunities = {

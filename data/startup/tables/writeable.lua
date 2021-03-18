@@ -1,13 +1,9 @@
--- Guidelines for BookDocumentTable:
--- containerId: id of the container item (bookcase, shelf, corpse, etc). Optional.
--- itemId: id of item (book, scroll, letter, etc).
--- position: position of the container or of the item (depending on if the item is on a container or not).
--- text: text of item (book, scroll, letter, etc).
-BookDocumentTable = {
+BookTable = {
 	[1] = {
-		containerId = 1718,
-		itemId = 1962,
-		position = {x = 32063, y = 31884, z = 4},
+		containerBook = true,
+		itemId = 1718,
+		bookId = 1962,
+		itemPos = {x = 32063, y = 31884, z = 4},
 		text = [[
 MONSTERS AND FOES OF DAWNPORT I
 
@@ -25,9 +21,10 @@ Other beasts - It is certain that other beasts live in the dungeons of our isle.
 		]]
 	},
 	[2] = {
-		containerId = 1718,
-		itemId = 1962,
-		position = {x = 32063, y = 31884, z = 4},
+		containerBook = true,
+		itemId = 1718,
+		bookId = 1962,
+		itemPos = {x = 32063, y = 31884, z = 4},
 		text = [[
 MONSTERS AND FOES OF DAWNPORT II
 
@@ -45,9 +42,10 @@ The rat - Whether humans brought this pest with them on the isle or whether rats
 		]]
 	},
 	[3] = {
-		containerId = 1718,
-		itemId = 1962,
-		position = {x = 32063, y = 31884, z = 4},
+		containerBook = true,
+		itemId = 1718,
+		bookId = 1962,
+		itemPos = {x = 32063, y = 31884, z = 4},
 		text = [[
 MONSTERS AND FOES OF DAWNPORT III
 
@@ -61,9 +59,10 @@ The poison spider - Though only slightly tougher than an ordinary spider, this o
 		]]
 	},
 	[4] = {
-		containerId = 1719,
-		itemId = 1962,
-		position = {x = 32064, y = 31884, z = 4},
+		containerBook = true,
+		itemId = 1719,
+		bookId = 1962,
+		itemPos = {x = 32064, y = 31884, z = 4},
 		text = [[
 MONSTERS AND FOES OF DAWNPORT IV
 
@@ -77,9 +76,10 @@ The Meadow strider - A giant bird that stalks the marshes and meadows, the meado
 		]]
 	},
 	[5] = {
-		containerId = 1719,
-		itemId = 1962,
-		position = {x = 32064, y = 31884, z = 4},
+		containerBook = true,
+		itemId = 1719,
+		bookId = 1962,
+		itemPos = {x = 32064, y = 31884, z = 4},
 		text = [[
 MONSTERS AND FOES OF DAWNPORT V
 
@@ -98,9 +98,10 @@ The squirrel - Swift and impish, squirrels will run from any human they see. Hun
 	},
 	--The isle of the kings (need position)
 	[6] = {
-		containerId = 1720,
-		itemId = 1955,
-		--position = {x = xxxxx, y = xxxxx, z = x},
+		containerBook = true,
+		itemId = 1720,
+		bookId = 1955,
+		itemPos = {x = xxxxx, y = xxxxx, z = x},
 		text = [[
 Kazordoon, the hidden city
 In the blocklike Mountain, known as the big old one, the hidden city of kazordoon is nestled. Its the last refuge of the ancient race of dwarves. Hidden and heavily fortified it was the last stand of dwarvenhood in the wars of creation and the last hope of that race to adapt to and survive the new ages. The famous giant statue, known as colossus guards its entry, alhough the narrow valley makes it difficult to see that fortress-statue and admire its beauty. Kazordoon is known for its safety and masterful smithery throughout the lands.
@@ -108,9 +109,10 @@ Since some generations the dwarven city (whose ruler claims a title that might b
 ]]
 	},
 	[7] = {
-		containerId = 1720,
-		itemId = 1959,
-		position = {x = 32065, y = 31884, z = 4},
+		containerBook = true,
+		itemId = 1720,
+		bookId = 1959,
+		itemPos = {x = 32065, y = 31884, z = 4},
 		text = [[
 Kazordoon, the hidden city
 In the blocklike Mountain, known as the big old one, the hidden city of kazordoon is nestled. Its the last refuge of the ancient race of dwarves. Hidden and heavily fortified it was the last stand of dwarvenhood in the wars of creation and the last hope of that race to adapt to and survive the new ages. The famous giant statue, known as colossus guards its entry, alhough the narrow valley makes it difficult to see that fortress-statue and admire its beauty. Kazordoon is known for its safety and masterful smithery throughout the lands.
@@ -118,9 +120,10 @@ Since some generations the dwarven city (whose ruler claims a title that might b
 		]]
 	},
 	[8] = {
-		containerId = 1720,
-		itemId = 1965,
-		position = {x = 32066, y = 31884, z = 4},
+		containerBook = true,
+		itemId = 1720,
+		bookId = 1965,
+		itemPos = {x = 32066, y = 31884, z = 4},
 		text = [[
 Genesis I. The Awakening of the Gods
 
@@ -137,9 +140,10 @@ Unfortunately, their combined efforts were hardly more successful. Just like bef
 		]]
 	},
 	[9] = {
-		containerId = 1720,
-		itemId = 1965,
-		position = {x = 32066, y = 31884, z = 4},
+		containerBook = true,
+		itemId = 1720,
+		bookId = 1965,
+		itemPos = {x = 32066, y = 31884, z = 4},
 		text = [[
 Genesis IV. The First Creatures
 
@@ -152,9 +156,10 @@ Zathroth watched Brog's experiments with great interest. So far he had not held 
 		]]
 	},
 	[10] = {
-		containerId = 1718,
-		itemId = 1955,
-		--position = (isle of the kings),
+		containerBook = true,
+		itemId = 1718,
+		bookId = 1955,
+		--itemPos = (isle of the kings),
 		text = [[
 The Minotaurs by Iregarn Pt. 1
 The minotaurs claimed that they were once the marshals and favoured people of Blog, the raging one. In the wars over creation they were one of the most successful races. But as the war grew more and more fierce it were the wild and raging minotaurs that had to pay the worst blood toll. The berserker rage inherent to their race made them a formidable opponent but also very vulnerable.
@@ -163,9 +168,10 @@ He looked upon the world and for the first time in aeons a minotaurean warrior s
 ]]
 	},
 	[11] = {
-		containerId = 1718,
-		itemId = 1959,
-		position = {x = 32061, y = 31889, z = 4},
+		containerBook = true,
+		itemId = 1718,
+		bookId = 1959,
+		itemPos = {x = 32061, y = 31889, z = 4},
 		text = [[
 The Minotaurs by Iregarn Pt. 1
 The minotaurs claimed that they were once the marshals and favoured people of Blog, the raging one. In the wars over creation they were one of the most successful races. But as the war grew more and more fierce it were the wild and raging minotaurs that had to pay the worst blood toll. The berserker rage inherent to their race made them a formidable opponent but also very vulnerable.
@@ -174,34 +180,38 @@ He looked upon the world and for the first time in aeons a minotaurean warrior s
 ]]
 	},
 	[12] = {
-		containerId = 1720,
-		itemId = 1950,
-		--position = (Rookgaard Academy),
+		containerBook = true,
+		itemId = 1720,
+		bookId = 1950,
+		--itemPos = (Rookgaard Academy),
 		text = [[
 Orcs ARE intelligent. Though some dwarves mumble about a shared hivemind of the greenskins, there is no evidence for that. Orcs have speech and are capable to learn other humanoids language quite well ... if they want, what almost never is the case. They lack a written language though. Some of the more educated orcs use human letters to write down orcish texts. Its rumored that the orcs we encounter now and then are just barbarians of their own kind and that there is a more 'civilized' orcish culture somewhere. There are some clues that the orcs indeed had a written language, but the modern orcs is unable to read it as we are.
 ]]
 	},
 	[13] = {
-		containerId = 1720,
-		itemId = 1981,
-		position = {x = 32062, y = 31889, z = 4},
+		containerBook = true,
+		itemId = 1720,
+		bookId = 1981,
+		itemPos = {x = 32062, y = 31889, z = 4},
 		text = [[
 Orcs ARE intelligent. Though some dwarves mumble about a shared hivemind of the greenskins, there is no evidence for that. Orcs have speech and are capable to learn other humanoids language quite well ... if they want, what almost never is the case. They lack a written language though. Some of the more educated orcs use human letters to write down orcish texts. Its rumored that the orcs we encounter now and then are just barbarians of their own kind and that there is a more 'civilized' orcish culture somewhere. There are some clues that the orcs indeed had a written language, but the modern orcs is unable to read it as we are.
 		]]
 	},
 	[14] = {
-		containerId = 1718,
-		itemId = 1964,
-		position = {x = 32068, y = 31889, z = 4},
+		containerBook = true,
+		itemId = 1718,
+		bookId = 1964,
+		itemPos = {x = 32068, y = 31889, z = 4},
 		text = [[
 There are two kinds of spells: rune spells and spontaneous spells. Rune spells are cast on blank rune stones, which requires mana. Rune stones can easily be carried around and store the specific spell. It can be used at any time, and only some spells require further investment of mana.
 Spontaneous spells are cast in the heartbeat they are needed, and take effect instantly. Most of these are healing spells, but there are also aggressive spells, invisibility or shape change spells, and more.
 ]]
 	},
 	[15] = {
-		containerId = 1718,
-		itemId = 1950,
-	   --position = (Rookgaard Libraries),
+		containerBook = true,
+		itemId = 1718,
+		bookId = 1950,
+	   --itemPos = (Rookgaard Libraries),
 		text = [[
 Magic
 
@@ -213,9 +223,10 @@ Instant spells are cast in the heartbeat they are needed and take effect instant
 		]]
 	},
 	[16] = {
-		containerId = 1718,
-		itemId = 1955,
-		--position = (Isle of the Kings Library),
+		containerBook = true,
+		itemId = 1718,
+		bookId = 1955,
+		--itemPos = (Isle of the Kings Library),
 		text = [[
 Magic by Puffels
 There are two kinds of spells: rune-spells, and spontaneous spells.
@@ -224,9 +235,10 @@ Spontaneous spells are cased in the heartbeat they are needed and take effect in
 ]]
 	},
 	[17] = {
-		containerId = 1719,
-		itemId = 1955,
-		position = {x = 32069, y = 31889, z = 4},
+		containerBook = true,
+		itemId = 1719,
+		bookId = 1955,
+		itemPos = {x = 32069, y = 31889, z = 4},
 		text = [[
 Combat Tactics
 
@@ -234,25 +246,28 @@ Most monsters are far more dangerous when you're attacked by more of them. Keep 
 ]]
 	},
 	[18] = {
-		containerId = 1718,
-		itemId = 1950,
-		--position = (Rookgaard Libraries),
+		containerBook = true,
+		itemId = 1718,
+		bookId = 1950,
+		--itemPos = (Rookgaard Libraries),
 		text = [[
 As we traveled through the dungeon tunnels we came to a big cave. In the light of our torches we saw several eyes glowing in the darknes, then the trolls attacked, silent as usual. We imediately dropped our torches and raised our shields to block the first attack, then we counterattacked. Soon the floor was wet with blood, ours and theirs. They were verry skilled in blocking our blows and I am sure with inferior weapons we would have hacked on this beasts for an eternity.
 ]]
 	},
 	[19] = {
-		containerId = 1719,
-		itemId = 1961,
-		position = {x = 32069, y = 31889, z = 4},
+		containerBook = true,
+		itemId = 1719,
+		bookId = 1961,
+		itemPos = {x = 32069, y = 31889, z = 4},
 		text = [[
 As we traveled through the dungeon tunnels we came to a big cave. In the light of our torches we saw several eyes glowing in the darknes, then the trolls attacked, silent as usual. We imediately dropped our torches and raised our shields to block the first attack, then we counterattacked. Soon the floor was wet with blood, ours and theirs. They were verry skilled in blocking our blows and I am sure with inferior weapons we would have hacked on this beasts for an eternity.
 		]]
 	},
 	[20] = {
-		containerId = 1719,
-		itemId = 1950,
-		position = {x = 32069, y = 31889, z = 4},
+		containerBook = true,
+		itemId = 1719,
+		bookId = 1950,
+		itemPos = {x = 32069, y = 31889, z = 4},
 		text = [[
 Tactics for close-ranged combat
 - Use the terrain to your advantage: always know the way to the nearest ropespot, and make sure you are not surrounded by enemies - that can be a death trap!
@@ -264,9 +279,10 @@ Tactics for close-ranged combat
 ]]
 	},
 	[21] = {
-		containerId = 1719,
-		itemId = 1950,
-		--position = (Isle of the Kings Library),
+		containerBook = true,
+		itemId = 1719,
+		bookId = 1950,
+		--itemPos = (Isle of the Kings Library),
 		text = [[
 The Tibian Wonders of the World!
 The known and acknowledged wonders of the world are:
@@ -281,9 +297,10 @@ The pyramid city of Ankrahmun
 		]]
 	},
 	[22] = {
-		containerId = 1719,
-		itemId = 1960,
-		--position = (Ankrahmun great pyramid),
+		containerBook = true,
+		itemId = 1719,
+		bookId = 1960,
+		--itemPos = (Ankrahmun great pyramid),
 		text = [[
 The Tibian Wonders of the World!
 The known and acknowledged wonders of the world are:
@@ -298,9 +315,10 @@ The pyramid city of Ankrahmun
 		]]
 	},
 	[23] = {
-		containerId = 1719,
-		itemId = 1959,
-		position = {x = 32069, y = 31889, z = 4},
+		containerBook = true,
+		itemId = 1719,
+		bookId = 1959,
+		itemPos = {x = 32069, y = 31889, z = 4},
 		text = [[
 The Tibian Wonders of the World!
 The known and acknowledged wonders of the world are:
@@ -315,8 +333,9 @@ The pyramid city of Ankrahmun
 		]]
 	},
 	[24] = {
-		itemId = 1965,
-		position = {x = 32068, y = 31880, z = 3},
+		itemId = 1718,
+		bookId = 1965,
+		itemPos = {x = 32068, y = 31880, z = 3},
 		text = [[
 Genesis VII, ii. Tibia's Renewal
 
@@ -326,8 +345,9 @@ It may be that this is yet another one of Zathroth's wicked ploys. It is well kn
 		]]
 	},
 	[25] = {
-		itemId = 1965,
-		position = {x = 32054, y = 31894, z = 4},
+		itemId = 1718,
+		bookId = 1965,
+		itemPos = {x = 32054, y = 31894, z = 4},
 		text = [[
 GV.i Part 1: The Age of Chaos
 
@@ -339,17 +359,19 @@ While Fardos and Uman were working hard on their spell, Zathroth's minions went 
 		]]
 	},
 	[26] = {
-		containerId = 1718,
-		itemId = 7492,
-		position = {x = 32061, y = 31894, z = 4},
+		containerBook = true,
+		itemId = 1718,
+		bookId = 7492,
+		itemPos = {x = 32061, y = 31894, z = 4},
 		text = [[
 This is written proof that Captain Plunderpurse gave away all the cursed gold to the little kiddies, bless his generous heart. No torture, extortion, cut off limbs, manipulation or embezzlement at all was involved in my testimony, I swear! And I am very thankful not to make the acquaintance of the Captain's pet sharks, lovely beasts though they are. Signed, Triomon Tangleweed, certifying notary.
 		]]
 	},
 	[27] = {
-		containerId = 1718,
-		itemId = 1960,
-		position = (Nagor),
+		containerBook = true,
+		itemId = 1718,
+		bookId = 1960,
+		itemPos = (Nagor),
 		text = [[
 Treasures of the Southern Isles
 
@@ -359,9 +381,10 @@ If anyone ever is looking for treasures, then those isles are the best place to 
 		]]
 	},
 	[28] = {
-		containerId = 1718,
-		itemId = 1955,
-		--position = (Isle of the Kings Library),
+		containerBook = true,
+		itemId = 1718,
+		bookId = 1955,
+		--itemPos = (Isle of the Kings Library),
 		text = [[
 Treasures of the Southern Isles
 
@@ -371,9 +394,10 @@ If anyone ever is looking for treasures, then those isles are the best place to 
 		]]
 	},
 	[29] = {
-		containerId = 1718,
-		itemId = 1961,
-		position = {x = 32061, y = 31894, z = 4},
+		containerBook = true,
+		itemId = 1718,
+		bookId = 1961,
+		itemPos = {x = 32061, y = 31894, z = 4},
 		text = [[
 Treasures of the Southern Isles
 
@@ -383,9 +407,10 @@ If anyone ever is looking for treasures, then those isles are the best place to 
 		]]
 	},
 	[30] = {
-		containerId = 1718,
-		itemId = 1963,
-		position = {x = 32061, y = 31894, z = 4},
+		containerBook = true,
+		itemId = 1718,
+		bookId = 1963,
+		itemPos = {x = 32061, y = 31894, z = 4},
 		text = [[
 The Great Sea Serpents
 
@@ -393,9 +418,10 @@ The Sea Serpent is as huge as a house and can swallow a small ship in one bite. 
 ]]
 	},
 	[31] = {
-		containerId = 1718,
-		itemId = 1960,
-		--position = (Nagor),
+		containerBook = true,
+		itemId = 1718,
+		bookId = 1960,
+		--itemPos = (Nagor),
 		text = [[
 The Great Sea Serpents
 
@@ -403,9 +429,10 @@ The Sea Serpent is as huge as a house and can swallow a small ship in one bite. 
 		]]
 	},
 	[32] = {
-		containerId = 1718,
-		itemId = 1955,
-		--position = (Liberty Bay freedom street),
+		containerBook = true,
+		itemId = 1718,
+		bookId = 1955,
+		--itemPos = (Liberty Bay freedom street),
 		text = [[
 The Great Sea Serpents
 
@@ -413,9 +440,10 @@ The Sea Serpent is as huge as a house and can swallow a small ship in one bite. 
 		]]
 	},
 	[33] = {
-		containerId = 1718,
-		itemId = 1950,
-		--position = (Isle of the Kings Library),
+		containerBook = true,
+		itemId = 1718,
+		bookId = 1950,
+		--itemPos = (Isle of the Kings Library),
 		text = [[
 The Great Sea Serpents
 
@@ -423,9 +451,10 @@ The Sea Serpent is as huge as a house and can swallow a small ship in one bite. 
 		]]
 	},
 	[34] = {
-		containerId = 1718,
-		itemId = 1963,
-		position = (kharos),
+		containerBook = true,
+		itemId = 1718,
+		bookId = 1963,
+		itemPos = (kharos),
 		text = [[
 The Great Sea Serpents
 
@@ -433,9 +462,10 @@ The Sea Serpent is as huge as a house and can swallow a small ship in one bite. 
 		]]
 	},
 	[35] = {
-		containerId = 1718,
-		itemId = 1965,
-		position = {x = 32061, y = 31894, z = 4},
+		containerBook = true,
+		itemId = 1718,
+		bookId = 1965,
+		itemPos = {x = 32061, y = 31894, z = 4},
 		text = [[
 V.i Part 2: The Age of Chaos
 
@@ -447,9 +477,10 @@ Thus the dragons had taken over the rule of the land, but the war was by no mean
 ]]
 	},
 	[36] = {
-		containerId = 3826,
-		itemId = 1965,
-		position = {x = 32075, y = 31894, z = 4},
+		containerBook = true,
+		itemId = 3826,
+		bookId = 1965,
+		itemPos = {x = 32075, y = 31894, z = 4},
 		text = [[
 V. ii, The Age of Chaos
 
@@ -461,9 +492,10 @@ The elder gods looked at what had happened to their world, and their hearts fill
 		]]
 	},
 	[37] = {
-		containerId = 3826,
-		itemId = 1964,
-		position = {x = 32075, y = 31894, z = 4},
+		containerBook = true,
+		itemId = 3826,
+		bookId = 1964,
+		itemPos = {x = 32075, y = 31894, z = 4},
 		text = [[
 The Shattered Isles
 
@@ -479,9 +511,10 @@ The Laguna Islands are quite often visited by passing ships to refresh their sup
 ]]
 	},
 	[38] = {
-		containerId = 3826,
-		itemId = 1959,
-		position = (Nagor),
+		containerBook = true,
+		itemId = 3826,
+		bookId = 1959,
+		itemPos = (Nagor),
 		text = [[
 The Shattered Isles
 
@@ -497,9 +530,10 @@ The Laguna Islands are quite often visited by passing ships to refresh their sup
 		]]
 	},
 	[39] = {
-		containerId = 3826,
-		itemId = 1966,
-		--position = (Liberty Bay freedom street),
+		containerBook = true,
+		itemId = 3826,
+		bookId = 1966,
+		--itemPos = (Liberty Bay freedom street),
 		text = [[
 The Shattered Isles
 
@@ -515,9 +549,10 @@ The Laguna Islands are quite often visited by passing ships to refresh their sup
 		]]
 	},
 	[40] = {
-		containerId = 3826,
-		itemId = 1973,
-		--position = (Liberty Bay Malunga),
+		containerBook = true,
+		itemId = 3826,
+		bookId = 1973,
+		--itemPos = (Liberty Bay Malunga),
 		text = [[
 The Shattered Isles
 
@@ -533,9 +568,10 @@ The Laguna Islands are quite often visited by passing ships to refresh their sup
 		]]
 	},
 	[41] = {
-		containerId = 3826,
-		itemId = 1959,
-		--position = (Carlin Congress),
+		containerBook = true,
+		itemId = 3826,
+		bookId = 1959,
+		--itemPos = (Carlin Congress),
 		text = [[
 The Shattered Isles
 
@@ -551,9 +587,10 @@ The Laguna Islands are quite often visited by passing ships to refresh their sup
 		]]
 	},
 	[42] = {
-		containerId = 3826,
-		itemId = 1955,
-		--position = (Carlin Explorer Club),
+		containerBook = true,
+		itemId = 3826,
+		bookId = 1955,
+		--itemPos = (Carlin Explorer Club),
 		text = [[
 The Shattered Isles
 
@@ -569,9 +606,10 @@ The Laguna Islands are quite often visited by passing ships to refresh their sup
 ]]
 	},
 	[43] = {
-		containerId = 3827,
-		itemId = 1966,
-		position = {x = 32068, y = 31898, z = 4},
+		containerBook = true,
+		itemId = 3827,
+		bookId = 1966,
+		itemPos = {x = 32068, y = 31898, z = 4},
 		text = [[
 My travels.
 
@@ -579,9 +617,10 @@ As the orcs approached I've hidden myself in the bushes near the lake. I did har
 ]]
 	},
 	[44] = {
-		containerId = 3827,
-		itemId = 1955,
-		--position = (Rookgaard Academy),
+		containerBook = true,
+		itemId = 3827,
+		bookId = 1955,
+		--itemPos = (Rookgaard Academy),
 		text = [[
 My travels.
 
@@ -589,9 +628,10 @@ As the orcs approached I've hidden myself in the bushes near the lake. I did har
 		]]
 	},
 	[45] = {
-		containerId = 3827,
-		itemId = 1955,
-		position = {x = 32068, y = 31898, z = 4},
+		containerBook = true,
+		itemId = 3827,
+		bookId = 1955,
+		itemPos = {x = 32068, y = 31898, z = 4},
 		text = [[
 Tibiantis: Fact and Fiction
 
@@ -599,9 +639,10 @@ In the light of progress made my modern science the tales of Tibiantis can be ch
 ]]
 	},
 	[46] = {
-		containerId = 3827,
-		itemId = 1960,
-		--position = (Carlin Congress),
+		containerBook = true,
+		itemId = 3827,
+		bookId = 1960,
+		--itemPos = (Carlin Congress),
 		text = [[
 Tibiantis: Fact and Fiction
 
@@ -609,9 +650,10 @@ In the light of progress made my modern science the tales of Tibiantis can be ch
 		]]
 	},
 	[47] = {
-		containerId = 3827,
-		itemId = 1958,
-		--position = (Isle of the Kings Library),
+		containerBook = true,
+		itemId = 3827,
+		bookId = 1958,
+		--itemPos = (Isle of the Kings Library),
 		text = [[
 Tibiantis: Fact and Fiction
 
@@ -619,49 +661,55 @@ In the light of progress made my modern science the tales of Tibiantis can be ch
 		]]
 	},
 	[48] = {
-		containerId = 3827,
-		itemId = 1965,
-		position = {x = 32068, y = 31898, z = 4},
+		containerBook = true,
+		itemId = 3827,
+		bookId = 1965,
+		itemPos = {x = 32068, y = 31898, z = 4},
 		text = [[
 You can not even imagine how old I am. In your wildest dreams you won't see the things I have seen. I am the last of my race and even though I am several centuries old I am not immortal and will eventually die. I fear that day. Not for me - I am weary and I don't care much about if I'm alive or dead. But I fear for all these memories that will die with me. For all those who no one will remember anymore.
 Words can't truly preserve their essence so I will leave no books or stone tablets. If I die, everything I have witnessed will die with me as if it has never existed. I was there when Rorak slew Tingil at the stairs of the seven temples. I was there as Riik led his peaceloving people to the far north to find refuge from the war. I was there to witness the betrayal of Asric for the whims of a female that was long dead by then. I fought with the last Frdai a futile battle on the plains of Weskurt against the unseen legion. I witnessed Ss'rar making his move on ascension to become the serpent god. I watched the first elves struggling to form a nation with the help of the lightbearers. It was me who assisted the great calculator to assemble the bonelords language. And you come here to this mountain and ask me how to win the heart of some shepherdess? This world has become a ridiculous mockery.
 ]]
 	},
 	[49] = {
-		containerId = 3827,
-		itemId = 1950,
-		--position = (Isle of the Kings Library),
+		containerBook = true,
+		itemId = 3827,
+		bookId = 1950,
+		--itemPos = (Isle of the Kings Library),
 		text = [[
 You can not even imagine how old I am. In your wildest dreams you won't see the things I have seen. I am the last of my race and even though I am several centuries old I am not immortal and will eventually die. I fear that day. Not for me - I am weary and I don't care much about if I'm alive or dead. But I fear for all these memories that will die with me. For all those who no one will remember anymore.
 Words can't truly preserve their essence so I will leave no books or stone tablets. If I die, everything I have witnessed will die with me as if it has never existed. I was there when Rorak slew Tingil at the stairs of the seven temples. I was there as Riik led his peaceloving people to the far north to find refuge from the war. I was there to witness the betrayal of Asric for the whims of a female that was long dead by then. I fought with the last Frdai a futile battle on the plains of Weskurt against the unseen legion. I witnessed Ss'rar making his move on ascension to become the serpent god. I watched the first elves struggling to form a nation with the help of the lightbearers. It was me who assisted the great calculator to assemble the bonelords language. And you come here to this mountain and ask me how to win the heart of some shepherdess? This world has become a ridiculous mockery.
 		]]
 	},
 	[50] = {
-		containerId = 3827,
-		itemId = 1963,
-		position = {x = 32068, y = 31898, z = 4},
+		containerBook = true,
+		itemId = 3827,
+		bookId = 1963,
+		itemPos = {x = 32068, y = 31898, z = 4},
 		text = [[
 The Lighthouse in the Middle of Nowhere
 Sailors claim to have travelled as far as the end of the world where the water pours down into nothingness. Although it is easily recognizable during daylight it poses a special threat at night. To make matters worse, a spooky lighthouse sometimes appears out of nowhere to lure ships over the edge of the world. Whether it is really a lighthouse or some other source of light differs from story to story and remains to be determined.
 ]]
 	},
 	[51] = {
-		containerId = 3827,
-		itemId = 1961,
-		--position = (Liberty Bay),
+		containerBook = true,
+		itemId = 3827,
+		bookId = 1961,
+		--itemPos = (Liberty Bay),
 		text = [[
 The Lighthouse in the Middle of Nowhere
 Sailors claim to have travelled as far as the end of the world where the water pours down into nothingness. Although it is easily recognizable during daylight it poses a special threat at night. To make matters worse, a spooky lighthouse sometimes appears out of nowhere to lure ships over the edge of the world. Whether it is really a lighthouse or some other source of light differs from story to story and remains to be determined.
 		]]
 	},
 	[52] = {
-		itemId = 12397,
-		position = {x = 32075, y = 31898, z = 4},
+		itemId = 3827,
+		bookId = 12397,
+		itemPos = {x = 32075, y = 31898, z = 4},
 		text = "Personal log book of Mr Morris. (The following lines are written in a code that you cannot make out. It seems Mr Morris is a very distrustful person.)"
 	},
 	[53] = {
-		itemId = 1958,
-		position = {x = 32070, y = 31900, z = 4},
+		itemId = 3827,
+		bookId = 1958,
+		itemPos = {x = 32070, y = 31900, z = 4},
 		text = [[
 The .........
 Some of he ancients formed .......amlands. They build mighty fortresses to ........................, conscious or not. It was then, when the mysteri............... and his anger shook the foundation of .....................................awakened screaming in fear and pain. And after the ................................................................................ were gone! All of them with all ..........................................................ost their best men in theese days and never recovered from the ........................................... for the other ancients and so the time of the first dreammasters ended.
@@ -669,9 +717,10 @@ From this time on ............. manipulate little of the matter of the dreamland
 ]]
 	},
 	[54] = {
-		containerId = 3827,
-		itemId = 1950,
-		--position = (Isle of the Kings Library),
+		containerBook = true,
+		itemId = 3827,
+		bookId = 1950,
+		--itemPos = (Isle of the Kings Library),
 		text = [[
 The .........
 Some of he ancients formed .......amlands. They build mighty fortresses to ........................, conscious or not. It was then, when the mysteri............... and his anger shook the foundation of .....................................awakened screaming in fear and pain. And after the ................................................................................ were gone! All of them with all ..........................................................ost their best men in theese days and never recovered from the ........................................... for the other ancients and so the time of the first dreammasters ended.
@@ -679,15 +728,17 @@ From this time on ............. manipulate little of the matter of the dreamland
 		]]
 	},
 	[55] = {
-		itemId = 7724,
-		position = {x = 32070, y = 31900, z = 4},
+		itemId = 3827,
+		bookId = 7724,
+		itemPos = {x = 32070, y = 31900, z = 4},
 		text = [[
 (It is covered with a strange language that you cannot make out.)
 		]]
 	},
 	[56] = {
-		itemId = 1966,
-		position = {x = 32052, y = 31898, z = 6},
+		itemId = 3827,
+		bookId = 1966,
+		itemPos = {x = 32052, y = 31898, z = 6},
 		text = [[
 ...
 
@@ -697,15 +748,17 @@ The elder gods looked at what had happened to their world, and their hearts fill
 		]]
 	},
 	[57] = {
-		containerId = 3827,
-		itemId = 1963,
-		position = {x = 32052, y = 31896, z = 6},
+		containerBook = true,
+		itemId = 3827,
+		bookId = 1963,
+		itemPos = {x = 32052, y = 31896, z = 6},
 		text = "Cooking Recipes for the Wildlife (excepting Squirrels!), by Richard"
 	},
 	[58] = {
-		containerId = 3827,
-		itemId = 1965,
-		position = {x = 32052, y = 31896, z = 6},
+		containerBook = true,
+		itemId = 3827,
+		bookId = 1965,
+		itemPos = {x = 32052, y = 31896, z = 6},
 		text = [[
 V. iii, The Age of Chaos
 
@@ -715,9 +768,10 @@ For all their strength, these races had one important flaw in common: They lacke
 		]]
 	},
 	[59] = {
-		containerId = 3827,
-		itemId = 1961,
-		position = {x = 32052, y = 31896, z = 6},
+		containerBook = true,
+		itemId = 3827,
+		bookId = 1961,
+		itemPos = {x = 32052, y = 31896, z = 6},
 		text = [[
 Thoughts and Notations on the Noble Craft of Potion-Making, by Grandsieur Haruvan of Drefia (the way of writing and the pages look very, very old)
 
@@ -732,7 +786,7 @@ But still, they can drink, and appreciate, the brews we make to keep a warrior's
 	[60] = {
 	-- Hiding the Amulet (Dawnport quest)
 		itemId = 23764,
-		position = {x = 32046, y = 31915, z = 7},
+		itemPos = {x = 32046, y = 31915, z = 7},
 		text = [[
 (You can barely read the following words on this soiled piece of paper)
 
@@ -750,21 +804,6 @@ To any adventurer friend: ... shovel... beach...
 Signed
 Dormovo the Impetuous
 		]]
-	},
-	[61] = {
-		itemId = 1953,
-		position = {x = 32854, y = 31992, z = 11},
-		text = [[
-What I thought to be digging men are in fact strange green creatures with many arms or eyestalks, who can dig very fast. I think they are called "Beholders".
-They did not attack me yet, although I am sure they can sense me. Who knows, maybe they have no interest in me, and I can use their tunnels to get out of here? I will not attack them, unless I have to defend myself.
-I stopped counting the days, because I lost all feeling for time down here.
-
-Oh, how I long to see humans again!]]
-	},
-	[62] = {
-		itemId = 1953,
-		position = {x = 33063, y = 31624, z = 15},
-		text = "Buried forever that he never shall return. Don't remove this seal or bad things may happen."
 	}
 }
 
@@ -849,5 +888,23 @@ Not mine!
 		itemId = 1444,
 		itemPos = {x = 32481, y = 31900, z = 3},
 		text = "Tristan, the black knight"
+	}
+}
+
+DocumentsTable = {
+	[1] = {
+		itemId = 1953,
+		itemPos = {x = 32854, y = 31992, z = 11},
+		text = [[
+What I thought to be digging men are in fact strange green creatures with many arms or eyestalks, who can dig very fast. I think they are called "Beholders".
+They did not attack me yet, although I am sure they can sense me. Who knows, maybe they have no interest in me, and I can use their tunnels to get out of here? I will not attack them, unless I have to defend myself.
+I stopped counting the days, because I lost all feeling for time down here.
+
+Oh, how I long to see humans again!]]
+	},
+	[2] = {
+		itemId = 1953,
+		itemPos = {x = 33063, y = 31624, z = 15},
+		text = "Buried forever that he never shall return. Don't remove this seal or bad things may happen."
 	}
 }

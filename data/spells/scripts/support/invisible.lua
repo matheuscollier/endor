@@ -1,11 +1,17 @@
-local combat = Combat()
-combat:setParameter(COMBAT_PARAM_EFFECT, CONST_ME_MAGIC_BLUE)
-combat:setParameter(COMBAT_PARAM_AGGRESSIVE, false)
+local combat = createCombatObject()
+setCombatParam(combat, COMBAT_PARAM_EFFECT, CONST_ME_MAGIC_BLUE)
+setCombatParam(combat, COMBAT_PARAM_AGGRESSIVE, FALSE)
 
-local condition = Condition(CONDITION_INVISIBLE)
-condition:setParameter(CONDITION_PARAM_TICKS, 200000)
-combat:addCondition(condition)
+local condition = createConditionObject(CONDITION_INVISIBLE)
+setConditionParam(condition, CONDITION_PARAM_TICKS, 40000)
+setCombatCondition(combat, condition)
 
-function onCastSpell(creature, variant)
-	return combat:execute(creature, variant)
+function onCastSpell(cid, var)
+	if cid:getStorageValue(Storage.events) > 0 then
+		cid:sendCancelMessage("Você não pode ficar invisível no evento.")
+		cid:getPosition():sendMagicEffect(CONST_ME_POFF)
+		return false
+	else
+		return doCombat(cid, combat, var)
+	end
 end

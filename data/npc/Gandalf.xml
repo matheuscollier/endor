@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<npc name="Gandalf, o Cinzento" script="gandalf.lua" walkinterval="0" floorchange="0">
+	<health now="100" max="100"/>
+	<look type="634" head="57" body="57" legs="57" feet="57" addons="3"/>
+<parameters>
+<parameter key="message_greet" value="Olá {|PLAYERNAME|}, Sou Gandalf, o Cizento. Estou formando uma comitiva aliado a Thorin Escudo de Carvalho, rei dos anões, para dar-lhes a chance de recuperar a Pedra de Arken na busca de restabelecer o reino dos anões em Moria. Está pronto para me ajudar nessa longa jornada?" />
+</parameters>
+</npc>

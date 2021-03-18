@@ -1,15 +1,75 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <events>
-	<event name="Otservbr example 1" startdate="11/03/2020" enddate="11/30/2020" script="example.lua" >
-		<ingame exprate="250" lootrate="200" spawnrate="100" skillrate="200" />
-		<description description="Otserver br example 1 description double exp and a half, double loot !chance!, regular spawn and double skill" />
+	<event name="Respawns 20% mais rápidos" startdate="02/01/2021" enddate="02/01/2021" script="example.lua" >
+		<ingame exprate="100" lootrate="100" spawnrate="150" skillrate="100" />
+		<description description="Durante as segundas todos respawns do jogo terão sua velocidade aumentada em 20%." />
 		<colors colordark="#235c00" colorlight="#2d7400" />
-		<details displaypriority="6" isseasonal="0" specialevent="0" />
+		<details displaypriority="1" isseasonal="0" specialevent="0" />
 	</event>
-	<event name="Otservbr example 2" startdate="10/2/2020" enddate="11/7/2020" script="example.lua" >
-		<ingame exprate="50" lootrate="300" spawnrate="150" skillrate="100" />
-		<description description="Otserver br example 2 description 50% less exp, triple loot !chance!, 50% faster spawn and regular skill" />
-		<colors colordark="#735D10" colorlight="#8B6D05" />
-		<details displaypriority="6" isseasonal="0" specialevent="0" />
+	<event name="Respawns 20% mais rápidos" startdate="02/08/2021" enddate="02/08/2021" script="example.lua" >
+		<ingame exprate="100" lootrate="100" spawnrate="150" skillrate="100" />
+		<description description="Durante as segundas todos respawns do jogo terão sua velocidade aumentada em 20%." />
+		<colors colordark="#235c00" colorlight="#2d7400" />
+		<details displaypriority="1" isseasonal="0" specialevent="0" />
+	</event>
+	<event name="Respawns 20% mais rápidos" startdate="02/03/2021" enddate="02/03/2021" script="example.lua" >
+		<ingame exprate="100" lootrate="100" spawnrate="150" skillrate="100" />
+		<description description="Durante as quartas todos respawns do jogo terão sua velocidade aumentada em 20%." />
+		<colors colordark="#235c00" colorlight="#2d7400" />
+		<details displaypriority="1" isseasonal="0" specialevent="0" />
+	</event>
+	<event name="Respawns 20% mais rápidos" startdate="02/10/2021" enddate="02/10/2021" script="example.lua" >
+		<ingame exprate="100" lootrate="100" spawnrate="150" skillrate="100" />
+		<description description="Durante as quartas todos respawns do jogo terão sua velocidade aumentada em 20%." />
+		<colors colordark="#235c00" colorlight="#2d7400" />
+		<details displaypriority="1" isseasonal="0" specialevent="0" />
+	</event>
+	<event name="Loot bônus de 20%" startdate="02/05/2021" enddate="02/05/2021" script="example.lua" >
+		<ingame exprate="100" lootrate="100" spawnrate="150" skillrate="100" />
+		<description description="Durante as sextas todos os monstros terão seu loot rate aumentado em 20%." />
+		<colors colordark="#235c00" colorlight="#CE8E0F" />
+		<details displaypriority="1" isseasonal="0" specialevent="0" />
+	</event>
+	<event name="Loot bônus de 20%" startdate="02/12/2021" enddate="02/12/2021" script="example.lua" >
+		<ingame exprate="100" lootrate="100" spawnrate="150" skillrate="100" />
+		<description description="Durante as sextas todos os monstros terão seu loot rate aumentado em 20%." />
+		<colors colordark="#235c00" colorlight="#CE8E0F" />
+		<details displaypriority="1" isseasonal="0" specialevent="0" />
+	</event>
+	<event name="Respawns 50% mais rápidos" startdate="02/06/2021" enddate="02/06/2021" script="example.lua" >
+		<ingame exprate="100" lootrate="100" spawnrate="150" skillrate="100" />
+		<description description="Durante os sábados todos respawns do jogo terão sua velocidade aumentada em 50%." />
+		<colors colordark="#235c00" colorlight="#2d7400" />
+		<details displaypriority="1" isseasonal="0" specialevent="0" />
+	</event>
+	<event name="Respawns 50% mais rápidos" startdate="02/13/2021" enddate="02/13/2021" script="example.lua" >
+		<ingame exprate="100" lootrate="100" spawnrate="150" skillrate="100" />
+		<description description="Durante os sábados todos respawns do jogo terão sua velocidade aumentada em 50%." />
+		<colors colordark="#235c00" colorlight="#2d7400" />
+		<details displaypriority="1" isseasonal="0" specialevent="0" />
+	</event>
+	<event name="Exp bônus de 10%" startdate="02/06/2021" enddate="02/07/2021" script="example.lua" >
+		<ingame exprate="100" lootrate="100" spawnrate="150" skillrate="100" />
+		<description description="Durante o final de semana todos os monstros darão 10% a mais de experiência." />
+		<colors colordark="#235c00" colorlight="#084CEA" />
+		<details displaypriority="0" isseasonal="0" specialevent="0" />
+	</event>
+	<event name="Exp bônus de 10%" startdate="02/13/2021" enddate="02/14/2021" script="example.lua" >
+		<ingame exprate="100" lootrate="100" spawnrate="150" skillrate="100" />
+		<description description="Durante o final de semana todos os monstros darão 10% a mais de experiência." />
+		<colors colordark="#235c00" colorlight="#084CEA" />
+		<details displaypriority="0" isseasonal="0" specialevent="0" />
+	</event>
+	<event name="Loot bônus de 50%" startdate="02/07/2021" enddate="02/07/2021" script="example.lua" >
+		<ingame exprate="100" lootrate="150" spawnrate="100" skillrate="100" />
+		<description description="Durante os domingos todos os monstros terão seu loot rate aumentado em 50%." />
+		<colors colordark="#235c00" colorlight="#CE8E0F" />
+		<details displaypriority="1" isseasonal="0" specialevent="0" />
+	</event>
+	<event name="Loot bônus de 50%" startdate="02/14/2021" enddate="02/14/2021" script="example.lua" >
+		<ingame exprate="100" lootrate="150" spawnrate="100" skillrate="100" />
+		<description description="Durante os domingos todos os monstros terão seu loot rate aumentado em 50%." />
+		<colors colordark="#235c00" colorlight="#CE8E0F" />
+		<details displaypriority="1" isseasonal="0" specialevent="0" />
 	</event>
 </events>

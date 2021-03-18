@@ -1,7 +1,7 @@
 local mType = Game.createMonsterType("Slime")
 local monster = {}
 
-monster.description = "a slime"
+monster.description = "uma slime"
 monster.experience = 160
 monster.outfit = {
 	lookType = 19,
@@ -13,24 +13,6 @@ monster.outfit = {
 	lookMount = 0
 }
 
-monster.raceId = 19
-monster.Bestiary = {
-	class = "Slime",
-	race = BESTY_RACE_SLIME,
-	toKill = 500,
-	FirstUnlock = 25,
-	SecondUnlock = 250,
-	CharmsPoints = 15,
-	Stars = 2,
-	Occurrence = 0,
-	Locations = "Ancient Temple under the Rotworm area, under White Flower Temple, \z
-		Mount Sternum Undead Cave on the last floor, Thais Troll Cave, Bonelord cave in Drefia, \z
-		Green Claw Swamp, Dwarf Mines, Villa Scapula, Ankrahmun Tombs, Dark Cathedral, north of Port Hope, \z
-		Deeper Banuta, on Folda on the floor above the Water Elementals, Hellgate, Vengoth, Alchemist Quarter, \z
-		Yalahar and Carlin sewers, Ghostlands, Desert Dungeon, Dusalk's Troll Clan Cave, Nargor, \z
-		and in a cave northeast of Ab'Dendriel."
-	}
-
 monster.health = 150
 monster.maxHealth = 150
 monster.race = "venom"
@@ -40,12 +22,8 @@ monster.manaCost = 0
 monster.maxSummons = 3
 
 monster.changeTarget = {
-	interval = 4000,
-	chance = 10
-}
-
-monster.strategiesTarget = {
-	nearest = 100,
+	interval = 2000,
+	chance = 0
 }
 
 monster.flags = {
@@ -63,6 +41,7 @@ monster.flags = {
 	runHealth = 0,
 	healthHidden = false,
 	isBlockable = false,
+	isBlockable = false,
 	canWalkOnEnergy = false,
 	canWalkOnFire = false,
 	canWalkOnPoison = true,
@@ -75,20 +54,19 @@ monster.light = {
 }
 
 monster.summons = {
-	{name = "Slime", chance = 10, interval = 2000}
+	{name = " Slime", chance = 10, interval = 2000}
 }
 
 monster.voices = {
 	interval = 5000,
 	chance = 10,
-	{text = "Blubb", yell = false}
 }
 
 monster.loot = {
 }
 
 monster.attacks = {
-	{name ="melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -110}
+	{name ="melee", interval = 2000, chance = 100, minDamage = -30, maxDamage = -110}
 }
 
 monster.defenses = {
@@ -98,13 +76,13 @@ monster.defenses = {
 
 monster.elements = {
 	{type = COMBAT_PHYSICALDAMAGE, percent = 0},
-	{type = COMBAT_ENERGYDAMAGE, percent = -10},
+	{type = COMBAT_ENERGYDAMAGE, percent = 0},
 	{type = COMBAT_EARTHDAMAGE, percent = 100},
-	{type = COMBAT_FIREDAMAGE, percent = -10},
+	{type = COMBAT_FIREDAMAGE, percent = 0},
 	{type = COMBAT_LIFEDRAIN, percent = 0},
 	{type = COMBAT_MANADRAIN, percent = 0},
 	{type = COMBAT_DROWNDAMAGE, percent = 0},
-	{type = COMBAT_ICEDAMAGE, percent = 20},
+	{type = COMBAT_ICEDAMAGE, percent = 0},
 	{type = COMBAT_HOLYDAMAGE , percent = 0},
 	{type = COMBAT_DEATHDAMAGE , percent = 0}
 }

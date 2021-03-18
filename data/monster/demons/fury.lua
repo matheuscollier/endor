@@ -1,8 +1,8 @@
 local mType = Game.createMonsterType("Fury")
 local monster = {}
 
-monster.description = "a fury"
-monster.experience = 3600
+monster.description = "uma fury"
+monster.experience = 4750
 monster.outfit = {
 	lookType = 149,
 	lookHead = 94,
@@ -23,8 +23,7 @@ monster.Bestiary = {
 	CharmsPoints = 50,
 	Stars = 4,
 	Occurrence = 0,
-	Locations = "Pits of Inferno (Apocalypse's Throne Room), The Inquisition Quest \z
-		(The Shadow Nexus, Battlefield), Vengoth, Fury Dungeon, Oramond Fury Dungeon, The Extension Site."
+	Locations = "x."
 	}
 
 monster.health = 4100
@@ -33,7 +32,7 @@ monster.race = "blood"
 monster.corpse = 20399
 monster.speed = 400
 monster.manaCost = 0
-monster.maxSummons = 0
+monster.maxSummons = 2
 
 monster.changeTarget = {
 	interval = 4000,
@@ -70,6 +69,10 @@ monster.light = {
 	color = 0
 }
 
+monster.summons = {
+	{name = "fire devil", chance = 15, interval = 8000, max = 2}
+}
+
 monster.voices = {
 	interval = 5000,
 	chance = 10,
@@ -80,32 +83,23 @@ monster.voices = {
 }
 
 monster.loot = {
-	{id = 2124, chance = 410},
-	{name = "gold coin", chance = 30000, maxCount = 100},
-	{name = "gold coin", chance = 30000, maxCount = 100},
-	{name = "gold coin", chance = 38000, maxCount = 69},
-	{name = "platinum coin", chance = 2800, maxCount = 4},
-	{name = "terra rod", chance = 20000},
-	{name = "golden legs", chance = 130},
-	{name = "steel boots", chance = 790},
-	{name = "orichalcum pearl", chance = 1500, maxCount = 4},
-	{name = "red piece of cloth", chance = 4000},
-	{name = "soul orb", chance = 21500},
-	{name = "soul orb", chance = 50},
-	{id = 6301, chance = 60},
-	{name = "demonic essence", chance = 22500},
-	{name = "concentrated demonic blood", chance = 35000, maxCount = 3},
-	{name = "assassin dagger", chance = 660},
-	{name = "noble axe", chance = 2000},
-	{name = "great health potion", chance = 10500},
-	{name = "jalapeno pepper", chance = 29280, maxCount = 4}
+	{id = 2645, chance = 200},
+	{id = 2181, chance = 900},
+	{id = 5944, chance = 400},
+	{id = 2470, chance = 1},
+	{id = 2487, chance = 250},
+	{id = 2148, chance = 80000, maxCount = 100},
+	{id = 6558, chance = 1000},
+	{id = 6500, chance = 800},
+	{id = 2156, chance = 650},
+	{id = 2143, chance = 1000, maxCount = 2}
 }
 
 monster.attacks = {
-	{name ="melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -510},
-	{name ="combat", interval = 2000, chance = 10, type = COMBAT_FIREDAMAGE, minDamage = -200, maxDamage = -300, length = 8, spread = 3, effect = CONST_ME_EXPLOSIONAREA, target = false},
-	{name ="combat", interval = 2000, chance = 5, type = COMBAT_DEATHDAMAGE, minDamage = -120, maxDamage = -700, length = 8, spread = 3, target = false},
-	{name ="combat", interval = 2000, chance = 10, type = COMBAT_DEATHDAMAGE, minDamage = -120, maxDamage = -300, radius = 4, target = false},
+	{name ="melee", interval = 2000, chance = 100, minDamage = -200, maxDamage = -320},
+	{name ="combat", interval = 2000, chance = 10, minDamage = -200, maxDamage = -300, type = COMBAT_PHYSICALDAMAGE, range = 7, ShootEffect = CONST_ANI_SUDDENDEATH, effect = CONST_ME_MORTAREA, target = false},
+	{name ="combat", interval = 2000, chance = 30, minDamage = -140, maxDamage = -300, type = COMBAT_PHYSICALDAMAGE, effect = CONST_ME_HITAREA, target = false},
+	{name ="combat", interval = 2000, chance = 10, minDamage = -250, maxDamage = -700, type = COMBAT_PHYSICALDAMAGE, range = 7, effect = CONST_ME_DRAWBLOOD, target = false},
 	{name ="fury skill reducer", interval = 2000, chance = 5, target = false},
 	{name ="combat", interval = 2000, chance = 10, type = COMBAT_LIFEDRAIN, minDamage = -120, maxDamage = -300, radius = 3, effect = CONST_ME_HITAREA, target = false},
 	{name ="combat", interval = 2000, chance = 10, type = COMBAT_DEATHDAMAGE, minDamage = -125, maxDamage = -250, range = 7, shootEffect = CONST_ANI_SUDDENDEATH, effect = CONST_ME_SMALLCLOUDS, target = false},
@@ -126,9 +120,9 @@ monster.elements = {
 	{type = COMBAT_LIFEDRAIN, percent = 0},
 	{type = COMBAT_MANADRAIN, percent = 0},
 	{type = COMBAT_DROWNDAMAGE, percent = 0},
-	{type = COMBAT_ICEDAMAGE, percent = 30},
-	{type = COMBAT_HOLYDAMAGE , percent = 30},
-	{type = COMBAT_DEATHDAMAGE , percent = -10}
+	{type = COMBAT_ICEDAMAGE, percent = 20},
+	{type = COMBAT_HOLYDAMAGE , percent = 20},
+	{type = COMBAT_DEATHDAMAGE , percent = 20}
 }
 
 monster.immunities = {

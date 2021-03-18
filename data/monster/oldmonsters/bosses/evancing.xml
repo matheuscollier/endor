@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Evancing" nameDescription="Evancing" race="undead" experience="900000" speed="500" manacost="0">
+	<health now="350000" max="350000"/>
+	<look type="12" head="1" body="94" legs="79" feet="78" addons="0" corpse="6068"/>
+	<targetchange interval="10000" chance="30"/>
+	<strategy attack="100" defense="0"/>
+	<flags>
+		<flag looteable="1"/>
+		<flag summonable="0"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="0"/>
+		<flag convinceable="0"/>
+		<flag pushable="0"/>
+		<flag canpushitems="1"/>
+		<flag canpushcreatures="1"/>
+		<flag staticattack="98"/>
+		<flag targetDistance="1"/>
+		<flag runonhealth="0"/>
+	</flags>
+	<attacks>
+		<attack name="melee" interval="1500" min="-1050" max="-1650"/>
+		<attack name="fire" interval="1800" chance="35" range="7" radius="7" target="1" min="-1250" max="-1850">
+			<attribute key="shootEffect" value="fire"/>
+			<attribute key="areaEffect" value="firearea"/>
+		</attack>
+		<attack name="physical" interval="2300" chance="45" length="8" spread="0" min="-1150" max="-1750">
+			<attribute key="areaEffect" value="mortarea"/>
+		</attack>
+		<attack name="energy" interval="2380" chance="75" range="7" radius="2" target="1" min="-1950" max="-2350">
+		<attribute key="shootEffect" value="energy"/>
+		<attribute key="areaEffect" value="PURPLEENERGY"/>
+	</attack>
+		<attack name="physical" interval="2800" chance="55" target="0" radius="7" min="-1350" max="-2150">
+			<attribute key="areaEffect" value="mortarea"/>
+		</attack>
+	</attacks>
+	<defenses armor="0" defense="0">
+		<defense name="healing" interval="2000" chance="20" min="350" max="700">
+			<attribute key="areaEffect" value="blueshimmer"/>
+		</defense>
+		<defense name="speed" interval="2000" chance="80" speedchange="808" duration="6000">
+			<attribute key="areaEffect" value="redshimmer"/>
+		</defense>
+	</defenses>
+	<elements><element physicalPercent="5"/>
+		<element firePercent="90"/>
+		<element earthPercent="60"/>
+		<element energyPercent="20"/>
+		<element icePercent="30"/>
+		<element holyPercent="30"/>
+	    <element deathPercent="80"/>
+	</elements>
+	<immunities>
+		<immunity paralyze="1"/>
+		<immunity invisible="1"/>
+	</immunities>
+	<voices interval="5000" chance="30">
+		<voice sentence="I AM EVANCING, LORD OF THE TRIANGLE... AND YOU ARE LOST!" yell="1"/>
+		<voice sentence="MY SEED IS FEAR AND MY HARVEST ARE YOUR SOULS!" yell="1"/>
+		<voice sentence="THE TRIANGLE OF TERROR WILL RISE!" yell="1"/>
+	</voices>
+	<loot>
+		<item id="12649" chance="8000" /> 
+		<item id="12644" chance="1500" />
+		<item id="12646" chance="25000" />
+		<item id="2123" chance="12000" />
+		<item id="12607" chance="9000" />
+		<item id="2091" chance="100000" actionId="3080"/> 
+	</loot>
+
+	
+	</monster>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

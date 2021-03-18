@@ -2,7 +2,7 @@ local mType = Game.createMonsterType("Draken Warmaster")
 local monster = {}
 
 monster.description = "a draken warmaster"
-monster.experience = 2400
+monster.experience = 5650
 monster.outfit = {
 	lookType = 334,
 	lookHead = 0,
@@ -23,14 +23,14 @@ monster.Bestiary = {
 	CharmsPoints = 25,
 	Stars = 3,
 	Occurrence = 0,
-	Locations = "Zao Palace, Chazorai, Razzachai, and Zzaion."
+	Locations = "x."
 	}
-
-monster.health = 4150
-monster.maxHealth = 4150
+	
+monster.health = 5700
+monster.maxHealth = 5700
 monster.race = "blood"
 monster.corpse = 11107
-monster.speed = 324
+monster.speed = 350
 monster.manaCost = 0
 monster.maxSummons = 0
 
@@ -42,7 +42,6 @@ monster.changeTarget = {
 monster.strategiesTarget = {
 	nearest = 100,
 }
-
 monster.flags = {
 	summonable = false,
 	attackable = true,
@@ -77,27 +76,20 @@ monster.voices = {
 }
 
 monster.loot = {
-	{name = "ring of the sky", chance = 180},
-	{name = "small ruby", chance = 1525, maxCount = 5},
-	{name = "gold coin", chance = 47000, maxCount = 100},
-	{name = "gold coin", chance = 50000, maxCount = 100},
-	{name = "platinum coin", chance = 50625, maxCount = 5},
-	{name = "tower shield", chance = 2035},
-	{name = "meat", chance = 30300},
-	{name = "great health potion", chance = 4850, maxCount = 3},
-	{name = "ultimate health potion", chance = 4020},
-	{name = "Zaoan armor", chance = 790},
-	{name = "Zaoan shoes", chance = 1900},
-	{name = "Zaoan legs", chance = 960},
-	{name = "drakinata", chance = 860},
-	{name = "bone shoulderplate", chance = 12010},
-	{name = "warmaster's wristguards", chance = 7000},
-	{name = "Zaoan halberd", chance = 7925}
+	{id = 2528, chance = 1150},
+	{id = 2152, chance = 30625, maxCount = 2},
+	{id = 2666, chance = 30300},
+	{id = 2148, chance = 41000, maxCount = 100},
+	{id = 2148, chance = 41000, maxCount = 100},
+	{id = 11303, chance = 320},
+	{id = 11301, chance = 250},
+	{id = 11304, chance = 320},
+	{id = 2147, chance = 425}
 }
 
 monster.attacks = {
-	{name ="melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -300},
-	{name ="combat", interval = 2000, chance = 10, type = COMBAT_FIREDAMAGE, minDamage = -240, maxDamage = -520, length = 4, spread = 3, effect = CONST_ME_EXPLOSIONHIT, target = false}
+	{name ="melee", interval = 2000, chance = 100, minDamage = -304, maxDamage = -378},
+	{name ="combat", interval = 2000, chance = 20, minDamage = -380, maxDamage = -520, type = COMBAT_FIREDAMAGE, length = 4, spread = 3, ShootEffect = CONST_ANI_EXPLOSION, effect = CONST_ME_EXPLOSIONHIT, target = false}
 }
 
 monster.defenses = {

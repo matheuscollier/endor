@@ -1,7 +1,7 @@
 local mType = Game.createMonsterType("Giant Spider")
 local monster = {}
 
-monster.description = "a giant spider"
+monster.description = "uma giant spider"
 monster.experience = 900
 monster.outfit = {
 	lookType = 38,
@@ -13,45 +13,17 @@ monster.outfit = {
 	lookMount = 0
 }
 
-monster.raceId = 38
-monster.Bestiary = {
-	class = "Vermin",
-	race = BESTY_RACE_VERMIN,
-	toKill = 1000,
-	FirstUnlock = 50,
-	SecondUnlock = 500,
-	CharmsPoints = 25,
-	Stars = 3,
-	Occurrence = 0,
-	Locations = "Plains of Havoc, Point of no Return in Outlaw Camp, Ghostlands, Hellgate, \z
-		Mintwallin Secret Laboratory, Mad Mage Room deep below Ancient Temple, \z
-		Mount Sternum Undead Cave, Green Claw Swamp, Maze of Lost Souls, \z
-		Crusader Helmet Quest in the Dwarf Mines, Mushroom Gardens, \z
-		west drillworm cave, Edron Hero Cave, Edron Orc Cave, \z
-		on a hill near Drefia, on a hill north-west of Ankrahmun (inaccessible), \z
-		Forbidden Lands, Deeper Banuta, Malada, Ramoa, Arena and Zoo Quarter, \z
-		second floor up of Cemetery Quarter, beneath Fenrock, Vengoth Castle, \z
-		Vandura Mountain, in a cave in Robson Isle, Chyllfroest, Spider Caves, \z
-		Second floor of Krailos Spider Lair , Caverna Exanima."
-	}
-
 monster.health = 1300
 monster.maxHealth = 1300
 monster.race = "venom"
-monster.corpse = 5977
-monster.speed = 240
+monster.corpse = 2857
+monster.speed = 300
 monster.manaCost = 0
 monster.maxSummons = 2
 
 monster.changeTarget = {
-	interval = 4000,
+	interval = 2000,
 	chance = 10
-}
-
-monster.strategiesTarget = {
-	nearest = 70,
-	health = 20,
-	random = 10,
 }
 
 monster.flags = {
@@ -64,14 +36,14 @@ monster.flags = {
 	illusionable = false,
 	canPushItems = true,
 	canPushCreatures = true,
-	staticAttackChance = 70,
+	staticAttackChance = 95,
 	targetDistance = 1,
 	runHealth = 0,
 	healthHidden = false,
 	isBlockable = false,
-	canWalkOnEnergy = true,
+	canWalkOnEnergy = false,
 	canWalkOnFire = false,
-	canWalkOnPoison = true,
+	canWalkOnPoison = false,
 	pet = false
 }
 
@@ -81,7 +53,7 @@ monster.light = {
 }
 
 monster.summons = {
-	{name = "Poison Spider", chance = 10, interval = 2000, max = 2}
+	{name = "poison spider", chance = 10, interval = 6000, max = 2}
 }
 
 monster.voices = {
@@ -90,45 +62,39 @@ monster.voices = {
 }
 
 monster.loot = {
-	{name = "gold coin", chance = 99990, maxCount = 100},
-	{name = "gold coin", chance = 99990, maxCount = 95},
-	{id = 2169, chance = 710},
-	{name = "platinum amulet", chance = 280},
-	{name = "two handed sword", chance = 5100},
-	{name = "steel helmet", chance = 4980},
-	{name = "plate armor", chance = 9980},
-	{name = "knight armor", chance = 500},
-	{name = "knight legs", chance = 840},
-	{name = "poison arrow", chance = 11950, maxCount = 12},
-	{name = "plate legs", chance = 8333},
-	{name = "spider silk", chance = 1990},
-	{name = "strong health potion", chance = 3550},
-	{name = "lightning headband", chance = 270}
+	{id = 2463, chance = 1600},
+	{id = 2478, chance = 2500},
+	{id = 5879, chance = 5000},
+	{id = 2476, chance = 820},
+	{id = 2477, chance = 610},
+	{id = 2148, chance = 90000, maxCount = 50},
+	{id = 2171, chance = 950},
+	{id = 2169, chance = 1050},
+	{id = 2138, chance = 350}
 }
 
 monster.attacks = {
-	{name ="melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -300, condition = {type = CONDITION_POISON, totalDamage = 160, interval = 4000}},
-	{name ="poisonfield", interval = 2000, chance = 10, range = 7, radius = 1, shootEffect = CONST_ANI_POISON, target = true},
-	{name ="combat", interval = 2000, chance = 10, type = COMBAT_EARTHDAMAGE, minDamage = -40, maxDamage = -70, range = 7, radius = 1, shootEffect = CONST_ANI_POISON, target = true}
+	{name ="melee", interval = 2000, chance = 100, minDamage = -120, maxDamage = -300, condition = {type = CONDITION_POISON, startDamage = 200, interval = 3000}},
+	{name ="poisonfield", interval = 1000, chance = 17, range = 7, ShootEffect = CONST_ANI_POISON, target = true}
 }
 
 monster.defenses = {
 	defense = 0,
-	armor = 30,
-	{name ="speed", interval = 2000, chance = 15, speedChange = 390, effect = CONST_ME_MAGIC_RED, target = false, duration = 5000}
+	armor = 0,
+	{name ="speed", interval = 4000, chance = 25, SpeedChange = 300, Duration = 8000}
 }
 
 monster.elements = {
-	{type = COMBAT_PHYSICALDAMAGE, percent = 0},
-	{type = COMBAT_ENERGYDAMAGE, percent = 20},
-	{type = COMBAT_EARTHDAMAGE, percent = 100},
-	{type = COMBAT_FIREDAMAGE, percent = -10},
+	{type = COMBAT_PHYSICALDAMAGE, percent = 5},
+	{type = COMBAT_ENERGYDAMAGE, percent = 10},
+	{type = COMBAT_EARTHDAMAGE, percent = 99},
+	{type = COMBAT_FIREDAMAGE, percent = 0},
 	{type = COMBAT_LIFEDRAIN, percent = 0},
 	{type = COMBAT_MANADRAIN, percent = 0},
 	{type = COMBAT_DROWNDAMAGE, percent = 0},
-	{type = COMBAT_ICEDAMAGE, percent = 20},
-	{type = COMBAT_HOLYDAMAGE , percent = 0},
-	{type = COMBAT_DEATHDAMAGE , percent = 0}
+	{type = COMBAT_ICEDAMAGE, percent = 15},
+	{type = COMBAT_HOLYDAMAGE , percent = 25},
+	{type = COMBAT_DEATHDAMAGE , percent = 25}
 }
 
 monster.immunities = {

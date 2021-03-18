@@ -6,8 +6,11 @@ combat:setParameter(COMBAT_PARAM_DISTANCEEFFECT, CONST_ANI_EARTH)
 local condition = Condition(CONDITION_POISON)
 condition:setParameter(CONDITION_PARAM_DELAYED, 1)
 condition:addDamage(25, 3000, -45)
-combat:addCondition(condition)
+combat:setCondition(condition)
 
 function onCastSpell(creature, var)
 	return combat:execute(creature, var)
 end
+
+
+

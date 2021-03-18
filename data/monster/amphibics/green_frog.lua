@@ -1,7 +1,7 @@
 local mType = Game.createMonsterType("Green Frog")
 local monster = {}
 
-monster.description = "a green frog"
+monster.description = "um green frog"
 monster.experience = 0
 monster.outfit = {
 	lookType = 224,
@@ -23,7 +23,7 @@ monster.Bestiary = {
 	CharmsPoints = 5,
 	Stars = 1,
 	Occurrence = 0,
-	Locations = "Meriana and other Shattered Isles, Port Hope caves, The Witches Cliff (only accessible during a quest)."
+	Locations = "x."
 	}
 
 monster.health = 25
@@ -72,8 +72,7 @@ monster.light = {
 monster.voices = {
 	interval = 5000,
 	chance = 10,
-	{text = "Ribbit!", yell = false},
-	{text = "Ribbit! Ribbit!", yell = false}
+	{text = "Ribbit!", yell = false}
 }
 
 monster.loot = {

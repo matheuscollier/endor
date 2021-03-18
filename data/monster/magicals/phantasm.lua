@@ -13,34 +13,17 @@ monster.outfit = {
 	lookMount = 0
 }
 
-monster.raceId = 292
-monster.Bestiary = {
-	class = "Magical",
-	race = BESTY_RACE_MAGICAL,
-	toKill = 2500,
-	FirstUnlock = 100,
-	SecondUnlock = 1000,
-	CharmsPoints = 50,
-	Stars = 4,
-	Occurrence = 0,
-	Locations = "Pits of Inferno, The Inquisition Quest, Deeper Banuta."
-	}
-
 monster.health = 3950
 monster.maxHealth = 3950
 monster.race = "undead"
 monster.corpse = 6344
-monster.speed = 340
+monster.speed = 280
 monster.manaCost = 0
 monster.maxSummons = 4
 
 monster.changeTarget = {
-	interval = 4000,
-	chance = 10
-}
-
-monster.strategiesTarget = {
-	nearest = 100,
+	interval = 5000,
+	chance = 8
 }
 
 monster.flags = {
@@ -55,12 +38,12 @@ monster.flags = {
 	canPushCreatures = true,
 	staticAttackChance = 90,
 	targetDistance = 1,
-	runHealth = 350,
+	runHealth = 0,
 	healthHidden = false,
 	isBlockable = false,
 	canWalkOnEnergy = false,
 	canWalkOnFire = false,
-	canWalkOnPoison = true,
+	canWalkOnPoison = false,
 	pet = false
 }
 
@@ -70,7 +53,7 @@ monster.light = {
 }
 
 monster.summons = {
-	{name = "Phantasm Summon", chance = 20, interval = 2000}
+	{name = "Phantasm summon", chance = 20, interval = 3000}
 }
 
 monster.voices = {
@@ -78,58 +61,44 @@ monster.voices = {
 	chance = 10,
 	{text = "Oh my, you forgot to put your pants on!", yell = false},
 	{text = "Weeheeheeheehee!", yell = false},
-	{text = "Its nothing but a dream.", yell = false},
-	{text = "Dream a little dream with me!", yell = false},
-	{text = "Give in.", yell = false}
+	{text = "Its nothing but a dream!", yell = false},
+	{text = "Give in!", yell = false}
 }
 
 monster.loot = {
-	{name = "small ruby", chance = 12160, maxCount = 3},
-	{name = "gold coin", chance = 30000, maxCount = 100},
-	{name = "gold coin", chance = 30000, maxCount = 100},
-	{name = "gold coin", chance = 28000, maxCount = 33},
-	{name = "small emerald", chance = 10190, maxCount = 3},
-	{name = "small amethyst", chance = 14570, maxCount = 3},
-	{name = "platinum coin", chance = 87730, maxCount = 4},
-	{name = "stealth ring", chance = 550},
-	{name = "blank rune", chance = 22500, maxCount = 2},
-	{name = "crown armor", chance = 660},
-	{name = "shadow herb", chance = 26930, maxCount = 2},
-	{id = 6300, chance = 330},
-	{name = "demonic essence", chance = 16320},
-	{name = "abyss hammer", chance = 110},
-	{name = "shadow sceptre", chance = 550},
-	{name = "great mana potion", chance = 32750, maxCount = 2},
-	{name = "ultimate health potion", chance = 14680},
-	{name = "small topaz", chance = 12810, maxCount = 3}
+	{id = 2148, chance = 80000, maxCount = 70},
+	{id = 2230, chance = 2000},
+	{id = 2804, chance = 950, maxCount = 2},
+	{id = 2260, chance = 1300},
+	{id = 5944, chance = 900},
+	{id = 8868, chance = 270},
+	{id = 8879, chance = 30},
+	{id = 2149, chance = 100}
 }
 
 monster.attacks = {
-	{name ="melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -475},
-	{name ="combat", interval = 2000, chance = 10, type = COMBAT_DEATHDAMAGE, minDamage = -250, maxDamage = -610, range = 7, shootEffect = CONST_ANI_SUDDENDEATH, effect = CONST_ME_SMALLCLOUDS, target = false},
-	{name ="combat", interval = 2000, chance = 20, type = COMBAT_MANADRAIN, minDamage = -5, maxDamage = -80, radius = 3, effect = CONST_ME_YELLOW_RINGS, target = false},
-	{name ="phantasm drown", interval = 2000, chance = 15, target = false},
-	{name ="drunk", interval = 2000, chance = 15, radius = 5, effect = CONST_ME_MAGIC_RED, target = false, duration = 6000}
+	{name ="melee", interval = 2000, chance = 100, skill = 75, attack = 56},
+	{name ="combat", interval = 2000, chance = 10, minDamage = -150, maxDamage = -300, type = COMBAT_EARTHDAMAGE, range = 7, ShootEffect = CONST_ANI_POISON, effect = CONST_ME_POISONAREA, target = true},
+	{name ="poisonfield", interval = 1000, chance = 14, range = 7, ShootEffect = CONST_ANI_POISON, target = true},
+	{name ="combat", interval = 3000, chance = 20, minDamage = -100, maxDamage = -300, type = COMBAT_MANADRAIN, range = 7, effect = CONST_ME_MAGIC_RED, target = false}
 }
 
 monster.defenses = {
 	defense = 0,
 	armor = 0,
-	{name ="combat", interval = 2000, chance = 30, type = COMBAT_HEALING, minDamage = 228, maxDamage = 449, effect = CONST_ME_MAGIC_BLUE, target = false},
-	{name ="speed", interval = 2000, chance = 10, speedChange = 500, effect = CONST_ME_MAGIC_RED, target = false, duration = 6000},
-	{name ="invisible", interval = 2000, chance = 25, effect = CONST_ME_MAGIC_BLUE}
+	{name ="combat", interval = 1000, chance = 50, minDamage = 75, maxDamage = 125, type = COMBAT_HEALING, effect = CONST_ME_MAGIC_BLUE, target = false}
 }
 
 monster.elements = {
 	{type = COMBAT_PHYSICALDAMAGE, percent = 100},
-	{type = COMBAT_ENERGYDAMAGE, percent = -10},
-	{type = COMBAT_EARTHDAMAGE, percent = 20},
+	{type = COMBAT_ENERGYDAMAGE, percent = -5},
+	{type = COMBAT_EARTHDAMAGE, percent = 50},
 	{type = COMBAT_FIREDAMAGE, percent = -10},
 	{type = COMBAT_LIFEDRAIN, percent = 100},
 	{type = COMBAT_MANADRAIN, percent = 0},
 	{type = COMBAT_DROWNDAMAGE, percent = 0},
-	{type = COMBAT_ICEDAMAGE, percent = 20},
-	{type = COMBAT_HOLYDAMAGE , percent = -10},
+	{type = COMBAT_ICEDAMAGE, percent = 15},
+	{type = COMBAT_HOLYDAMAGE , percent = -15},
 	{type = COMBAT_DEATHDAMAGE , percent = 100}
 }
 

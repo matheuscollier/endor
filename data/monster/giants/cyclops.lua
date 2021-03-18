@@ -1,7 +1,7 @@
 local mType = Game.createMonsterType("Cyclops")
 local monster = {}
 
-monster.description = "a cyclops"
+monster.description = "um cyclops"
 monster.experience = 150
 monster.outfit = {
 	lookType = 22,
@@ -23,9 +23,7 @@ monster.Bestiary = {
 	CharmsPoints = 15,
 	Stars = 2,
 	Occurrence = 0,
-	Locations = "Ab'Dendriel Underground, Cyclopolis, Femor Hills, Kazordoon Prison, Kazordoon Surroundings, \z
-		Maze of the Lost Souls, Mistrock, Mount Sternum, Outlaw Camp, Plains of Havoc, Shadowthorn, \z
-		Thais Northern Dungeon, Thais Surroundings, Thais Underground, Ulderek's Rock, Yalahar Foreigner Quarter."
+	Locations = "x."
 	}
 
 monster.health = 260
@@ -83,23 +81,20 @@ monster.voices = {
 }
 
 monster.loot = {
-	{id = 2129, chance = 190},
-	{name = "gold coin", chance = 82000, maxCount = 47},
-	{name = "club ring", chance = 90},
-	{name = "halberd", chance = 1003},
-	{name = "short sword", chance = 8000},
-	{name = "dark helmet", chance = 220},
-	{name = "plate shield", chance = 2500},
-	{name = "battle shield", chance = 1400},
-	{name = "meat", chance = 30070},
-	{id = 7398, chance = 80},
-	{name = "health potion", chance = 210},
-	{name = "cyclops toe", chance = 4930},
-	{id = 26654, chance = 1000}
+	{id = 2381, chance = 285},
+	{id = 2490, chance = 500},
+	{id = 2129, chance = 2000},
+	{id = 2513, chance = 800},
+	{id = 2511, chance = 4000},
+	{id = 2666, chance = 5000, maxCount = 2},
+	{id = 2209, chance = 150},
+	{id = 2406, chance = 10000},
+	{id = 2148, chance = 75000, maxCount = 85},
+	{id = 2671, chance = 10000, maxCount = 3}
 }
 
 monster.attacks = {
-	{name ="melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -105}
+	{name ="melee", interval = 2000, chance = 100, minDamage = -20, maxDamage = -50}
 }
 
 monster.defenses = {

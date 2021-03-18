@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Elite Novice" nameDescription="um elite novice" race="undead" experience="0" speed="180" manacost="0">
+  <health now="955" max="955"/>
+  <look type="133" head="114" body="95" legs="114" feet="114" corpse="0"/>
+  <targetchange interval="6000" chance="5"/>
+  <strategy attack="100" defense="100"/>
+  
+<flags>
+	<flag looteable="1"/>
+	<flag summonable="0"/>
+	<flag attackable="1"/>
+	<flag hostile="1"/>
+	<flag illusionable="0"/>
+	<flag convinceable="0"/>
+	<flag pushable="0"/>
+	<flag canpushitems="1"/>
+	<flag staticattack="50"/>
+	<flag lightlevel="0"/>
+	<flag lightcolor="0"/>
+	<flag targetDistance="1"/>
+	<flag runonhealth="25"/>
+</flags>
+
+<attacks>
+	<attack name="melee" interval="2000" min="-50" max="-115"/>
+	
+	<attack name="energy" interval="1200" chance="100" range="4" min="-45" max="-90">
+		<attribute key="shootEffect" value="energy"/>
+	</attack>
+</attacks>
+
+<defenses armor="0" defense="0"/>
+
+<immunities>
+    <immunity physical="0"/>
+    <immunity energy="1"/>
+    <immunity fire="0"/>
+    <immunity poison="0"/>
+    <immunity lifedrain="0"/>
+    <immunity paralyze="0"/>
+    <immunity outfit="0"/>
+    <immunity drunk="0"/>
+    <immunity invisible="0"/>
+</immunities>
+  
+  <summons maxSummons="3">
+    <summon name="Dog" interval="5000" chance="10"/>
+    <summon name="Chicken" interval="4000" chance="10"/>
+    <summon name="Rat" interval="6000" chance="10"/>
+    <summon name="Skunk" interval="3800" chance="10"/>
+  </summons>
+  
+  <voices interval="2000" chance="5">
+    <voice sentence="Fear us!"/>
+    <voice sentence="You will not tell anyone what you have seen."/>
+    <voice sentence="Your curiosity will be punished!"/>
+  </voices>
+
+</monster>

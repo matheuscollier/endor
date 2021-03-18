@@ -1,36 +1,14 @@
-local combat = {}
-
-for i = 35, 60 do
-combat[i] = Combat()
-combat[i]:setParameter(COMBAT_PARAM_EFFECT, CONST_ME_YELLOW_RINGS)
+local combat = Combat()
+combat:setParameter(COMBAT_PARAM_EFFECT, CONST_ME_STUN)
 
 local condition = Condition(CONDITION_ATTRIBUTES)
-condition:setParameter(CONDITION_PARAM_TICKS, 8000)
-condition:setParameter(CONDITION_PARAM_SKILL_MELEEPERCENT, i)
-condition:setParameter(CONDITION_PARAM_SKILL_FISTPERCENT, i)
+condition:setParameter(CONDITION_PARAM_TICKS, 4000)
+condition:setParameter(CONDITION_PARAM_SKILL_DISTANCEPERCENT, 50)
 
-arr = {
-{0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0},
-{0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0},
-{0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0},
-{0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0},
-{0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0},
-{0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0},
-{1, 1, 1, 1, 1, 1, 3, 1, 1, 1, 1, 1, 1},
-{0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0},
-{0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0},
-{0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0},
-{0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0},
-{0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0},
-{0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0},
-}
-
-local area = createCombatArea(arr)
-	combat[i]:setArea(area)
-	combat[i]:addCondition(condition)
-
-end
+local area = createCombatArea(AREA_CROSS6X6)
+combat:setArea(area)
+combat:setCondition(condition)
 
 function onCastSpell(creature, var)
-	return combat[math.random(35, 60)]:execute(creature, var)
+	return combat:execute(creature, var)
 end

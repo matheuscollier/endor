@@ -1341,5 +1341,43 @@ function doSetCreatureLight(cid, lightLevel, lightColor, time)
 	return true
 end
 
+do
+	local combats = {
+		[COMBAT_PHYSICALDAMAGE] = 'physical',
+		[COMBAT_ENERGYDAMAGE] = 'energy',
+		[COMBAT_EARTHDAMAGE] = 'earth',
+		[COMBAT_FIREDAMAGE] = 'fire',
+		[COMBAT_UNDEFINEDDAMAGE] = 'undefined',
+		[COMBAT_LIFEDRAIN] = 'lifedrain',
+		[COMBAT_MANADRAIN] = 'manadrain',
+		[COMBAT_HEALING] = 'healing',
+		[COMBAT_DROWNDAMAGE] = 'drown',
+		[COMBAT_ICEDAMAGE] = 'ice',
+		[COMBAT_HOLYDAMAGE] = 'holy',
+		[COMBAT_DEATHDAMAGE] = 'death'
+	}
+
+	function getCombatName(combat)
+		return combats[combat]
+	end
+end
+
+do
+	local skills = {
+		[SKILL_FIST] = 'fist fighting',
+		[SKILL_CLUB] = 'club fighting',
+		[SKILL_SWORD] = 'sword fighting',
+		[SKILL_AXE] = 'axe fighting',
+		[SKILL_DISTANCE] = 'distance fighting',
+		[SKILL_SHIELD] = 'shielding',
+		[SKILL_FISHING] = 'fishing',
+		[SKILL_MAGLEVEL] = 'magic level',
+		[SKILL_LEVEL] = 'level'
+	}
+
+	function getSkillName(skill)
+		return skills[skill] or 'unknown'
+	end
+end
 -- this is a fix for lua52 or higher which has the function renamed to table.unpack, while luajit still uses unpack
 if unpack == nil then unpack = table.unpack end

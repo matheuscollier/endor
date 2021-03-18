@@ -1,8 +1,8 @@
 local mType = Game.createMonsterType("Kongra")
 local monster = {}
 
-monster.description = "a kongra"
-monster.experience = 115
+monster.description = "uma kongra"
+monster.experience = 110
 monster.outfit = {
 	lookType = 116,
 	lookHead = 0,
@@ -13,34 +13,17 @@ monster.outfit = {
 	lookMount = 0
 }
 
-monster.raceId = 116
-monster.Bestiary = {
-	class = "Mammal",
-	race = BESTY_RACE_MAMMAL,
-	toKill = 500,
-	FirstUnlock = 25,
-	SecondUnlock = 250,
-	CharmsPoints = 15,
-	Stars = 2,
-	Occurrence = 0,
-	Locations = "In Banuta, northeast of Port Hope, Arena and Zoo Quarter."
-	}
-
 monster.health = 340
 monster.maxHealth = 340
 monster.race = "blood"
-monster.corpse = 6043
-monster.speed = 184
+monster.corpse = 4268
+monster.speed = 160
 monster.manaCost = 0
 monster.maxSummons = 0
 
 monster.changeTarget = {
-	interval = 4000,
+	interval = 2000,
 	chance = 0
-}
-
-monster.strategiesTarget = {
-	nearest = 100,
 }
 
 monster.flags = {
@@ -53,7 +36,7 @@ monster.flags = {
 	illusionable = true,
 	canPushItems = true,
 	canPushCreatures = false,
-	staticAttackChance = 90,
+	staticAttackChance = 95,
 	targetDistance = 1,
 	runHealth = 10,
 	healthHidden = false,
@@ -78,38 +61,35 @@ monster.voices = {
 }
 
 monster.loot = {
-	{name = "gold coin", chance = 69000, maxCount = 40},
-	{name = "power ring", chance = 300},
-	{name = "protection amulet", chance = 990},
-	{name = "club ring", chance = 230},
-	{name = "plate armor", chance = 950},
-	{name = "banana", chance = 30000, maxCount = 12},
-	{name = "ape fur", chance = 980},
-	{name = "health potion", chance = 570},
-	{name = "kongra's shoulderpad", chance = 4900}
+	{id = 2148, chance = 100000, maxCount = 30},
+	{id = 2678, chance = 3000, maxCount = 2},
+	{id = 2676, chance = 10000, maxCount = 10},
+	{id = 5883, chance = 7000, maxCount = 5},
+	{id = 2463, chance = 820},
+	{id = 2200, chance = 800}
 }
 
 monster.attacks = {
-	{name ="melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -60}
+	{name ="melee", interval = 2000, chance = 100, minDamage = -35, maxDamage = -70}
 }
 
 monster.defenses = {
-	defense = 20,
-	armor = 20,
-	{name ="speed", interval = 2000, chance = 15, speedChange = 260, effect = CONST_ME_MAGIC_RED, target = false, duration = 3000}
+	defense = 0,
+	armor = 0,
+	{name ="speed", interval = 7000, chance = 40, SpeedChange = 300, Duration = 6000}
 }
 
 monster.elements = {
 	{type = COMBAT_PHYSICALDAMAGE, percent = 0},
-	{type = COMBAT_ENERGYDAMAGE, percent = 5},
-	{type = COMBAT_EARTHDAMAGE, percent = 10},
-	{type = COMBAT_FIREDAMAGE, percent = 20},
+	{type = COMBAT_ENERGYDAMAGE, percent = 0},
+	{type = COMBAT_EARTHDAMAGE, percent = 0},
+	{type = COMBAT_FIREDAMAGE, percent = 0},
 	{type = COMBAT_LIFEDRAIN, percent = 0},
 	{type = COMBAT_MANADRAIN, percent = 0},
 	{type = COMBAT_DROWNDAMAGE, percent = 0},
-	{type = COMBAT_ICEDAMAGE, percent = -15},
+	{type = COMBAT_ICEDAMAGE, percent = 0},
 	{type = COMBAT_HOLYDAMAGE , percent = 0},
-	{type = COMBAT_DEATHDAMAGE , percent = -5}
+	{type = COMBAT_DEATHDAMAGE , percent = 0}
 }
 
 monster.immunities = {

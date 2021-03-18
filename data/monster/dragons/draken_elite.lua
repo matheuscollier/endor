@@ -2,7 +2,7 @@ local mType = Game.createMonsterType("Draken Elite")
 local monster = {}
 
 monster.description = "a draken elite"
-monster.experience = 4200
+monster.experience = 7900
 monster.outfit = {
 	lookType = 362,
 	lookHead = 0,
@@ -23,14 +23,14 @@ monster.Bestiary = {
 	CharmsPoints = 50,
 	Stars = 4,
 	Occurrence = 0,
-	Locations = "Razachai, including the Crystal Column chambers in the Inner Sanctum."
+	Locations = "x."
 	}
-
-monster.health = 5550
-monster.maxHealth = 5550
+	
+monster.health = 6900
+monster.maxHealth = 6900
 monster.race = "blood"
 monster.corpse = 12609
-monster.speed = 332
+monster.speed = 350
 monster.manaCost = 0
 monster.maxSummons = 0
 
@@ -42,7 +42,6 @@ monster.changeTarget = {
 monster.strategiesTarget = {
 	nearest = 100,
 }
-
 monster.flags = {
 	summonable = false,
 	attackable = true,
@@ -77,39 +76,29 @@ monster.voices = {
 }
 
 monster.loot = {
-	{name = "small diamond", chance = 2440, maxCount = 4},
-	{name = "gold coin", chance = 50000, maxCount = 100},
-	{name = "gold coin", chance = 47000, maxCount = 100},
-	{name = "platinum coin", chance = 50360, maxCount = 8},
-	{name = "meat", chance = 30175},
-	{name = "magic sulphur", chance = 2100},
-	{name = "assassin dagger", chance = 980},
-	{name = "great mana potion", chance = 9340, maxCount = 3},
-	{name = "ultimate health potion", chance = 9250, maxCount = 3},
-	{name = "Zaoan armor", chance = 490},
-	{name = "Zaoan helmet", chance = 150},
-	{name = "Zaoan legs", chance = 770},
-	{name = "Zaoan sword", chance = 490},
-	{name = "elite draken mail", chance = 110},
-	{name = "twiceslicer", chance = 910},
-	{name = "draken sulphur", chance = 7600},
-	{name = "draken wristbands", chance = 14030},
-	{name = "broken draken mail", chance = 16930},
-	{name = "broken slicer", chance = 24670},
-	{name = "cobra crown", chance = 10},
-	{name = "draken boots", chance = 600},
-	{name = "snake god's wristguard", chance = 80},
-	{name = "blade of corruption", chance = 20}
+	{id = 2148, chance = 40625, maxCount = 100},
+	{id = 2148, chance = 40625, maxCount = 100},
+	{id = 12617, chance = 22300},
+	{id = 2666, chance = 30175},
+	{id = 2152, chance = 28275, maxCount = 8},
+	{id = 2145, chance = 1800, maxCount = 4},
+	{id = 12615, chance = 9250},
+	{id = 12616, chance = 7000},
+	{id = 12614, chance = 700},
+	{id = 12646, chance = 120},
+	{id = 12645, chance = 80},
+	{id = 12607, chance = 50},
+	{id = 11304, chance = 200}
 }
 
 monster.attacks = {
-	{name ="melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -354},
-	{name ="combat", interval = 2000, chance = 10, type = COMBAT_FIREDAMAGE, minDamage = -240, maxDamage = -550, length = 4, spread = 3, effect = CONST_ME_EXPLOSIONHIT, target = false},
-	{name ="combat", interval = 2000, chance = 15, type = COMBAT_FIREDAMAGE, minDamage = -200, maxDamage = -300, range = 7, shootEffect = CONST_ANI_FIRE, effect = CONST_ME_FIREAREA, target = true},
-	{name ="combat", interval = 2000, chance = 15, type = COMBAT_EARTHDAMAGE, minDamage = -280, maxDamage = -410, radius = 4, effect = CONST_ME_POFF, target = true},
+	{name ="melee", interval = 2000, chance = 100, minDamage = -336, maxDamage = -430},
+	{name ="combat", interval = 2000, chance = 20, minDamage = -300, maxDamage = -450, type = COMBAT_FIREDAMAGE, length = 4, spread = 3, ShootEffect = CONST_ANI_EXPLOSION, effect = CONST_ME_EXPLOSIONHIT, target = false},
+	{name ="combat", interval = 2000, chance = 40, minDamage = -300, maxDamage = -420, type = COMBAT_FIREDAMAGE, range = 7, ShootEffect = CONST_ANI_FIRE, effect = CONST_ME_FIREAREA, target = true},
+	{name ="combat", interval = 2000, chance = 10, type = COMBAT_EARTHDAMAGE, effect = CONST_ME_POFF, target = false},
 	{name ="soulfire", interval = 2000, chance = 10, target = false},
 	-- poison
-	{name ="condition", type = CONDITION_POISON, interval = 2000, chance = 10, minDamage = -250, maxDamage = -320, range = 7, shootEffect = CONST_ANI_POISON, target = true}
+	{name ="condition", type = CONDITION_POISON, interval = 2000, chance = 10, minDamage = -400, maxDamage = -500, range = 7, shootEffect = CONST_ANI_POISON, target = true}
 }
 
 monster.defenses = {
@@ -119,7 +108,7 @@ monster.defenses = {
 }
 
 monster.elements = {
-	{type = COMBAT_PHYSICALDAMAGE, percent = 0},
+	{type = COMBAT_PHYSICALDAMAGE, percent = 15},
 	{type = COMBAT_ENERGYDAMAGE, percent = 40},
 	{type = COMBAT_EARTHDAMAGE, percent = 100},
 	{type = COMBAT_FIREDAMAGE, percent = 100},
@@ -128,7 +117,7 @@ monster.elements = {
 	{type = COMBAT_DROWNDAMAGE, percent = 0},
 	{type = COMBAT_ICEDAMAGE, percent = 0},
 	{type = COMBAT_HOLYDAMAGE , percent = 30},
-	{type = COMBAT_DEATHDAMAGE , percent = 30}
+	{type = COMBAT_DEATHDAMAGE , percent = 50}
 }
 
 monster.immunities = {

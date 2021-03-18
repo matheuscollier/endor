@@ -1,7 +1,7 @@
 local mType = Game.createMonsterType("Ghost")
 local monster = {}
 
-monster.description = "a ghost"
+monster.description = "um ghost"
 monster.experience = 120
 monster.outfit = {
 	lookType = 48,
@@ -13,56 +13,37 @@ monster.outfit = {
 	lookMount = 0
 }
 
-monster.raceId = 48
-monster.Bestiary = {
-	class = "Undead",
-	race = BESTY_RACE_UNDEAD,
-	toKill = 500,
-	FirstUnlock = 25,
-	SecondUnlock = 250,
-	CharmsPoints = 15,
-	Stars = 2,
-	Occurrence = 0,
-	Locations = "Ghost Ship, Drefia, Ankrahmun Tombs, Mount Sternum Undead Cave between Thais and Kazordoon, \z
-		Dark Cathedral, under Treasure Island, Isle of the Kings, Grothmok tunnels (in Dwarven Mines), Goroma, \z
-		Ramoa, Lich Hell, Upper Spike."
-	}
-
 monster.health = 150
 monster.maxHealth = 150
 monster.race = "undead"
-monster.corpse = 5993
-monster.speed = 160
-monster.manaCost = 100
+monster.corpse = 2913
+monster.speed = 180
+monster.manaCost = 0
 monster.maxSummons = 0
 
 monster.changeTarget = {
-	interval = 4000,
+	interval = 2000,
 	chance = 0
 }
 
-monster.strategiesTarget = {
-	nearest = 100,
-}
-
 monster.flags = {
-	summonable = true,
+	summonable = false,
 	attackable = true,
 	hostile = true,
-	convinceable = true,
+	convinceable = false,
 	pushable = false,
 	rewardBoss = false,
-	illusionable = false,
+	illusionable = true,
 	canPushItems = true,
 	canPushCreatures = false,
-	staticAttackChance = 90,
+	staticAttackChance = 95,
 	targetDistance = 1,
 	runHealth = 0,
 	healthHidden = false,
 	isBlockable = false,
 	canWalkOnEnergy = false,
 	canWalkOnFire = false,
-	canWalkOnPoison = true,
+	canWalkOnPoison = false,
 	pet = false
 }
 
@@ -80,25 +61,23 @@ monster.voices = {
 }
 
 monster.loot = {
-	{id = 1962, chance = 1310},
-	{name = "stealth ring", chance = 180},
-	{name = "morning star", chance = 10610},
-	{name = "combat knife", chance = 7002},
-	{name = "ancient shield", chance = 860},
-	{name = "cape", chance = 8800},
-	{name = "shadow herb", chance = 14400},
-	{name = "white piece of cloth", chance = 1940},
-	{name = "ghostly tissue", chance = 1870}
+	{id = 2394, chance = 1000},
+	{id = 2656, chance = 10},
+	{id = 2148, chance = 100000, maxCount = 35},
+	{id = 2532, chance = 150},
+	{id = 2165, chance = 50},
+	{id = 1962, chance = 2000},
+	{id = 2331, chance = 110}
 }
 
 monster.attacks = {
-	{name ="melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -80},
-	{name ="combat", interval = 2000, chance = 15, type = COMBAT_LIFEDRAIN, minDamage = -20, maxDamage = -45, range = 1, effect = CONST_ME_MAGIC_RED, target = false}
+	{name ="melee", interval = 2000, chance = 100, minDamage = -60, maxDamage = -120},
+	{name ="combat", interval = 3000, chance = 30, minDamage = -25, maxDamage = -45, type = COMBAT_LIFEDRAIN, range = 1, target = false}
 }
 
 monster.defenses = {
-	defense = 5,
-	armor = 10
+	defense = 0,
+	armor = 0
 }
 
 monster.elements = {
@@ -108,10 +87,10 @@ monster.elements = {
 	{type = COMBAT_FIREDAMAGE, percent = 0},
 	{type = COMBAT_LIFEDRAIN, percent = 100},
 	{type = COMBAT_MANADRAIN, percent = 0},
-	{type = COMBAT_DROWNDAMAGE, percent = 100},
+	{type = COMBAT_DROWNDAMAGE, percent = 0},
 	{type = COMBAT_ICEDAMAGE, percent = 0},
 	{type = COMBAT_HOLYDAMAGE , percent = 0},
-	{type = COMBAT_DEATHDAMAGE , percent = 100}
+	{type = COMBAT_DEATHDAMAGE , percent = 0}
 }
 
 monster.immunities = {

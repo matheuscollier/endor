@@ -2,7 +2,7 @@ local mType = Game.createMonsterType("Dragon Hatchling")
 local monster = {}
 
 monster.description = "a dragon hatchling"
-monster.experience = 185
+monster.experience = 375
 monster.outfit = {
 	lookType = 271,
 	lookHead = 0,
@@ -23,15 +23,14 @@ monster.Bestiary = {
 	CharmsPoints = 25,
 	Stars = 3,
 	Occurrence = 0,
-	Locations = "Thais Dragon Lair, beneath Fenrock, Darashia Dragon Lair, Venore Dragon Lair, \z
-		Edron Dragon Lair, Dragonblaze Peaks, Krailos Steppe. Also summoned by Lizard Dragon Priests."
+	Locations = "x."
 	}
-
-monster.health = 380
-monster.maxHealth = 380
+	
+monster.health = 500	
+monster.maxHealth = 500
 monster.race = "blood"
 monster.corpse = 7621
-monster.speed = 146
+monster.speed = 170
 monster.manaCost = 0
 monster.maxSummons = 0
 
@@ -81,16 +80,25 @@ monster.voices = {
 }
 
 monster.loot = {
-	{name = "gold coin", chance = 67500, maxCount = 55},
-	{name = "dragon ham", chance = 61000},
-	{name = "health potion", chance = 400},
-	{name = "dragon's tail", chance = 4300}
+	{id = 2672, chance = 10000},
+	{id = 5920, chance = 3000},
+	{id = 10020, chance = 1500},
+	{id = 5877, chance = 5000},
+	{id = 2434, chance = 850},
+	{id = 2509, chance = 1500},
+	{id = 2647, chance = 1200},
+	{id = 2387, chance = 1350},
+	{id = 2397, chance = 1800},
+	{id = 2546, chance = 10000, maxCount = 5},
+	{id = 2148, chance = 90000, maxCount = 50},
+	{id = 2145, chance = 2000},
+	{id = 2177, chance = 350}
 }
 
 monster.attacks = {
-	{name ="melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -55},
-	{name ="combat", interval = 2000, chance = 10, type = COMBAT_FIREDAMAGE, minDamage = -60, maxDamage = -90, length = 5, spread = 2, effect = CONST_ME_FIREAREA, target = false},
-	{name ="combat", interval = 2000, chance = 15, type = COMBAT_FIREDAMAGE, minDamage = -30, maxDamage = -55, range = 7, radius = 4, shootEffect = CONST_ANI_FIRE, effect = CONST_ME_FIREAREA, target = true}
+	{name ="melee", interval = 2000, chance = 100, minDamage = -30, maxDamage = -70},
+	{name ="combat", interval = 2000, chance = 20, type = COMBAT_FIREDAMAGE, minDamage = -60, maxDamage = -90, length = 5, spread = 2, effect = CONST_ME_FIREAREA, target = false},
+	{name ="combat", interval = 2000, chance = 25, type = COMBAT_FIREDAMAGE, minDamage = -70, maxDamage = -95, range = 7, radius = 4, shootEffect = CONST_ANI_FIRE, effect = CONST_ME_FIREAREA, target = true}
 }
 
 monster.defenses = {

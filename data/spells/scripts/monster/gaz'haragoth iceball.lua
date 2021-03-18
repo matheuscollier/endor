@@ -1,6 +1,6 @@
-local combat = Combat()
-combat:setParameter(COMBAT_PARAM_TYPE, COMBAT_ICEDAMAGE)
-combat:setParameter(COMBAT_PARAM_EFFECT, CONST_ME_ICEAREA)
+local combat = createCombatObject()
+setCombatParam(combat, COMBAT_PARAM_TYPE, COMBAT_ICEDAMAGE)
+setCombatParam(combat, COMBAT_PARAM_EFFECT, CONST_ME_ICEAREA)
 
 arr = {
 {0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0},
@@ -20,9 +20,9 @@ arr = {
 
 
 local area = createCombatArea(arr)
-combat:setArea(area)
+setCombatArea(combat, area)
 
-function onCastSpell(creature, var)
-creature:say("Chill out!", TALKTYPE_ORANGE_1)
-	return combat:execute(creature, var)
+function onCastSpell(cid, var)
+doCreatureSay(cid, "Chill out!", TALKTYPE_ORANGE_1)
+	return doCombat(cid, combat, var)
 end

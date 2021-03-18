@@ -1,7 +1,7 @@
 local mType = Game.createMonsterType("Pirate Ghost")
 local monster = {}
 
-monster.description = "a pirate ghost"
+monster.description = "um pirate ghost"
 monster.experience = 250
 monster.outfit = {
 	lookType = 196,
@@ -13,56 +13,36 @@ monster.outfit = {
 	lookMount = 0
 }
 
-monster.raceId = 257
-monster.Bestiary = {
-	class = "Undead",
-	race = BESTY_RACE_UNDEAD,
-	toKill = 500,
-	FirstUnlock = 25,
-	SecondUnlock = 250,
-	CharmsPoints = 15,
-	Stars = 2,
-	Occurrence = 0,
-	Locations = "Drefia, Goroma, Nargor Undead Cave, hidden caves under Treasure Island, \z
-		single spawn at Liberty Bay ruins, Chyllfroest (unreachable)."
-	}
-
 monster.health = 275
 monster.maxHealth = 275
 monster.race = "undead"
-monster.corpse = 5566
-monster.speed = 210
+monster.corpse = 6071
+monster.speed = 180
 monster.manaCost = 0
 monster.maxSummons = 0
 
 monster.changeTarget = {
-	interval = 4000,
-	chance = 10
-}
-
-monster.strategiesTarget = {
-	nearest = 100,
+	interval = 2000,
+	chance = 5
 }
 
 monster.flags = {
-	summonable = false,
-	attackable = true,
-	hostile = true,
-	convinceable = false,
-	pushable = true,
-	rewardBoss = false,
+	isSummonable = false,
+	isAttackable = true,
+	isHostile = true,
+	isConvinceable = false,
+	isPushable = false,
+	isBoss = false,
 	illusionable = false,
 	canPushItems = true,
 	canPushCreatures = false,
-	staticAttackChance = 90,
+	staticAttackChance = 50,
 	targetDistance = 1,
 	runHealth = 0,
-	healthHidden = false,
-	isBlockable = false,
-	canWalkOnEnergy = false,
-	canWalkOnFire = false,
-	canWalkOnPoison = false,
-	pet = false
+	isHealthHidden = false,
+	canwalkonenergy = false,
+	canwalkonfire = false,
+	canwalkonpoison = false
 }
 
 monster.light = {
@@ -74,31 +54,24 @@ monster.voices = {
 	interval = 5000,
 	chance = 10,
 	{text = "Yooh Ho Hooh Ho!", yell = false},
-	{text = "Hell is waiting for You!", yell = false},
-	{text = "It's alive!", yell = false},
-	{text = "The curse! Aww the curse!", yell = false},
-	{text = "You will not get my treasure!", yell = false}
+	{text = "Hell is waiting for You!", yell = false}
 }
 
 monster.loot = {
-	{id = 1951, chance = 910},
-	{name = "gold coin", chance = 48000, maxCount = 67},
-	{name = "stealth ring", chance = 650},
-	{name = "spike sword", chance = 130},
-	{name = "red robe", chance = 130},
-	{name = "tattered piece of robe", chance = 4300}
+	{id = 2148, chance = 70000, maxCount = 40},
+	{id = 2655, chance = 120},
+	{id = 2383, chance = 900},
+	{id = 2165, chance = 800}
 }
 
 monster.attacks = {
-	{name ="melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -100, condition = {type = CONDITION_POISON, totalDamage = 40, interval = 4000}},
-	{name ="combat", interval = 2000, chance = 15, type = COMBAT_LIFEDRAIN, minDamage = -40, maxDamage = -80, radius = 1, effect = CONST_ME_MAGIC_RED, target = false},
-	{name ="combat", interval = 2000, chance = 10, type = COMBAT_DEATHDAMAGE, minDamage = -50, maxDamage = -65, range = 7, radius = 3, effect = CONST_ME_SOUND_RED, target = true}
+	{name ="melee", interval = 2000, chance = 100, minDamage = -50, maxDamage = -130}
 }
 
 monster.defenses = {
 	defense = 0,
 	armor = 0,
-	{name ="combat", interval = 2000, chance = 5, type = COMBAT_HEALING, minDamage = 40, maxDamage = 70, effect = CONST_ME_MAGIC_BLUE, target = false}
+	{name ="combat", interval = 6000, chance = 65, minDamage = 20, maxDamage = 50, type = COMBAT_HEALING, target = false}
 }
 
 monster.elements = {
@@ -106,12 +79,12 @@ monster.elements = {
 	{type = COMBAT_ENERGYDAMAGE, percent = 0},
 	{type = COMBAT_EARTHDAMAGE, percent = 100},
 	{type = COMBAT_FIREDAMAGE, percent = 0},
-	{type = COMBAT_LIFEDRAIN, percent = 100},
+	{type = COMBAT_LIFEDRAIN, percent = 0},
 	{type = COMBAT_MANADRAIN, percent = 0},
 	{type = COMBAT_DROWNDAMAGE, percent = 0},
 	{type = COMBAT_ICEDAMAGE, percent = 0},
-	{type = COMBAT_HOLYDAMAGE , percent = -25},
-	{type = COMBAT_DEATHDAMAGE , percent = 100}
+	{type = COMBAT_HOLYDAMAGE , percent = 0},
+	{type = COMBAT_DEATHDAMAGE , percent = 0}
 }
 
 monster.immunities = {

@@ -1,7 +1,7 @@
 local mType = Game.createMonsterType("Blood Crab")
 local monster = {}
 
-monster.description = "a blood crab"
+monster.description = "um blood crab"
 monster.experience = 160
 monster.outfit = {
 	lookType = 200,
@@ -23,15 +23,14 @@ monster.Bestiary = {
 	CharmsPoints = 15,
 	Stars = 2,
 	Occurrence = 0,
-	Locations = "Goroma (beyond electric barrier), Laguna Islands, Shattered Isles, Underground Port Hope, \z
-		Mistrock, Treasure Island. There is also one underwater next to The Tibianic, however it is unreachable."
-	}
-
+	Locations = "x."
+	}	
+	
 monster.health = 290
 monster.maxHealth = 290
 monster.race = "blood"
 monster.corpse = 6075
-monster.speed = 160
+monster.speed = 190
 monster.manaCost = 505
 monster.maxSummons = 0
 
@@ -65,6 +64,7 @@ monster.flags = {
 	pet = false
 }
 
+
 monster.light = {
 	level = 0,
 	color = 0
@@ -76,12 +76,11 @@ monster.voices = {
 }
 
 monster.loot = {
-	{name = "gold coin", chance = 85750, maxCount = 20},
-	{id = 2667, chance = 14300},--fish
-	{name = "bloody pincers", chance = 6190},
-	{name = "chain armor", chance = 5240},
-	{name = "brass legs", chance = 2120},
-	{name = "white pearl", chance = 530}
+	{id = 2148, chance = 80000, maxCount = 30},
+	{id = 2667, chance = 15000, maxCount = 2},
+	{id = 2478, chance = 2000},
+	{id = 10550, chance = 3000},
+	{id = 2143, chance = 4000}
 }
 
 monster.attacks = {

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Graug-Olog" nameDescription="Graug-Olog" race="blood" experience="250000" speed="300" manacost="0">
+	<health now="120000" max="120000" />
+	<look type="857" corpse="24799" />
+	<targetchange interval="5000" chance="10" />
+	<flags>
+		<flag looteable="1"/>
+		<flag summonable="0"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="0"/>
+		<flag convinceable="0"/>
+		<flag pushable="0"/>
+		<flag canpushitems="1"/>
+		<flag canpushcreatures="1"/>
+		<flag staticattack="98"/>
+		<flag targetDistance="1"/>
+		<flag runonhealth="0"/>
+	</flags>
+	<attacks>
+		<attack name="melee" interval="2000" min="900" max="-1169" poison="60" />
+		<attack name="poison" interval="2000" chance="15" range="7" min="-700" max="-1200">
+			<attribute key="shootEffect" value="poison" />
+		</attack>
+		
+		<attack name="melee" interval="2824" chance="99" range="7" radius="1" target="1" min="-830" max="-1100">
+			<attribute key="shootEffect" value="whirlwindaxe"/>
+			<attribute key="areaEffect" value="redspark"/>
+		</attack>
+		
+		<attack name="drunk" interval="2000" chance="10" range="7">
+			<attribute key="areaEffect" value="stun" />
+		</attack>
+		
+		<attack name="physical" interval="2700" chance="99" range="6" min="-1050" max="-1390">
+			<attribute key="shootEffect" value="largerock"/>
+		</attack>
+	
+		<attack name="physical" interval="3100" chance="33" target="0" radius="5" min="-1300" max="-1750">
+			<attribute key="areaEffect" value="groundshaker"/>
+		</attack>
+	</attacks>
+	<defenses armor="46" defense="44">
+		<defense name="speed" interval="2000" chance="100" duration="2500" speedchange="500">
+			<attribute key="areaEffect" value="redshimmer" />
+		</defense>
+		<defense name="healing" interval="6000" chance="65" min="200" max="500">
+			<attribute key="areaEffect" value="blueshimmer" />
+		</defense>
+	</defenses>
+	
+	<elements><element physicalPercent="5"/>
+		<element physicalPercent="65"/>
+		<element icePercent="15"/>
+		<element poisonPercent="95"/>
+		<element firePercent="90"/>
+		<element energyPercent="60"/>
+		<element holyPercent="30"/>
+		<element deathPercent="70"/>
+	</elements>
+
+	<immunities>
+		<immunity poison="1"/>
+		<immunity drown="1"/>
+		<immunity lifedrain="0"/>
+		<immunity paralyze="1"/>
+		<immunity outfit="1"/>
+		<immunity drunk="0"/>
+		<immunity invisible="1"/>
+	</immunities>
+	
+	<voices interval="3000" chance="50">
+		<voice sentence="You, stop! You'll be my lunch!" />
+		<voice sentence="Smash you face in!!!" />
+		<voice sentence="I'LL GET YOU ALL!" yell="1" />
+		<voice sentence="I won't let you escape!" />
+		<voice sentence="I'll crush you beneath my feet!" />
+		<voice sentence="I am the greatest among the Ologs! Fear me!" />
+	</voices>
+	<loot>
+		<item id="2152" countmax="130" chance="50000" />	<!-- plat coin -->
+		<item id="11302" chance="120" /> <!-- zenit helmet-->
+		<item id="11304" chance="150" /> <!-- zenit legs -->
+		<item id="7423" chance="45" /> <!-- skull crusher -->
+		<item id="11301" chance="300" /> <!-- zenit cuirass -->
+		<item id="2391" chance="25000" /> <!-- war hammer -->
+		<item id="2645" chance="8000" /> <!-- steel boots -->
+		<item id="3968" chance="3000" /> <!-- aegis armor -->
+		<item id="2496" chance="2000" /> <!-- horned helmet -->
+	</loot>
+</monster>

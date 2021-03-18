@@ -1,8 +1,8 @@
 local mType = Game.createMonsterType("Reality Reaver")
 local monster = {}
 
-monster.description = "a reality reaver"
-monster.experience = 2480
+monster.description = "um spark of destruction"
+monster.experience = 21000
 monster.outfit = {
 	lookType = 879,
 	lookHead = 0,
@@ -26,8 +26,8 @@ monster.Bestiary = {
 	Locations = "Otherworld."
 	}
 
-monster.health = 3900
-monster.maxHealth = 3900
+monster.health = 17000
+monster.maxHealth = 17000
 monster.race = "venom"
 monster.corpse = 26068
 monster.speed = 340
@@ -79,34 +79,33 @@ monster.voices = {
 }
 
 monster.loot = {
-	{id = 2148, chance = 100000, maxCount = 100},
-	{id = 2152, chance = 100000, maxCount = 6},
-	{id = 26201, chance = 15000},
-	{id = 26191, chance = 15000},
-	{id = 26164, chance = 15000},
-	{id = 26176, chance = 14700},
-	{id = 8472, chance = 11400, maxCount = 2},
-	{id = 7590, chance = 10300, maxCount = 2},
-	{id = 7591, chance = 9700, maxCount = 2},
-	{id = 26162, chance = 9700},
-	{id = 26171, chance = 9600},
-	{id = 18418, chance = 7900},
-	{id = 18420, chance = 6000},
-	{id = 18414, chance = 4400},
-	{id = 18413, chance = 4000},
-	{id = 2156, chance = 2600},
-	{id = 26199, chance = 630},
-	{id = 7901, chance = 520},
-	{id = 2153, chance = 370},
-	{id = 26185, chance = 370},
-	{id = 26200, chance = 300},
-	{id = 26187, chance = 220}
+	{id = 2148, chance = 50000, maxCount = 100},
+	{id = 2152, chance = 50000, maxCount = 2},
+	{id = 26201, chance = 2000},
+	{id = 26164, chance = 100},
+	{id = 26191, chance = 2000},
+	{id = 26174, chance = 1000},
+	{id = 26163, chance = 700},
+	{id = 26167, chance = 1000},
+	{id = 26162, chance = 1000},
+	{id = 26170, chance = 1000},
+	{id = 18418, chance = 900, maxCount = 2},
+	{id = 18419, chance = 1300},
+	{id = 18413, chance = 1300},
+	{id = 18415, chance = 1500},
+	{id = 8879, chance = 120},
+	{id = 2474, chance = 330},
+	{id = 2123, chance = 90},
+	{id = 7893, chance = 300},
+	{id = 7895, chance = 300},
+	{id = 7901, chance = 300}
 }
 
 monster.attacks = {
-	{name ="melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -500},
-	{name ="combat", interval = 2000, chance = 20, type = COMBAT_ENERGYDAMAGE, minDamage = -180, maxDamage = -400, range = 5, radius = 5, shootEffect = CONST_ANI_ENERGYBALL, effect = CONST_ME_PURPLEENERGY, target = true},
-	{name ="reality reaver wave", interval = 2000, chance = 20, minDamage = -200, maxDamage = -500, target = false},
+	{name ="melee", interval = 1900, chance = 100, minDamage = -560, maxDamage = -968},
+	{name ="combat", interval = 2200, chance = 65, minDamage = -750, maxDamage = -920, type = COMBAT_ENERGYDAMAGE, range = 7, ShootEffect = CONST_ANI_ENERGY, effect = CONST_ME_ENERGYHIT, target = true},
+	{name ="combat", interval = 2000, chance = 50, minDamage = -450, maxDamage = -560, type = COMBAT_PHYSICALDAMAGE, range = 1, target = false},
+	{name ="reality reaver wave", interval = 2000, chance = 20, minDamage = -700, maxDamage = -950, target = false},
 	-- energy damage
 	{name ="condition", type = CONDITION_ENERGY, interval = 2000, chance = 20, minDamage = -400, maxDamage = -800, radius = 5, effect = CONST_ME_STUN, target = false}
 }

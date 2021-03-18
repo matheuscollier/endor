@@ -1,8 +1,8 @@
 local mType = Game.createMonsterType("Rustheap Golem")
 local monster = {}
 
-monster.description = "a rustheap golem"
-monster.experience = 2100
+monster.description = "um rustheap golem"
+monster.experience = 14500
 monster.outfit = {
 	lookType = 603,
 	lookHead = 0,
@@ -23,15 +23,14 @@ monster.Bestiary = {
 	CharmsPoints = 25,
 	Stars = 3,
 	Occurrence = 0,
-	Locations = "Workshop Quarter, Glooth Factory, Underground Glooth Factory, \z
-		Oramond Dungeon (depending on Magistrate votes), Jaccus Maxxens Dungeon."
+	Locations = "x."
 	}
 
-monster.health = 2800
-monster.maxHealth = 2800
+monster.health = 13000
+monster.maxHealth = 13000
 monster.race = "venom"
 monster.corpse = 23355
-monster.speed = 250
+monster.speed = 350
 monster.manaCost = 0
 monster.maxSummons = 0
 
@@ -82,30 +81,19 @@ monster.voices = {
 }
 
 monster.loot = {
-	{id = 8309, chance = 1950},
-	{id = 9930, chance = 5860},
-	{id = 23567, chance = 14980},
+	{id = 23567, chance = 1000},
 	{id = 2148, chance = 100000, maxCount = 290},
-	{id = 5880, chance = 330},
-	{id = 24124, chance = 1950},
 	{id = 2152, chance = 58310, maxCount = 3},
-	{id = 2143, chance = 1300},
-	{id = 2144, chance = 1630},
-	{id = 7588, chance = 10100, maxCount = 2},
-	{id = 7589, chance = 7170, maxCount = 2},
-	{id = 2391, chance = 3580},
-	{id = 7452, chance = 330},
-	{id = 23542, chance = 330},
-	{id = 23541, chance = 2930},
-	{id = 9810, chance = 5860},
-	{id = 9813, chance = 4230}
+	{id = 2391, chance = 250},
+	{id = 2195, chance = 150}
 }
 
 monster.attacks = {
-	{name ="melee", interval = 2000, chance = 100, skill = 118, attack = 50},
+	{name ="melee", interval = 1250, chance = 100, minDamage = -350, maxDamage = -450},
+	{name ="combat", interval = 2000, chance = 10, minDamage = -600, maxDamage = -900, type = COMBAT_PHYSICALDAMAGE, effect = CONST_ME_DRAWBLOOD, target = false},
 	{name ="rustheap golem electrify", interval = 2000, chance = 11, range = 7, target = false},
 	{name ="frazzlemaw paralyze", interval = 2000, chance = 10, target = false},
-	{name ="rustheap golem wave", interval = 2000, chance = 9, minDamage = -100, maxDamage = -210, target = false}
+	{name ="rustheap golem wave", interval = 2000, chance = 9, minDamage = -600, maxDamage = -910, target = false}
 }
 
 monster.defenses = {

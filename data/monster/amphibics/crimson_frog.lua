@@ -1,7 +1,7 @@
 local mType = Game.createMonsterType("Crimson Frog")
 local monster = {}
 
-monster.description = "a crimson frog"
+monster.description = "um crimson frog"
 monster.experience = 20
 monster.outfit = {
 	lookType = 226,
@@ -23,7 +23,7 @@ monster.Bestiary = {
 	CharmsPoints = 15,
 	Stars = 2,
 	Occurrence = 0,
-	Locations = "Meriana, Laguna Islands, and other Shattered Isles."
+	Locations = "x."
 	}
 
 monster.health = 60
@@ -72,13 +72,12 @@ monster.light = {
 monster.voices = {
 	interval = 5000,
 	chance = 10,
-	{text = "Ribbit!", yell = false},
-	{text = "Ribbit! Ribbit!", yell = false}
+	{text = "Ribbit!Ribbit!", yell = false}
 }
 
 monster.loot = {
-	{name = "gold coin", chance = 76000, maxCount = 11},
-	{name = "worm", chance = 10000}
+	{id = 2148, chance = 60000, maxCount = 3},
+	{id = 3976, chance = 53500, maxCount = 6}
 }
 
 monster.attacks = {

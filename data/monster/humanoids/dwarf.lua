@@ -1,7 +1,7 @@
 local mType = Game.createMonsterType("Dwarf")
 local monster = {}
 
-monster.description = "a dwarf"
+monster.description = "um dwarf"
 monster.experience = 45
 monster.outfit = {
 	lookType = 69,
@@ -23,15 +23,14 @@ monster.Bestiary = {
 	CharmsPoints = 15,
 	Stars = 2,
 	Occurrence = 0,
-	Locations = "Kazordoon Dwarf Mines, Dwarf Bridge, deep Elvenbane, Tiquanda Dwarf Cave, Cormaya Dwarf Cave, \z
-		Island of Destiny (Knights area), Beregar."
+	Locations = "x."
 	}
 
 monster.health = 90
 monster.maxHealth = 90
 monster.race = "blood"
-monster.corpse = 6007
-monster.speed = 170
+monster.corpse = 2960
+monster.speed = 140
 monster.manaCost = 320
 monster.maxSummons = 0
 
@@ -77,21 +76,21 @@ monster.voices = {
 }
 
 monster.loot = {
-	{name = "gold coin", chance = 35000, maxCount = 8},
-	{name = "dwarven ring", chance = 100},
-	{name = "axe", chance = 15000},
-	{name = "hatchet", chance = 25000},
-	{name = "studded armor", chance = 8000},
-	{name = "copper shield", chance = 10000},
-	{id = 2553, chance = 10000},
-	{name = "letter", chance = 8000},
-	{name = "leather legs", chance = 10000},
-	{name = "white mushroom", chance = 50000},
-	{name = "iron ore", chance = 700}
+	{id = 2148, chance = 90000, maxCount = 75},
+	{id = 2388, chance = 3000},
+	{id = 2386, chance = 4000},
+	{id = 2484, chance = 2000},
+	{id = 2530, chance = 2000},
+	{id = 2649, chance = 3000},
+	{id = 2787, chance = 20000, maxCount = 3},
+	{id = 2553, chance = 3000},
+	{id = 2554, chance = 1000},
+	{id = 2597, chance = 2000},
+	{id = 2213, chance = 750}
 }
 
 monster.attacks = {
-	{name ="melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -30}
+	{name ="melee", interval = 2000, chance = 100, minDamage = -10, maxDamage = -25}
 }
 
 monster.defenses = {
@@ -102,14 +101,14 @@ monster.defenses = {
 monster.elements = {
 	{type = COMBAT_PHYSICALDAMAGE, percent = 0},
 	{type = COMBAT_ENERGYDAMAGE, percent = 0},
-	{type = COMBAT_EARTHDAMAGE, percent = 10},
-	{type = COMBAT_FIREDAMAGE, percent = -5},
+	{type = COMBAT_EARTHDAMAGE, percent = 0},
+	{type = COMBAT_FIREDAMAGE, percent = 0},
 	{type = COMBAT_LIFEDRAIN, percent = 0},
 	{type = COMBAT_MANADRAIN, percent = 0},
 	{type = COMBAT_DROWNDAMAGE, percent = 0},
 	{type = COMBAT_ICEDAMAGE, percent = 0},
 	{type = COMBAT_HOLYDAMAGE , percent = 0},
-	{type = COMBAT_DEATHDAMAGE , percent = -5}
+	{type = COMBAT_DEATHDAMAGE , percent = 0}
 }
 
 monster.immunities = {

@@ -1,8 +1,8 @@
 local familiar = {
-	[VOCATION.CLIENT_ID.SORCERER] = {id = 994, name = "Sorcerer familiar"},
+	[VOCATION.CLIENT_ID.MAGE] = {id = 994, name = "Mage familiar"},
 	[VOCATION.CLIENT_ID.DRUID] = {id = 993, name = "Druid familiar"},
-	[VOCATION.CLIENT_ID.PALADIN] = {id = 992, name = "Paladin familiar"},
-	[VOCATION.CLIENT_ID.KNIGHT] = {id = 991, name = "Knight familiar"}
+	[VOCATION.CLIENT_ID.ARCHER] = {id = 992, name = "Archer familiar"},
+	[VOCATION.CLIENT_ID.WARRIOR] = {id = 991, name = "Warrior familiar"}
 }
 
 local timer = {

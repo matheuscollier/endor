@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Draken Abomination" nameDescription="a draken abomination" race="blood" experience="9000" speed="350" manacost="0">
+<health now="8100" max="8100"/>
+<look type="357" corpse="12623"/>
+<targetchange interval="2000" chance="5"/>
+<strategy attack="100" defense="0"/>
+	<flags>
+		<flag summonable="0"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="1"/>
+		<flag convinceable="0"/>
+		<flag pushable="0"/>
+		<flag canpushitems="1"/>
+		<flag canpushcreatures="0"/>
+		<flag targetDistance="1"/>
+		<flag staticattack="90"/>
+		<flag runonhealth="0"/>
+	</flags>
+	<attacks>
+		<attack name="melee" interval="1900" min="-400" max="-480"/>
+		<attack name="fire" interval="2000" chance="20" length="4" spread="3" min="-500" max="-620">
+			<attribute key="shootEffect" value="explosion"/>
+			<attribute key="areaEffect" value="explosion"/>
+		</attack>
+		<attack name="death" interval="2000" chance="30" length="8" spread="3" min="-500" max="-620">
+			<attribute key="areaEffect" value="mortarea"/>
+		</attack>
+		<attack name="drunk" interval="2000" chance="10" target="0" radius="5">
+			<attribute key="shootEffect" value="poison"/>
+			<attribute key="areaEffect" value="poison"/>
+		</attack>
+	</attacks>
+	<defenses armor="0" defense="0">
+		<defense name="healing" interval="2000" chance="15" min="650" max="700">
+			<attribute key="areaEffect" value="blueshimmer"/>
+		</defense>
+	</defenses>
+	<elements><element physicalPercent="5"/>
+		<element firePercent="90"/>
+		<element earthPercent="60"/>
+		<element energyPercent="20"/>
+		<element icePercent="25"/>
+		<element holyPercent="25"/>
+	    <element deathPercent="80"/>
+		<element physicalPercent="25"/>
+	</elements>
+	<immunities>
+		<immunity paralyze="1"/>
+		<immunity outfit="1"/>
+		<immunity drunk="1"/>
+		<immunity invisible="1"/>
+	</immunities>
+	<summons maxSummons="2">
+		<summon name="Death Blob" interval="2000" chance="10" max="2"/>
+	</summons>
+	<voices interval="5000" chance="10">
+		<voice sentence="Ugggh!"/>
+	</voices>
+	<loot>
+		<item id="2148" countmax="100" chance="40825" />
+		<item id="2148" countmax="100" chance="40825" />
+		<item id="2666" countmax="4" chance="50450" />
+		<item id="2152" countmax="8" chance="28900" />
+		<item id="12627" chance="9250" />
+		<item id="12628" chance="6400" />
+		<item id="12629" chance="1167" />
+		<item id="12646" chance="150" />
+	    <item id="12630" chance="60" />
+	    <item id="12645" chance="135" />
+		<item id="11301" chance="135" />
+		<item id="8880" chance="835" />
+		<item id="2123" chance="30" />
+	</loot>
+</monster>

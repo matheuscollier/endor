@@ -1,7 +1,7 @@
 local mType = Game.createMonsterType("Parrot")
 local monster = {}
 
-monster.description = "a parrot"
+monster.description = "um parrot"
 monster.experience = 0
 monster.outfit = {
 	lookType = 217,
@@ -23,9 +23,9 @@ monster.Bestiary = {
 	CharmsPoints = 5,
 	Stars = 1,
 	Occurrence = 0,
-	Locations = "In the jungle of Tiquanda, Liberty Bay, the Shattered Isles, and as a house pet in Meriana."
+	Locations = "x."
 	}
-
+	
 monster.health = 25
 monster.maxHealth = 25
 monster.race = "blood"
@@ -89,6 +89,7 @@ monster.voices = {
 }
 
 monster.loot = {
+	{id = 2687, chance = 90000, maxCount = 5}
 }
 
 monster.attacks = {

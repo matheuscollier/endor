@@ -1,49 +1,29 @@
 local mType = Game.createMonsterType("Stalker")
 local monster = {}
 
-monster.description = "a stalker"
+monster.description = "um stalker"
 monster.experience = 90
 monster.outfit = {
 	lookType = 128,
-	lookHead = 78,
+	lookHead = 97,
 	lookBody = 116,
 	lookLegs = 95,
-	lookFeet = 114,
+	lookFeet = 95,
 	lookAddons = 0,
 	lookMount = 0
 }
-
-monster.raceId = 72
-monster.Bestiary = {
-	class = "Human",
-	race = BESTY_RACE_HUMAN,
-	toKill = 500,
-	FirstUnlock = 25,
-	SecondUnlock = 250,
-	CharmsPoints = 15,
-	Stars = 2,
-	Occurrence = 0,
-	Locations = "Triangle Tower, Drefia, Edron Hero Cave in the Warlock room, White Flower Temple, \z
-		Ghostlands, Shadow Tomb, Ancient Ruins Tomb, Tarpit Tomb, Stone Tomb, Mountain Tomb, Peninsula Tomb, \z
-		Oasis Tomb, Yalahar Trade Quarter and Isle of the Kings."
-	}
 
 monster.health = 120
 monster.maxHealth = 120
 monster.race = "blood"
 monster.corpse = 20511
-monster.speed = 260
+monster.speed = 220
 monster.manaCost = 0
 monster.maxSummons = 0
 
 monster.changeTarget = {
-	interval = 4000,
-	chance = 10
-}
-
-monster.strategiesTarget = {
-	nearest = 60,
-	random = 40,
+	interval = 8000,
+	chance = 15
 }
 
 monster.flags = {
@@ -56,7 +36,7 @@ monster.flags = {
 	illusionable = false,
 	canPushItems = true,
 	canPushCreatures = false,
-	staticAttackChance = 90,
+	staticAttackChance = 95,
 	targetDistance = 1,
 	runHealth = 0,
 	healthHidden = false,
@@ -78,38 +58,38 @@ monster.voices = {
 }
 
 monster.loot = {
-	{name = "gold coin", chance = 13000, maxCount = 8},
-	{name = "blank rune", chance = 8670},
-	{name = "throwing knife", chance = 11170, maxCount = 2},
-	{name = "katana", chance = 530},
-	{name = "obsidian lance", chance = 1210},
-	{name = "brass legs", chance = 3500},
-	{name = "brass legs", chance = 5510},
-	{name = "miraculum", chance = 1550}
+	{id = 2148, chance = 100000, maxCount = 25},
+	{id = 2260, chance = 11000},
+	{id = 2478, chance = 1500},
+	{id = 2511, chance = 2500},
+	{id = 2412, chance = 2000},
+	{id = 2649, chance = 5000},
+	{id = 2410, chance = 25000, maxCount = 2},
+	{id = 2165, chance = 250}
 }
 
 monster.attacks = {
-	{name ="melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -70},
-	{name ="combat", interval = 1000, chance = 15, type = COMBAT_LIFEDRAIN, minDamage = -20, maxDamage = -30, range = 1, effect = CONST_ME_MAGIC_RED, target = false}
+	{name ="melee", interval = 2000, chance = 100, minDamage = -20, maxDamage = -60},
+	{name ="combat", interval = 2350, chance = 20, minDamage = -20, maxDamage = -50, type = COMBAT_LIFEDRAIN, range = 1, target = false}
 }
 
 monster.defenses = {
-	defense = 15,
-	armor = 15,
-	{name ="invisible", interval = 2000, chance = 40, effect = CONST_ME_MAGIC_BLUE}
+	defense = 0,
+	armor = 0,
+	{name ="invisible", interval = 9000, chance = 60, effect = CONST_ME_MAGIC_BLUE}
 }
 
 monster.elements = {
-	{type = COMBAT_PHYSICALDAMAGE, percent = -20},
+	{type = COMBAT_PHYSICALDAMAGE, percent = 0},
 	{type = COMBAT_ENERGYDAMAGE, percent = 0},
 	{type = COMBAT_EARTHDAMAGE, percent = 0},
 	{type = COMBAT_FIREDAMAGE, percent = 0},
-	{type = COMBAT_LIFEDRAIN, percent = 100},
+	{type = COMBAT_LIFEDRAIN, percent = 0},
 	{type = COMBAT_MANADRAIN, percent = 0},
 	{type = COMBAT_DROWNDAMAGE, percent = 0},
 	{type = COMBAT_ICEDAMAGE, percent = 0},
-	{type = COMBAT_HOLYDAMAGE , percent = -5},
-	{type = COMBAT_DEATHDAMAGE , percent = 5}
+	{type = COMBAT_HOLYDAMAGE , percent = 0},
+	{type = COMBAT_DEATHDAMAGE , percent = 0}
 }
 
 monster.immunities = {

@@ -1,7 +1,7 @@
 local mType = Game.createMonsterType("Orc")
 local monster = {}
 
-monster.description = "an orc"
+monster.description = "um orc"
 monster.experience = 25
 monster.outfit = {
 	lookType = 5,
@@ -13,56 +13,36 @@ monster.outfit = {
 	lookMount = 0
 }
 
-monster.raceId = 5
-monster.Bestiary = {
-	class = "Humanoid",
-	race = BESTY_RACE_HUMANOID,
-	toKill = 500,
-	FirstUnlock = 25,
-	SecondUnlock = 250,
-	CharmsPoints = 15,
-	Stars = 2,
-	Occurrence = 0,
-	Locations = "Ulderek's Rock, Edron Orc Cave, Ancient Temple, Ice Islands, Venore Orc Cave, \z
-		Rookgaard Orc Fortress, Rookgaard main cave, Fibula Dungeon, Elvenbane, Foreigner Quarter, Zao Orc Land."
-	}
-
 monster.health = 70
 monster.maxHealth = 70
 monster.race = "blood"
-monster.corpse = 5966
+monster.corpse = 2820
 monster.speed = 150
 monster.manaCost = 300
 monster.maxSummons = 0
 
 monster.changeTarget = {
-	interval = 4000,
+	interval = 2000,
 	chance = 0
 }
 
-monster.strategiesTarget = {
-	nearest = 100,
-}
-
 monster.flags = {
-	summonable = true,
-	attackable = true,
-	hostile = true,
-	convinceable = true,
-	pushable = true,
-	rewardBoss = false,
+	isSummonable = true,
+	isAttackable = true,
+	isHostile = true,
+	isConvinceable = true,
+	isPushable = true,
+	isBoss = false,
 	illusionable = true,
 	canPushItems = false,
 	canPushCreatures = false,
-	staticAttackChance = 90,
+	staticAttackChance = 95,
 	targetDistance = 1,
 	runHealth = 15,
-	healthHidden = false,
-	isBlockable = false,
-	canWalkOnEnergy = false,
-	canWalkOnFire = false,
-	canWalkOnPoison = false,
-	pet = false
+	isHealthHidden = false,
+	canwalkonenergy = false,
+	canwalkonfire = false,
+	canwalkonpoison = false
 }
 
 monster.light = {
@@ -79,38 +59,36 @@ monster.voices = {
 }
 
 monster.loot = {
-	{name = "gold coin", chance = 84810, maxCount = 14},
-	{name = "sabre", chance = 5850},
-	{name = "axe", chance = 4960},
-	{name = "studded helmet", chance = 2950},
-	{name = "studded armor", chance = 7860},
-	{name = "studded shield", chance = 7300},
-	{name = "meat", chance = 10160},
-	{name = "orc tooth", chance = 210},
-	{name = "orc leather", chance = 590},
-	{id = 26654, chance = 1000}
+	{id = 11113, chance = 2000},
+	{id = 2148, chance = 85000, maxCount = 18},
+	{id = 2386, chance = 5000},
+	{id = 2666, chance = 10000},
+	{id = 2385, chance = 4000},
+	{id = 2484, chance = 5000},
+	{id = 2482, chance = 3500},
+	{id = 2526, chance = 8000}
 }
 
 monster.attacks = {
-	{name ="melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -35}
+	{name ="melee", interval = 2000, chance = 100, minDamage = -5, maxDamage = -15}
 }
 
 monster.defenses = {
-	defense = 10,
-	armor = 10
+	defense = 0,
+	armor = 0
 }
 
 monster.elements = {
 	{type = COMBAT_PHYSICALDAMAGE, percent = 0},
-	{type = COMBAT_ENERGYDAMAGE, percent = 20},
-	{type = COMBAT_EARTHDAMAGE, percent = -10},
+	{type = COMBAT_ENERGYDAMAGE, percent = 0},
+	{type = COMBAT_EARTHDAMAGE, percent = 0},
 	{type = COMBAT_FIREDAMAGE, percent = 0},
 	{type = COMBAT_LIFEDRAIN, percent = 0},
 	{type = COMBAT_MANADRAIN, percent = 0},
 	{type = COMBAT_DROWNDAMAGE, percent = 0},
 	{type = COMBAT_ICEDAMAGE, percent = 0},
-	{type = COMBAT_HOLYDAMAGE , percent = 10},
-	{type = COMBAT_DEATHDAMAGE , percent = -5}
+	{type = COMBAT_HOLYDAMAGE , percent = 0},
+	{type = COMBAT_DEATHDAMAGE , percent = 0}
 }
 
 monster.immunities = {

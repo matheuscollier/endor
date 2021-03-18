@@ -1,8 +1,8 @@
 local mType = Game.createMonsterType("Quara Mantassin")
 local monster = {}
 
-monster.description = "a quara mantassin"
-monster.experience = 400
+monster.description = "um quara mantassin"
+monster.experience = 500
 monster.outfit = {
 	lookType = 72,
 	lookHead = 0,
@@ -23,9 +23,9 @@ monster.Bestiary = {
 	CharmsPoints = 25,
 	Stars = 3,
 	Occurrence = 0,
-	Locations = "Calassa, Frozen Trench, Yalahar (Sunken Quarter)."
+	Locations = "x."
 	}
-
+	
 monster.health = 800
 monster.maxHealth = 800
 monster.race = "blood"
@@ -77,22 +77,18 @@ monster.voices = {
 }
 
 monster.loot = {
-	{name = "gold coin", chance = 5000, maxCount = 100},
-	{name = "gold coin", chance = 29000, maxCount = 29},
-	{name = "mantassin tail", chance = 12600},
-	{name = "shrimp", chance = 5170, maxCount = 5},
-	{name = "halberd", chance = 4970},
-	{name = "small sapphire", chance = 1130},
-	{name = "cape", chance = 1090},
-	{name = "stealth ring", chance = 1050},
-	{name = "two handed sword", chance = 990},
-	{name = "fish fin", chance = 610},
-	{name = "strange helmet", chance = 100},
-	{name = "blue robe", chance = 60}
+	{id = 2148, chance = 100000, maxCount = 30},
+	{id = 2654, chance = 8000},
+	{id = 2377, chance = 2000},
+	{id = 2146, chance = 100},
+	{id = 2165, chance = 300},
+	{id = 2479, chance = 400},
+	{id = 7892, chance = 100},
+	{id = 11423, chance = 20}
 }
 
 monster.attacks = {
-	{name ="melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -138, effect = CONST_ME_DRAWBLOOD}
+	{name ="melee", interval = 2000, chance = 100, minDamage = -60, maxDamage = -140, effect = CONST_ME_DRAWBLOOD}
 }
 
 monster.defenses = {
@@ -103,7 +99,7 @@ monster.defenses = {
 }
 
 monster.elements = {
-	{type = COMBAT_PHYSICALDAMAGE, percent = 0},
+	{type = COMBAT_PHYSICALDAMAGE, percent = -20},
 	{type = COMBAT_ENERGYDAMAGE, percent = -25},
 	{type = COMBAT_EARTHDAMAGE, percent = -10},
 	{type = COMBAT_FIREDAMAGE, percent = 100},

@@ -23,7 +23,7 @@ monster.Bestiary = {
 	CharmsPoints = 50,
 	Stars = 4,
 	Occurrence = 2,
-	Locations = "The First Dragon's Lair, fourth floor."
+	Locations = "x."
 	}
 
 monster.health = 6500
@@ -62,7 +62,7 @@ monster.flags = {
 	healthHidden = false,
 	isBlockable = false,
 	canWalkOnEnergy = false,
-	canWalkOnFire = false,
+	canWalkOnFire = true,
 	canWalkOnPoison = true,
 	pet = false
 }
@@ -78,24 +78,16 @@ monster.voices = {
 }
 
 monster.loot = {
-	{name = "black pearl", chance = 22780, maxCount = 2},
-	{name = "small sapphire", chance = 28370, maxCount = 2},
-	{name = "gold coin", chance = 35500, maxCount = 100},
-	{name = "gold coin", chance = 55500, maxCount = 98},
-	{name = "platinum coin", chance = 52000, maxCount = 5},
-	{name = "life crystal", chance = 2500},
-	{name = "hardened bone", chance = 14180},
-	{id = 6300, chance = 1150},
-	{name = "demonic essence", chance = 12460},
-	{name = "assassin star", chance = 26650, maxCount = 5},
-	{name = "dragon slayer", chance = 860},
-	{name = "dragonbone staff", chance = 4000},
-	{name = "great mana potion", chance = 21490},
-	{name = "great health potion", chance = 21200},
-	{name = "skullcracker armor", chance = 290},
-	{name = "gold ingot", chance = 570},
-	{name = "unholy bone", chance = 33380},
-	{name = "spellweaver's robe", chance = 860}
+	{id = 2466, chance = 10},
+	{id = 5741, chance = 50},
+	{id = 2495, chance = 35},
+	{id = 2516, chance = 1200},
+	{id = 2328, chance = 2000},
+	{id = 2427, chance = 300},
+	{id = 2407, chance = 100},
+	{id = 2148, chance = 80000, maxCount = 80},
+	{id = 2148, chance = 50000, maxCount = 80},
+	{id = 2148, chance = 50000, maxCount = 80}
 }
 
 monster.attacks = {

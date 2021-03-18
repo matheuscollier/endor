@@ -1,8 +1,8 @@
 local mType = Game.createMonsterType("Ironblight")
 local monster = {}
 
-monster.description = "an ironblight"
-monster.experience = 4400
+monster.description = "ironblight"
+monster.experience = 5350
 monster.outfit = {
 	lookType = 498,
 	lookHead = 0,
@@ -23,7 +23,7 @@ monster.Bestiary = {
 	CharmsPoints = 50,
 	Stars = 4,
 	Occurrence = 1,
-	Locations = "Warzone 3."
+	Locations = "x."
 	}
 
 monster.health = 6600
@@ -80,40 +80,23 @@ monster.voices = {
 }
 
 monster.loot = {
-	{name = "gold coin", chance = 100000, maxCount = 199},
-	{name = "small emerald", chance = 10890, maxCount = 3},
-	{name = "small amethyst", chance = 15020, maxCount = 3},
-	{name = "platinum coin", chance = 100000, maxCount = 8},
-	{name = "red gem", chance = 3510},
-	{name = "blue gem", chance = 480},
-	{name = "epee", chance = 480},
-	{name = "magic sulphur", chance = 830},
-	{name = "sapphire hammer", chance = 480},
-	{name = "great mana potion", chance = 17640},
-	{name = "terra legs", chance = 1110},
-	{name = "ultimate health potion", chance = 18330},
-	{name = "composite hornbow", chance = 210},
-	{name = "springsprout rod", chance = 1720},
-	{name = "crystal of balance", chance = 4480},
-	{name = "crystal of power", chance = 2480},
-	{name = "war crystal", chance = 21230},
-	{name = "shiny stone", chance = 15230},
-	{name = "jade hat", chance = 210},
-	{name = "glacial rod", chance = 960},
-	{name = "green crystal shard", chance = 5720},
-	{name = "brown crystal splinter", chance = 12610, maxCount = 2},
-	{name = "red crystal fragment", chance = 10540},
-	{name = "crystalline spikes", chance = 18400}
+	{name = "gold coin", chance = 100000, maxCount = 199},												   
+	{id = 2152, chance = 99900, maxCount = 3},
+	{id = 5880, chance = 30000, maxCount = 10},
+	{name = "platinum coin", chance = 100000, maxCount = 8},													 
+	{id = 11221, chance = 2500},
+	{id = 10571, chance = 280}
 }
 
 monster.attacks = {
-	{name ="melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -300},
+	{name ="melee", interval = 2000, chance = 100, skill = 90, attack = 80},
 	-- poison
 	{name ="condition", type = CONDITION_POISON, interval = 2000, chance = 10, minDamage = -460, maxDamage = -480, radius = 6, shootEffect = CONST_ANI_POISON, effect = CONST_ME_POISONAREA, target = false},
-	{name ="combat", interval = 2000, chance = 15, type = COMBAT_ICEDAMAGE, minDamage = -260, maxDamage = -350, length = 7, spread = 3, shootEffect = CONST_ANI_ICE, effect = CONST_ME_ICEATTACK, target = false},
-	{name ="combat", interval = 2000, chance = 20, type = COMBAT_EARTHDAMAGE, minDamage = -180, maxDamage = -250, radius = 2, shootEffect = CONST_ANI_GREENSTAR, effect = CONST_ME_BIGPLANTS, target = true},
+	{name ="combat", interval = 2000, chance = 30, minDamage = -200, maxDamage = -320, type = COMBAT_ICEDAMAGE, ShootEffect = CONST_ANI_ICE, effect = CONST_ME_LOSEENERGY, target = true},
+	{name ="combat", interval = 2000, chance = 20, type = COMBAT_EARTHDAMAGE, minDamage = -180, maxDamage = -350, radius = 2, shootEffect = CONST_ANI_GREENSTAR, effect = CONST_ME_BIGPLANTS, target = true},
 	{name ="speed", interval = 2000, chance = 10, speedChange = -800, length = 5, spread = 3, effect = CONST_ME_BLOCKHIT, target = false, duration = 30000}
 }
+
 
 monster.defenses = {
 	defense = 35,

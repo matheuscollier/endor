@@ -1,8 +1,8 @@
 local mType = Game.createMonsterType("Manta Ray")
 local monster = {}
 
-monster.description = "a manta ray"
-monster.experience = 125
+monster.description = "uma manta ray"
+monster.experience = 700
 monster.outfit = {
 	lookType = 449,
 	lookHead = 0,
@@ -23,14 +23,14 @@ monster.Bestiary = {
 	CharmsPoints = 25,
 	Stars = 3,
 	Occurrence = 2,
-	Locations = "Fiehonja only in stage 3 in a large room."
+	Locations = "Atlantida."
 	}
-
-monster.health = 680
-monster.maxHealth = 680
+	
+monster.health = 900					
+monster.maxHealth = 900
 monster.race = "blood"
 monster.corpse = 15276
-monster.speed = 168
+monster.speed = 270
 monster.manaCost = 0
 monster.maxSummons = 0
 
@@ -72,11 +72,10 @@ monster.light = {
 monster.voices = {
 	interval = 5000,
 	chance = 10,
-	{text = "Flap flap flap!", yell = false}
 }
 
 monster.loot = {
-	{name = "gold coin", chance = 63000, maxCount = 39}
+	{id = 2148, chance = 30000, maxCount = 100}
 }
 
 monster.attacks = {

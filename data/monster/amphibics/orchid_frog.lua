@@ -1,7 +1,7 @@
 local mType = Game.createMonsterType("Orchid Frog")
 local monster = {}
 
-monster.description = "an orchid frog"
+monster.description = "um orchid frog"
 monster.experience = 20
 monster.outfit = {
 	lookType = 226,
@@ -23,7 +23,7 @@ monster.Bestiary = {
 	CharmsPoints = 15,
 	Stars = 2,
 	Occurrence = 0,
-	Locations = "Meriana, Laguna Islands, and other Shattered Isles."
+	Locations = "x."
 	}
 
 monster.health = 60
@@ -72,13 +72,12 @@ monster.light = {
 monster.voices = {
 	interval = 5000,
 	chance = 10,
-	{text = "Ribbit!", yell = false},
-	{text = "Ribbit! Ribbit!", yell = false}
+	{text = "Ribbit!Ribbit!", yell = false}
 }
 
 monster.loot = {
-	{name = "gold coin", chance = 73230, maxCount = 10},
-	{name = "worm", chance = 8000}
+	{id = 2148, chance = 60000, maxCount = 10},
+	{id = 3976, chance = 53500, maxCount = 7}
 }
 
 monster.attacks = {

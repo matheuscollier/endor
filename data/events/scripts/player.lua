@@ -44,34 +44,6 @@ local STORAGE_CAPACITY_IMBUEMENT = 42154
 -- Players cannot throw items on teleports if set to true
 local blockTeleportTrashing = true
 
-local titles = {
-	{storageID = 14960, title = " Scout"},
-	{storageID = 14961, title = " Sentinel"},
-	{storageID = 14962, title = " Steward"},
-	{storageID = 14963, title = " Warden"},
-	{storageID = 14964, title = " Squire"},
-	{storageID = 14965, title = " Warrior"},
-	{storageID = 14966, title = " Keeper"},
-	{storageID = 14967, title = " Guardian"},
-	{storageID = 14968, title = " Sage"},
-	{storageID = 14969, title = " Tutor"},
-	{storageID = 14970, title = " Senior Tutor"},
-	{storageID = 14971, title = " King"},
-}
-
-local function getTitle(uid)
-	local player = Player(uid)
-	if not player then return false end
-
-	for i = #titles, 1, -1 do
-		if player:getStorageValue(titles[i].storageID) == 1 then
-			return titles[i].title
-		end
-	end
-
-	return false
-end
-
 function Player:onBrowseField(position)
 	return true
 end
@@ -222,6 +194,23 @@ function Player:onLook(thing, position, distance)
 			end
 		end
 	end
+	if thing:isCreature() then
+		if thing:isPlayer() then
+			local grupodoplayer = thing:getGroup():getId()
+			if grupodoplayer == 2 then
+				description = string.format("%s\nTutor do Endor OT Server.", description)
+			elseif grupodoplayer == 3 then
+				description = string.format("%s\nSenior Tutor do Endor OT Server.", description)
+			elseif grupodoplayer == 5 then
+				description = string.format("%s\nAdministrador do Endor OT Server.", description)
+			end
+		end
+	end
+	if thing:isCreature() then
+		if thing:isPlayer() then
+			description = string.format("%s\nTask Rank: "..Player.rankTask(thing), description)
+		end
+	end
 	self:sendTextMessage(MESSAGE_LOOK, description)
 end
 
@@ -334,32 +323,6 @@ function Player:onMoveItem(item, count, fromPosition, toPosition, fromCylinder, 
 		self:sendCancelMessage("Your cannot move this item too heavy.")
 		return false
 	end
-
-	-- Cults of Tibia begin
-	local frompos = Position(33023, 31904, 14) -- Checagem
-	local topos = Position(33052, 31932, 15) -- Checagem
-	if self:getPosition():isInRange(frompos, topos) and item:getId() == 26397 then
-		local tileBoss = Tile(toPosition)
-		if tileBoss and tileBoss:getTopCreature() and tileBoss:getTopCreature():isMonster() then
-			if tileBoss:getTopCreature():getName():lower() == 'the remorseless corruptor' then
-				tileBoss:getTopCreature():addHealth(-17000)
-				item:remove(1)
-				if tileBoss:getTopCreature():getHealth() <= 300 then
-					tileBoss:getTopCreature():remove()
-					local monster = Game.createMonster('the corruptor of souls', toPosition)
-					monster:registerEvent('CheckTile')
-					if Game.getStorageValue('healthSoul') > 0 then
-						monster:addHealth(-(monster:getHealth() - Game.getStorageValue('healthSoul')))
-					end
-					Game.setStorageValue('CheckTile', os.time()+30)
-				end
-			elseif tileBoss:getTopCreature():getName():lower() == 'the corruptor of souls' then
-				Game.setStorageValue('CheckTile', os.time()+30)
-				item:remove(1)
-			end
-		end
-	end
-	-- Cults of Tibia end
 
 	-- SSA exhaust
 	local exhaust = { }
@@ -753,10 +716,6 @@ function Player:onLoseExperience(exp)
 end
 
 function Player:onGainSkillTries(skill, tries)
-	-- Dawnport skills limit
-	if isSkillGrowthLimited(self, skill) then
-		return 0
-	end
 	if APPLY_SKILL_MULTIPLIER == false then
 		return tries
 	end
@@ -814,7 +773,7 @@ function Player:canBeAppliedImbuement(imbuement, item)
 		return false
 	end
 
-	if self:getStorageValue(Storage.ForgottenKnowledge.Tomes) > 0 then
+	if self:getPremiumDays() > 0 then
 		imbuable = true
 	else
 		return false

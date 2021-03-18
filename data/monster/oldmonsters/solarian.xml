@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Solarian" nameDescription="um solarian" race="blood" experience="14500" speed="410" manacost="0">
+  <health now="11500" max="11500"/>
+  <look type="130" head="78" body="76" legs="94" feet="115" addons="2" corpse="3058"/>
+  <targetchange interval="4000" chance="100"/>
+  <strategy attack="100" defense="100"/>
+  <flags>
+    <flag summonable="0"/>
+    <flag attackable="1"/>
+    <flag hostile="1"/>
+    <flag illusionable="0"/>
+    <flag convinceable="0"/>
+    <flag pushable="0"/>
+    <flag canpushitems="1"/>
+    <flag canpushcreatures="1"/>
+    <flag targetDistance="3"/>
+
+  </flags>
+
+<attacks>
+	<attack name="melee" interval="1900" min="-120" max="-200"/>
+
+	<attack name="speed" interval="5400" chance="25" range="7" speedchange="-500" duration="4000">
+		<attribute key="areaEffect" value="redshimmer"/>
+	</attack>
+
+	<attack name="fire" interval="1800" chance="100" range="7" radius="1" target="1" min="-470" max="-650">
+		<attribute key="shootEffect" value="fire"/>
+	</attack>
+
+
+</attacks>
+
+
+	<elements><element physicalPercent="5"/>
+	<element physicalPercent="25"/>
+	<element icePercent="20"/>
+	<element poisonPercent="30"/>
+	<element firePercent="95"/>
+	<element energyPercent="35"/>
+	<element holyPercent="95"/>
+	<element deathPercent="25"/>
+	</elements>
+
+ <immunities>
+    <immunity physical="0"/>
+    <immunity energy="0"/>
+    <immunity fire="0"/>
+    <immunity poison="0"/>
+    <immunity lifedrain="1"/>
+    <immunity paralyze="1"/>
+    <immunity outfit="1"/>
+    <immunity drunk="1"/>
+    <immunity invisible="1"/>
+  </immunities>
+
+<summons maxSummons="4">
+	<summon name="fire elemental" interval="1000" chance="50" max="1"/>
+</summons>
+
+
+<loot capacity="900">
+	<item id="2662" chance="2000"/>
+	<item id="2187" chance="1500" /> 
+    <item id="8886" chance="80" /> 
+	<item id="7894" chance="1650" />
+	<item id="2173" chance="600" />
+	<item id="7431" chance="120" />
+	<item id="2152" countmax="3" chance1="80000"/> 
+	<item id="2148" countmax="100" chance1="30000"/> 
+	<item id="2197" chance="650"/>
+	<item id="2167" chance="2000"/>
+		
+	
+</loot>
+
+</monster>

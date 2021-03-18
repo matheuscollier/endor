@@ -1,7 +1,7 @@
 local mType = Game.createMonsterType("Dwarf Guard")
 local monster = {}
 
-monster.description = "a dwarf guard"
+monster.description = "um dwarf guard"
 monster.experience = 165
 monster.outfit = {
 	lookType = 70,
@@ -23,15 +23,14 @@ monster.Bestiary = {
 	CharmsPoints = 15,
 	Stars = 2,
 	Occurrence = 0,
-	Locations = "Kazordoon Dwarf Mines, Dwacatra, Ferngrims Gate, Cyclopolis, Mount Sternum Undead Cave, \z
-		Stonehome Rotworm cave (near Edron), Maze of Lost Souls, Tiquanda Dwarf Cave, Beregar, Cormaya Dwarf Cave."
+	Locations = "x."
 	}
 
 monster.health = 245
 monster.maxHealth = 245
 monster.race = "blood"
-monster.corpse = 6013
-monster.speed = 206
+monster.corpse = 2983
+monster.speed = 190
 monster.manaCost = 650
 monster.maxSummons = 0
 
@@ -79,47 +78,44 @@ monster.voices = {
 }
 
 monster.loot = {
-	{name = "gold coin", chance = 40000, maxCount = 30},
-	{name = "small amethyst", chance = 140},
-	{name = "axe ring", chance = 190},
-	{name = "double axe", chance = 600},
-	{name = "battle hammer", chance = 4000},
-	{name = "steel helmet", chance = 1600},
-	{name = "scale armor", chance = 9200},
-	{name = "battle shield", chance = 6000},
-	{name = "leather boots", chance = 40000},
-	{name = "white mushroom", chance = 55000, maxCount = 2},
-	{name = "iron ore", chance = 510},
-	{name = "health potion", chance = 380},
-	{id = 13757, chance = 280}
+	{id = 2502, chance = 320},
+	{id = 2503, chance = 280},
+	{id = 2504, chance = 300},
+	{id = 2387, chance = 300},
+	{id = 2378, chance = 900},
+	{id = 2513, chance = 1050},
+	{id = 2787, chance = 60000, maxCount = 5},
+	{id = 2148, chance = 90000, maxCount = 80},
+	{id = 2150, chance = 430},
+	{id = 2149, chance = 650}
 }
 
 monster.attacks = {
-	{name ="melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -140}
+	{name ="melee", interval = 2000, chance = 100, minDamage = -60, maxDamage = -135}
 }
 
 monster.defenses = {
-	defense = 30,
-	armor = 30
+	defense = 0,
+	armor = 0
 }
 
 monster.elements = {
-	{type = COMBAT_PHYSICALDAMAGE, percent = 10},
+	{type = COMBAT_PHYSICALDAMAGE, percent = 0},
 	{type = COMBAT_ENERGYDAMAGE, percent = 0},
-	{type = COMBAT_EARTHDAMAGE, percent = 20},
-	{type = COMBAT_FIREDAMAGE, percent = -5},
+	{type = COMBAT_EARTHDAMAGE, percent = 0},
+	{type = COMBAT_FIREDAMAGE, percent = 0},
 	{type = COMBAT_LIFEDRAIN, percent = 0},
 	{type = COMBAT_MANADRAIN, percent = 0},
 	{type = COMBAT_DROWNDAMAGE, percent = 0},
 	{type = COMBAT_ICEDAMAGE, percent = 0},
 	{type = COMBAT_HOLYDAMAGE , percent = 0},
-	{type = COMBAT_DEATHDAMAGE , percent = -5}
+	{type = COMBAT_DEATHDAMAGE , percent = 0}
 }
 
 monster.immunities = {
 	{type = "paralyze", condition = false},
 	{type = "outfit", condition = false},
-	{type = "invisible", condition = true},
+	{type = "invisible", condition = false},
 	{type = "bleed", condition = false}
 }
 

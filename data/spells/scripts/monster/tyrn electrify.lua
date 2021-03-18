@@ -1,11 +1,11 @@
-local combat = Combat()
-combat:setParameter(COMBAT_PARAM_TYPE, COMBAT_ENERGYDAMAGE)
-combat:setParameter(COMBAT_PARAM_EFFECT, CONST_ME_SMOKE)
+local combat = createCombatObject()
+setCombatParam(combat, COMBAT_PARAM_TYPE, COMBAT_ENERGYDAMAGE)
+setCombatParam(combat, COMBAT_PARAM_EFFECT, CONST_ME_SMOKE)
 
-local condition = Condition(CONDITION_ENERGY)
-condition:setParameter(CONDITION_PARAM_DELAYED, 1)
-condition:addDamage(30, 10000, -25)
-combat:addCondition(condition)
+local condition = createConditionObject(CONDITION_ENERGY)
+setConditionParam(condition, CONDITION_PARAM_DELAYED, 1)
+addDamageCondition(condition, 30, 10000, -25)
+setCombatCondition(combat, condition)
 
 	arr = {
 		{0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0},
@@ -17,8 +17,8 @@ combat:addCondition(condition)
 	}
 
 local area = createCombatArea(arr)
-combat:setArea(area)
+setCombatArea(combat, area)
 
-function onCastSpell(creature, var)
-	return combat:execute(creature, var)
+function onCastSpell(cid, var)
+	return doCombat(cid, combat, var)
 end

@@ -1,0 +1,89 @@
+<?xml version="1.0"?>
+<monster name="Glaurung" nameDescription="Glaurung" race="blood" experience="450000" speed="310" manacost="0">
+<health now="100000" max="100000"/>
+<look type="947" head="5" body="5" legs="5" feet="5" corpse="27854" />
+<targetchange speed="8000" chance="30"/>
+<strategy attack="100" defense="0"/>
+
+<flags>
+    <flag looteable="1"/>
+    <flag summonable="0"/>
+    <flag attackable="1"/>
+    <flag hostile="1"/>
+    <flag illusionable="0"/>
+    <flag convinceable="0"/>
+    <flag pushable="0"/>
+    <flag canpushitems="1"/>
+    <flag canpushcreatures="1"/>
+    <flag targetDistance="1"/>
+    <flag runonhealth="1500"/>
+  </flags>
+
+<attacks>
+	<attack name="melee" interval="1800" min="-900" max="-1500"/>
+
+	<attack name="fire" interval="1850" chance="30" length="8" spread="3" target="0" min="-850" max="-1400">
+		<attribute key="areaEffect" value="firearea"/>
+	</attack>
+	
+	<attack name="poison" interval="2100" chance="25" range="7" radius="3" target="1" min="-500" max="-720">
+		<attribute key="shootEffect" value="earth"/>
+		<attribute key="areaEffect" value="greenbubble"/>
+	</attack>
+	
+	<attack name="fire" interval="2600" chance="99" range="7" radius="4" target="1" min="-800" max="-1200">
+		<attribute key="shootEffect" value="fire"/>
+		<attribute key="areaEffect" value="firearea"/>
+	</attack>
+
+	<attack name="fire" interval="2700" chance="35" range="7" radius="8" min="-500" max="-800">
+		<attribute key="shootEffect" value="fire"/>
+		<attribute key="areaEffect" value="firearea"/>
+	</attack>
+	
+	<attack name="speed" interval="5000" chance="30" radius="7" target="0" speedchange="-700" duration="4000">
+		<attribute key="areaEffect" value="blackspark"/>
+	</attack>
+</attacks>
+
+<defenses armor="0" defense="0">
+	<defense name="healing" interval="500" chance="100" min="70" max="100"/>
+</defenses>
+
+<elements><element physicalPercent="5"/>
+	<element physicalPercent="60"/>
+	<element icePercent="25"/>
+	<element poisonPercent="100"/>
+	<element firePercent="90"/>
+	<element energyPercent="70"/>
+	<element holyPercent="20"/>
+	<element deathPercent="95"/>
+</elements>
+
+<immunities>
+	<immunity drown="1"/>
+	<immunity lifedrain="1"/>
+    <immunity paralyze="1"/>
+    <immunity outfit="1"/>
+    <immunity drunk="1"/>
+    <immunity invisible="1"/>
+</immunities>
+
+
+  <loot capacity="600">
+	<item id="7898" chance="2000"/> 
+	<item id="2522" unique="1" chance="950"/> 
+	<item id="12645" unique="1" chance="2000"/> 
+	<item id="5741" chance="25000"/> 
+	<item id="7894" chance="10000"/> 
+	<item id="2520" chance="6000"/> 
+	<item id="2408" chance="5000"/> 
+	<item id="6500" chance="10000"/> 
+	<item id="2152" countmax="100" chance1="100000"/> 
+	<item id="2152" countmax="100" chance1="100000"/> 
+	<item id="2547" countmax="50" chance1="40000"/> 
+		
+
+  </loot>
+
+</monster>
