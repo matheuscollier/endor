@@ -2912,6 +2912,18 @@ void Game::playerReceivePingBack(uint32_t playerId)
 	player->sendPingBack();
 }
 
+void Game::playerReceiveNewPing(uint32_t playerId, uint16_t/* localPing*/, uint16_t/* fps*/)
+{
+    Player* player = getPlayerByID(playerId);
+	if (!player) {
+		return;
+	}
+
+    player->receivePing();
+    // do whatever you want with localPing and fps
+    // localPing is just player ping in ms, can be used to detect ddos/lags
+}
+
 void Game::playerAutoWalk(uint32_t playerId, const std::forward_list<Direction>& listDir)
 {
 	Player* player = getPlayerByID(playerId);
@@ -4911,7 +4923,7 @@ void Game::playerShowQuestLine(uint32_t playerId, uint16_t questId)
 }
 
 void Game::playerSay(uint32_t playerId, uint16_t channelId, SpeakClasses type,
-					 const std::string& receiver, const std::string& text)
+					const std::string& receiver, const std::string& text)
 {
 	Player* player = getPlayerByID(playerId);
 	if (!player) {

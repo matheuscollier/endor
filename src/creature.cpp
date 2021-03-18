@@ -967,13 +967,15 @@ void Creature::goToFollowCreature()
 
 bool Creature::setFollowCreature(Creature* creature)
 {
+	
+	// it should be here, should also work for nullptr
+    if (followCreature == creature) {
+        return true;
+    }
+	
 	if (creature) {
 		if (returnToMasterInterval > 0 && master && creature != master)
 			return false;
-
-		if (followCreature == creature) {
-			return true;
-		}
 
 		const Position& creaturePos = creature->getPosition();
 		if (creaturePos.z != getPosition().z || !canSee(creaturePos)) {
