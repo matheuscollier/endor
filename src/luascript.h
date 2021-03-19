@@ -21,7 +21,9 @@
 #define FS_LUASCRIPT_H_5344B2BC907E46E3943EA78574A212D8
 
 #if __has_include("luajit/lua.hpp")
-  #include <luajit/lua.hpp>
+  #include <luajit/lua.h>
+  #include <luajit/lualib.h>
+  #include <luajit/lauxlib.h>
 #else
   #include <lua.hpp>
 #endif

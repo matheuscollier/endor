@@ -6545,6 +6545,7 @@ void ProtocolGame::sendFeatures()
 	if (g_config.getBoolean(ConfigManager::PACKET_COMPRESSION)) {
 		enableCompression();
 	}
+	
 	if(features.empty())
 		return;
 	auto msg = getOutputBuffer(1024);

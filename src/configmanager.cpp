@@ -20,7 +20,9 @@
 #include "otpch.h"
 
 #if __has_include("luajit/lua.hpp")
-  #include <luajit/lua.hpp>
+  #include <luajit/lua.h>
+  #include <luajit/lualib.h>
+  #include <luajit/lauxlib.h>
 #else
   #include <lua.hpp>
 #endif

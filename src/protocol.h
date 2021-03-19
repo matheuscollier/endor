@@ -21,6 +21,7 @@
 #define FS_PROTOCOL_H_D71405071ACF4137A4B1203899DE80E1
 
 #include <zlib.h>
+
 #include "connection.h"
 #include "xtea.h"
 

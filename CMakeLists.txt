@@ -60,6 +60,7 @@ else ()
   find_package(CryptoPP REQUIRED)
 endif ()
 
+find_package(ZLIB REQUIRED)
 find_package(PugiXML REQUIRED)
 find_package(MySQL REQUIRED)
 find_package(Threads REQUIRED)
@@ -258,4 +259,5 @@ include_directories(SYSTEM ${MYSQL_INCLUDE_DIR} ${LUA_INCLUDE_DIR}
 target_link_libraries(otbr otbr_lib ${MYSQL_CLIENT_LIBS} ${LUA_LIBRARIES}
                       ${Boost_LIBRARIES} ${Boost_FILESYSTEM_LIBRARY}
                       ${PUGIXML_LIBRARIES} ${CRYPTOPP_LIBRARIES}
+					  ${ZLIB_LIBRARY}
                       ${CMAKE_THREAD_LIBS_INIT} ${CURL_LIBRARIES} jsoncpp_lib)
