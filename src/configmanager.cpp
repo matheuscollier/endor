@@ -19,12 +19,15 @@
 
 #include "otpch.h"
 
-#if __has_include("luajit/lua.hpp")
-  #include <luajit/lua.h>
-  #include <luajit/lualib.h>
-  #include <luajit/lauxlib.h>
+#if defined(_MSC_VER)
+extern "C"
+{
+	#include <luajit/lua.h>
+	#include <luajit/lualib.h>
+	#include <luajit/lauxlib.h>
+}
 #else
-  #include <lua.hpp>
+#include <lua.hpp>
 #endif
 
 #include "configmanager.h"
