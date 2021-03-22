@@ -203,7 +203,7 @@ std::ostringstream& Container::getContentDescription(std::ostringstream& os, boo
 		}
 
 		if (!oldClient)
-			os << "{" << item->getClientID() << "|" << item->getNameDescription() << "}";
+			os << item->getNameDescription();
 		else
 			os << item->getNameDescription();
 	}
