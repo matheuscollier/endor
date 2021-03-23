@@ -13,36 +13,54 @@ monster.outfit = {
 	lookMount = 0
 }
 
+monster.raceId = 61
+monster.Bestiary = {
+	class = "Humanoid",
+	race = BESTY_RACE_HUMANOID,
+	toKill = 250,
+	FirstUnlock = 10,
+	SecondUnlock = 100,
+	CharmsPoints = 5,
+	Stars = 1,
+	Occurrence = 0,
+	Locations = "x."
+	
 monster.health = 50
 monster.maxHealth = 50
 monster.race = "blood"
-monster.corpse = 2940
+monster.corpse = 6002
 monster.speed = 120
 monster.manaCost = 290
 monster.maxSummons = 0
 
 monster.changeTarget = {
-	interval = 2000,
+	interval = 5000,
 	chance = 0
 }
 
+monster.strategiesTarget = {
+	nearest = 100,
+}
+
 monster.flags = {
-	isSummonable = true,
-	isAttackable = true,
-	isHostile = true,
-	isConvinceable = true,
-	isPushable = true,
-	isBoss = false,
+	summonable = true,
+	attackable = true,
+	hostile = true,
+	convinceable = true,
+	pushable = true,
+	rewardBoss = false,
 	illusionable = true,
 	canPushItems = false,
 	canPushCreatures = false,
-	staticAttackChance = 95,
+	staticAttackChance = 90,
 	targetDistance = 1,
 	runHealth = 15,
-	isHealthHidden = false,
-	canwalkonenergy = false,
-	canwalkonfire = false,
-	canwalkonpoison = false
+	healthHidden = false,
+	isBlockable = false,
+	canWalkOnEnergy = false,
+	canWalkOnFire = false,
+	canWalkOnPoison = false,
+	pet = false
 }
 
 monster.light = {
@@ -56,6 +74,7 @@ monster.voices = {
 	{text = "Me have him!", yell = false},
 	{text = "Zig Zag! Gobo attack!", yell = false},
 	{text = "Help! Goblinkiller!", yell = false},
+	{text = "Bugga! Bugga!", yell = false},
 	{text = "Me green, me mean!", yell = false}
 }
 
@@ -73,26 +92,26 @@ monster.loot = {
 }
 
 monster.attacks = {
-	{name ="melee", interval = 2000, chance = 100, minDamage = -5, maxDamage = -12},
-	{name ="combat", interval = 3000, chance = 33, minDamage = -5, maxDamage = -15, type = COMBAT_PHYSICALDAMAGE, range = 7, ShootEffect = CONST_ANI_SMALLSTONE, target = false}
+	{name ="melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -10},
+	{name ="combat", interval = 2000, chance = 10, type = COMBAT_PHYSICALDAMAGE, minDamage = 0, maxDamage = -25, range = 7, shootEffect = CONST_ANI_SMALLSTONE, target = false}
 }
 
 monster.defenses = {
-	defense = 0,
-	armor = 0
+	defense = 10,
+	armor = 10
 }
 
 monster.elements = {
 	{type = COMBAT_PHYSICALDAMAGE, percent = 0},
-	{type = COMBAT_ENERGYDAMAGE, percent = 0},
-	{type = COMBAT_EARTHDAMAGE, percent = 0},
+	{type = COMBAT_ENERGYDAMAGE, percent = 20},
+	{type = COMBAT_EARTHDAMAGE, percent = -12},
 	{type = COMBAT_FIREDAMAGE, percent = 0},
 	{type = COMBAT_LIFEDRAIN, percent = 0},
 	{type = COMBAT_MANADRAIN, percent = 0},
 	{type = COMBAT_DROWNDAMAGE, percent = 0},
 	{type = COMBAT_ICEDAMAGE, percent = 0},
-	{type = COMBAT_HOLYDAMAGE , percent = 0},
-	{type = COMBAT_DEATHDAMAGE , percent = 0}
+	{type = COMBAT_HOLYDAMAGE , percent = 1},
+	{type = COMBAT_DEATHDAMAGE , percent = -10}
 }
 
 monster.immunities = {

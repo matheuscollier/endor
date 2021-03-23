@@ -13,11 +13,24 @@ monster.outfit = {
 	lookMount = 0
 }
 
+monster.raceId = 463
+monster.Bestiary = {
+	class = "Humanoid",
+	race = BESTY_RACE_HUMANOID,
+	toKill = 500,
+	FirstUnlock = 25,
+	SecondUnlock = 250,
+	CharmsPoints = 15,
+	Stars = 2,
+	Occurrence = 0,
+	Locations = "x."
+	}
+
 monster.health = 75
 monster.maxHealth = 75
 monster.race = "blood"
 monster.corpse = 6002
-monster.speed = 220
+monster.speed = 140
 monster.manaCost = 360
 monster.maxSummons = 0
 
@@ -26,23 +39,29 @@ monster.changeTarget = {
 	chance = 0
 }
 
+monster.strategiesTarget = {
+	nearest = 100,
+}
+
 monster.flags = {
-	isSummonable = true,
-	isAttackable = true,
-	isHostile = true,
-	isConvinceable = true,
-	isPushable = true,
-	isBoss = false,
+	summonable = true,
+	attackable = true,
+	hostile = true,
+	convinceable = true,
+	pushable = true,
+	rewardBoss = false,
 	illusionable = true,
 	canPushItems = false,
 	canPushCreatures = false,
 	staticAttackChance = 90,
 	targetDistance = 1,
 	runHealth = 15,
-	isHealthHidden = false,
-	canwalkonenergy = false,
-	canwalkonfire = false,
-	canwalkonpoison = false
+	healthHidden = false,
+	isBlockable = false,
+	canWalkOnEnergy = false,
+	canWalkOnFire = false,
+	canWalkOnPoison = false,
+	pet = false
 }
 
 monster.light = {
@@ -53,8 +72,13 @@ monster.light = {
 monster.voices = {
 	interval = 5000,
 	chance = 10,
-	{text = "Goblin Powahhh!", yell = false}
+	{text = "Goblin Powahhh!", yell = false},
+	{text = "Me kill you!", yell = false},
+	{text = "Me green menace!", yell = false},
+	{text = "Gobabunga!", yell = false},
+	{text = "Gooobliiiins!", yell = false}
 }
+
 
 monster.loot = {
 	{id = 2148, chance = 100000, maxCount = 9},
@@ -71,27 +95,28 @@ monster.loot = {
 
 monster.attacks = {
 	{name ="melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -15},
-	{name ="drunk", interval = 5000, chance = 15, effect = CONST_ME_POISONAREA, target = false},
-	{name ="combat", interval = 1000, chance = 9, minDamage = -15, maxDamage = -25, type = COMBAT_PHYSICALDAMAGE, range = 6, ShootEffect = CONST_ANI_THROWINGKNIFE, target = false}
+	{name ="drunk", interval = 2000, chance = 10, shootEffect = CONST_ANI_POISON, target = false, duration = 10000},
+	{name ="combat", interval = 2000, chance = 10, type = COMBAT_PHYSICALDAMAGE, minDamage = 0, maxDamage = -35, range = 6, shootEffect = CONST_ANI_THROWINGKNIFE, target = false}
 }
 
 monster.defenses = {
-	defense = 0,
-	armor = 0,
-	{name ="invisible", interval = 7500, chance = 10, effect = CONST_ME_MAGIC_BLUE}
+	defense = 15,
+	armor = 15,
+	{name ="invisible", interval = 2000, chance = 10, effect = CONST_ME_MAGIC_BLUE},
+	{name ="speed", interval = 2000, chance = 15, speedChange = 100, effect = CONST_ME_MAGIC_RED, target = false, duration = 3000}
 }
 
 monster.elements = {
-	{type = COMBAT_PHYSICALDAMAGE, percent = 5},
-	{type = COMBAT_ENERGYDAMAGE, percent = 10},
+	{type = COMBAT_PHYSICALDAMAGE, percent = 0},
+	{type = COMBAT_ENERGYDAMAGE, percent = 20},
 	{type = COMBAT_EARTHDAMAGE, percent = -10},
 	{type = COMBAT_FIREDAMAGE, percent = 0},
 	{type = COMBAT_LIFEDRAIN, percent = 0},
 	{type = COMBAT_MANADRAIN, percent = 0},
 	{type = COMBAT_DROWNDAMAGE, percent = 0},
 	{type = COMBAT_ICEDAMAGE, percent = 0},
-	{type = COMBAT_HOLYDAMAGE , percent = 5},
-	{type = COMBAT_DEATHDAMAGE , percent = -15}
+	{type = COMBAT_HOLYDAMAGE , percent = 1},
+	{type = COMBAT_DEATHDAMAGE , percent = -1}
 }
 
 monster.immunities = {

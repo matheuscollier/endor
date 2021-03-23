@@ -13,6 +13,19 @@ monster.outfit = {
 	lookMount = 0
 }
 
+monster.raceId = 4013
+monster.Bestiary = {
+	class = "Humanoid",
+	race = BESTY_RACE_HUMANOID,
+	toKill = 1500,
+	FirstUnlock = 100,
+	SecondUnlock = 500,
+	CharmsPoints = 50,
+	Stars = 4,
+	Occurrence = 0,
+	Locations = "x."
+	}
+
 monster.health = 9000
 monster.maxHealth = 9000
 monster.race = "blood"

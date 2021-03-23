@@ -1,48 +1,67 @@
-local mType = Game.createMonsterType("Island troll")
+local mType = Game.createMonsterType("Island Troll")
 local monster = {}
 
-monster.description = "a island troll"
+monster.description = "an island troll"
 monster.experience = 20
 monster.outfit = {
-	lookType = 15,
-	lookHead = 20,
-	lookBody = 30,
-	lookLegs = 40,
-	lookFeet = 50,
+	lookType = 282,
+	lookHead = 0,
+	lookBody = 0,
+	lookLegs = 0,
+	lookFeet = 0,
 	lookAddons = 0,
 	lookMount = 0
 }
 
+monster.raceId = 277
+monster.Bestiary = {
+	class = "Humanoid",
+	race = BESTY_RACE_HUMANOID,
+	toKill = 250,
+	FirstUnlock = 10,
+	SecondUnlock = 100,
+	CharmsPoints = 5,
+	Stars = 1,
+	Occurrence = 0,
+	Locations = "x."
+	}
+
 monster.health = 50
 monster.maxHealth = 50
 monster.race = "blood"
-monster.corpse = 5960
-monster.speed = 190
+monster.corpse = 7930
+monster.speed = 126
 monster.manaCost = 290
 monster.maxSummons = 0
 
 monster.changeTarget = {
 	interval = 5000,
-	chance = 20
+	chance = 0
+}
+
+monster.strategiesTarget = {
+	nearest = 100,
 }
 
 monster.flags = {
-	isSummonable = true,
-	isAttackable = true,
-	isHostile = true,
-	isConvinceable = true,
-	isPushable = true,
-	isBoss = false,
-	illusionable = false,
-	canPushItems = true,
+	summonable = true,
+	attackable = true,
+	hostile = true,
+	convinceable = true,
+	pushable = true,
+	rewardBoss = false,
+	illusionable = true,
+	canPushItems = false,
 	canPushCreatures = false,
 	staticAttackChance = 90,
 	targetDistance = 1,
 	runHealth = 15,
-	isHealthHidden = false,
-	canwalkonenergy = false,
-	canwalkonfire = false,
-	canwalkonpoison = false
+	healthHidden = false,
+	isBlockable = false,
+	canWalkOnEnergy = false,
+	canWalkOnFire = false,
+	canWalkOnPoison = false,
+	pet = false
 }
 
 monster.light = {
@@ -54,7 +73,8 @@ monster.voices = {
 	interval = 5000,
 	chance = 10,
 	{text = "Hmmm, turtles", yell = false},
-	{text = "HHmmm, dogs", yell = false},
+	{text = "Hmmm, dogs", yell = false},
+	{text = "Hmmm, worms", yell = false},
 	{text = "Groar", yell = false},
 	{text = "Gruntz!", yell = false}
 }

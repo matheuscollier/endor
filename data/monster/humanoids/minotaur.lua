@@ -13,36 +13,55 @@ monster.outfit = {
 	lookMount = 0
 }
 
+monster.raceId = 25
+monster.Bestiary = {
+	class = "Humanoid",
+	race = BESTY_RACE_HUMANOID,
+	toKill = 500,
+	FirstUnlock = 25,
+	SecondUnlock = 250,
+	CharmsPoints = 15,
+	Stars = 2,
+	Occurrence = 0,
+	Locations = "x."
+	}
+
 monster.health = 100
 monster.maxHealth = 100
 monster.race = "blood"
-monster.corpse = 2830
+monster.corpse = 5969
 monster.speed = 168
 monster.manaCost = 330
 monster.maxSummons = 0
 
 monster.changeTarget = {
-	interval = 2000,
+	interval = 4000,
 	chance = 0
 }
 
+monster.strategiesTarget = {
+	nearest = 100,
+}
+
 monster.flags = {
-	isSummonable = true,
-	isAttackable = true,
-	isHostile = true,
-	isConvinceable = true,
-	isPushable = true,
-	isBoss = false,
+	summonable = true,
+	attackable = true,
+	hostile = true,
+	convinceable = true,
+	pushable = true,
+	rewardBoss = false,
 	illusionable = true,
 	canPushItems = false,
 	canPushCreatures = false,
-	staticAttackChance = 95,
+	staticAttackChance = 90,
 	targetDistance = 1,
 	runHealth = 0,
-	isHealthHidden = false,
-	canwalkonenergy = false,
-	canwalkonfire = false,
-	canwalkonpoison = false
+	healthHidden = false,
+	isBlockable = false,
+	canWalkOnEnergy = false,
+	canWalkOnFire = false,
+	canWalkOnPoison = false,
+	pet = false
 }
 
 monster.light = {
@@ -53,7 +72,8 @@ monster.light = {
 monster.voices = {
 	interval = 5000,
 	chance = 10,
-	{text = "Kaplar!", yell = false}
+	{text = "Kaplar!", yell = false},
+	{text = "Hurr", yell = false}
 }
 
 monster.loot = {
@@ -76,21 +96,21 @@ monster.attacks = {
 }
 
 monster.defenses = {
-	defense = 0,
-	armor = 0
+	defense = 15,
+	armor = 15
 }
 
 monster.elements = {
 	{type = COMBAT_PHYSICALDAMAGE, percent = 0},
-	{type = COMBAT_ENERGYDAMAGE, percent = 0},
+	{type = COMBAT_ENERGYDAMAGE, percent = -15},
 	{type = COMBAT_EARTHDAMAGE, percent = 0},
-	{type = COMBAT_FIREDAMAGE, percent = 0},
+	{type = COMBAT_FIREDAMAGE, percent = 20},
 	{type = COMBAT_LIFEDRAIN, percent = 0},
 	{type = COMBAT_MANADRAIN, percent = 0},
 	{type = COMBAT_DROWNDAMAGE, percent = 0},
-	{type = COMBAT_ICEDAMAGE, percent = 0},
-	{type = COMBAT_HOLYDAMAGE , percent = 0},
-	{type = COMBAT_DEATHDAMAGE , percent = 0}
+	{type = COMBAT_ICEDAMAGE, percent = -10},
+	{type = COMBAT_HOLYDAMAGE , percent = 10},
+	{type = COMBAT_DEATHDAMAGE , percent = -5}
 }
 
 monster.immunities = {
