@@ -500,8 +500,9 @@ private:
 	void sendInventory();
 
 	void sendOpenStash();
+	void AddPlayerStowedItems(NetworkMessage &msg);
 	void parseStashWithdraw(NetworkMessage &msg);
-	void sendSpecialContainersAvailable();
+	void sendSpecialContainersAvailable(bool supplyStashAvailable);
 };
 
 #endif
