@@ -4113,6 +4113,8 @@
 		<attribute key="armor" value="7" />
 		<attribute key="slotType" value="head" />
 		<attribute key="loottype" value="helmet" />
+		<attribute key="absorbPercentDeath" value="3" />
+		<attribute key="showattributes" value="1" />
 	</item>
 	<item id="2463" article="a" name="plate armor">
 		<attribute key="weight" value="12000" />
@@ -4198,6 +4200,8 @@
 		<attribute key="slotType" value="head" />
 		<attribute key="loottype" value="helmet" />
 		<attribute key="imbuingSlots" value="2" />
+		<attribute key="absorbPercentHoly" value="5" />
+		<attribute key="showattributes" value="1" />
 	</item>
 	<item id="2476" article="a" name="knight armor">
 		<attribute key="weight" value="12000" />
@@ -4221,8 +4225,10 @@
 	<item id="2479" article="a" name="strange helmet">
 		<attribute key="weight" value="4600" />
 		<attribute key="armor" value="6" />
+		<attribute key="absorbPercentDeath" value="2" />
 		<attribute key="slotType" value="head" />
 		<attribute key="loottype" value="helmet" />
+		<attribute key="showattributes" value="1" />
 	</item>
 	<item id="2480" article="a" name="legion helmet">
 		<attribute key="weight" value="3100" />
@@ -4288,7 +4294,7 @@
 	</item>
 	<item id="2490" article="a" name="dark helmet">
 		<attribute key="weight" value="4600" />
-		<attribute key="armor" value="6" />
+		<attribute key="armor" value="5" />
 		<attribute key="slotType" value="head" />
 		<attribute key="loottype" value="helmet" />
 	</item>
@@ -4298,6 +4304,8 @@
 		<attribute key="slotType" value="head" />
 		<attribute key="loottype" value="helmet" />
 		<attribute key="imbuingSlots" value="2" />
+		<attribute key="absorbPercentFire" value="4" />
+		<attribute key="showattributes" value="1" />
 	</item>
 	<item id="2492" article="a" name="dragon scale mail">
 		<attribute key="weight" value="11400" />
@@ -4339,6 +4347,7 @@
 		<attribute key="slotType" value="head" />
 		<attribute key="loottype" value="helmet" />
 		<attribute key="imbuingSlots" value="2" />
+		<attribute key="showattributes" value="1" />
 	</item>
 	<item id="2498" article="a" name="royal helmet">
 		<attribute key="description" value="An excellent masterpiece of a smith." />
@@ -4354,6 +4363,9 @@
 		<attribute key="slotType" value="head" />
 		<attribute key="loottype" value="helmet" />
 		<attribute key="imbuingSlots" value="2" />
+		<attribute key="absorbPercentEarth" value="5" />
+		<attribute key="absorbPercentFire" value="-5" />
+		<attribute key="showattributes" value="1" />
 	</item>
 	<item id="2500" article="an" name="amazon armor">
 		<attribute key="weight" value="4500" />
@@ -4375,7 +4387,8 @@
 		<attribute key="slotType" value="head" />
 		<attribute key="loottype" value="helmet" />
 		<attribute key="absorbPercentPhysical" value="2" />
-		<attribute key="imbuingSlots" value="2" />
+		<attribute key="imbuingSlots" value="1" />
+		<attribute key="showattributes" value="1" />
 	</item>
 	<item id="2503" article="a" name="dwarven armor">
 		<attribute key="weight" value="13000" />
@@ -5064,10 +5077,12 @@
 	</item>
 	<item id="2662" article="a" name="magician hat">
 		<attribute key="weight" value="750" />
-		<attribute key="armor" value="1" />
+		<attribute key="armor" value="4" />
+		<attribute key="magiclevelpoints" value="2" />
 		<attribute key="slotType" value="head" />
 		<attribute key="loottype" value="helmet" />
 		<attribute key="imbuingSlots" value="2" />
+		<attribute key="showattributes" value="1" />
 	</item>
 	<item id="2663" article="a" name="mystic turban">
 		<attribute key="description" value="Something is strange about this turban." />
@@ -7971,6 +7986,7 @@
 		<attribute key="absorbPercentEarth" value="5" />
         <attribute key="absorbPercentFire" value="-5" />												
 		<attribute key="imbuingSlots" value="1" />
+		<attribute key="showattributes" value="1" />
 	</item>
 	<item id="3973" article="a" name="tusk shield">
 		<attribute key="weight" value="6900" />
@@ -10317,7 +10333,11 @@
 		<attribute key="fluidSource" value="blood" />
 	</item>
 	<item id="5965" article="a" name="dead human">
-		<attribute key="containerSize" value="10" />
+		<attribute key="containerSize" value="15" />
+		<attribute key="decayTo" value="6082" />
+		<attribute key="duration" value="300" />
+		<attribute key="corpseType" value="blood" />
+		<attribute key="fluidSource" value="blood" />
 	</item>
 	<item id="5966" article="a" name="dead orc">
 		<attribute key="containerSize" value="10" />
@@ -10703,7 +10723,11 @@
 		<attribute key="fluidSource" value="slime" />
 	</item>
 	<item id="6022" article="a" name="dead human">
-		<attribute key="containerSize" value="10" />
+		<attribute key="containerSize" value="15" />
+		<attribute key="decayTo" value="5965" />
+		<attribute key="duration" value="300" />
+		<attribute key="corpseType" value="blood" />
+		<attribute key="fluidSource" value="blood" />
 	</item>
 	<item id="6023" article="a" name="dead larva">
 		<attribute key="containerSize" value="5" />
@@ -11095,28 +11119,38 @@
 		<attribute key="corpseType" value="blood" />
 		<attribute key="fluidSource" value="blood" />
 	</item>
-	<item id="6080" article="a" name="dead human">
-		<attribute key="containerSize" value="10" />
-		<attribute key="decayTo" value="3058" />
+	<item id="6080" article="a" name="dead human" editorsuffix=" (Creature)">
+		<attribute key="containerSize" value="15" />
+		<attribute key="decayTo" value="6022" />
 		<attribute key="duration" value="10" />
 		<attribute key="corpseType" value="blood" />
 		<attribute key="fluidSource" value="blood" />
 	</item>
-	<item id="6081" article="a" name="dead human">
-		<attribute key="containerSize" value="10" />
-		<attribute key="decayTo" value="3065" />
+	<item id="6081" article="a" name="dead human" editorsuffix=" (Creature)">
+		<attribute key="containerSize" value="15" />
+		<attribute key="decayTo" value="6083" />
 		<attribute key="duration" value="10" />
 		<attribute key="corpseType" value="blood" />
 		<attribute key="fluidSource" value="blood" />
 	</item>
 	<item id="6082" article="a" name="dead human" />
-	<item id="6083" article="a" name="dead human" editorsuffix=" (Creature)">
-		<attribute key="containerSize" value="10" />
+	<item id="6082" article="a" name="dead human">
+		<attribute key="decayTo" value="0" />
+		<attribute key="duration" value="300" />
+	</item>
+	<item id="6083" article="a" name="dead human">
+		<attribute key="containerSize" value="15" />
+		<attribute key="decayTo" value="6084" />
+		<attribute key="duration" value="300" />
+		<attribute key="corpseType" value="blood" />
+		<attribute key="fluidSource" value="blood" />
 	</item>
 	<item id="6084" article="a" name="dead human">
-		<attribute key="containerSize" value="10" />
+		<attribute key="containerSize" value="15" />
 		<attribute key="decayTo" value="6082" />
-		<attribute key="duration" value="120" />
+		<attribute key="duration" value="300" />
+		<attribute key="corpseType" value="blood" />
+		<attribute key="fluidSource" value="blood" />
 	</item>
 	<item id="6085" article="a" name="large trunk" />
 	<item id="6086" article="a" name="faked label">
@@ -15742,6 +15776,7 @@
 		<attribute key="absorbPercentEnergy" value="-5" />
 		<attribute key="slotType" value="head" />
 		<attribute key="loottype" value="helmet" />
+		<attribute key="showattributes" value="1" />
 	</item>
 	<item id="7903" article="a" name="terra hood">
 		<attribute key="weight" value="1000" />
@@ -15750,6 +15785,7 @@
 		<attribute key="absorbPercentFire" value="-5" />
 		<attribute key="slotType" value="head" />
 		<attribute key="loottype" value="helmet" />
+		<attribute key="showattributes" value="1" />
 	</item>
 	<item id="7904" article="a" name="green bed kit">
 		<attribute key="description" value="Use it on your bed to change the bed to green." />
@@ -19071,6 +19107,7 @@
 		<attribute key="loottype" value="helmet" />
 		<attribute key="magiclevelpoints" value="1" />
 		<attribute key="imbuingSlots" value="1" />
+		<attribute key="showattributes" value="1" />
 	</item>
 	<item id="10017" article="a" name="football" />
 	<item id="10018" article="a" name="voodoo doll">
@@ -19727,11 +19764,14 @@
 	</item>
 	<item id="10298" article="a" name="helmet of ultimate terror">
 		<attribute key="description" value="There is evil inside." />
+		<attribute key="absorbPercentDeath" value="3" />
+		<attribute key="absorbPercentHoly" value="-3" />
 		<attribute key="weight" value="1250" />
 		<attribute key="armor" value="3" />
 		<attribute key="slotType" value="head" />
 		<attribute key="loottype" value="helmet" />
 		<attribute key="imbuingSlots" value="2" />
+		<attribute key="showattributes" value="1" />
 	</item>
 	<item id="10299" article="a" name="helmet of nature">
 		<attribute key="description" value="One can only hope nobody will ever insist on wearing that." />
@@ -20300,6 +20340,7 @@
 		<attribute key="slotType" value="head" />
 		<attribute key="loottype" value="helmet" />
 		<attribute key="imbuingSlots" value="1" />
+		<attribute key="showattributes" value="1" />
 	</item>
 	<item id="10571" article="a" name="war crystal" plural="war crystals">
 		<attribute key="loottype" value="creatureproduct" />
@@ -52498,5 +52539,13 @@
 	<item id="40807" article="a" name="portable aqueduct">
 		<attribute key="duration" value="1" />
 		<attribute key="decayTo" value="40804" />
+	</item>
+	<item id="40808" article="a" name="podium of renown">
+		<attribute key="isPodium" value="true" />
+		<attribute key="wrapableTo" value="26054" />
+	</item>
+	<item id="40809" article="a" name="podium of renown">
+		<attribute key="isPodium" value="true" />
+		<attribute key="wrapableTo" value="26054" />
 	</item>
 </items>
